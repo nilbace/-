@@ -5,8 +5,8 @@ using UnityEngine;
 public class Stage1MonsterSpawner : MonoBehaviour
 {
     [SerializeField] Define.MonsterWave _wavesData;
-    [SerializeField] float[] waveTerms;
-    [SerializeField] int[] waveIndexs;
+    [Header("X는 텀, Y는 몇웨이브인지")]
+    [SerializeField] Vector2[] _waveControlData;
     
     void Start()
     {
@@ -15,10 +15,10 @@ public class Stage1MonsterSpawner : MonoBehaviour
 
     IEnumerator MonsterSpawner()
     {
-        for (int i = 0; i < waveTerms.Length; i++)
+        for (int i = 0; i < _waveControlData.Length; i++)
         {
-            yield return new WaitForSeconds(waveTerms[i]);
-            SpawnMonsterWave(waveIndexs[i]);
+            yield return new WaitForSeconds(_waveControlData[i].x);
+            SpawnMonsterWave((int)_waveControlData[i].y);
         }
     }
 

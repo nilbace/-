@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 510274790}
   - component: {fileID: 510274789}
   m_Layer: 0
-  m_Name: MonsterWave1
+  m_Name: Stage1Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -420,18 +420,17 @@ MonoBehaviour:
       WaveMoveSpeed: 3
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 6}
-  waveTerms:
-  - 2
-  - 2
-  - 5
-  - 3
-  - 2
-  - 2
-  - 2
-  - 5
-  - 3
-  - 5
-  waveIndexs: 0100000002000000000000000100000003000000040000000f000000060000000700000000000000
+  _waveControlData:
+  - {x: 2, y: 1}
+  - {x: 2, y: 2}
+  - {x: 5, y: 0}
+  - {x: 3, y: 1}
+  - {x: 2, y: 3}
+  - {x: 2, y: 4}
+  - {x: 2, y: 15}
+  - {x: 5, y: 6}
+  - {x: 3, y: 7}
+  - {x: 5, y: 0}
 --- !u!4 &510274790
 Transform:
   m_ObjectHideFlags: 0

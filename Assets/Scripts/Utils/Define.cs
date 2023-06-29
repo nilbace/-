@@ -1,17 +1,49 @@
-
-
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Define
+public class Define : MonoBehaviour
 {
-    public enum SceneName {
-        Start,
+
+    public enum Scene
+    {
+        Unknown,
+        Login,
         Lobby,
         StageSelect,
-        Game
+        Game,
     }
 
-    
+    public enum Sound
+    {
+        Bgm,
+        Effect,
+        MaxCount,
+    }
+    public enum UIEvent
+    {
+        Click,
+        Drag,
+        
+    }
+    public enum MouseEvent{
+        Press,
+        Click,
+    }
+    public enum CameraMode{
+        QuaterView,
+    }
+
+    [System.Serializable]
+    public struct BulletPosition
+    {
+        public Vector3 Level1;
+        public Vector3 Level2_1;
+        public Vector3 Level2_2;
+        public Vector3 Level3_1;
+        public Vector3 Level3_2;
+        public Vector3 Level3_3;
+        public Vector3 Level3_4;
+    }
 
 }

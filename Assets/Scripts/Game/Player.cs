@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Rigidbody2D rigid;
     public Joystick fixedJoystick;
+
+    Rigidbody2D rigid;
     public float moveSpeed;
     Vector3 moveVec;
 
-    public GameObject Bullet;
     public float AttackTerm;
+
+    [SerializeField] BulletPool bulletPool;
+
+    [Header("Power")]
+    public int PowerLevel = 1;
+    [SerializeField] Define.BulletPosition _bulletpositionGroup;
 
     void Start()
     {
@@ -34,8 +40,37 @@ public class Player : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(AttackTerm);
-            Instantiate(Bullet, transform.position, Quaternion.identity);
+            if(PowerLevel == 1)
+            {
+                yield return new WaitForSeconds(AttackTerm);
+                GameObject bullet = bulletPool.GetBullet();
+                if (bullet != null)
+                {
+                    bullet.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level1, 0f);
+                }
+            }
+
+            else if(PowerLevel == 2)
+            {
+                yield return new WaitForSeconds(AttackTerm);
+                GameObject bullet1 = bulletPool.GetBullet();
+                bullet1.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level2_1, 0f);
+                GameObject bullet2 = bulletPool.GetBullet();
+                bullet2.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level2_2, 0f);
+            }
+
+            else
+            {
+                yield return new WaitForSeconds(AttackTerm);
+                GameObject bullet1 = bulletPool.GetBullet();
+                bullet1.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_1, 30f);
+                GameObject bullet2 = bulletPool.GetBullet();
+                bullet2.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_2, 0f);
+                GameObject bullet3 = bulletPool.GetBullet();
+                bullet3.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_3, 0f);
+                GameObject bullet4 = bulletPool.GetBullet();
+                bullet4.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_4, -30f);
+            }
         }
     }
 }

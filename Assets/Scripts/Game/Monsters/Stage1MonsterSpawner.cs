@@ -20,7 +20,6 @@ public class Stage1MonsterSpawner : MonoBehaviour
             yield return new WaitForSeconds(waveTerms[i]);
             SpawnMonsterWave(waveIndexs[i]);
         }
-        
     }
 
     public void SpawnMonsterWave(Define.WaveData waveData)

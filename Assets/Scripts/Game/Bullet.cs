@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    //적과 닿으면 반납
+    //화면 밖으로 벗어나면 반납
+    //직진하는 코드(바라보는 방향에 따라 달라짐)
+
     [SerializeField] float _moveSpeed;
     private Camera mainCamera;
 
@@ -41,5 +45,11 @@ public class Bullet : MonoBehaviour
         }
 
         return true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+            gameObject.SetActive(false);
     }
 }

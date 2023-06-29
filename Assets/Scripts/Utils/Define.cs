@@ -46,4 +46,21 @@ public class Define : MonoBehaviour
         public Vector3 Level3_4;
     }
 
+    [System.Serializable]
+    public struct MonsterWave
+    {
+        public GameObject BossMonster;
+        public WaveData[] waveDatas;
+    }
+
+    [System.Serializable]
+    public struct WaveData
+    {
+        public string WaveName;
+        public GameObject WaveMonster;
+        public int MonsterHP;
+        public float WaveMoveSpeed;
+        public Vector3 WaveDir;
+        public Vector2 SpawnPoint;
+    }
 }

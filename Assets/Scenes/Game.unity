@@ -253,6 +253,88 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &510274788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 510274790}
+  - component: {fileID: 510274789}
+  m_Layer: 0
+  m_Name: MonsterWave1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &510274789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510274788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de76ab0f8a962a644ae650a94be9ca22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wavesData:
+    BossMonster: {fileID: 0}
+    waveDatas:
+    - WaveName: "1\uC6E8\uC774\uBE0C \uC67C\uCABD"
+      WaveMonster: {fileID: 3500401954018370785, guid: 415fa11f04607364f99ea1e9f55d767b, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 1, y: -1, z: 0}
+      SpawnPoint: {x: -3.6, y: 0.9}
+    - WaveName: "1\uC6E8\uC774\uBE0C \uC624\uB978\uCABD"
+      WaveMonster: {fileID: 8550814359631738301, guid: 8512a64e2f15f794187fd7fd0315f81a, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: -1, y: -1, z: 0}
+      SpawnPoint: {x: 3.5, y: 0.9}
+    - WaveName: "2\uC6E8\uC774\uBE0C"
+      WaveMonster: {fileID: 732490138081586504, guid: 102e44af035c64241a3f26c927009abb, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 2
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: "3\uC6E8\uC774\uBE0C"
+      WaveMonster: {fileID: 4476599629499637430, guid: c1059e760bea6264b979a21aa84ff2a1, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: "4\uC6E8\uC774\uBE0C \uC67C"
+      WaveMonster: {fileID: 7957083639256676310, guid: faf30a990f0ff764cb126dd96bd1f874, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 1, y: -1, z: 0}
+      SpawnPoint: {x: -2.8, y: 2}
+    - WaveName: "4\uC6E8\uC774\uBE0C \uC624\uB978"
+      WaveMonster: {fileID: 7957083639256676310, guid: faf30a990f0ff764cb126dd96bd1f874, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: -1, y: -1, z: 0}
+      SpawnPoint: {x: 2.8, y: 2}
+--- !u!4 &510274790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510274788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &517681898 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
@@ -345,8 +427,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651570251}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.029325008, y: -0.18945181, z: -9.907975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 824557697}
@@ -397,6 +479,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &782456617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 782456618}
+  m_Layer: 0
+  m_Name: PointCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &782456618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782456617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.74, y: 5.03, z: -15.587997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &806688597
 GameObject:
@@ -497,7 +609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824557696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.029325008, y: 0.18945181, z: -0.09202499}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 651570254}
@@ -1240,17 +1352,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7805576738229023087, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.09
+      value: -2.14
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1283,6 +1399,10 @@ PrefabInstance:
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: PowerLevel
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: bulletPool

@@ -14,6 +14,10 @@ public class Player : MonoBehaviour
 
     [SerializeField] BulletPool bulletPool;
 
+    [Header("HP")]
+    [SerializeField] int _hp = 5;
+    public int PlayerHP { get { return _hp; } set { _hp = value; } }
+
     [Header("Power")]
     public int PowerLevel = 1;
     [SerializeField] Define.BulletPosition _bulletpositionGroup;

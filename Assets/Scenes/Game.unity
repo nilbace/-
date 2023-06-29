@@ -215,6 +215,63 @@ MonoBehaviour:
   minYPosition: -2397.8
   scrollAmount: 5760
   moveSpeed: 177.5
+--- !u!1 &413938327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 413938329}
+  - component: {fileID: 413938328}
+  m_Layer: 0
+  m_Name: Boundary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &413938328
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413938327}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.100916, y: -7.0854826}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.559729, y: 3.2396188}
+  m_EdgeRadius: 0
+--- !u!4 &413938329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413938327}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.3658075, y: -0.09, z: -8.085286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 824557697}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464238149
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,42 +342,96 @@ MonoBehaviour:
   _wavesData:
     BossMonster: {fileID: 0}
     waveDatas:
-    - WaveName: "1\uC6E8\uC774\uBE0C \uC67C\uCABD"
+    - WaveName: Wave1Left
       WaveMonster: {fileID: 3500401954018370785, guid: 415fa11f04607364f99ea1e9f55d767b, type: 3}
       MonsterHP: 3
       WaveMoveSpeed: 3
       WaveDir: {x: 1, y: -1, z: 0}
       SpawnPoint: {x: -3.6, y: 0.9}
-    - WaveName: "1\uC6E8\uC774\uBE0C \uC624\uB978\uCABD"
+    - WaveName: Wave1Right
       WaveMonster: {fileID: 8550814359631738301, guid: 8512a64e2f15f794187fd7fd0315f81a, type: 3}
       MonsterHP: 3
       WaveMoveSpeed: 3
       WaveDir: {x: -1, y: -1, z: 0}
       SpawnPoint: {x: 3.5, y: 0.9}
-    - WaveName: "2\uC6E8\uC774\uBE0C"
+    - WaveName: Wave2
       WaveMonster: {fileID: 732490138081586504, guid: 102e44af035c64241a3f26c927009abb, type: 3}
       MonsterHP: 3
       WaveMoveSpeed: 2
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 6}
-    - WaveName: "3\uC6E8\uC774\uBE0C"
+    - WaveName: Wave3
       WaveMonster: {fileID: 4476599629499637430, guid: c1059e760bea6264b979a21aa84ff2a1, type: 3}
       MonsterHP: 3
       WaveMoveSpeed: 3
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 6}
-    - WaveName: "4\uC6E8\uC774\uBE0C \uC67C"
+    - WaveName: Wave4Left
       WaveMonster: {fileID: 7957083639256676310, guid: faf30a990f0ff764cb126dd96bd1f874, type: 3}
       MonsterHP: 3
       WaveMoveSpeed: 3
       WaveDir: {x: 1, y: -1, z: 0}
       SpawnPoint: {x: -2.8, y: 2}
-    - WaveName: "4\uC6E8\uC774\uBE0C \uC624\uB978"
+    - WaveName: Wave4Right
       WaveMonster: {fileID: 7957083639256676310, guid: faf30a990f0ff764cb126dd96bd1f874, type: 3}
       MonsterHP: 3
       WaveMoveSpeed: 3
       WaveDir: {x: -1, y: -1, z: 0}
       SpawnPoint: {x: 2.8, y: 2}
+    - WaveName: Wave5
+      WaveMonster: {fileID: 1210791177195655880, guid: c2c2021eb082f094ca8f2b2f83db17b7, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave6
+      WaveMonster: {fileID: 2060594728944624803, guid: 87dac85c8f4caac42a0df6f9f6807dba, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 2, y: -1, z: 0}
+      SpawnPoint: {x: -3.3, y: 2.3}
+    - WaveName: Wave7
+      WaveMonster: {fileID: 4054160525712941997, guid: 7c222ac6c76857b4a9a81d537d6c60a0, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: -2, y: -1, z: 0}
+      SpawnPoint: {x: 3.3, y: 2.3}
+    - WaveName: Wave8
+      WaveMonster: {fileID: 2672318622465112957, guid: 566759d085de261418e50be2c015fbb0, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave9
+      WaveMonster: {fileID: 1117664143243744859, guid: f1116d6e6cde12c4d9e4dba24cd4ad0a, type: 3}
+      MonsterHP: 5
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave10
+      WaveMonster: {fileID: 4997560409481862639, guid: 2003d3441bb5ae242a2c26810eac7743, type: 3}
+      MonsterHP: 5
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave15
+      WaveMonster: {fileID: 2529791429493540104, guid: 74f6b28bed97ac74d91e26e5ba03edcf, type: 3}
+      MonsterHP: 5
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+  waveTerms:
+  - 2
+  - 2
+  - 5
+  - 3
+  - 2
+  - 2
+  - 2
+  - 5
+  - 3
+  - 5
+  waveIndexs: 0100000002000000000000000100000003000000040000000f000000060000000700000000000000
 --- !u!4 &510274790
 Transform:
   m_ObjectHideFlags: 0
@@ -614,6 +725,9 @@ Transform:
   m_Children:
   - {fileID: 651570254}
   - {fileID: 2013927997}
+  - {fileID: 413938329}
+  - {fileID: 1201510548}
+  - {fileID: 1869262170}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -814,6 +928,63 @@ MonoBehaviour:
   minYPosition: -2397.8
   scrollAmount: 5760
   moveSpeed: 108.1
+--- !u!1 &1201510547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201510548}
+  - component: {fileID: 1201510549}
+  m_Layer: 0
+  m_Name: Boundary (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1201510548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201510547}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.3658075, y: -0.09, z: -8.085286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 824557697}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1201510549
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201510547}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -10.433747, y: -1.4182386}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.296144, y: 14.574106}
+  m_EdgeRadius: 0
 --- !u!1 &1260326264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1358,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+--- !u!1 &1869262169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869262170}
+  - component: {fileID: 1869262171}
+  m_Layer: 0
+  m_Name: Boundary (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1869262170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869262169}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.96, y: -0.09, z: -8.085286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 824557697}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1869262171
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869262169}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -10.642796, y: -1.4182386}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.714241, y: 14.574106}
+  m_EdgeRadius: 0
 --- !u!1 &1871732040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,7 +1594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.14
+      value: -2.22
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1401,8 +1629,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: AttackTerm
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: PowerLevel
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: bulletPool

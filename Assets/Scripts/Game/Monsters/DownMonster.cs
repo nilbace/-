@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DownMonster : EnemyBase
 {
+    [SerializeField] Vector3 newPoz;
     private void Start()
     {
         StartCoroutine(GoDown());
@@ -12,7 +13,7 @@ public class DownMonster : EnemyBase
     IEnumerator GoDown()
     {
         yield return new WaitForSeconds(1f);
-        _movedir = new Vector3(0, -1, 0);
+        _movedir = newPoz;
     }
 
 

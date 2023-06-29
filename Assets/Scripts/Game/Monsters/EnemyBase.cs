@@ -33,7 +33,6 @@ public class EnemyBase : MonoBehaviour
         if(collision.gameObject.tag == "PlayerBullet")
         {
             _myHP--;
-            print(_myHP);
         }
     }
 }

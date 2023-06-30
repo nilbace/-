@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myHP: -5
   newPoz: {x: -1, y: 0, z: 0}
+  ChangeDirTime: 2
 --- !u!61 &1794648907442591063
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -277,6 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myHP: -5
   newPoz: {x: -1, y: 0, z: 0}
+  ChangeDirTime: 2
 --- !u!61 &7795203463087491812
 BoxCollider2D:
   m_ObjectHideFlags: 0

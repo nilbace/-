@@ -414,6 +414,24 @@ MonoBehaviour:
       WaveMoveSpeed: 3
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave11
+      WaveMonster: {fileID: 2231702847287585711, guid: 395c7cb304dbf8544afe830d1c09fbef, type: 3}
+      MonsterHP: 4
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave13
+      WaveMonster: {fileID: 4452601977093224037, guid: 10c66796ab9f2924992de79b9edb0e4b, type: 3}
+      MonsterHP: 5
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 4.98}
+    - WaveName: Wave14
+      WaveMonster: {fileID: 243182345081718191, guid: 77e2ccadb5c9ac14bb00955ac7eb7222, type: 3}
+      MonsterHP: 73
+      WaveMoveSpeed: 3
+      WaveDir: {x: -2, y: -1, z: 0}
+      SpawnPoint: {x: 2, y: 5.93}
     - WaveName: Wave15
       WaveMonster: {fileID: 2529791429493540104, guid: 74f6b28bed97ac74d91e26e5ba03edcf, type: 3}
       MonsterHP: 5
@@ -421,7 +439,7 @@ MonoBehaviour:
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 6}
   _waveControlData:
-  - {x: 2, y: 1}
+  - {x: 1, y: 13}
   - {x: 2, y: 2}
   - {x: 5, y: 0}
   - {x: 3, y: 1}
@@ -1588,12 +1606,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.30267107
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.30267107
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.30267107
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.22
+      value: -2.48
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1627,13 +1657,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023090, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09662d1cdc59089469ec6a72630c682e, type: 3}
     - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: AttackTerm
       value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: PowerLevel
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: bulletPool

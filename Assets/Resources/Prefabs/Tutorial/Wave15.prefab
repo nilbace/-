@@ -84,6 +84,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: BulletSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: attackNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487566, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: m_Name
       value: OneShootingPig
@@ -146,6 +154,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: BulletSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: attackNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487566, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: m_Name
       value: OneShootingPig (1)
@@ -207,6 +223,14 @@ PrefabInstance:
     - target: {fileID: 2886714046877487552, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: BulletSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: attackNumber
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487566, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: m_Name

@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 413938329}
   - component: {fileID: 413938328}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,11 +438,29 @@ MonoBehaviour:
       WaveMoveSpeed: 3
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave31Left
+      WaveMonster: {fileID: 5860076356670581586, guid: e4ff3b93448de7943b29d3fb64f3a20b, type: 3}
+      MonsterHP: 5
+      WaveMoveSpeed: 3
+      WaveDir: {x: 1, y: -1, z: 0}
+      SpawnPoint: {x: -3.7, y: 4}
+    - WaveName: Wave31Right
+      WaveMonster: {fileID: 5860076356670581586, guid: 67e8a34457e346343868f11a9bfeb7d3, type: 3}
+      MonsterHP: 5
+      WaveMoveSpeed: 3
+      WaveDir: {x: -1, y: -1, z: 0}
+      SpawnPoint: {x: 3.7, y: 4}
+    - WaveName: Wave32
+      WaveMonster: {fileID: 1861192600613534411, guid: da0772ad124a617419b3106f4c7ab506, type: 3}
+      MonsterHP: 20
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
   _waveControlData:
-  - {x: 1, y: 13}
+  - {x: 0, y: 31}
   - {x: 2, y: 2}
   - {x: 5, y: 0}
-  - {x: 3, y: 1}
+  - {x: 3, y: 13}
   - {x: 2, y: 3}
   - {x: 2, y: 4}
   - {x: 2, y: 15}
@@ -955,7 +973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1201510548}
   - component: {fileID: 1201510549}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boundary (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1385,7 +1403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1869262170}
   - component: {fileID: 1869262171}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boundary (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1597,9 +1615,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7805576738229023087, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
-      propertyPath: m_Constraints
-      value: 4
+    - target: {fileID: 7805576738229023088, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: m_Size.x
+      value: 11.543102
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023088, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: m_Size.y
+      value: 10.476501
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023088, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.9002292
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023088, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.8876095
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_RootOrder
@@ -1607,23 +1637,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.30267107
+      value: 0.040441602
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.30267107
+      value: 0.040441602
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.30267107
+      value: 0.040441602
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.48
+      value: -2.35
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023089, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1657,17 +1687,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7805576738229023090, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 09662d1cdc59089469ec6a72630c682e, type: 3}
-    - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
-      propertyPath: AttackTerm
-      value: 0.17
-      objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: PowerLevel
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: bulletPool

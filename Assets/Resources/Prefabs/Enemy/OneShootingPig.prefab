@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2886714046877487552}
   - component: {fileID: 2886714046877487567}
-  - component: {fileID: 2886714046877487553}
   - component: {fileID: 5033532135144874021}
   - component: {fileID: -3078867184592495779}
+  - component: {fileID: 2886714046877487553}
+  - component: {fileID: 5586283456139344768}
   m_Layer: 8
   m_Name: OneShootingPig
   m_TagString: Untagged
@@ -85,23 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2886714046877487553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2886714046877487566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7099b58fb6537044bb6a749ad5b0f9f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _myHP: 8.5
-  toShootDelay: 1.3
-  BulletPrefab: {fileID: 1655372175088003629, guid: ddfe97212284dac4795133026172990d, type: 3}
-  bulletDir: {x: 0, y: -1, z: 0}
-  bulletSpeed: 4.88
 --- !u!61 &5033532135144874021
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +133,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2886714046877487553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886714046877487566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7099b58fb6537044bb6a749ad5b0f9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myHP: 8.5
+  toShootDelay: 1.3
+  BulletPrefab: {fileID: 1655372175088003629, guid: ddfe97212284dac4795133026172990d, type: 3}
+  BulletSize: 1
+  bulletDir: {x: 0, y: -1, z: 0}
+  bulletSpeed: 4.88
+  isTwoWay: 0
+  twoOffset: {x: 0, y: 0, z: 0}
+  attackNumber: 0
+  attackTerm: 0
+--- !u!114 &5586283456139344768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886714046877487566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc6026e339e0af4cb877282b632dcc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

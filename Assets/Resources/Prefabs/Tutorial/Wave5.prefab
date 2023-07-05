@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1954032220234765512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wave5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,10 @@ PrefabInstance:
     - target: {fileID: 6937719842271616772, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_Name
       value: ZMonster (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616772, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder
@@ -129,6 +133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZMonster (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616772, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -210,6 +218,10 @@ PrefabInstance:
     - target: {fileID: 6937719842271616772, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_Name
       value: ZMonster (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616772, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder
@@ -293,6 +305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZMonster (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616772, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -375,6 +391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZMonster
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616772, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -456,6 +476,10 @@ PrefabInstance:
     - target: {fileID: 6937719842271616772, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_Name
       value: ZMonster (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616772, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder

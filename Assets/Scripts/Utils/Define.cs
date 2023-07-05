@@ -63,4 +63,16 @@ public class Define : MonoBehaviour
         public Vector3 WaveDir;
         public Vector2 SpawnPoint;
     }
+
+
+    [System.Serializable]
+    public class CharData {
+        public string CharName;
+
+        public int CharBaseATK;
+        public int CharUPStatATK;
+
+        public Sprite frontImg;
+        public Sprite backImg;
+    }
 }

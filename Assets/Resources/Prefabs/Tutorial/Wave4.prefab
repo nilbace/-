@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5596489367781846737}
   - component: {fileID: 3733488986344603502}
   - component: {fileID: 4783098950201910077}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownMonster (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 744120021786109941}
   - component: {fileID: 5123402991582716125}
   - component: {fileID: 4451463671546061833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownMonster
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5951262020869339128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wave4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

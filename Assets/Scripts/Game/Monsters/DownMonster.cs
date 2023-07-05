@@ -16,6 +16,4 @@ public class DownMonster : EnemyBase
         yield return new WaitForSeconds(ChangeDirTime);
         _movedir = newPoz;
     }
-
-
 }

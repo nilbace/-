@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4306305423947955253}
   - component: {fileID: 5492948379270808031}
   - component: {fileID: 1193861812468749325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boneworm-black
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 1787667364171278583}
   - component: {fileID: 1113604614858119530}
   - component: {fileID: 2376273771891775455}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boneworm-black (4)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 5517815320670392500}
   - component: {fileID: 8380470359461075192}
   - component: {fileID: 4586493083275348376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boneworm-black (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 8868784888056555235}
   - component: {fileID: 2431608673553998395}
   - component: {fileID: 5384697877012884538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boneworm-black (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7599470833154433991}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wave7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 1625499287840261328}
   - component: {fileID: 1655985525166513222}
   - component: {fileID: 6171608428664554314}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boneworm-black (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 712014604722576693}
   - component: {fileID: 2653719769098238696}
   - component: {fileID: 8016670939573247958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boneworm-black (5)
   m_TagString: Enemy
   m_Icon: {fileID: 0}

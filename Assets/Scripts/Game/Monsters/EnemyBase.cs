@@ -10,7 +10,7 @@ public class EnemyBase : MonoBehaviour
     public float MonsterHP { get { return _myHP; } set { _myHP = value; } }
     void Start()
     {
-        
+        Destroy(gameObject, 7f);
     }
 
     public void SetMonster(Define.WaveData waveData)
@@ -18,6 +18,12 @@ public class EnemyBase : MonoBehaviour
         MonsterHP = waveData.MonsterHP;
         _movedir = waveData.WaveDir;
         _movespeed = waveData.WaveMoveSpeed;
+    }
+
+    public void ChangeDir(Vector3 newdir, float newSpeed)
+    {
+        _movedir = newdir;
+        _movespeed = newSpeed;
     }
 
     void Update()

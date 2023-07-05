@@ -38,7 +38,7 @@ public class Stage1MonsterSpawner : MonoBehaviour
         if (n == 0) return;
 
         //´ëÄªÀÎ ³ðµé
-        if(n ==1 || n==4)
+        if(n ==1 || n==4 || n == 31)
         {
             SpawnMonsterWave(FindDataWithWaveIndex(n, "Left"));
             SpawnMonsterWave(FindDataWithWaveIndex(n, "Right"));

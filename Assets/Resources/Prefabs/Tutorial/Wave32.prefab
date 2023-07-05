@@ -118,6 +118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OneShootingPig
       objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487566, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5586283456139344768, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: changeDirDelay
       value: 2.57

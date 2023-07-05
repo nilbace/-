@@ -19,6 +19,8 @@ public class ShootingMonster : EnemyBase
     [SerializeField] bool is_N_1_Right;
     float plusangle = 0.2f;
     [SerializeField] bool is_N_2;
+    [SerializeField] bool is_N_3;
+    [SerializeField] float N_3_xValue;
     void Start()
     {
         StartCoroutine(Shooting());
@@ -49,6 +51,23 @@ public class ShootingMonster : EnemyBase
 
                 angle1 += 18f; angle2 += 18f;
                 yield return new WaitForSeconds(attackTerm);
+            }
+        }
+
+        else if(is_N_3)
+        {
+            for(int i = 0; i <8; i++)
+            {
+                for(int j = -1 ; j<2; j++)
+                {
+                    GameObject bullet = Instantiate(BulletPrefab);
+                    Vector3 temp = transform.position + twoOffset;
+                    Vector3 tempvalue = new Vector3(j * N_3_xValue, -1, 0).normalized;
+                    bullet.GetComponent<MonsterBullet>().Setting(tempvalue, bulletSpeed, temp);
+                    bullet.transform.localScale = Vector3.one * BulletSize;
+                }
+                yield return new WaitForSeconds(attackTerm);
+                if (i == 3) yield return new WaitForSeconds(attackTerm * 2);
             }
         }
 

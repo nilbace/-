@@ -10,7 +10,7 @@ public class EnemyBase : MonoBehaviour
     public float MonsterHP { get { return _myHP; } set { _myHP = value; } }
     void Start()
     {
-        Destroy(gameObject, 7f);
+        
     }
 
     public void SetMonster(Define.WaveData waveData)
@@ -32,6 +32,12 @@ public class EnemyBase : MonoBehaviour
             gameObject.SetActive(false);
         else
             transform.position += _movedir.normalized * Time.deltaTime * _movespeed;
+
+        float distance = Vector3.Distance(transform.position, Vector3.zero);
+        if (distance > 10f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

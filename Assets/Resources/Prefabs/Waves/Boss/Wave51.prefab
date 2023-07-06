@@ -191,9 +191,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatternStartDelay: 0
   BulletPrefab: {fileID: 1655372175088003629, guid: ddfe97212284dac4795133026172990d, type: 3}
-  RaserPrefab: {fileID: 0}
+  RaserDanger: {fileID: 3538576259298749658, guid: 81e94684ef371a9469b0e9dbf73cc657, type: 3}
+  RaserPrefab: {fileID: 2462214706568107475, guid: 117704c3a347e8c4aaf77170aefc769e, type: 3}
   pigPattern:
-  - {x: 1, y: 3}
+  - {x: 8, y: 10}
   - {x: 3, y: 3}
   - {x: 4, y: 3}
   - {x: 5, y: 3}

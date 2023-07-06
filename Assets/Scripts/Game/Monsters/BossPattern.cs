@@ -6,6 +6,7 @@ public class BossPattern : MonoBehaviour
 {
     [SerializeField] float PatternStartDelay;
     [SerializeField] GameObject BulletPrefab;
+    [SerializeField] GameObject RaserDanger;
     [SerializeField] GameObject RaserPrefab;
 
     [Header("패턴 이름 / 패턴간의 간격(초)")]
@@ -13,6 +14,7 @@ public class BossPattern : MonoBehaviour
     [Header("각 패턴별 정보")]
     [SerializeField] BulletPattern[] PatternData;
     [SerializeField] float[] PatternDelay;
+    
 
     void Start()
     {
@@ -31,7 +33,7 @@ public class BossPattern : MonoBehaviour
                 case 0:
                     break;
 
-                case 1:
+                case 1:   //큰거 두개 발사
                     Pattern1();
                     break;
 
@@ -69,6 +71,31 @@ public class BossPattern : MonoBehaviour
                         yield return new WaitForSeconds(PatternDelay[4]);
                     }
                     break;
+
+                case 7:  //원형으로 발사
+                    float angle1 = 0f;
+                    for (int j = 0; j < 10; j++)
+                    {
+                        Vector3 dir1 = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle1), Mathf.Sin(Mathf.Deg2Rad * angle1), 0f);
+
+                        GameObject bullet = Instantiate(BulletPrefab);
+                        Vector3 temp = transform.position + new Vector3(0, -1, 0);
+                        bullet.GetComponent<MonsterBullet>().Setting(dir1, 3f, temp);
+                        bullet.transform.localScale = Vector3.one * 1f;
+
+
+
+                        angle1 -= 18f;
+                    }
+                    break;
+
+                case 8: //레이저 발사
+                    GameObject danger = Instantiate(RaserDanger);
+                    Destroy(danger, 2f);
+                    yield return new WaitForSeconds(2f);
+                    Instantiate(RaserPrefab);
+                    break;
+
             }
             yield return new WaitForSeconds(pigPattern[i].y);
         }

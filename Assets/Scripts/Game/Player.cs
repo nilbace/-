@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     [Header("HP")]
     [SerializeField] int _hp = 5;
     public int PlayerHP { get { return _hp; } set { _hp = value; } }
+    bool _isalive = true;
 
     [Header("Power")]
     public int PowerLevel = 1;
@@ -30,6 +31,12 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (PlayerHP < 0 && _isalive == true)
+        {
+            _isalive = false;
+            PlayerDead();
+        }
+
         float x = fixedJoystick.Horizontal;
         float y = fixedJoystick.Vertical;
 
@@ -38,6 +45,13 @@ public class Player : MonoBehaviour
 
         if (moveVec.sqrMagnitude == 0)
             return;
+
+        
+    }
+
+    void PlayerDead()
+    {
+        print("ав╬З╬Н!");
     }
 
     IEnumerator Shooting()

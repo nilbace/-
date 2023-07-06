@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7852752602627403277}
   - component: {fileID: 7852752602627403278}
   - component: {fileID: 7852752602627403273}
+  - component: {fileID: 6438862335061553332}
   m_Layer: 0
   m_Name: Pig
   m_TagString: Enemy
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b554e2275478ac74a91075085bdf790d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myHP: 300
+  _myHP: 400
 --- !u!50 &7852752602627403277
 Rigidbody2D:
   serializedVersion: 4
@@ -194,11 +195,14 @@ MonoBehaviour:
   RaserDanger: {fileID: 3538576259298749658, guid: 81e94684ef371a9469b0e9dbf73cc657, type: 3}
   RaserPrefab: {fileID: 2462214706568107475, guid: 117704c3a347e8c4aaf77170aefc769e, type: 3}
   pigPattern:
-  - {x: 8, y: 10}
+  - {x: 0, y: 2}
+  - {x: 8, y: 5}
   - {x: 3, y: 3}
   - {x: 4, y: 3}
   - {x: 5, y: 3}
   - {x: 6, y: 3}
+  - {x: 7, y: 3}
+  - {x: 8, y: 3}
   PatternData:
   - PatternName: "\uD328\uD1341\uC67C\uCABD"
     BulletSize: 1.5
@@ -253,3 +257,19 @@ MonoBehaviour:
   - 0.48
   - 0.48
   - 0.48
+--- !u!114 &6438862335061553332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5950153125099052828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc6026e339e0af4cb877282b632dcc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newDir: {x: 0, y: 0, z: 0}
+  ChangeDirTime: 0
+  newSpeed: 0
+  changeDirDelay: 2

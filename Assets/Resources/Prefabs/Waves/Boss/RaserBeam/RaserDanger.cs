@@ -19,7 +19,7 @@ public class RaserDanger : MonoBehaviour
         if (isAnimating)
         {
             float t = Mathf.PingPong(Time.time, duration) / duration;
-            float alpha = Mathf.Lerp(0f, 0.8f, t);
+            float alpha = Mathf.Lerp(0f, 0.5f, t);
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, alpha);
         }
     }

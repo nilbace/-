@@ -49,7 +49,6 @@ public class Define : MonoBehaviour
     [System.Serializable]
     public struct MonsterWave
     {
-        public GameObject BossMonster;
         public WaveData[] waveDatas;
     }
 

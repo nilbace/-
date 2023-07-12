@@ -28,9 +28,4 @@ public class RaserDanger : MonoBehaviour
     {
         isAnimating = true;
     }
-
-    private void StopAnimation()
-    {
-        isAnimating = false;
-    }
 }

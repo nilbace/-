@@ -15,21 +15,6 @@ public class RaserBeam : MonoBehaviour
         StartCoroutine(FireRaser());
     }
 
-    void Update()
-    {
-        if (boxCollider2D.enabled == true)
-        {
-            // 이미 겹치는 Collider를 검사하여 처리
-            Collider2D[] overlappedColliders = Physics2D.OverlapAreaAll(boxCollider2D.bounds.min, boxCollider2D.bounds.max);
-            foreach (Collider2D collider in overlappedColliders)
-            {
-                // 특정 함수를 실행하는 로직을 작성하세요.
-                // 겹치는 Collider에 대한 추가적인 동작을 수행할 수 있습니다.
-                SpecialFunction(collider.gameObject);
-            }
-        }
-    }
-
     IEnumerator FireRaser()
     {
         boxCollider2D.enabled = false;
@@ -62,13 +47,19 @@ public class RaserBeam : MonoBehaviour
         Destroy(gameObject);
     }
 
-    
-
-    private void SpecialFunction(GameObject otherObject)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (otherObject.tag == "Player")
+        if (collision.tag == "Player")
         {
-            otherObject.GetComponent<Player>().PlayerHP -= 100;
+            collision.GetComponent<Player>().PlayerHP -= 100;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<Player>().PlayerHP -= 100;
         }
     }
 }

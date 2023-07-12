@@ -7,9 +7,13 @@ public class Stage1MonsterSpawner : MonoBehaviour
     [SerializeField] Define.MonsterWave _wavesData;
     [Header("X는 텀, Y는 몇웨이브인지")]
     [SerializeField] Vector2[] _waveControlData;
+    public static Stage1MonsterSpawner instance;
+    [SerializeField] GameObject Log;
+    [SerializeField] GameObject LogWarning;
     
     void Start()
     {
+        instance = this;
         StartCoroutine(MonsterSpawner());
     }
 
@@ -33,7 +37,7 @@ public class Stage1MonsterSpawner : MonoBehaviour
          }
     }
 
-    void SpawnMonsterWave(int n)
+    public void SpawnMonsterWave(int n)
     {
         if (n == 0) return;
 
@@ -43,11 +47,16 @@ public class Stage1MonsterSpawner : MonoBehaviour
             SpawnMonsterWave(FindDataWithWaveIndex(n, "Left"));
             SpawnMonsterWave(FindDataWithWaveIndex(n, "Right"));
         }
+        else if(n==35 || n==36 || n==37) // 통나무
+        {
+            StartCoroutine(LogComming(n));
+        }
         else
             SpawnMonsterWave(FindDataWithWaveIndex(n));
     }
 
-    Define.WaveData FindDataWithWaveIndex(int n, string str = null)
+    public Define.WaveData FindDataWithWaveIndex(int n, string str = null)
+        //n을 이용해 누구인지 찾아서 SpawnMonsterWave에 넘겨줌
     {
         foreach (Define.WaveData waveData in _wavesData.waveDatas)
         {
@@ -58,5 +67,21 @@ public class Stage1MonsterSpawner : MonoBehaviour
         }
 
         return new Define.WaveData();
+    }
+
+    IEnumerator LogComming(int n)
+    {
+        Vector3 tempPoz = new Vector3((n - 36) * 2.1f, 0f, 0);
+
+        GameObject LogWarn = Instantiate(LogWarning);
+        LogWarn.transform.position += tempPoz;
+        Destroy(LogWarn,1.8f);
+        yield return new WaitForSeconds(1.8f);
+
+        tempPoz += new Vector3(0, 8, 0);
+        
+        GameObject logGo = Instantiate(Log);
+        logGo.transform.position += tempPoz;
+        Destroy(logGo, 6f);
     }
 }

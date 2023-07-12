@@ -6,17 +6,13 @@ public class MonsterBullet : MonoBehaviour
 {
     Vector3 bulletDir;
     float bulletSpeed;
-    void Start()
-    {
-        Destroy(gameObject, 8f);
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().PlayerHP--;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

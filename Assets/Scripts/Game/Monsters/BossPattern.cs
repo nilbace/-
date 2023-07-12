@@ -11,6 +11,7 @@ public class BossPattern : MonoBehaviour
     [SerializeField] GameObject LongBulletPrefab;
     [SerializeField] GameObject RaserDanger;
     [SerializeField] GameObject RaserPrefab;
+    [SerializeField] GameObject SplitBall;
     Transform _PlayerTrans;
 
     [Header("패턴 이름 / 패턴간의 간격(초)")]
@@ -491,6 +492,142 @@ public class BossPattern : MonoBehaviour
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        
+                        break;
+
+                    #endregion
+
+
+                    #region horse
+
+                    case 31: //왼쪽 > 가운데 > 오른쪽 쪼개지는총알
+                        transform.DOMoveX(-1f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        ShootSplitBall(_basePattern);
+                        yield return new WaitForSeconds(0.5f);
+
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        ShootSplitBall(_basePattern);
+                        yield return new WaitForSeconds(0.5f);
+
+                        transform.DOMoveX(1f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        ShootSplitBall(_basePattern);
+                        yield return new WaitForSeconds(0.5f);
+
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        break;
+
+                    case 32: // 오른쪽에서 올라오면서 3갈래 쏘기
+                        
+                        transform.DOMoveX(1f, 0.3f);
+                        yield return new WaitForSeconds(0.3f);
+
+                        transform.DOMoveY(0.5f, 0.3f);
+                        yield return new WaitForSeconds(0.3f);
+                        StartCoroutine(Shoot3Way());
+                        transform.DOMove(new Vector3(0, 3.5f, 0), 2f);
+                        yield return new WaitForSeconds(2f);
+                        
+
+                        break;
+
+                    case 33:  //원형으로 쏘기 + 잡몹소환
+                        for(int j =0; j<2; j++)
+                        {
+                            StartCoroutine(ShootCircle());
+                            Stage1MonsterSpawner.instance.SpawnMonsterWave(4);
+                            Stage1MonsterSpawner.instance.SpawnMonsterWave(12);
+                        }
+
+                        break;
+
+                    case 34: //왼쪽가서 분해, 통나무 두개
+
+                        transform.DOMoveX(-1.7f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        ShootSplitBall(_basePattern);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        break;
+
+
+                    case 35: //왼쪽에서 올라오면서
+                        
+                        transform.DOMoveX(-1f, 0.3f);
+                        yield return new WaitForSeconds(0.3f);
+
+                        transform.DOMoveY(0.5f, 0.3f);
+                        yield return new WaitForSeconds(0.3f);
+
+                        transform.DOMove(new Vector3(0, 3.5f, 0), 0.3f);
+                        yield return new WaitForSeconds(0.3f);
+
+                        for(int j =0; j<5; j++)
+                        {
+                            ShootBullet(_basePattern, new Vector3(-1, 0, 0));
+                            ShootBullet(_basePattern, new Vector3(1, 0, 0));
+                            yield return new WaitForSeconds(0.4f);
+                        }
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+
+                        break;
+
+                    case 36:  //2_3_2 두번
+                        yield return StartCoroutine(Shoot2_3_2());
+                        yield return new WaitForSeconds(0.4f);
+                        yield return StartCoroutine(Shoot2_3_2());
+                        break;
+
+                    //마지막은 27번
+
+                    #endregion
+
+
+                    #region snake
+
+                    //2번으로 시작
+
+                    case 37:  //X 자로 쏘기
+                        BulletPattern Left2_37 = new BulletPattern("BaseLeft", 3f, bulletDir: new Vector3(-2f, -3f, 0));
+                        BulletPattern Right2_37 = new BulletPattern("BaseLeft", 3f, bulletDir: new Vector3(2f, -3f, 0));
+
+                        for(int j = 0; j<5; j++)
+                        {
+                            ShootBullet(Left2_37, new Vector3(2, -1, 0));
+                            ShootBullet(Right2_37, new Vector3(-2, -1, 0));
+                            yield return new WaitForSeconds(0.5f);
+                        }
+
+                        break;
+
+                    case 38:  //팔자로 쏘기
+                        BulletPattern Left2_38 = new BulletPattern("BaseLeft", 3f, bulletDir: new Vector3(-1f, -4f, 0));
+                        BulletPattern Right2_38 = new BulletPattern("BaseLeft", 3f, bulletDir: new Vector3(1f, -4f, 0));
+
+                        for (int j = 0; j < 5; j++)
+                        {
+                            ShootBullet(Left2_38, new Vector3(-1, -1, 0));
+                            ShootBullet(Right2_38, new Vector3(1, -1, 0));
+                            yield return new WaitForSeconds(0.5f);
+                        }
+
+                        break;
+
+                    case 39:  //원형쏘기 두번+1번몹
+                        StartCoroutine(ShootCircle());
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(1);
+                        yield return new WaitForSeconds(1f);
+                        StartCoroutine(ShootCircle());
+
                         break;
 
                         #endregion
@@ -601,6 +738,15 @@ public class BossPattern : MonoBehaviour
     {
         bullet.SetActive(false);
         longBulletPool.Enqueue(bullet);
+    }
+
+    void ShootSplitBall(BulletPattern bulletPattern, Vector3? poz = null, float BulletSize = 1)
+    {
+        GameObject _splitball = Instantiate(SplitBall);
+
+        Vector3 temp = transform.position + bulletPattern.Offset + (poz ?? Vector3.zero);
+        _splitball.GetComponent<MonsterBullet>().Setting(bulletPattern.BulletDir, bulletPattern.BulletSpeed, temp);
+        _splitball.transform.localScale = Vector3.one * BulletSize;
     }
 }
 

@@ -74,4 +74,23 @@ public class Define : MonoBehaviour
         public Sprite frontImg;
         public Sprite backImg;
     }
+
+    public enum BossName { 
+    none,
+    Pig,
+    Dog,
+    Chick,
+    Monkey,
+    Sheep,
+    Horse,
+    Snake,
+    Dragon,
+    Rabbit,
+    TIger,
+    Cow,
+    Rat,
+    MaxCount,
+         
+    }
+
 }

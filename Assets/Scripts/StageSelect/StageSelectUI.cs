@@ -12,32 +12,32 @@ public class StageSelectUI : MonoBehaviour
     [SerializeField] GameObject PannelBossImg;
     [SerializeField] TMP_Text StageNameTMP;
     Sprite _tempBossImage;
+    static int _nowSelectedBoss;
 
+   
 
     public void BaseBackBTN()
     {
         SceneManager.LoadScene("Lobby");
     }
 
-    public void SelectBoss(string BossName)
+    string indexToName(int i)
     {
-        PannelBossImg.GetComponent<Image>().sprite = GameObject.Find(BossName).GetComponent<Image>().sprite;
-        StageNameTMP.text = BossName + "스테이지";
-        if (BossName == "Chicken")
-        {
-            
-        }
-        else if(BossName == "Tiger")
-        {
-
-        }
-        else if(BossName == "Pig")
-        {
-
-        }
+        Define.BossName temp = (Define.BossName)(i);
+        return temp.ToString();
     }
 
-    public void StartGame()
+    public void SelectBoss(int BossIndex)
+    {
+        PannelBossImg.GetComponent<Image>().sprite = GameObject.Find(indexToName(BossIndex)).GetComponent<Image>().sprite;
+        StageNameTMP.text = indexToName(BossIndex) + "스테이지";
+        _nowSelectedBoss = (int)BossIndex;
+        Managers.Data.SelectedBossindex = BossIndex;
+    }
+
+    
+
+        public void StartGame()
     {
         SceneManager.LoadScene("Game");
     }

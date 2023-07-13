@@ -1,0 +1,255 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8348356575824109564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8348356575824109566}
+  - component: {fileID: 8348356575824109567}
+  m_Layer: 0
+  m_Name: StageWave3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8348356575824109566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348356575824109564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8348356575824109567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348356575824109564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de76ab0f8a962a644ae650a94be9ca22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wavesData:
+    waveDatas:
+    - WaveName: Wave1Left
+      WaveMonster: {fileID: 3500401954018370785, guid: 415fa11f04607364f99ea1e9f55d767b, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 1, y: -1, z: 0}
+      SpawnPoint: {x: -3.6, y: 0.9}
+    - WaveName: Wave1Right
+      WaveMonster: {fileID: 8550814359631738301, guid: 8512a64e2f15f794187fd7fd0315f81a, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: -1, y: -1, z: 0}
+      SpawnPoint: {x: 3.5, y: 0.9}
+    - WaveName: Wave2
+      WaveMonster: {fileID: 732490138081586504, guid: 102e44af035c64241a3f26c927009abb, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 2
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave3
+      WaveMonster: {fileID: 4476599629499637430, guid: c1059e760bea6264b979a21aa84ff2a1, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave4Left
+      WaveMonster: {fileID: 7957083639256676310, guid: faf30a990f0ff764cb126dd96bd1f874, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 1, y: -1, z: 0}
+      SpawnPoint: {x: -2.8, y: 2}
+    - WaveName: Wave4Right
+      WaveMonster: {fileID: 7957083639256676310, guid: faf30a990f0ff764cb126dd96bd1f874, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: -1, y: -1, z: 0}
+      SpawnPoint: {x: 2.8, y: 2}
+    - WaveName: Wave5
+      WaveMonster: {fileID: 1210791177195655880, guid: c2c2021eb082f094ca8f2b2f83db17b7, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave6
+      WaveMonster: {fileID: 2060594728944624803, guid: 87dac85c8f4caac42a0df6f9f6807dba, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 2, y: -1, z: 0}
+      SpawnPoint: {x: -3.3, y: 2.3}
+    - WaveName: Wave7
+      WaveMonster: {fileID: 4054160525712941997, guid: 7c222ac6c76857b4a9a81d537d6c60a0, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: -2, y: -1, z: 0}
+      SpawnPoint: {x: 3.3, y: 2.3}
+    - WaveName: Wave8
+      WaveMonster: {fileID: 2672318622465112957, guid: 566759d085de261418e50be2c015fbb0, type: 3}
+      MonsterHP: 3
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave9
+      WaveMonster: {fileID: 1117664143243744859, guid: f1116d6e6cde12c4d9e4dba24cd4ad0a, type: 3}
+      MonsterHP: 5
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave10
+      WaveMonster: {fileID: 4997560409481862639, guid: 2003d3441bb5ae242a2c26810eac7743, type: 3}
+      MonsterHP: 5
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave11
+      WaveMonster: {fileID: 2231702847287585711, guid: 395c7cb304dbf8544afe830d1c09fbef, type: 3}
+      MonsterHP: 4
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave12
+      WaveMonster: {fileID: 7266898284361494132, guid: bf69e706e086dba498e761cd96b8a79e, type: 3}
+      MonsterHP: 4
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave13
+      WaveMonster: {fileID: 4452601977093224037, guid: 10c66796ab9f2924992de79b9edb0e4b, type: 3}
+      MonsterHP: 5
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 4.98}
+    - WaveName: Wave14
+      WaveMonster: {fileID: 243182345081718191, guid: 77e2ccadb5c9ac14bb00955ac7eb7222, type: 3}
+      MonsterHP: 73
+      WaveMoveSpeed: 3
+      WaveDir: {x: -2, y: -1, z: 0}
+      SpawnPoint: {x: 2, y: 5.93}
+    - WaveName: Wave15
+      WaveMonster: {fileID: 2529791429493540104, guid: 74f6b28bed97ac74d91e26e5ba03edcf, type: 3}
+      MonsterHP: 5
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave31Left
+      WaveMonster: {fileID: 5860076356670581586, guid: e4ff3b93448de7943b29d3fb64f3a20b, type: 3}
+      MonsterHP: 15
+      WaveMoveSpeed: 3
+      WaveDir: {x: 1, y: -1, z: 0}
+      SpawnPoint: {x: -3.7, y: 4}
+    - WaveName: Wave31Right
+      WaveMonster: {fileID: 5860076356670581586, guid: 67e8a34457e346343868f11a9bfeb7d3, type: 3}
+      MonsterHP: 15
+      WaveMoveSpeed: 3
+      WaveDir: {x: -1, y: -1, z: 0}
+      SpawnPoint: {x: 3.7, y: 4}
+    - WaveName: Wave32
+      WaveMonster: {fileID: 1861192600613534411, guid: da0772ad124a617419b3106f4c7ab506, type: 3}
+      MonsterHP: 20
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave33
+      WaveMonster: {fileID: 2250583805970367478, guid: d5e110573283a49459b1284a81febddb, type: 3}
+      MonsterHP: 36
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 6}
+    - WaveName: Wave51
+      WaveMonster: {fileID: 3939812511040050646, guid: 1b6f7ae3d7ffd264ebc022c29e8d30c1, type: 3}
+      MonsterHP: 400
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 5}
+    - WaveName: Wave52
+      WaveMonster: {fileID: 9180555276336733649, guid: 1acff2dc0ba8f8a42a9f17f1d7e5b052, type: 3}
+      MonsterHP: 400
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 5}
+    - WaveName: Wave53
+      WaveMonster: {fileID: 4170498816167135923, guid: 67803c7e7e8890d4db7240cf9f440267, type: 3}
+      MonsterHP: 400
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 5}
+    - WaveName: Wave54
+      WaveMonster: {fileID: 4416017226508112015, guid: edac04b3e6d810a46934654d2716ef8c, type: 3}
+      MonsterHP: 400
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 5}
+    - WaveName: Wave55
+      WaveMonster: {fileID: 724415442272161799, guid: fee0a04e2a2e7a94b97921025f4ca82b, type: 3}
+      MonsterHP: 400
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 5}
+    - WaveName: Wave56
+      WaveMonster: {fileID: 264406512542626709, guid: 67434cad8f46e9744b2773c28fecb329, type: 3}
+      MonsterHP: 400
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 5}
+    - WaveName: Wave57
+      WaveMonster: {fileID: 5551587086624545199, guid: 29907424601be044fbb3a50ade5d1808, type: 3}
+      MonsterHP: 400
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 5}
+    - WaveName: Wave58
+      WaveMonster: {fileID: 3714091697221412020, guid: 9b1d9c6135fd0f4439761542da2832d9, type: 3}
+      MonsterHP: 400
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 5}
+    - WaveName: Wave59
+      WaveMonster: {fileID: 3961937674712807615, guid: 4cd2e9801f0a0fe4e94fb83074b296bb, type: 3}
+      MonsterHP: 400
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 5}
+    - WaveName: Wave60
+      WaveMonster: {fileID: 3961937674712807615, guid: 1e549d97f52503448866946d74225e46, type: 3}
+      MonsterHP: 400
+      WaveMoveSpeed: 3
+      WaveDir: {x: 0, y: -1, z: 0}
+      SpawnPoint: {x: 0, y: 5}
+  _waveControlData:
+  - {x: 4, y: 2}
+  - {x: 4, y: 4}
+  - {x: 4, y: 4}
+  - {x: 4, y: 3}
+  - {x: 4, y: 4}
+  - {x: 4, y: 4}
+  - {x: 4, y: 5}
+  - {x: 4, y: 1}
+  - {x: 4, y: 9}
+  - {x: 4, y: 10}
+  - {x: 4, y: 14}
+  - {x: 4, y: 15}
+  - {x: 4, y: 31}
+  - {x: 4, y: 12}
+  - {x: 4, y: 3}
+  - {x: 4, y: 16}
+  - {x: 4, y: 8}
+  - {x: 4, y: 15}
+  - {x: 4, y: 53}
+  Log: {fileID: 7020389787168640034, guid: 9b59e65c40d13bf429c3f9f5054cec79, type: 3}
+  LogWarning: {fileID: 4302185438866433526, guid: ba7a78c103191db4aba303a93e3d111c, type: 3}

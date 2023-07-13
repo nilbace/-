@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using UnityEngine.SceneManagement;
 
 public class BossPattern : MonoBehaviour
 {
@@ -16,13 +17,24 @@ public class BossPattern : MonoBehaviour
 
     [Header("패턴 이름 / 패턴간의 간격(초)")]
     public Vector2[] BossPatternData;
+    EnemyBase _enemybase;
     
 
     void Start()
     {
         StartCoroutine(StartBattle());
+        _enemybase = GetComponent<EnemyBase>();
         _PlayerTrans = GameObject.Find("Player").transform;
     }
+
+    private void Update()
+    {
+        if(_enemybase.MonsterHP < 0)
+        {
+            SceneManager.LoadScene("StageSelect");
+        }
+    }
+
 
     #region CommonPatterns
     IEnumerator ShootHalfCircle()
@@ -114,11 +126,18 @@ public class BossPattern : MonoBehaviour
             }
     }
 
-    IEnumerator FireLaser(bool toPlayer = false)
+    IEnumerator FireLaser(bool toPlayer = false, Vector3? dir = null)
     {
         GameObject danger2 = Instantiate(RaserDanger);
         danger2.transform.position +=  transform.position + new Vector3(0,-1f,0);
         Vector3 playerDirection = Vector3.down;
+
+        if (dir != null)
+        {
+            playerDirection = dir.Value;
+            Quaternion rotation = Quaternion.LookRotation(Vector3.back, playerDirection);
+            danger2.transform.rotation = rotation;
+        }
 
         if (toPlayer)
         {
@@ -133,7 +152,7 @@ public class BossPattern : MonoBehaviour
         GameObject Raser = Instantiate(RaserPrefab);
         Raser.transform.position +=  transform.position + new Vector3(0, -1f, 0);
 
-        if (toPlayer)
+        if (toPlayer || dir!= null)
         {
             Quaternion rotation = Quaternion.LookRotation(Vector3.forward, playerDirection);
             Raser.transform.rotation = rotation;
@@ -142,6 +161,15 @@ public class BossPattern : MonoBehaviour
         yield return new WaitForSeconds(1.6f);
     }
 
+    IEnumerator ShootLong2Time()
+    {
+        for(int j =0; j<2;j++)
+        {
+            ShootLongBullet(_basePattern, new Vector3(-2f, 0f, 0f));
+            ShootLongBullet(_basePattern, new Vector3(2f, 0f, 0f));
+            yield return new WaitForSeconds(1f);
+        }
+    }
 
     #endregion
 
@@ -184,7 +212,7 @@ public class BossPattern : MonoBehaviour
                         }
                         break;
 
-                    case 4: //왼쪽으로 5번
+                    case 4: //오른쪽으로 5번
                         for (int j = 0; j < 5; j++)
                         {
                             ShootBullet(_baseRight, new Vector3(-1.1f, -0.7f, 0));
@@ -630,7 +658,350 @@ public class BossPattern : MonoBehaviour
 
                         break;
 
+                    case 40: //왼쪽아래 원형 > 오른쪽아래 원형 > 복귀
+                        transform.DOMove(new Vector3(-1.5f, 0.5f, 0), 1);
+                        yield return new WaitForSeconds(1);
+                        StartCoroutine(ShootCircle());
+
+                        transform.DOMove(new Vector3(1.5f, 0.5f, 0), 1);
+                        yield return new WaitForSeconds(1);
+                        StartCoroutine(ShootCircle());
+
+
+                        transform.DOMove(new Vector3(0, 3.5f, 0), 1);
+                        yield return new WaitForSeconds(1);
+
+                        break;
+
+                    case 41:  //갈라지는거 4개
+
+                        for(float j = -1.5f; j<= 1.5f; j++)
+                        {
+                            float k = j * 1.5f;
+                            ShootSplitBall(_basePattern, new Vector3(k, 0,0));
+                        }
+
+                        break;
+
+                    case 42:  //잡몹 + 반원 + 통나무
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(3);
+                        yield return new WaitForSeconds(1);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        StartCoroutine(ShootHalfCircle());
+
+                        break;
+
+                    case 43:  //잡몹 + 반원
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(3);
+                        yield return new WaitForSeconds(1);
+                        StartCoroutine(ShootHalfCircle());
+                        break;
+
+
+                    case 44:  // 잡몹 + 232
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(12);
+                        yield return new WaitForSeconds(1);
+                        yield return StartCoroutine(Shoot2_3_2());
+
+                        break;
+
+                    #endregion
+
+                    #region Dragon
+
+                    case 45:  //긴거 3발 후 5발
+                        ShootLongBullet(_basePattern, new Vector3(-2, -2, 0));
+                        ShootLongBullet(_basePattern, new Vector3(0, -2, 0));
+                        ShootLongBullet(_basePattern, new Vector3(2, -2, 0));
+
+                        yield return new WaitForSeconds(0.5f);
+
+                        for (int j = -2; j < 3; j++)
+                        {
+                            float temp = j * 1.5f;
+                            ShootBullet(_basePattern, new Vector3(temp,0,0), 0.5f);
+                        }
+
+                        break;
+
+                    case 46:  //통나무 + 반원 두번
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        StartCoroutine(ShootHalfCircle());
+
+                        yield return new WaitForSeconds(3f);
+
+                        StartCoroutine(ShootHalfCircle());
+                        break;
+
+                        //내려와서 나선 탄막 27번
+
+                    case 47://왼쪽으로 가서 탄막쏘며 통나무
+
+                        transform.DOMoveX(-1f, 0.3f);
+                        yield return new WaitForSeconds(0.3f);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        yield return StartCoroutine(Shoot3Way());
+
+                        transform.DOMoveX(0f, 0.3f);
+                        yield return new WaitForSeconds(0.3f);
+
+                        break;
+
+                    case 48:  //27번하고 같이 써라
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(8);
+                        break;
+
+                    case 49://오른쪽으로 가서 탄막쏘며 통나무
+
+                        transform.DOMoveX(1f, 0.3f);
+                        yield return new WaitForSeconds(0.3f);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        yield return StartCoroutine(Shoot3Way());
+
+                        transform.DOMoveX(0f, 0.3f);
+                        yield return new WaitForSeconds(0.3f);
+
+                        break;
+
+                    //다시 27+48 패턴
+
+                    case 50: //원형 + 대각선 스플릿
+                        StartCoroutine(ShootCircle());
+                        yield return new WaitForSeconds(1f);
+                        ShootSplitBall(_baseLeft);
+                        ShootSplitBall(_baseRight);
+
+                        break;
+
+                    case 51: //원형 + 그냥 스플릿
+                        StartCoroutine(ShootCircle());
+                        yield return new WaitForSeconds(1f);
+                        ShootSplitBall(_basePattern , new Vector3(-1,0,0));
+                        ShootSplitBall(_basePattern, new Vector3(1, 0, 0));
+                        break;
+
+                    case 52:  //레이저3갈래 등등
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        StartCoroutine(ShootHalfCircle());
+                        StartCoroutine(FireLaser(false, new Vector3(1, 3, 0)));
+                        StartCoroutine(FireLaser(false, new Vector3(-1, 3, 0)));
+                        StartCoroutine(FireLaser(true));
+
+                        break;
+                    #endregion
+
+                    #region Rabbit
+
+                    case 53: //제자리 3갈래
+                        yield return StartCoroutine(Shoot3Way());
+
+
+                        break;
+
+                    case 54: // 원형 + 3갈래
+                        StartCoroutine(ShootCircle());
+                        yield return StartCoroutine(Shoot3Way());
+                        break;
+
+                    case 55: //왼쪽가서 쏘면서 통나무2개
+                        transform.DOMoveX(-1f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        for (int j = 0; j < 5; j++)
+                        {
+                            ShootBullet(_basePattern, Vector3.right);
+                            ShootBullet(_basePattern, Vector3.left);
+                            yield return new WaitForSeconds(0.5f);
+                        }
+
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        break;
+
+                    case 56: //오른쪽가서 쏘면서 통나무2개
+                        transform.DOMoveX(1f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        for (int j = 0; j < 5; j++)
+                        {
+                            ShootBullet(_basePattern, Vector3.right);
+                            ShootBullet(_basePattern, Vector3.left);
+                            yield return new WaitForSeconds(0.5f);
+                        }
+
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        break;
+
+
+                    //27번 사용
+
+                    case 57:  //왼쪽에서 3번쏘고 오기
+                        transform.DOMoveX(-1f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        for(int j =0;j<3;j++)
+                        {
+                            StartCoroutine(ShootCircle());
+                            yield return new WaitForSeconds(0.5f);
+                        }
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        break;
+
+                    case 58:  //오른쪽에서 2번쏘고 오기
+                        transform.DOMoveX(1f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        for (int j = 0; j < 2; j++)
+                        {
+                            StartCoroutine(ShootCircle());
+                            yield return new WaitForSeconds(0.5f);
+                        }
+
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        break;
+
+                    case 59:  //천천히 몸박
+                        transform.DOMove(new Vector3(1.5f, 0.5f, 0), 2f);
+                        yield return new WaitForSeconds(2f);
+
+                        transform.DOMove(new Vector3(-1.5f, 0.5f, 0), 2f);
+                        yield return new WaitForSeconds(2f);
+
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(31);
+
+
+                        transform.DOMove(new Vector3(-1.5f, -2.5f, 0), 2f);
+                        yield return new WaitForSeconds(2f);
+
+                        transform.DOMove(new Vector3(1.5f, -2.5f, 0), 2f);
+                        yield return new WaitForSeconds(2f);
+
+                        transform.DOMove(new Vector3(0, 3.5f, 0), 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        break;
+
+                    case 60:  //원형 두번
+                        for (int j = 0; j < 2; j++)
+                        {
+                            StartCoroutine(ShootCircle());
+                            yield return new WaitForSeconds(0.5f);
+                        }
+                        break;
+
+                    case 61:  //원형 + 통나무 2개
+                        StartCoroutine(ShootCircle());
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        break;
+
+                    #endregion
+
+                    #region Tiger
+
+                    case 62:  //3갈래 2번
+                        yield return StartCoroutine(Shoot3Way());
+                        yield return new WaitForSeconds(1f);
+                        yield return StartCoroutine(Shoot3Way());
+
+                        break;
+
+                    case 63:  //통나무 + 원형쏘기4번
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        StartCoroutine(ShootCircle());
+                        yield return new WaitForSeconds(0.5f);
+                        StartCoroutine(ShootHalfCircle());
+                        yield return new WaitForSeconds(1.5f);
+                        StartCoroutine(ShootCircle());
+                        yield return new WaitForSeconds(0.5f);
+                        StartCoroutine(ShootHalfCircle());
+                        break;
+
+                    case 64: //스플릿 + 잡몹들
+                        ShootSplitBall(_basePattern, Vector3.left);
+                        ShootSplitBall(_basePattern, Vector3.right);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(1);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(15);
+                        break;
+
+                    case 65: //통나무 + 4갈래
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        yield return new WaitForSeconds(1.5f);
+                        for (int j = 0; j < 5; j++)
+                        {
+                            ShootBullet(_baseLeft, new Vector3(-1.5f, 0, 0));
+                            ShootBullet(_baseLeft, new Vector3(0.2f, -0.7f, 0));
+                            ShootBullet(_baseRight, new Vector3(-0.2f, -0.7f, 0));
+                            ShootBullet(_baseRight, new Vector3(1.5f, 0f, 0));
+                            yield return new WaitForSeconds(0.5f);
+                        }
+                        break;
+
+                    case 66: //잡몹 + 스플릿 + 잡몹
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(1);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(31);
+                        yield return new WaitForSeconds(3f);
+                        ShootSplitBall(_basePattern, Vector3.left);
+                        ShootSplitBall(_basePattern, Vector3.right);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(1);
+                        break;
+
+                    case 67: 
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(3);
+
+                        break;
+
+                    //37번 쓰고 68번 이어서 써라
+
+                    case 68:
+                        yield return new WaitForSeconds(1f);
+                        StartCoroutine(ShootCircle());
+                        break;
+
+
+
+                    case 69: //3갈래+ 긴거3번
+                        StartCoroutine(ShootLong2Time());
+                        for(int j =0;j<5;j++)
+                        {
+                            ShootBullet(_basePattern, Vector3.right * 2.5f, 0.5f);
+                            ShootBullet(_basePattern, null, 0.5f);
+                            ShootBullet(_basePattern, Vector3.left * 2.5f, 0.5f);
+
+                            yield return new WaitForSeconds(0.5f);
+                        }
+                        break;
+
+                    case 70: //레이저 5번
+                        StartCoroutine(Shoot2_3_2(0f));
+                        StartCoroutine(FireLaser(false, new Vector3(3, 3, 0)));
+                        yield return new WaitForSeconds(0.5f);
+                        StartCoroutine(FireLaser(false, new Vector3(1, 3, 0)));
+                        yield return new WaitForSeconds(0.5f);
+                        StartCoroutine(FireLaser(true));
+                        yield return new WaitForSeconds(0.5f);
+                        StartCoroutine(FireLaser(false, new Vector3(-1, 3, 0)));
+                        yield return new WaitForSeconds(0.5f);
+                        StartCoroutine(FireLaser(false, new Vector3(-3, 3, 0)));
+                        yield return new WaitForSeconds(0.5f);
+
+
+                        break;
                         #endregion
+
                 }
                 yield return new WaitForSeconds(BossPatternData[i].y);
             }

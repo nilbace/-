@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Trees: MonoBehaviour
+public class Grounds: MonoBehaviour
 {
     public Image image;
     public float minYPosition = -1000f;
-    public float scrollAmount = 1920f * 3f;
+    public float scrollAmount = 1156.8f * 3f;
     public float moveSpeed;
 
     private void Update()

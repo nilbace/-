@@ -243,7 +243,7 @@ MonoBehaviour:
   - {x: 4, y: 2}
   - {x: 0, y: 14}
   - {x: 4, y: 33}
-  - {x: 4, y: 34}
+  - {x: 4, y: 33}
   - {x: 4, y: 13}
   - {x: 4, y: 12}
   - {x: 4, y: 1}
@@ -262,6 +262,6 @@ MonoBehaviour:
   - {x: 0, y: 33}
   - {x: 4, y: 11}
   - {x: 0, y: 12}
-  - {x: 4, y: 56}
+  - {x: 4, y: 57}
   Log: {fileID: 7020389787168640034, guid: 9b59e65c40d13bf429c3f9f5054cec79, type: 3}
   LogWarning: {fileID: 4302185438866433526, guid: ba7a78c103191db4aba303a93e3d111c, type: 3}

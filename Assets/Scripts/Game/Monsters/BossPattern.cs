@@ -17,22 +17,20 @@ public class BossPattern : MonoBehaviour
 
     [Header("패턴 이름 / 패턴간의 간격(초)")]
     public Vector2[] BossPatternData;
-    EnemyBase _enemybase;
     
 
     void Start()
     {
         StartCoroutine(StartBattle());
-        _enemybase = GetComponent<EnemyBase>();
         _PlayerTrans = GameObject.Find("Player").transform;
+        gameObject.GetComponent<EnemyBase>().IsBoss = true;
     }
 
-    private void Update()
+ 
+
+    public void ReturnToStageSelect()
     {
-        if(_enemybase.MonsterHP < 0)
-        {
-            SceneManager.LoadScene("StageSelect");
-        }
+        SceneManager.LoadScene("StageSelect");
     }
 
 

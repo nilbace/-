@@ -191,9 +191,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 1655372175088003629, guid: ddfe97212284dac4795133026172990d, type: 3}
-  LongBulletPrefab: {fileID: 0}
-  RaserDanger: {fileID: 3538576259298749658, guid: 81e94684ef371a9469b0e9dbf73cc657, type: 3}
-  RaserPrefab: {fileID: 2462214706568107475, guid: 117704c3a347e8c4aaf77170aefc769e, type: 3}
+  LongBulletPrefab: {fileID: 1655372175088003629, guid: 42ac50280c2101e4f9db04a09edf0aac, type: 3}
+  RaserDanger: {fileID: 8532047674531208471, guid: af6b7ab68d163b446a503018ea1b05e8, type: 3}
+  RaserPrefab: {fileID: 6544904726160064764, guid: 46bac7a73c237724084b9d7cce16f439, type: 3}
+  SplitBall: {fileID: 0}
   BossPatternData:
   - {x: 1, y: 2}
   - {x: 2, y: 2}

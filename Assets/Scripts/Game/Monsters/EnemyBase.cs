@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyBase : MonoBehaviour
 {
@@ -8,10 +9,8 @@ public class EnemyBase : MonoBehaviour
     protected Vector3 _movedir;
     float _movespeed;
     public float MonsterHP { get { return _myHP; } set { _myHP = value; } }
-    void Start()
-    {
-        
-    }
+    public bool IsBoss = false;
+    
 
     public void SetMonster(Define.WaveData waveData)
     {
@@ -29,7 +28,8 @@ public class EnemyBase : MonoBehaviour
     void Update()
     {
         if (MonsterHP < 0)
-            gameObject.SetActive(false);
+            Dead();
+
         else
             transform.position += _movedir.normalized * Time.deltaTime * _movespeed;
 
@@ -37,6 +37,15 @@ public class EnemyBase : MonoBehaviour
         if (distance > 10f)
         {
             Destroy(gameObject);
+        }
+    }
+
+    void Dead()
+    {
+        gameObject.SetActive(false);
+        if (IsBoss)
+        {
+            SceneManager.LoadScene("StageSelect");
         }
     }
 

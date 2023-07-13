@@ -86,7 +86,7 @@ public class Define : MonoBehaviour
     Snake,
     Dragon,
     Rabbit,
-    TIger,
+    Tiger,
     Cow,
     Rat,
     MaxCount,

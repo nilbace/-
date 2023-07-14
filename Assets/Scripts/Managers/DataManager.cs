@@ -8,3 +8,8 @@ public class DataManager
     public int SelectedBossindex { get; set; }
    
 }
+
+public class SaveData
+{
+    int _nowbellCount = 5;
+}

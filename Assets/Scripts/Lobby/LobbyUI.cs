@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LobbyUI : MonoBehaviour
 {
+    [SerializeField] GameObject[] bells;
+
     public void StartBTN()
     {
-         SceneManager.LoadScene("StageSelect");
+        Managers.Scene.LoadScene(Define.Scene.StageSelect);
     }
 }

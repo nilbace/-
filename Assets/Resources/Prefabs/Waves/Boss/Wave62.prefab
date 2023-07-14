@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6694752424961544978}
   m_Layer: 0
-  m_Name: Wave59 3
+  m_Name: Wave62
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 7830690111161467744}
   - component: {fileID: 6417005933832740317}
   m_Layer: 0
-  m_Name: Dragon
+  m_Name: Rat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 9c36ca9b18d2252499765c69145e105b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a16c5465374ef2f40aec440358b10fe3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myHP: 400
+  IsBoss: 0
 --- !u!50 &7830690111161467748
 Rigidbody2D:
   serializedVersion: 4
@@ -169,7 +170,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.71, y: 7.21}
+    oldSize: {x: 5.71, y: 7.2}
     newSize: {x: 5.71, y: 7.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -196,8 +197,17 @@ MonoBehaviour:
   RaserPrefab: {fileID: 6544904726160064764, guid: 46bac7a73c237724084b9d7cce16f439, type: 3}
   SplitBall: {fileID: 1655372175088003629, guid: 06d2a28a870a60645b546439095e902d, type: 3}
   BossPatternData:
-  - {x: 45, y: 5}
-  - {x: 27, y: 3}
+  - {x: 80, y: 3}
+  - {x: 81, y: 3}
+  - {x: 82, y: 3}
+  - {x: 83, y: 3}
+  - {x: 84, y: 3}
+  - {x: 85, y: 0}
+  - {x: 23, y: 3}
+  - {x: 86, y: 3}
+  - {x: 87, y: 3}
+  - {x: 88, y: 3}
+  - {x: 89, y: 3}
 --- !u!114 &6417005933832740317
 MonoBehaviour:
   m_ObjectHideFlags: 0

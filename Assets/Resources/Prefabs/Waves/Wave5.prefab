@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616773, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -95,6 +99,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.7325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.7175
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
 --- !u!1 &8859763053840827615 stripped
@@ -120,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myHP: -5
+  IsBoss: 0
   startDelay: 0.23
   movedelay: 0.4
 --- !u!1001 &3288754916046777179
@@ -137,6 +150,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616773, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -181,6 +198,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.7325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.7175
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
 --- !u!1 &5612534463617496159 stripped
@@ -206,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myHP: -5
+  IsBoss: 0
   startDelay: 0.23
   movedelay: 0.4
 --- !u!1001 &6882590381227655458
@@ -223,6 +249,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616773, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -267,6 +297,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.7325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.7175
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
 --- !u!1 &4594907523238010406 stripped
@@ -292,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myHP: -5
+  IsBoss: 0
   startDelay: 0.23
   movedelay: 0.4
 --- !u!1001 &8140362148410291864
@@ -309,6 +348,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616773, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -353,6 +396,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.7325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.7175
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
 --- !u!1 &1206924356614138268 stripped
@@ -378,6 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myHP: -5
+  IsBoss: 0
   startDelay: 0.23
   movedelay: 0.4
 --- !u!1001 &8842822471824616407
@@ -395,6 +447,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616773, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -439,6 +495,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.7325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.7175
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
 --- !u!1 &1945483981092156627 stripped
@@ -464,6 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myHP: -5
+  IsBoss: 0
   startDelay: 0.23
   movedelay: 0.4
 --- !u!1001 &8843024178623464668
@@ -481,6 +546,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616773, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
     - target: {fileID: 6937719842271616774, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -525,6 +594,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.7325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937719842271616777, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.7175
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f64ccdc8497914e81c569c5e31b5af, type: 3}
 --- !u!1 &1945274470399581144 stripped
@@ -550,5 +627,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myHP: -5
+  IsBoss: 0
   startDelay: 0.23
   movedelay: 0.4

@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myHP: 400
+  IsBoss: 1
 --- !u!50 &7830690111161467748
 Rigidbody2D:
   serializedVersion: 4

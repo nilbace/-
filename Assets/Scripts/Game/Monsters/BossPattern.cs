@@ -80,6 +80,16 @@ public class BossPattern : MonoBehaviour
         }
     }
 
+    IEnumerator ShootDown5Time()
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            ShootBullet(_basePattern, Vector3.right);
+            ShootBullet(_basePattern, Vector3.left);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
     IEnumerator Shoot2_3_2(float xValue = 0)
     {
         float offset12 = 0.8f;
@@ -998,6 +1008,237 @@ public class BossPattern : MonoBehaviour
 
 
                         break;
+                    #endregion
+
+
+                    #region cow
+
+                    case 71:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(4);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        yield return StartCoroutine(Shoot2_3_2());
+
+
+                        break;
+
+                    case 72:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        transform.DOMoveX(-1f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        yield return StartCoroutine(Shoot3Way());
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(7);
+
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        break;
+
+
+                    case 73:
+                        transform.DOMoveX(-1f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(6);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(14);
+
+                        StartCoroutine(ShootCircle());
+                        StartCoroutine(ShootDown5Time());
+
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        break;
+
+                    case 74:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+
+                        yield return StartCoroutine(ShootCircle());
+                        yield return new WaitForSeconds(1.5f);
+                        yield return StartCoroutine(ShootCircle());
+                        yield return new WaitForSeconds(1.5f);
+                        yield return StartCoroutine(ShootCircle());
+                        yield return new WaitForSeconds(1.5f);
+                        break;
+
+                    case 75:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(6);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(7);
+                        yield return StartCoroutine(Shoot3Way());
+
+                        
+                        break;
+
+                    case 76:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(13);
+                        transform.DOMoveX(1f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        yield return StartCoroutine(Shoot3Way());
+                       
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        break;
+
+
+                    case 77:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(8);
+                        yield return StartCoroutine(Shoot3Way());
+
+                        break;
+
+                    case 78:
+                        transform.DOMoveX(-1.5f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        StartCoroutine(FireLaser());
+                        StartCoroutine(FireLaser(false, new Vector3(-0.7f,1,0) ));
+                        yield return StartCoroutine(FireLaser(false, new Vector3(-1.4f, 1, 0)));
+                        yield return new WaitForSeconds(1.5f);
+
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+
+                        break;
+
+                    case 79:
+                        transform.DOMoveX(1.5f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        StartCoroutine(FireLaser());
+                        StartCoroutine(FireLaser(false, new Vector3(0.7f, 1, 0)));
+                        yield return StartCoroutine(FireLaser(false, new Vector3(1.4f, 1, 0)));
+                        yield return new WaitForSeconds(1.5f);
+
+                        transform.DOMoveX(0f, 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        break;
+
+                    #endregion
+
+
+                    #region Rat
+
+                    case 80:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(4);
+                        yield return StartCoroutine(ShootCircle());
+                        yield return new WaitForSeconds(1.5f);
+                        yield return StartCoroutine(ShootCircle());
+
+                        break;
+
+                    case 81:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(1);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(33);
+                        yield return StartCoroutine(Shoot3Way());
+                        yield return new WaitForSeconds(1.0f);
+                        yield return StartCoroutine(Shoot3Way());
+                        break;
+
+                    case 82:
+                        
+                        transform.DOMove(new Vector3(-1.5f, 0.5f, 0), 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        StartCoroutine(ShootCircle());
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(12);
+
+                        transform.DOMove(new Vector3(1.5f, 0.5f, 0), 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        StartCoroutine(ShootCircle());
+
+                        transform.DOMove(new Vector3(0f, 3.5f, 0), 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        StartCoroutine(ShootCircle());
+
+
+                        break;
+
+                    case 83:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(5);
+
+                        yield return StartCoroutine(Shoot2_3_2());
+                        yield return new WaitForSeconds(0.5f);
+                        yield return StartCoroutine(Shoot2_3_2());
+
+                        break;
+
+                    case 84:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(4);
+                        transform.DOMove(new Vector3(0f, 0.5f, 0), 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+
+                        yield return StartCoroutine(ShootSpiral());
+                        yield return new WaitForSeconds(0.5f);
+                        yield return StartCoroutine(ShootSpiral());
+
+                        transform.DOMove(new Vector3(0f, 3.5f, 0), 0.5f);
+                        yield return new WaitForSeconds(0.5f);
+                        break;
+
+
+                         
+
+                    case 85:  //그림자분신이랑 같이 쓸 것 23번
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        break;
+
+                    case 86:
+                        ShootSplitBall(_baseLeft);
+                        ShootSplitBall(_basePattern);
+                        ShootSplitBall(_baseRight);
+                        break;
+
+                    case 87:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(6);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(7);
+                        yield return StartCoroutine(Shoot3Way());
+                        break;
+
+
+                    case 88:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(1);
+                        yield return StartCoroutine(ShootCircle());
+                        yield return new WaitForSeconds(0.7f);
+
+                        yield return StartCoroutine(ShootCircle());
+                        yield return new WaitForSeconds(0.7f);
+
+                        yield return StartCoroutine(ShootCircle());
+                        yield return new WaitForSeconds(0.7f);
+                        break;
+
+                    case 89:
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
+                        StartCoroutine(Shoot2_3_2());
+
+                        StartCoroutine(FireLaser(false, new Vector3(1, 1, 0)));
+                        yield return new WaitForSeconds(0.5f);
+
+                        StartCoroutine(FireLaser(false, new Vector3(1, 3, 0)));
+                        yield return new WaitForSeconds(0.5f);
+
+                        StartCoroutine(FireLaser(true));
+                        yield return new WaitForSeconds(0.5f);
+
+                        StartCoroutine(FireLaser(false, new Vector3(-1, 3, 0)));
+                        yield return new WaitForSeconds(0.5f);
+
+                        StartCoroutine(FireLaser(false, new Vector3(-1, 1, 0)));
+                        yield return new WaitForSeconds(0.5f);
+
+                        break;
+
+
                         #endregion
 
                 }

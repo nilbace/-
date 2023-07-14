@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myHP: 400
+  IsBoss: 1
 --- !u!50 &2679765035935098378
 Rigidbody2D:
   serializedVersion: 4
@@ -163,6 +164,7 @@ MonoBehaviour:
   LongBulletPrefab: {fileID: 0}
   RaserDanger: {fileID: 3538576259298749658, guid: 81e94684ef371a9469b0e9dbf73cc657, type: 3}
   RaserPrefab: {fileID: 2462214706568107475, guid: 117704c3a347e8c4aaf77170aefc769e, type: 3}
+  SplitBall: {fileID: 0}
   BossPatternData:
   - {x: 10, y: 2}
   - {x: 7, y: 2}

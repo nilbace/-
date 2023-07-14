@@ -107,7 +107,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 9c6d4b5fa9449ae4e88fa18593dacdd1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ceb73dcea183724889717bcd21ceeca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myHP: 400
+  IsBoss: 1
 --- !u!50 &7852752602627403277
 Rigidbody2D:
   serializedVersion: 4
@@ -165,18 +166,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03421974, y: -0.7699505}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.71, y: 7.2}
+    oldSize: {x: 7.91, y: 9.71}
     newSize: {x: 5.71, y: 7.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.71, y: 7.2}
+  m_Size: {x: 7.0103617, y: 7.028901}
   m_EdgeRadius: 0
 --- !u!114 &7852752602627403273
 MonoBehaviour:
@@ -194,16 +195,20 @@ MonoBehaviour:
   LongBulletPrefab: {fileID: 1655372175088003629, guid: 42ac50280c2101e4f9db04a09edf0aac, type: 3}
   RaserDanger: {fileID: 8532047674531208471, guid: af6b7ab68d163b446a503018ea1b05e8, type: 3}
   RaserPrefab: {fileID: 6544904726160064764, guid: 46bac7a73c237724084b9d7cce16f439, type: 3}
-  SplitBall: {fileID: 0}
+  SplitBall: {fileID: 1655372175088003629, guid: 06d2a28a870a60645b546439095e902d, type: 3}
   BossPatternData:
-  - {x: 1, y: 2}
-  - {x: 2, y: 2}
-  - {x: 3, y: 2}
-  - {x: 4, y: 2}
-  - {x: 5, y: 2}
-  - {x: 6, y: 2}
-  - {x: 7, y: 2}
-  - {x: 8, y: 2}
+  - {x: 23, y: 2}
+  - {x: 22, y: 2}
+  - {x: 27, y: 2}
+  - {x: 30, y: 2}
+  - {x: 39, y: 2}
+  - {x: 41, y: 2}
+  - {x: 43, y: 2}
+  - {x: 46, y: 2}
+  - {x: 52, y: 2}
+  - {x: 54, y: 2}
+  - {x: 55, y: 2}
+  - {x: 52, y: 2}
 --- !u!114 &6438862335061553332
 MonoBehaviour:
   m_ObjectHideFlags: 0

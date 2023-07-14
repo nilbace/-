@@ -118,6 +118,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487567, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ec2830cbdccedb346a03acee8304eb82, type: 3}
+    - target: {fileID: 5033532135144874021, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1038167
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033532135144874021, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.014132619
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033532135144874021, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.1675
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033532135144874021, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.225
+      objectReference: {fileID: 0}
     - target: {fileID: 5586283456139344768, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: changeDirDelay
       value: 2.57

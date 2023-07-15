@@ -21,7 +21,7 @@ public class Managers : MonoBehaviour
     public static DataManager Data { get { return instance._data; } }
     public static SceneMan Scene { get { return instance._scene; } }
     
-    void Start()
+    void Awake()
     {
         Init();
     }
@@ -44,7 +44,7 @@ public class Managers : MonoBehaviour
             DontDestroyOnLoad(go);
             s_instance = go.GetComponent<Managers>();
 
-            //s_instance._sound.Init();
+            s_instance._data.Init();
             //s_instance._pool.Init();
         }
     }

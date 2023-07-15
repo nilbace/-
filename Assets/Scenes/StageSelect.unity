@@ -440,7 +440,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3371441760556201468, guid: ebd1b8d455cd7c64e8ddb00b0a546a8f, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: StageSelectUI
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3371441760556201469, guid: ebd1b8d455cd7c64e8ddb00b0a546a8f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ebd1b8d455cd7c64e8ddb00b0a546a8f, type: 3}

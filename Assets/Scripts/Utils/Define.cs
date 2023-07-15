@@ -14,24 +14,19 @@ public class Define : MonoBehaviour
         Game,
     }
 
+    public enum Popup
+    { 
+        none,
+        Setting,
+        MaxCount
+    }
+
+
     public enum Sound
     {
         Bgm,
         Effect,
         MaxCount,
-    }
-    public enum UIEvent
-    {
-        Click,
-        Drag,
-        
-    }
-    public enum MouseEvent{
-        Press,
-        Click,
-    }
-    public enum CameraMode{
-        QuaterView,
     }
 
     [System.Serializable]

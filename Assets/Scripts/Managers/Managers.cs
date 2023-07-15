@@ -14,12 +14,14 @@ public class Managers : MonoBehaviour
 
     DataManager _data = new DataManager();
     SceneMan _scene = new SceneMan();
+    UIManager _ui = new UIManager();
     //public static InputManager Input {get {return instance._input;}}
     //public static ResourceManager Resource{get{return instance._resource;}}
     //public static UI_Manager UI_Manager{get{return instance._ui_manager;}}
 
     public static DataManager Data { get { return instance._data; } }
     public static SceneMan Scene { get { return instance._scene; } }
+    public static UIManager UI { get { return instance._ui;  } }
     
     void Awake()
     {

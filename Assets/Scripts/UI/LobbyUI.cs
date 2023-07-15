@@ -34,4 +34,14 @@ public class LobbyUI : MonoBehaviour
     {
         Managers.Scene.LoadScene(Define.Scene.StageSelect);
     }
+
+    public void OpenSetting()
+    {
+        Managers.UI.ShowPopup(Define.Popup.Setting);
+    }
+
+    public void StageSelectBackBTN()
+    {
+        Managers.Scene.LoadScene(Define.Scene.Lobby);
+    }
 }

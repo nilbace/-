@@ -13,6 +13,14 @@ public class SettingUI : MonoBehaviour
         SetSettingPannel();
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Managers.UI.ClosePopup();
+        }
+    }
+
 
     void SetSettingPannel()
     {

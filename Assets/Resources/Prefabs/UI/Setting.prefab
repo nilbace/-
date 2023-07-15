@@ -89,7 +89,19 @@ MonoBehaviour:
   m_Value: 0.404
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1394588806}
+        m_TargetAssemblyTypeName: SettingUI, Assembly-CSharp
+        m_MethodName: OnBGMSliderValueChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &108306505
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +190,7 @@ GameObject:
   - component: {fileID: 178262032}
   - component: {fileID: 178262031}
   m_Layer: 5
-  m_Name: Dev
+  m_Name: Devs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,7 +527,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 760206625}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1394588806}
+        m_TargetAssemblyTypeName: SettingUI, Assembly-CSharp
+        m_MethodName: ClickJoystickFixBTN
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &911347567
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +704,19 @@ MonoBehaviour:
   m_Value: 0.404
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1394588806}
+        m_TargetAssemblyTypeName: SettingUI, Assembly-CSharp
+        m_MethodName: OnSFXSliderValueChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1074196248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1335,7 @@ GameObject:
   - component: {fileID: 3016585879598962978}
   - component: {fileID: 3016585879598962979}
   - component: {fileID: 3016585879598962988}
+  - component: {fileID: 1394588806}
   m_Layer: 5
   m_Name: Setting
   m_TagString: Untagged
@@ -1390,3 +1427,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1394588806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3016585879598962989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc1c232c79dfa445af0ee51bb3c545e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JoystickSet: {fileID: 760206623}
+  truefalseImg:
+  - {fileID: 21300000, guid: f752e1b9f8ae1a142bdb73b406d9438c, type: 3}
+  - {fileID: 21300000, guid: 34dfd857bb31e46419bd13d35e8d5414, type: 3}
+  sliders:
+  - {fileID: 6718273}
+  - {fileID: 957294763}

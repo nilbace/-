@@ -18,6 +18,7 @@ public class Define : MonoBehaviour
     { 
         none,
         Setting,
+        Selected,
         MaxCount
     }
 
@@ -87,5 +88,4 @@ public class Define : MonoBehaviour
     MaxCount,
          
     }
-
 }

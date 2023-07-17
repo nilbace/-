@@ -1,0 +1,88 @@
+{
+    "charSaveDatas": [
+        {
+            "Name": "",
+            "bought": true,
+            "TotalStatPoint": 0,
+            "StatLevels": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                5,
+                0
+            ]
+        },
+        {
+            "Name": "",
+            "bought": false,
+            "TotalStatPoint": 0,
+            "StatLevels": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Name": "",
+            "bought": false,
+            "TotalStatPoint": 0,
+            "StatLevels": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Name": "",
+            "bought": false,
+            "TotalStatPoint": 0,
+            "StatLevels": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Name": "",
+            "bought": false,
+            "TotalStatPoint": 0,
+            "StatLevels": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Name": "",
+            "bought": false,
+            "TotalStatPoint": 0,
+            "StatLevels": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ]
+}

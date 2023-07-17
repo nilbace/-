@@ -4,7 +4,20 @@ using UnityEngine;
 
 public class Define : MonoBehaviour
 {
+    public static string FormatNumber(int value)
+    {
+        const string separator = ",";
 
+        if (value < 1000)
+        {
+            return value.ToString();
+        }
+        else
+        {
+            string formattedNumber = value.ToString("N0");
+            return formattedNumber;
+        }
+    }
     public enum Scene
     {
         Unknown,
@@ -19,9 +32,10 @@ public class Define : MonoBehaviour
         none,
         Setting,
         Selected,
+        CharPet,
+        CharUpgrade,
         MaxCount
     }
-
 
     public enum Sound
     {
@@ -102,4 +116,29 @@ public class Define : MonoBehaviour
         public int ThreeStarReward;
         public Sprite BossImg;
     }
+
+    public enum StatName
+    {
+        atkPower,
+        atkSpeed,
+        CritDmg,
+        SkillDmg,
+        GoldBonus,
+        HpBonus,
+        extra,
+        Total,
+        MaxCount
+    }
+
+    public enum CatName
+    { 
+        Cheese,
+        ThreeColor,
+        Mackerel,
+        Tuxedo,
+        Siamese,
+        Bengal,
+        MaxCount
+    }
+
 }

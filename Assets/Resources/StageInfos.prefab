@@ -46,7 +46,7 @@ MonoBehaviour:
   datas:
   - BossName: 
     ThreeStarScore: 12345
-    TwoStarScore: 1234
+    TwoStarScore: 4444
     OneStarScore: 123
     OneStarReward: 888
     TwoStarReward: 887

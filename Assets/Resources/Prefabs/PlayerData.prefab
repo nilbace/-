@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7839624228425578477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2330446182874851138}
+  - component: {fileID: 8184898511745690964}
+  m_Layer: 0
+  m_Name: PlayerData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2330446182874851138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839624228425578477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8184898511745690964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839624228425578477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49cb8ad2766bbe49984d0c5f3cbc6da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chars:
+  - FrontImg: {fileID: 0}
+    BackImg: {fileID: 0}
+    ThreeValues:
+    - StatName: "\uACF5\uACA9\uB825"
+      baseStat: 25
+      UpValue: 5
+      MaxValue: 10
+    - StatName: "\uACF5\uACA9\uC18D\uB3C4"
+      baseStat: 130
+      UpValue: 10
+      MaxValue: 10
+    - StatName: "\uCE58\uBA85\uB370\uBBF8\uC9C0"
+      baseStat: 200
+      UpValue: 20
+      MaxValue: 5
+    - StatName: "\uC2A4\uD0AC\uB370\uBBF8\uC9C0"
+      baseStat: 60
+      UpValue: 10
+      MaxValue: 5
+    - StatName: "\uACE8\uB4DC\uBCF4\uB108\uC2A4"
+      baseStat: 10
+      UpValue: 10
+      MaxValue: 10
+    - StatName: HP
+      baseStat: 30
+      UpValue: 2
+      MaxValue: 5
+    baseCritPer: 5
+    GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
+  - FrontImg: {fileID: 0}
+    BackImg: {fileID: 0}
+    ThreeValues: []
+    baseCritPer: 0
+    GetPointMoneyValue: 
+  - FrontImg: {fileID: 0}
+    BackImg: {fileID: 0}
+    ThreeValues: []
+    baseCritPer: 0
+    GetPointMoneyValue: 
+  - FrontImg: {fileID: 0}
+    BackImg: {fileID: 0}
+    ThreeValues: []
+    baseCritPer: 0
+    GetPointMoneyValue: 
+  - FrontImg: {fileID: 0}
+    BackImg: {fileID: 0}
+    ThreeValues: []
+    baseCritPer: 0
+    GetPointMoneyValue: 
+  - FrontImg: {fileID: 0}
+    BackImg: {fileID: 0}
+    ThreeValues: []
+    baseCritPer: 0
+    GetPointMoneyValue: 

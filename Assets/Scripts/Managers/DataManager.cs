@@ -8,12 +8,12 @@ public class DataManager
 {
     //스테이지 셀렉트
     public int SelectedBossindex { get; set; } = 1;
+    public int SelectedCatIndex { get; set; } = (int)Define.CatName.Cheese;
     public BellData MyBellData { get; set; }
     public StoreData MyStoreData { get; set; }
     public SettingData MySettingData { get; set; }
     public StageHighScoreData MyHighScoreData { get; set; }
-
-    private string jsonDataPath;
+    public CharSaveDatas MyCharDatas { get; set; }
 
 
     public void Init()
@@ -30,13 +30,23 @@ public class DataManager
 
 
     #region AboutJson
-    
+    private string jsonDataPath;
     void LoadAllData()
     {
         LoadBellData();
         LoadStoreData();
         LoadSettingData();
         LoadStageHighScoreData();
+        LoadCharDatas();
+    }
+
+    public void SaveDatas()
+    {
+        SaveBellData();
+        SaveStoreData();
+        SaveSettingData();
+        SaveStageHighScoreData();
+        SaveCharDatas();
     }
 
     #endregion
@@ -92,7 +102,7 @@ public class DataManager
             Debug.Log("no BellData");
             return;
         }
-        string jsonData = JsonUtility.ToJson(MyBellData);
+        string jsonData = JsonUtility.ToJson(MyBellData, true);
         File.WriteAllText(BellDataPath, jsonData);
     }
     void LoadBellData()
@@ -207,6 +217,58 @@ public class DataManager
         {
             MyHighScoreData = new StageHighScoreData();
             SaveStageHighScoreData();
+        }
+    }
+
+    #endregion
+
+    #region CharDatas
+
+   
+    public int GetThisCatStat(Define.StatName statname)
+    {
+        if(statname == Define.StatName.Total)
+        {
+            int temp = 0;
+            for(int i = 0; i < 7;i++)
+            {
+                temp += GetThisCatStat((Define.StatName)i);
+            }
+            return temp;
+        }
+        return MyCharDatas.charSaveDatas[SelectedCatIndex].StatLevels[(int)statname];
+    }
+
+    public void CalThisCatStat(Define.StatName statName, int n)
+    {
+        MyCharDatas.charSaveDatas[SelectedCatIndex].StatLevels[(int)statName] += n;
+        SaveDatas();
+    }
+    
+    public void SaveCharDatas()
+    {
+        string charDatapath = Path.Combine(jsonDataPath, "CharData.json");
+        if (MyCharDatas == null)
+        {
+            Debug.Log("No HighScore");
+            return;
+        }
+        string jsonData = JsonUtility.ToJson(MyCharDatas, true);
+        File.WriteAllText(charDatapath, jsonData);
+    }
+
+    public void LoadCharDatas()
+    {
+        string filePath = Path.Combine(jsonDataPath, "CharData.json");
+        if (File.Exists(filePath))
+        {
+            string jsonData = File.ReadAllText(filePath);
+            MyCharDatas = JsonUtility.FromJson<CharSaveDatas>(jsonData);
+        }
+        else
+        {
+            MyCharDatas = new CharSaveDatas();
+            SaveCharDatas();
         }
     }
 

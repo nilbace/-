@@ -14,6 +14,7 @@ public class SelectedUI : MonoBehaviour
     [SerializeField] TMP_Text _myHighScore;
     [SerializeField] StageInfoDatas stageInfos;
     [SerializeField] Button[] _stageBTNs;
+    [SerializeField] Button _startBTN;
 
     private void Start()
     {
@@ -21,8 +22,16 @@ public class SelectedUI : MonoBehaviour
         {
             _stageBTNs[i].interactable = true;
         }
-
+        
         gameObject.SetActive(false);
+        if(Managers.Data.MyBellData.NowBellCount>0)
+        {
+            _startBTN.interactable = true;
+        }
+        else
+        {
+            _startBTN.interactable = false;
+        }
     }
 
     public void GoLobby()
@@ -70,7 +79,6 @@ public class SelectedUI : MonoBehaviour
             _123stars[1].SetActive(false);
             _123stars[2].SetActive(false);
         }
-
     }
 
     public void StartGame()
@@ -80,7 +88,6 @@ public class SelectedUI : MonoBehaviour
             Managers.Data.UseBell();
             Managers.Scene.LoadScene(Define.Scene.Game);
         }
-        
     }
 
 }

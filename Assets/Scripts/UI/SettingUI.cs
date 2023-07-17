@@ -13,14 +13,6 @@ public class SettingUI : MonoBehaviour
         SetSettingPannel();
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Backspace))
-        {
-            Managers.UI.ClosePopup();
-        }
-    }
-
 
     void SetSettingPannel()
     {
@@ -69,5 +61,11 @@ public class SettingUI : MonoBehaviour
             Managers.Data.MySettingData.SFXSound = sliders[1].value;
             Managers.Data.SaveSettingData();
         }
+    }
+
+
+    public void CloseBTN()
+    {
+        Managers.UI.ClosePopup();
     }
 }

@@ -11,6 +11,7 @@ public class DataManager
     public BellData MyBellData { get; set; }
     public StoreData MyStoreData { get; set; }
     public SettingData MySettingData { get; set; }
+    public StageHighScoreData MyHighScoreData { get; set; }
 
     private string jsonDataPath;
 
@@ -35,6 +36,7 @@ public class DataManager
         LoadBellData();
         LoadStoreData();
         LoadSettingData();
+        LoadStageHighScoreData();
     }
 
     #endregion
@@ -46,7 +48,7 @@ public class DataManager
         string temp = (GetDateTime(MyBellData.BellPlusTime) - DateTime.Now).Minutes.ToString()
             + ":" + (GetDateTime(MyBellData.BellPlusTime) - DateTime.Now).Seconds.ToString();
 
-        return temp;
+        return temp; 
     }
 
     public void CalculateAndAddBell()
@@ -59,22 +61,28 @@ public class DataManager
         SaveBellData();
     }
 
-    public bool UseBell()
+    public bool CanUseBell()
     {
-        if(MyBellData.NowBellCount == 5)
+        if(MyBellData.NowBellCount > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void UseBell()
+    {
+        if (MyBellData.NowBellCount == 5)
         {
             MyBellData.BellPlusTime = GetDateTime(MyBellData.BellPlusTime).AddMinutes(30).ToString();
             MyBellData.NowBellCount--;
             SaveBellData();
-            return true;
         }
-        else if(MyBellData.NowBellCount > 0)
+        else if (MyBellData.NowBellCount > 0)
         {
             MyBellData.NowBellCount--;
             SaveBellData();
-            return true;
         }
-        return false;
     }
     void SaveBellData()
     {
@@ -120,9 +128,9 @@ public class DataManager
     void SaveStoreData()
     {
         string StoreDataPath = Path.Combine(jsonDataPath, "storeData.json");
-        if (MyBellData == null)
+        if (MyStoreData == null)
         {
-            Debug.Log("no BellData");
+            Debug.Log("no StoreData");
             return;
         }
         string jsonData = JsonUtility.ToJson(MyStoreData);
@@ -148,9 +156,9 @@ public class DataManager
     public void SaveSettingData()
     {
         string settingDataPath = Path.Combine(jsonDataPath, "settingData.json");
-        if (MyBellData == null)
+        if (MySettingData == null)
         {
-            Debug.Log("No BellData");
+            Debug.Log("No SettingData");
             return;
         }
         string jsonData = JsonUtility.ToJson(MySettingData);
@@ -171,6 +179,37 @@ public class DataManager
             SaveSettingData();
         }
     }
+    #endregion
+
+
+    #region HighScore
+    public void SaveStageHighScoreData()
+    {
+        string stageHighScoreDataPath = Path.Combine(jsonDataPath, "stageHighScoreData.json");
+        if (MyHighScoreData == null)
+        {
+            Debug.Log("No HighScore");
+            return;
+        }
+        string jsonData = JsonUtility.ToJson(MyHighScoreData);
+        File.WriteAllText(stageHighScoreDataPath, jsonData);
+    }
+
+    void LoadStageHighScoreData()
+    {
+        string filePath = Path.Combine(jsonDataPath, "stageHighScoreData.json");
+        if (File.Exists(filePath))
+        {
+            string jsonData = File.ReadAllText(filePath);
+            MyHighScoreData = JsonUtility.FromJson<StageHighScoreData>(jsonData);
+        }
+        else
+        {
+            MyHighScoreData = new StageHighScoreData();
+            SaveStageHighScoreData();
+        }
+    }
+
     #endregion
 }
 
@@ -211,6 +250,27 @@ public class SettingData
         this.isFixedJoystick = true;
         BGMSound = 1f;
         SFXSound = 1f;
+    }
+}
+
+[System.Serializable]
+public class StageHighScoreData
+{
+    public int[] HighScores = new int[12];
+    public int clearStageIndex;
+    public bool[] GetReward = new bool[36];
+
+    public StageHighScoreData()
+    {
+        for (int i = 0; i < HighScores.Length; i++)
+        {
+            HighScores[i] = 0;
+        }
+        clearStageIndex = 0;
+        for (int i = 0; i < GetReward.Length; i++)
+        {
+            GetReward[i] = false;
+        }
     }
 }
 

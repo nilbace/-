@@ -88,4 +88,18 @@ public class Define : MonoBehaviour
     MaxCount,
          
     }
+
+    [System.Serializable]
+    public class StageInfoData
+    {
+        public string BossName;
+        public int ThreeStarScore;
+        public int TwoStarScore;
+        public int OneStarScore;
+
+        public int OneStarReward;
+        public int TwoStarReward;
+        public int ThreeStarReward;
+        public Sprite BossImg;
+    }
 }

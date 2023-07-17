@@ -460,6 +460,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5915532085855915021, guid: a1265b4b54046d147ba0fb5014c9c4bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5915532086020759546, guid: a1265b4b54046d147ba0fb5014c9c4bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -575,6 +579,18 @@ PrefabInstance:
     - target: {fileID: 5915532086372583525, guid: a1265b4b54046d147ba0fb5014c9c4bf, type: 3}
       propertyPath: m_Name
       value: Lobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915532086420119677, guid: a1265b4b54046d147ba0fb5014c9c4bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915532086784269944, guid: a1265b4b54046d147ba0fb5014c9c4bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915532086893090284, guid: a1265b4b54046d147ba0fb5014c9c4bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1265b4b54046d147ba0fb5014c9c4bf, type: 3}

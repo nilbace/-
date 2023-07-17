@@ -8,16 +8,21 @@ public class LobbyUI : MonoBehaviour
     [SerializeField] TMPro.TMP_Text bellPlusText;
     [SerializeField] TMPro.TMP_Text moneyText;
     [SerializeField] TMPro.TMP_Text RubyText;
+    int _lastbellCount;
 
     private void Start()
     {
-        for(int i =0;  i< Managers.Data.MyBellData.NowBellCount; i++)
+        _lastbellCount = Managers.Data.MyBellData.NowBellCount;
+
+        for (int i =0;  i< Managers.Data.MyBellData.NowBellCount; i++)
         {
             bells[i].gameObject.SetActive(true);
         }
         moneyText.text = Managers.Data.MyStoreData.MyGoldAmount.ToString();
         RubyText.text = Managers.Data.MyStoreData.MyRubyAmount.ToString();
     }
+
+  
 
     private void FixedUpdate()
     {
@@ -28,6 +33,12 @@ public class LobbyUI : MonoBehaviour
         }
         else if (Managers.Data.MyBellData.NowBellCount == 5)
             bellPlusText.gameObject.SetActive(false);
+
+        if(Managers.Data.LastTimeForBell() == "0:-1")
+        {
+            Managers.Data.CalculateAndAddBell();
+            Start();
+        }
     }
 
     public void StartBTN()

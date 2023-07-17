@@ -224,7 +224,17 @@ public class DataManager
 
     #region CharDatas
 
-   
+    public void ResetCatStat()
+    {
+        for(int i = 0; i<6;i++)
+        {
+            int temp = GetThisCatStat((Define.StatName)i);
+            CalThisCatStat((Define.StatName)i, -temp);
+            CalThisCatStat(Define.StatName.extra, temp);
+        }
+        SaveDatas();
+    }
+
     public int GetThisCatStat(Define.StatName statname)
     {
         if(statname == Define.StatName.Total)

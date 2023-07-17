@@ -38,6 +38,7 @@ public class CharUpgrade : MonoBehaviour
     }
     public void CloseBTN()
     {
+        CharPet.instance.Init();
         Managers.UI.ClosePopup();
     }
 
@@ -55,6 +56,12 @@ public class CharUpgrade : MonoBehaviour
             Managers.Data.CalThisCatStat(Define.StatName.extra, 1);
 
         }
+        Init();
+    }
+
+    public void ResetStatBTN()
+    {
+        Managers.Data.ResetCatStat();
         Init();
     }
 }

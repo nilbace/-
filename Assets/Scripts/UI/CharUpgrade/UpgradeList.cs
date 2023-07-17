@@ -34,9 +34,14 @@ public class UpgradeList : MonoBehaviour
         
 
         if(Managers.Data.MyCharDatas.charSaveDatas
-            [Managers.Data.SelectedCatIndex].StatLevels[6] > 0)
+            [Managers.Data.SelectedCatIndex].StatLevels[6] > 0
+            && Managers.Data.GetThisCatStat((Define.StatName)n)  < charData.ThreeValues[n].MaxValue) 
         {
             UpgradeButton.interactable = true;
+        }
+        else
+        {
+            UpgradeButton.interactable = false;
         }
 
         if(n==5 && Managers.Data.MyCharDatas.charSaveDatas
@@ -48,6 +53,7 @@ public class UpgradeList : MonoBehaviour
 
     public void Upgrade()
     {
+
         Managers.Data.CalThisCatStat((Define.StatName)_n, 1);
         Managers.Data.CalThisCatStat(Define.StatName.extra, -1);
         if (_n ==5)
@@ -60,4 +66,5 @@ public class UpgradeList : MonoBehaviour
         CharUpgrade.instance.Init();
     }
 
+    
 }

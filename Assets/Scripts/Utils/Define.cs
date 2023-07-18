@@ -34,6 +34,11 @@ public class Define : MonoBehaviour
         Selected,
         CharPet,
         CharUpgrade,
+        Pause,
+        Quit,
+        D_Continue,
+        StageClear,
+        StageFail,
         MaxCount
     }
 

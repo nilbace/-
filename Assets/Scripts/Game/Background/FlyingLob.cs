@@ -8,7 +8,7 @@ public class FlyingLob : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<Player>().PlayerHP -= 100;
+            GameScene.instance.PlayerGetDamage();
         }
     }
 
@@ -16,7 +16,7 @@ public class FlyingLob : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<Player>().PlayerHP -= 100;
+            GameScene.instance.PlayerGetDamage();
         }
     }
 

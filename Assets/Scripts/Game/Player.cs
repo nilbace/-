@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Joystick fixedJoystick;
+    public Joystick[] Joystick;
+    Joystick _nowjoystick;
 
     Rigidbody2D rigid;
     public float moveSpeed;
     Vector3 moveVec;
 
-    public float AttackTerm;
-
     [SerializeField] BulletPool bulletPool;
 
-    [Header("HP")]
-    [SerializeField] int _hp = 5;
-    public int PlayerHP { get { return _hp; } set { _hp = value; } }
-    bool _isalive = true;
+    StatManager _statmanager;
+    int[] resultStats = new int[6];
+    float _attackTerm;
 
     [Header("Power")]
     public int PowerLevel = 1;
@@ -26,19 +24,26 @@ public class Player : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        StartCoroutine(Shooting());
+        _statmanager = GetComponent<StatManager>();
+
+        SetStat();
+
+        if (Managers.Data.MySettingData.isFixedJoystick)
+        {
+            _nowjoystick = Joystick[0];
+            Joystick[1].gameObject.SetActive(false);
+        }
+        else
+        {
+            _nowjoystick = Joystick[1];
+            Joystick[0].gameObject.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
     {
-        if (PlayerHP < 0 && _isalive == true)
-        {
-            _isalive = false;
-            PlayerDead();
-        }
-
-        float x = fixedJoystick.Horizontal;
-        float y = fixedJoystick.Vertical;
+        float x = _nowjoystick.Horizontal;
+        float y = _nowjoystick.Vertical;
 
         moveVec = new Vector3(x, y, 0) * moveSpeed * Time.deltaTime;
         rigid.MovePosition((Vector3)rigid.position + moveVec);
@@ -49,46 +54,60 @@ public class Player : MonoBehaviour
         
     }
 
-    void PlayerDead()
+    void SetStat()
     {
-        print("ав╬З╬Н!");
+        resultStats = _statmanager.ResultStats;
+        _attackTerm = 50f / (float)resultStats[1];
+        print(_attackTerm);
+        StartCoroutine(Shooting());
     }
+
 
     IEnumerator Shooting()
     {
         while(true)
         {
-            if(PowerLevel == 1)
+            if(Managers.Data.SelectedCatIndex == 0)
             {
-                yield return new WaitForSeconds(AttackTerm);
-                GameObject bullet = bulletPool.GetBullet();
-                if (bullet != null)
+                if (PowerLevel == 1)
                 {
-                    bullet.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level1, 0f);
+                    yield return new WaitForSeconds(_attackTerm);
+                    GameObject bullet = bulletPool.GetBullet();
+                    if (bullet != null)
+                    {
+                        bullet.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level1, 0f, resultStats[0]);
+                    }
+                }
+
+                else if (PowerLevel == 2)
+                {
+                    yield return new WaitForSeconds(_attackTerm);
+                    GameObject bullet1 = bulletPool.GetBullet();
+                    bullet1.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level2_1, 0f, resultStats[0]);
+                    GameObject bullet2 = bulletPool.GetBullet();
+                    bullet2.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level2_2, 0f, resultStats[0]);
+                }
+
+                else
+                {
+                    yield return new WaitForSeconds(_attackTerm);
+                    GameObject bullet1 = bulletPool.GetBullet();
+                    bullet1.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_1, 30f, resultStats[0]);
+                    GameObject bullet2 = bulletPool.GetBullet();
+                    bullet2.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_2, 0f, resultStats[0]);
+                    GameObject bullet3 = bulletPool.GetBullet();
+                    bullet3.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_3, 0f, resultStats[0]);
+                    GameObject bullet4 = bulletPool.GetBullet();
+                    bullet4.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_4, -30f, resultStats[0]);
                 }
             }
 
-            else if(PowerLevel == 2)
+            else if(Managers.Data.SelectedCatIndex == 1)
             {
-                yield return new WaitForSeconds(AttackTerm);
-                GameObject bullet1 = bulletPool.GetBullet();
-                bullet1.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level2_1, 0f);
-                GameObject bullet2 = bulletPool.GetBullet();
-                bullet2.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level2_2, 0f);
+
             }
 
-            else
-            {
-                yield return new WaitForSeconds(AttackTerm);
-                GameObject bullet1 = bulletPool.GetBullet();
-                bullet1.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_1, 30f);
-                GameObject bullet2 = bulletPool.GetBullet();
-                bullet2.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_2, 0f);
-                GameObject bullet3 = bulletPool.GetBullet();
-                bullet3.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_3, 0f);
-                GameObject bullet4 = bulletPool.GetBullet();
-                bullet4.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_4, -30f);
-            }
+
         }
     }
 }

@@ -10,15 +10,17 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] float _moveSpeed;
     private Camera mainCamera;
+    int _damage;
 
     private void Start()
     {
         mainCamera = Camera.main;
     }
-    public void SetBullet(Vector3 playerposition, float rotation)
+    public void SetBullet(Vector3 playerposition, float rotation, int damage)
     {
         transform.rotation = Quaternion.Euler(0f, 0f, rotation);
         transform.position = playerposition;
+        _damage = damage;
     }
 
 
@@ -49,7 +51,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyBase>().MonGetDamage(_damage);
             gameObject.SetActive(false);
+        }    
     }
 }

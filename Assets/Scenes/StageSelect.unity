@@ -3207,6 +3207,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3147370173554649047, guid: f4895f1c4e866a443b4a116db95568c1, type: 3}
+      propertyPath: m_fontSize
+      value: 50.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3147370173554649047, guid: f4895f1c4e866a443b4a116db95568c1, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3147370173596402828, guid: f4895f1c4e866a443b4a116db95568c1, type: 3}
       propertyPath: m_Name
       value: BackBTN
@@ -3238,6 +3246,14 @@ PrefabInstance:
     - target: {fileID: 3147370173596402830, guid: f4895f1c4e866a443b4a116db95568c1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3147370173654551657, guid: f4895f1c4e866a443b4a116db95568c1, type: 3}
+      propertyPath: m_fontSize
+      value: 50.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3147370173654551657, guid: f4895f1c4e866a443b4a116db95568c1, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4895f1c4e866a443b4a116db95568c1, type: 3}

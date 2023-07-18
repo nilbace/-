@@ -51,15 +51,8 @@ public class RaserBeam : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<Player>().PlayerHP -= 100;
+            GameScene.instance.PlayerGetDamage(10);
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            collision.GetComponent<Player>().PlayerHP -= 100;
-        }
-    }
 }

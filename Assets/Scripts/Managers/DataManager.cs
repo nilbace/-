@@ -14,6 +14,7 @@ public class DataManager
     public SettingData MySettingData { get; set; }
     public StageHighScoreData MyHighScoreData { get; set; }
     public CharSaveDatas MyCharDatas { get; set; }
+    
 
 
     public void Init()

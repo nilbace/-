@@ -23,7 +23,7 @@ public class MonsterBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Player>().PlayerHP--;
+            GameScene.instance.PlayerGetDamage();
             gameObject.SetActive(false);
         }
     }

@@ -49,20 +49,26 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void MonGetDamage(int n)
     {
-        if(collision.gameObject.tag == "PlayerBullet")
-        {
-            _myHP--;
-        }
+        _myHP -= n;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Player>().PlayerHP -= 2000;
+            if(!IsBoss)
+            {
+                GameScene.instance.PlayerGetDamage();
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                GameScene.instance.PlayerGetDamage();
+            }
         }
+
     }
 }
 

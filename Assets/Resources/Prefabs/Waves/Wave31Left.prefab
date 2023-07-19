@@ -87,6 +87,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: IsNamed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: BulletSize
       value: 0.46
       objectReference: {fileID: 0}
@@ -118,6 +122,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ec2830cbdccedb346a03acee8304eb82, type: 3}
+    - target: {fileID: 2886714046877487567, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5033532135144874021, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: m_Size.x
       value: 1.1274678

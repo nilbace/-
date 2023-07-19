@@ -44,7 +44,7 @@ public class GameScene : MonoBehaviour
     void Update()
     {
         ScroeTMP.text = ScoreAmount.ToString();
-        GoldTMP.text = GoldAmount.ToString();
+        GoldTMP.text = Define.FormatNumber(GoldAmount);
         if(_bossAppear)
         {
             BossHP.rectTransform.sizeDelta = new Vector2(GetBossHPRatio(), 100);
@@ -58,7 +58,7 @@ public class GameScene : MonoBehaviour
         }
     }
 
-    #region Heart Gold Score BossHP
+    #region Heart
     void SetHeart()
     {
         _heartCount = StatManager.instance.GetReusltStat(Define.StatName.HpBonus) - 1;
@@ -85,6 +85,25 @@ public class GameScene : MonoBehaviour
         Hearts[_heartCount].SetActive(false);
         _heartCount--;
     }
+    #endregion
+
+    #region Score
+    public void GetScore(int n)
+    {
+        ScoreAmount += n;
+    }
+    #endregion
+
+    #region Gold
+
+    public void PlayerGetGold(int n)
+    {
+        GoldAmount += n;
+    }
+
+    #endregion
+
+    #region Boss
 
 
     public void BossAppear(int MaxHP, EnemyBase _bossScript)
@@ -102,6 +121,20 @@ public class GameScene : MonoBehaviour
 
     #endregion
 
+    #region Clear
+
+    public void ClearStage(int n)
+    {
+        StartCoroutine(showClearUI());
+    }
+
+    IEnumerator showClearUI()
+    {
+        yield return new WaitForSeconds(2f);
+        Managers.UI.ShowPopup(Define.Popup.StageClear);
+    }
+
+    #endregion
 
     #region LoadWave+UI
     public static void LoadWave(int i)

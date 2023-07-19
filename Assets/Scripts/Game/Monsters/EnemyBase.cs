@@ -10,8 +10,16 @@ public class EnemyBase : MonoBehaviour
     float _movespeed;
     public float MonsterHP { get { return _myHP; } set { _myHP = value; } }
     public bool IsBoss = false;
-    
+    public bool IsNamed = false;
 
+    string ItemPath = "Prefabs/MonItems/";
+    private void Start()
+    {
+        if(IsBoss)
+        {
+            GameScene.instance.BossAppear((int)MonsterHP, this);
+        }
+    }
     public void SetMonster(Define.WaveData waveData)
     {
         MonsterHP = waveData.MonsterHP;
@@ -27,7 +35,7 @@ public class EnemyBase : MonoBehaviour
 
     void Update()
     {
-        if (MonsterHP < 0)
+        if (MonsterHP <= 0)
             Dead();
 
         else
@@ -45,8 +53,68 @@ public class EnemyBase : MonoBehaviour
         gameObject.SetActive(false);
         if (IsBoss)
         {
-            SceneManager.LoadScene("StageSelect");
+            //GameScene.instance.
         }
+    }
+
+    private void OnDisable()
+    {
+        DropGolds();
+        DropScores();
+
+    }
+
+    void DropScores()
+    {
+        if (IsNamed)
+        {
+            GameScene.instance.GetScore(1000);
+        }
+        else if (IsBoss)
+        {
+            GameScene.instance.GetScore(10000);
+        }
+        else
+        {
+            GameScene.instance.GetScore(100);
+        }
+    }
+
+
+    void DropGolds()
+    {
+        if(IsNamed)
+        {
+            for(int i = 0; i<5; i++)
+            {
+                DropGold();
+            }
+        }
+        else if(IsBoss)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                DropGold();
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                DropGold();
+            }
+        }
+    }
+
+    void DropGold()
+    {
+        string temppath = ItemPath + Define.DropItems.DropGold.ToString();
+        float Randx = Random.Range(-0.5f, 0.5f);
+        float Randy = Random.Range(-0.5f, -1.5f);
+        Vector3 randPoz = new Vector3(Randx, Randy, 0) + transform.position;
+        GameObject go = Instantiate(Resources.Load<GameObject>(temppath), randPoz, Quaternion.identity);
+
+        go.GetComponent<DropGold>().Setting(10);
     }
 
     public void MonGetDamage(int n)

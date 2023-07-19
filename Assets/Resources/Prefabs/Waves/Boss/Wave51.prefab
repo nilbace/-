@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myHP: 400
   IsBoss: 1
+  IsNamed: 0
 --- !u!50 &7852752602627403277
 Rigidbody2D:
   serializedVersion: 4
@@ -197,18 +198,14 @@ MonoBehaviour:
   RaserPrefab: {fileID: 6544904726160064764, guid: 46bac7a73c237724084b9d7cce16f439, type: 3}
   SplitBall: {fileID: 1655372175088003629, guid: 06d2a28a870a60645b546439095e902d, type: 3}
   BossPatternData:
-  - {x: 23, y: 2}
-  - {x: 22, y: 2}
-  - {x: 27, y: 2}
-  - {x: 30, y: 2}
-  - {x: 39, y: 2}
-  - {x: 41, y: 2}
-  - {x: 43, y: 2}
-  - {x: 46, y: 2}
-  - {x: 52, y: 2}
-  - {x: 54, y: 2}
-  - {x: 55, y: 2}
-  - {x: 52, y: 2}
+  - {x: 1, y: 2}
+  - {x: 2, y: 2}
+  - {x: 3, y: 2}
+  - {x: 4, y: 2}
+  - {x: 5, y: 2}
+  - {x: 6, y: 2}
+  - {x: 7, y: 2}
+  - {x: 8, y: 2}
 --- !u!114 &6438862335061553332
 MonoBehaviour:
   m_ObjectHideFlags: 0

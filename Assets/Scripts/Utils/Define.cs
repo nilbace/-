@@ -146,4 +146,11 @@ public class Define : MonoBehaviour
         MaxCount
     }
 
+    public enum DropItems
+    {
+        DropGold,
+
+    }
+
+
 }

@@ -58,7 +58,6 @@ public class Player : MonoBehaviour
     {
         resultStats = _statmanager.ResultStats;
         _attackTerm = 50f / (float)resultStats[1];
-        print(_attackTerm);
         StartCoroutine(Shooting());
     }
 

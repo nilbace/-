@@ -468,7 +468,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 523662165}
   m_OnClick:
     m_PersistentCalls:
@@ -555,7 +555,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 670674153}
   m_OnClick:
     m_PersistentCalls:
@@ -579,7 +579,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -1004,7 +1004,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 877984318}
   m_OnClick:
     m_PersistentCalls:
@@ -1028,7 +1028,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -1363,7 +1363,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1208848164}
   m_OnClick:
     m_PersistentCalls:
@@ -1507,7 +1507,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1219149009}
   m_OnClick:
     m_PersistentCalls:
@@ -1892,7 +1892,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1426438251}
   m_OnClick:
     m_PersistentCalls:
@@ -2079,7 +2079,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1509339628}
   m_OnClick:
     m_PersistentCalls:
@@ -2228,7 +2228,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1700172019}
   m_OnClick:
     m_PersistentCalls:
@@ -2372,7 +2372,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1725763814}
   m_OnClick:
     m_PersistentCalls:
@@ -2532,7 +2532,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1869533197}
   m_OnClick:
     m_PersistentCalls:
@@ -3059,7 +3059,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 2076622744}
   m_OnClick:
     m_PersistentCalls:
@@ -3342,7 +3342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3022935640968982970, guid: 4dc5afd088907b84faeb4245a119bb20, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3022935640968982974, guid: 4dc5afd088907b84faeb4245a119bb20, type: 3}
       propertyPath: m_SortingOrder
@@ -3680,6 +3680,10 @@ PrefabInstance:
     - target: {fileID: 8458020589476918297, guid: 8bb6d530eeea0e641949c017463e8654, type: 3}
       propertyPath: m_Name
       value: StageInfos
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458020589476918297, guid: 8bb6d530eeea0e641949c017463e8654, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8458020589476918302, guid: 8bb6d530eeea0e641949c017463e8654, type: 3}
       propertyPath: m_RootOrder

@@ -239,13 +239,12 @@ MonoBehaviour:
       SpawnPoint: {x: 0, y: 5}
     - WaveName: Wave62
       WaveMonster: {fileID: 3961937674712807615, guid: 39a277b1a887cbf4fae10f04bd8adae1, type: 3}
-      MonsterHP: 400
+      MonsterHP: 5000
       WaveMoveSpeed: 3
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 5}
   _waveControlData:
-  - {x: 0, y: 62}
-  - {x: 200, y: 2}
+  - {x: 2, y: 2}
   - {x: 4, y: 4}
   - {x: 2, y: 3}
   - {x: 4, y: 4}
@@ -282,5 +281,6 @@ MonoBehaviour:
   - {x: 4, y: 1}
   - {x: 4, y: 33}
   - {x: 4, y: 35}
+  - {x: 0, y: 62}
   Log: {fileID: 7020389787168640034, guid: 9b59e65c40d13bf429c3f9f5054cec79, type: 3}
   LogWarning: {fileID: 4302185438866433526, guid: ba7a78c103191db4aba303a93e3d111c, type: 3}

@@ -38,6 +38,7 @@ public class GameScene : MonoBehaviour
     void Init()
     {
         Time.timeScale = 1f;
+        TempSound.instance.TurnONBGM(TempSound.BGMName.Stage);
         LoadWave(Managers.Data.SelectedBossindex);
         SetHeart();
         BossGO.SetActive(false);

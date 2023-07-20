@@ -12,6 +12,7 @@ public class LobbyUI : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
+        TempSound.instance.TurnONBGM(TempSound.BGMName.Lobby);
     }
 
     private void FixedUpdate()

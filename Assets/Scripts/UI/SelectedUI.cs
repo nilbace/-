@@ -46,7 +46,7 @@ public class SelectedUI : MonoBehaviour
         Managers.Data.SelectedBossindex = n;
         StageInfoData thisStageData = stageInfos.datas[k];
 
-        _stageName.text = "STAGE" + n.ToString();
+        _stageName.text = "STAGE" + (n+1).ToString();
         _myHighScore.text = "BEST SCORE : " + Managers.Data.MyHighScoreData.HighScores[k].ToString();
         _321ReqScoreTmps[0].text = "점수 " +thisStageData.ThreeStarScore.ToString() + "점 이상";
         _321ReqScoreTmps[1].text = "점수 " + thisStageData.TwoStarScore.ToString() + "점 이상";

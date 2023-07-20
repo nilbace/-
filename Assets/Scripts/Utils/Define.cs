@@ -6,8 +6,6 @@ public class Define : MonoBehaviour
 {
     public static string FormatNumber(int value)
     {
-        const string separator = ",";
-
         if (value < 1000)
         {
             return value.ToString();

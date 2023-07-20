@@ -713,7 +713,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7086932472400778738}
         m_TargetAssemblyTypeName: StageFail, Assembly-CSharp
-        m_MethodName: StageSelBTN
+        m_MethodName: CharPetBTN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

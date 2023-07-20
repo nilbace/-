@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
+using System.Text;
 
 public class DataManager 
 {
     //스테이지 셀렉트
-    public int SelectedBossindex { get; set; } = 1;
+    public int SelectedBossindex { get; set; } = 0;
     public int SelectedCatIndex { get; set; } = (int)Define.CatName.Cheese;
     public BellData MyBellData { get; set; }
     public StoreData MyStoreData { get; set; }
@@ -19,11 +20,6 @@ public class DataManager
 
     public void Init()
     {
-#if UNITY_EDITOR
-        jsonDataPath = Path.Combine(Application.dataPath, "SaveDatas");
-#else
-        jsonDataPath = Path.Combine(Application.persistentDataPath, "SaveDatas");
-#endif
         LoadAllData();
         CalculateAndAddBell();
     }
@@ -41,7 +37,7 @@ public class DataManager
         LoadCharDatas();
     }
 
-    public void SaveDatas()
+    public void SaveAllDatas()
     {
         SaveBellData();
         SaveStoreData();
@@ -97,28 +93,47 @@ public class DataManager
     }
     void SaveBellData()
     {
-        string BellDataPath = Path.Combine(jsonDataPath, "bellData.json");
-        if(MyBellData == null)
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
         {
-            Debug.Log("no BellData");
-            return;
+            path = Path.Combine(Application.persistentDataPath, "MyBellData.json");
+        }
+        else
+        {
+            path = Path.Combine(Application.dataPath, "MyBellData.json");
         }
         string jsonData = JsonUtility.ToJson(MyBellData, true);
-        File.WriteAllText(BellDataPath, jsonData);
+
+        FileStream fileStream = new FileStream(path, FileMode.Create);
+        byte[] data = Encoding.UTF8.GetBytes(jsonData);
+        fileStream.Write(data, 0, data.Length);
+        fileStream.Close();
     }
     void LoadBellData()
     {
-        string filePath = Path.Combine(jsonDataPath, "bellData.json");
-        if (File.Exists(filePath))
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
         {
-            string jsonData = File.ReadAllText(filePath);
-            MyBellData = JsonUtility.FromJson<BellData>(jsonData);
+            path = Path.Combine(Application.persistentDataPath, "MyBellData.json");
         }
         else
+        {
+            path = Path.Combine(Application.dataPath, "MyBellData.json");
+        }
+
+        if(!File.Exists(path))
         {
             MyBellData = new BellData();
             SaveBellData();
         }
+
+        FileStream fileStream = new FileStream(path, FileMode.Open);
+        byte[] data = new byte[fileStream.Length];
+        fileStream.Read(data, 0, data.Length);
+        fileStream.Close();
+        string jsonData = Encoding.UTF8.GetString(data);
+
+        MyBellData = JsonUtility.FromJson<BellData>(jsonData);
     }
 
     public DateTime GetDateTime(string timeString)
@@ -138,57 +153,96 @@ public class DataManager
     #region Store
     void SaveStoreData()
     {
-        string StoreDataPath = Path.Combine(jsonDataPath, "storeData.json");
-        if (MyStoreData == null)
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
         {
-            Debug.Log("no StoreData");
-            return;
-        }
-        string jsonData = JsonUtility.ToJson(MyStoreData);
-        File.WriteAllText(StoreDataPath, jsonData);
-    }
-    void LoadStoreData()
-    {
-        string filePath = Path.Combine(jsonDataPath, "storeData.json");
-        if (File.Exists(filePath))
-        {
-            string jsonData = File.ReadAllText(filePath);
-            MyStoreData = JsonUtility.FromJson<StoreData>(jsonData);
+            path = Path.Combine(Application.persistentDataPath, "MyStoreData.json");
         }
         else
         {
+            path = Path.Combine(Application.dataPath, "MyStoreData.json");
+        }
+        string jsonData = JsonUtility.ToJson(MyStoreData, true);
+
+        FileStream fileStream = new FileStream(path, FileMode.Create);
+        byte[] data = Encoding.UTF8.GetBytes(jsonData);
+        fileStream.Write(data, 0, data.Length);
+        fileStream.Close();
+    }
+    void LoadStoreData()
+    {
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            path = Path.Combine(Application.persistentDataPath, "MyStoreData.json");
+        }
+        else
+        {
+            path = Path.Combine(Application.dataPath, "MyStoreData.json");
+        }
+
+        if (!File.Exists(path))
+        {
             MyStoreData = new StoreData();
+            MyStoreData.MyGoldAmount = 1000000;
             SaveStoreData();
         }
+
+        FileStream fileStream = new FileStream(path, FileMode.Open);
+        byte[] data = new byte[fileStream.Length];
+        fileStream.Read(data, 0, data.Length);
+        fileStream.Close();
+        string jsonData = Encoding.UTF8.GetString(data);
+
+        MyStoreData = JsonUtility.FromJson<StoreData>(jsonData);
     }
     #endregion
 
     #region Setting
     public void SaveSettingData()
     {
-        string settingDataPath = Path.Combine(jsonDataPath, "settingData.json");
-        if (MySettingData == null)
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
         {
-            Debug.Log("No SettingData");
-            return;
+            path = Path.Combine(Application.persistentDataPath, "MySettingData.json");
         }
-        string jsonData = JsonUtility.ToJson(MySettingData);
-        File.WriteAllText(settingDataPath, jsonData);
+        else
+        {
+            path = Path.Combine(Application.dataPath, "MySettingData.json");
+        }
+        string jsonData = JsonUtility.ToJson(MySettingData, true);
+
+        FileStream fileStream = new FileStream(path, FileMode.Create);
+        byte[] data = Encoding.UTF8.GetBytes(jsonData);
+        fileStream.Write(data, 0, data.Length);
+        fileStream.Close();
     }
 
     void LoadSettingData()
     {
-        string filePath = Path.Combine(jsonDataPath, "settingData.json");
-        if (File.Exists(filePath))
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
         {
-            string jsonData = File.ReadAllText(filePath);
-            MySettingData = JsonUtility.FromJson<SettingData>(jsonData);
+            path = Path.Combine(Application.persistentDataPath, "MySettingData.json");
         }
         else
+        {
+            path = Path.Combine(Application.dataPath, "MySettingData.json");
+        }
+
+        if (!File.Exists(path))
         {
             MySettingData = new SettingData();
             SaveSettingData();
         }
+
+        FileStream fileStream = new FileStream(path, FileMode.Open);
+        byte[] data = new byte[fileStream.Length];
+        fileStream.Read(data, 0, data.Length);
+        fileStream.Close();
+        string jsonData = Encoding.UTF8.GetString(data);
+
+        MySettingData = JsonUtility.FromJson<SettingData>(jsonData);
     }
     #endregion
 
@@ -196,29 +250,48 @@ public class DataManager
     #region HighScore
     public void SaveStageHighScoreData()
     {
-        string stageHighScoreDataPath = Path.Combine(jsonDataPath, "stageHighScoreData.json");
-        if (MyHighScoreData == null)
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
         {
-            Debug.Log("No HighScore");
-            return;
+            path = Path.Combine(Application.persistentDataPath, "MyHighScoreData.json");
         }
-        string jsonData = JsonUtility.ToJson(MyHighScoreData);
-        File.WriteAllText(stageHighScoreDataPath, jsonData);
+        else
+        {
+            path = Path.Combine(Application.dataPath, "MyHighScoreData.json");
+        }
+        string jsonData = JsonUtility.ToJson(MyHighScoreData, true);
+
+        FileStream fileStream = new FileStream(path, FileMode.Create);
+        byte[] data = Encoding.UTF8.GetBytes(jsonData);
+        fileStream.Write(data, 0, data.Length);
+        fileStream.Close();
     }
 
     void LoadStageHighScoreData()
     {
-        string filePath = Path.Combine(jsonDataPath, "stageHighScoreData.json");
-        if (File.Exists(filePath))
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
         {
-            string jsonData = File.ReadAllText(filePath);
-            MyHighScoreData = JsonUtility.FromJson<StageHighScoreData>(jsonData);
+            path = Path.Combine(Application.persistentDataPath, "MyHighScoreData.json");
         }
         else
+        {
+            path = Path.Combine(Application.dataPath, "MyHighScoreData.json");
+        }
+
+        if (!File.Exists(path))
         {
             MyHighScoreData = new StageHighScoreData();
             SaveStageHighScoreData();
         }
+
+        FileStream fileStream = new FileStream(path, FileMode.Open);
+        byte[] data = new byte[fileStream.Length];
+        fileStream.Read(data, 0, data.Length);
+        fileStream.Close();
+        string jsonData = Encoding.UTF8.GetString(data);
+
+        MyHighScoreData = JsonUtility.FromJson<StageHighScoreData>(jsonData);
     }
 
     #endregion
@@ -233,7 +306,7 @@ public class DataManager
             CalThisCatStat((Define.StatName)i, -temp);
             CalThisCatStat(Define.StatName.extra, temp);
         }
-        SaveDatas();
+        SaveAllDatas();
     }
 
     public int GetThisCatStat(Define.StatName statname)
@@ -253,34 +326,53 @@ public class DataManager
     public void CalThisCatStat(Define.StatName statName, int n)
     {
         MyCharDatas.charSaveDatas[SelectedCatIndex].StatLevels[(int)statName] += n;
-        SaveDatas();
+        SaveAllDatas();
     }
     
     public void SaveCharDatas()
     {
-        string charDatapath = Path.Combine(jsonDataPath, "CharData.json");
-        if (MyCharDatas == null)
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
         {
-            Debug.Log("No HighScore");
-            return;
+            path = Path.Combine(Application.persistentDataPath, "MyCharDatas.json");
+        }
+        else
+        {
+            path = Path.Combine(Application.dataPath, "MyCharDatas.json");
         }
         string jsonData = JsonUtility.ToJson(MyCharDatas, true);
-        File.WriteAllText(charDatapath, jsonData);
+
+        FileStream fileStream = new FileStream(path, FileMode.Create);
+        byte[] data = Encoding.UTF8.GetBytes(jsonData);
+        fileStream.Write(data, 0, data.Length);
+        fileStream.Close();
     }
 
     public void LoadCharDatas()
     {
-        string filePath = Path.Combine(jsonDataPath, "CharData.json");
-        if (File.Exists(filePath))
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
         {
-            string jsonData = File.ReadAllText(filePath);
-            MyCharDatas = JsonUtility.FromJson<CharSaveDatas>(jsonData);
+            path = Path.Combine(Application.persistentDataPath, "MyCharDatas.json");
         }
         else
+        {
+            path = Path.Combine(Application.dataPath, "MyCharDatas.json");
+        }
+
+        if (!File.Exists(path))
         {
             MyCharDatas = new CharSaveDatas();
             SaveCharDatas();
         }
+
+        FileStream fileStream = new FileStream(path, FileMode.Open);
+        byte[] data = new byte[fileStream.Length];
+        fileStream.Read(data, 0, data.Length);
+        fileStream.Close();
+        string jsonData = Encoding.UTF8.GetString(data);
+
+        MyCharDatas = JsonUtility.FromJson<CharSaveDatas>(jsonData);
     }
 
     #endregion

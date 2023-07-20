@@ -235,17 +235,21 @@ MonoBehaviour:
   - {x: 2, y: 2}
   - {x: 2, y: 14}
   - {x: 5, y: 4}
-  - {x: 3, y: 51}
   - {x: 5, y: 1}
+  - {x: 0, y: 99}
   - {x: 4, y: 7}
   - {x: 2, y: 12}
   - {x: 5, y: 4}
   - {x: 4, y: 31}
+  - {x: 0, y: 99}
   - {x: 4, y: 7}
   - {x: 2, y: 11}
   - {x: 2, y: 4}
   - {x: 2, y: 9}
   - {x: 3, y: 10}
   - {x: 2, y: 15}
+  - {x: 0, y: 99}
+  - {x: 3, y: 51}
   Log: {fileID: 7020389787168640034, guid: 9b59e65c40d13bf429c3f9f5054cec79, type: 3}
   LogWarning: {fileID: 4302185438866433526, guid: ba7a78c103191db4aba303a93e3d111c, type: 3}
+  PowerUp: {fileID: 6953580092862893647, guid: 2590ade27882701498c7bb5906d63550, type: 3}

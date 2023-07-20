@@ -1295,6 +1295,7 @@ MonoBehaviour:
   - {fileID: 869541692}
   - {fileID: 1062838335}
   - {fileID: 957345432}
+  ScoreText: {fileID: 5866821665382993112}
 --- !u!1 &8730056900386213111
 GameObject:
   m_ObjectHideFlags: 0

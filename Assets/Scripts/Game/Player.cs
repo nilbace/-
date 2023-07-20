@@ -21,6 +21,18 @@ public class Player : MonoBehaviour
     public int PowerLevel = 1;
     [SerializeField] Define.BulletPosition _bulletpositionGroup;
 
+    public void PowerUp()
+    {
+        if(PowerLevel < 3)
+        {
+            PowerLevel++;
+        }
+        else
+        {
+            return;
+        }
+    }
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -42,8 +54,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float x = _nowjoystick.Horizontal;
-        float y = _nowjoystick.Vertical;
+        float x = _nowjoystick.Horizontal * 0.5f;
+        float y = _nowjoystick.Vertical * 0.5f;
 
         moveVec = new Vector3(x, y, 0) * moveSpeed * Time.deltaTime;
         rigid.MovePosition((Vector3)rigid.position + moveVec);
@@ -57,7 +69,7 @@ public class Player : MonoBehaviour
     void SetStat()
     {
         resultStats = _statmanager.ResultStats;
-        _attackTerm = 50f / (float)resultStats[1];
+        _attackTerm = 25f / (float)resultStats[1];
         StartCoroutine(Shooting());
     }
 
@@ -91,13 +103,16 @@ public class Player : MonoBehaviour
                 {
                     yield return new WaitForSeconds(_attackTerm);
                     GameObject bullet1 = bulletPool.GetBullet();
-                    bullet1.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_1, 30f, resultStats[0]);
+                    bullet1.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_1, 15f, resultStats[0]);
+
                     GameObject bullet2 = bulletPool.GetBullet();
                     bullet2.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_2, 0f, resultStats[0]);
+
                     GameObject bullet3 = bulletPool.GetBullet();
                     bullet3.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_3, 0f, resultStats[0]);
+
                     GameObject bullet4 = bulletPool.GetBullet();
-                    bullet4.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_4, -30f, resultStats[0]);
+                    bullet4.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_4, -15f, resultStats[0]);
                 }
             }
 

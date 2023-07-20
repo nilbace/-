@@ -9,6 +9,8 @@ public class GameScene : MonoBehaviour
 {
     public static GameScene instance;
 
+    public StageInfoDatas stageInfoDatas;
+
     [SerializeField] GameObject[] Hearts;
     int _heartCount = 0;
     bool isDead = false;
@@ -105,6 +107,10 @@ public class GameScene : MonoBehaviour
 
     #region Boss
 
+    public void BossDead()
+    {
+        StartCoroutine(BossDie());
+    }
 
     public void BossAppear(int MaxHP, EnemyBase _bossScript)
     {
@@ -117,6 +123,16 @@ public class GameScene : MonoBehaviour
     public float GetBossHPRatio()
     {
         return ((float)_bossBase.MonsterHP / _bossMaxHP * 100);
+    }
+
+    IEnumerator BossDie()
+    {
+        yield return new WaitForSeconds(3f);
+        Time.timeScale = 0;
+        Managers.UI.ShowPopup(Define.Popup.StageClear);
+        Managers.Data.MyStoreData.MyGoldAmount += GoldAmount;
+        Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] = ScoreAmount;
+        Managers.Data.SaveAllDatas();
     }
 
     #endregion
@@ -139,7 +155,7 @@ public class GameScene : MonoBehaviour
     #region LoadWave+UI
     public static void LoadWave(int i)
     {
-        string path = "Prefabs/Stage/StageWave" + i.ToString(); // 프리팹의 경로
+        string path = "Prefabs/Stage/StageWave" + (i+1).ToString(); // 프리팹의 경로
         GameObject waveStagePrefab = Resources.Load<GameObject>(path); // 경로를 통해 프리팹 로드
 
         if (waveStagePrefab == null)

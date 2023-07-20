@@ -62,7 +62,7 @@ public class UpgradeList : MonoBehaviour
             Managers.Data.CalThisCatStat(Define.StatName.extra, -4);
         }
 
-        Managers.Data.SaveDatas();
+        Managers.Data.SaveAllDatas();
         CharUpgrade.instance.Init();
     }
 

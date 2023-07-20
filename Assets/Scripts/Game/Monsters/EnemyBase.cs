@@ -13,11 +13,12 @@ public class EnemyBase : MonoBehaviour
     public bool IsNamed = false;
 
     string ItemPath = "Prefabs/MonItems/";
+
     private void Start()
     {
         if(IsBoss)
         {
-            GameScene.instance.BossAppear((int)MonsterHP, this);
+            GameScene.instance.BossAppear((int)_myHP, this);
         }
     }
     public void SetMonster(Define.WaveData waveData)
@@ -53,14 +54,19 @@ public class EnemyBase : MonoBehaviour
         gameObject.SetActive(false);
         if (IsBoss)
         {
-            //GameScene.instance.
+            GameScene.instance.BossDead();
         }
     }
 
+    
+
     private void OnDisable()
     {
-        DropGolds();
-        DropScores();
+        if (Time.timeScale != 0 && _myHP <= 0)
+        {
+            DropGolds();
+            DropScores();
+        }
 
     }
 

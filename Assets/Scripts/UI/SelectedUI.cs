@@ -42,7 +42,7 @@ public class SelectedUI : MonoBehaviour
     public void SelectStage(int k)
         //k은 0부터 시작 n은 1부터 시작
     {
-        int n = k + 1;
+        int n = k;
         Managers.Data.SelectedBossindex = n;
         StageInfoData thisStageData = stageInfos.datas[k];
 
@@ -54,7 +54,11 @@ public class SelectedUI : MonoBehaviour
 
         //별 몇개인지 보여주기
         int myscore = Managers.Data.MyHighScoreData.HighScores[k];
+
+
         _bossImg.sprite = thisStageData.BossImg;
+
+
         if(myscore >= thisStageData.ThreeStarScore)
         {
             _123stars[0].SetActive(true);
@@ -85,7 +89,7 @@ public class SelectedUI : MonoBehaviour
     {
         if(Managers.Data.CanUseBell())
         {
-            Managers.Data.UseBell();
+            //Managers.Data.UseBell();
             Managers.Scene.LoadScene(Define.Scene.Game);
         }
     }

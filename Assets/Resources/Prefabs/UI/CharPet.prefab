@@ -1025,7 +1025,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lv.1 \uC5B4\uCA4C\uAD6C\uB0E5\uC774"
+  m_text: "Lv.1 \uCE58\uC988\uB0E5"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 59e4200b9d20bff47a472d45706275d1, type: 2}
   m_sharedMaterial: {fileID: 8346955573852615751, guid: 59e4200b9d20bff47a472d45706275d1, type: 2}
@@ -2190,7 +2190,7 @@ RectTransform:
   m_GameObject: {fileID: 4125024919873793225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5086, y: 1.5086, z: 1.5086}
   m_Children: []
   m_Father: {fileID: 4125024919485720402}
   m_RootOrder: 4
@@ -2228,7 +2228,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1076d3c247ccec6439a1a57ec745f448, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d937f48c71886e14eb1edb2d23e03111, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3110,9 +3110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2A4\uD0AC \uC124\uBA85\uC2A4\uD0AC \uC124\uBA85\uC2A4\uD0AC \uC124\uBA85\uC2A4\uD0AC
-    \uC124\uBA85\uC2A4\uD0AC \uC124\uBA85\uC2A4\uD0AC \uC124\uBA85\uC2A4\uD0AC \uC124\uBA85\uC2A4\uD0AC
-    \uC124\uBA85\uC2A4\uD0AC \uC124\uBA85\uC2A4\uD0AC \uC124\uBA85\uC2A4\uD0AC \uC124\uBA85"
+  m_text: "\uCD94\uAC00 \uC608\uC815\uC785\uB2C8\uB2E4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 59e4200b9d20bff47a472d45706275d1, type: 2}
   m_sharedMaterial: {fileID: 8346955573852615751, guid: 59e4200b9d20bff47a472d45706275d1, type: 2}

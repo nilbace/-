@@ -1472,6 +1472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf37ee2f77ff9524781e5e60f56332d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageInfoDatas: {fileID: 4178019880599631432, guid: 8bb6d530eeea0e641949c017463e8654, type: 3}
   Hearts:
   - {fileID: 795246073}
   - {fileID: 1688343112}
@@ -3004,6 +3005,22 @@ PrefabInstance:
       propertyPath: Joystick.Array.data[1]
       value: 
       objectReference: {fileID: 768024445}
+    - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: _bulletpositionGroup.Level2_1.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: _bulletpositionGroup.Level2_2.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: _bulletpositionGroup.Level3_2.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805576738229023091, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
+      propertyPath: _bulletpositionGroup.Level3_3.x
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7805576738229023092, guid: d9a3339b436f6ac4d90a1436f234de75, type: 3}
       propertyPath: m_Name
       value: Player

@@ -8,49 +8,39 @@ public class LobbyUI : MonoBehaviour
     [SerializeField] TMPro.TMP_Text bellPlusText;
     [SerializeField] TMPro.TMP_Text moneyText;
     [SerializeField] TMPro.TMP_Text RubyText;
-    int _lastbellCount;
-    int _lastGold;
-    int _lastRuby;
 
     private void Start()
     {
-        _lastbellCount = Managers.Data.MyBellData.NowBellCount;
-        _lastGold = Managers.Data.MyStoreData.MyGoldAmount;
-        _lastRuby = Managers.Data.MyStoreData.MyRubyAmount;
-
-        for (int i =0;  i< Managers.Data.MyBellData.NowBellCount; i++)
-        {
-            bells[i].gameObject.SetActive(true);
-        }
-        moneyText.text = Define.FormatNumber(Managers.Data.MyStoreData.MyGoldAmount);
-        RubyText.text = Managers.Data.MyStoreData.MyRubyAmount.ToString();
+        Time.timeScale = 1f;
     }
-
-  
 
     private void FixedUpdate()
     {
-        if (Managers.Data.MyBellData.NowBellCount < 5)
+        Managers.Data.CalculateAndAddBell();
+
+        if(Managers.Data.MyBellData.NowBellCount == 5)
         {
-            bellPlusText.text = Managers.Data.LastTimeForBell();
-            bellPlusText.gameObject.SetActive(true);
-        }
-        else if (Managers.Data.MyBellData.NowBellCount == 5)
             bellPlusText.gameObject.SetActive(false);
-
-        if(Managers.Data.LastTimeForBell() == "0:-1")
+        }
+        else
         {
-            Managers.Data.CalculateAndAddBell();
-            Start();
+            bellPlusText.gameObject.SetActive(true);
+            bellPlusText.text = Managers.Data.LastTimeForBell();
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            bells[i].gameObject.SetActive(i<Managers.Data.MyBellData.NowBellCount);
         }
 
-        if(_lastbellCount != Managers.Data.MyBellData.NowBellCount ||
-            _lastGold     != Managers.Data.MyStoreData.MyGoldAmount ||
-            _lastRuby     != Managers.Data.MyStoreData.MyRubyAmount
-            )
-        {
-            Start();
-        }
+        moneyText.text = Define.FormatNumber(Managers.Data.MyStoreData.MyGoldAmount);
+        RubyText.text = Define.FormatNumber(Managers.Data.MyStoreData.MyRubyAmount);
+    }
+
+    [ContextMenu("데이터 임시 체크")]
+    void showdata()
+    {
+        moneyText.text = Define.FormatNumber(Managers.Data.MyStoreData.MyGoldAmount) 
+            + " / " + Define.FormatNumber(Managers.Data.MyStoreData.MyRubyAmount);
     }
 
     public void StartBTN()

@@ -20,7 +20,7 @@ public class StageFail : MonoBehaviour
         Managers.Scene.LoadScene(Define.Scene.StageSelect);
     }
 
-    public void CharSelBTN()
+    public void CharPetBTN()
     {
         Managers.UI.ShowPopup(Define.Popup.CharPet);
     }

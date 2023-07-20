@@ -10,6 +10,7 @@ public class Stage1MonsterSpawner : MonoBehaviour
     public static Stage1MonsterSpawner instance;
     [SerializeField] GameObject Log;
     [SerializeField] GameObject LogWarning;
+    [SerializeField] GameObject PowerUp;
     
     void Start()
     {
@@ -50,6 +51,11 @@ public class Stage1MonsterSpawner : MonoBehaviour
         else if(n==35 || n==36 || n==37) // Åë³ª¹«
         {
             StartCoroutine(LogComming(n));
+        }
+        else if(n==99)
+        {
+            Vector3 poz = new Vector3(0, 7, 0);
+            GameObject.Instantiate(PowerUp, poz, Quaternion.identity);
         }
         else
             SpawnMonsterWave(FindDataWithWaveIndex(n));

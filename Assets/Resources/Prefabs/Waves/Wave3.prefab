@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
+    - target: {fileID: 4777925430440174824, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174825, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_Name
       value: boneworm-black (3)
@@ -69,11 +73,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.z
@@ -145,6 +149,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
+    - target: {fileID: 4777925430440174824, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174825, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_Name
       value: boneworm-black (2)
@@ -159,11 +167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.z
@@ -235,6 +243,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
+    - target: {fileID: 4777925430440174824, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174825, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_Name
       value: boneworm-black
@@ -249,11 +261,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.z
@@ -325,6 +337,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
+    - target: {fileID: 4777925430440174824, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174825, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_Name
       value: boneworm-black (5)
@@ -339,11 +355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.z
@@ -415,6 +431,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
+    - target: {fileID: 4777925430440174824, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174825, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_Name
       value: boneworm-black (4)
@@ -429,11 +449,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.z
@@ -505,6 +525,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
+    - target: {fileID: 4777925430440174824, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174825, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_Name
       value: boneworm-black (1)
@@ -519,11 +543,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4777925430440174827, guid: a935ca24139fd49428a721792dbd8c97, type: 3}
       propertyPath: m_LocalScale.z

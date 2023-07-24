@@ -7,17 +7,9 @@ public class Managers : MonoBehaviour
     static Managers s_instance;
     static Managers instance {get{Init(); return s_instance;}}
 
-
-    //InputManager _input = new InputManager();
-    //ResourceManager _resource = new ResourceManager();
-    //UI_Manager _ui_manager = new UI_Manager();
-
     DataManager _data = new DataManager();
     SceneMan _scene = new SceneMan();
     UIManager _ui = new UIManager();
-    //public static InputManager Input {get {return instance._input;}}
-    //public static ResourceManager Resource{get{return instance._resource;}}
-    //public static UI_Manager UI_Manager{get{return instance._ui_manager;}}
 
     public static DataManager Data { get { return instance._data; } }
     public static SceneMan Scene { get { return instance._scene; } }
@@ -28,10 +20,6 @@ public class Managers : MonoBehaviour
         Init();
     }
 
-    void Update()
-    {
-        //_input.OnUpdate();
-    }
 
     static void Init(){
         if(s_instance == null)
@@ -47,7 +35,6 @@ public class Managers : MonoBehaviour
             s_instance = go.GetComponent<Managers>();
 
             s_instance._data.Init();
-            //s_instance._pool.Init();
         }
     }
 

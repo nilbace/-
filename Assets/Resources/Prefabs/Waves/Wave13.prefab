@@ -48,6 +48,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895400, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685549593562895400, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685549593562895400, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
       objectReference: {fileID: 0}
@@ -91,6 +99,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
+    - target: {fileID: 6685549593562895401, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895406, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: _myHP
       value: 10.53
@@ -168,6 +180,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895400, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685549593562895400, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685549593562895400, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.78
       objectReference: {fileID: 0}
@@ -211,6 +231,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9a5a43470dedd444dab63aa4e7f42962, type: 3}
+    - target: {fileID: 6685549593562895401, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895406, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: _myHP
       value: 10.53

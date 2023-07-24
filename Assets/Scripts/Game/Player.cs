@@ -63,7 +63,13 @@ public class Player : MonoBehaviour
         if (moveVec.sqrMagnitude == 0)
             return;
 
-        
+        if(Time.timeScale ==0 )
+        {
+            foreach(Joystick temp in Joystick)
+            {
+                temp.gameObject.SetActive(false);
+            }
+        }
     }
 
     void SetStat()

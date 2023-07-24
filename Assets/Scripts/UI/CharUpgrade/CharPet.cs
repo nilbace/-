@@ -18,6 +18,7 @@ public class CharPet : MonoBehaviour
     {
         instance = this;
         thiscatData = PlayerData.Chars[Managers.Data.SelectedCatIndex];
+        GetComponent<Canvas>().worldCamera = Camera.main;
     }
     private void Start()
     {

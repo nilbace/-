@@ -21,6 +21,10 @@ public class InGameData
     public int baseCritPer;
 
     public int[] GetPointMoneyValue = new int[10];
+
+    public string SkillName;
+    public string SkillInfos;
+    public Sprite SkillIcon;
 }
 
 [System.Serializable]

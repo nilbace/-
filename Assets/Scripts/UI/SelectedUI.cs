@@ -14,12 +14,13 @@ public class SelectedUI : MonoBehaviour
     [SerializeField] TMP_Text _myHighScore;
     [SerializeField] StageInfoDatas stageInfos;
     [SerializeField] Button[] _stageBTNs;
-    [SerializeField] Button _startBTN;
+    [SerializeField] Button   _startBTN;
 
     private void Start()
     {
-        for(int i =0; i <= Managers.Data.MyHighScoreData.clearStageIndex + 1; i++)
+        for(int i = 0; i <= Managers.Data.MyHighScoreData.clearStageIndex; i++)
         {
+            if (i == 12) continue;
             _stageBTNs[i].interactable = true;
         }
         

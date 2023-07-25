@@ -9,6 +9,9 @@ public class CharPet : MonoBehaviour
 {
     [SerializeField] PlayerData PlayerData;
     InGameData thiscatData;
+
+    [SerializeField] TMP_Text CharName;
+
     [SerializeField] Slider[] StatSliders;
     [SerializeField] GameObject[] growlevel;
     [SerializeField] int[] MaxValues;
@@ -27,17 +30,23 @@ public class CharPet : MonoBehaviour
 
     public void Init()
     {
+        int _temp = Managers.Data.GetThisCatStat(Define.StatName.Total);
+
+        CharName.text = "Lv." + _temp.ToString() + " " + Managers.Data.GetNowCatName();
+
         for(int i = 0; i<6;i++)
         {
             StatSliders[i].value = (float)GetResultStat(i) / (float)MaxValues[i];
         }
         StatSliders[6].value = (float)(thiscatData.baseCritPer / 10f);
 
-        int _temp = Managers.Data.GetThisCatStat(Define.StatName.Total);
+        
         for(int i =0; i<_temp; i++)
         {
             growlevel[i].SetActive(true);
         }
+
+
     }
 
     int GetResultStat(int n)

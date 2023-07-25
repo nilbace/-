@@ -26,8 +26,6 @@ public class Player : MonoBehaviour
     public UnityEngine.UI.Image bombImage;
     public CharBomb[] CharBombs;
 
-
-
     public void PowerUp()
     {
         if(PowerLevel < 3)
@@ -58,7 +56,7 @@ public class Player : MonoBehaviour
             Joystick[0].gameObject.SetActive(false);
         }
 
-        bombImage.sprite = CharBombs[Managers.Data.SelectedCatIndex].BombSprite;
+        bombImage.sprite = CharBombs[0].BombSprite;
         StartCoroutine(timeChecker());
     }
 
@@ -89,7 +87,7 @@ public class Player : MonoBehaviour
 
     public void ShootBomb()
     {
-        Instantiate(CharBombs[Managers.Data.SelectedCatIndex].BombGO, transform.position, Quaternion.identity);
+        Instantiate(CharBombs[0].BombGO, transform.position, Quaternion.identity);
     }
 
     IEnumerator Shooting()

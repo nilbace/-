@@ -73,15 +73,15 @@ MonoBehaviour:
       MaxValue: 5
     baseCritPer: 5
     GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
-  - FrontImg: {fileID: 21300000, guid: d937f48c71886e14eb1edb2d23e03111, type: 3}
-    BackImg: {fileID: 21300000, guid: 09662d1cdc59089469ec6a72630c682e, type: 3}
+  - FrontImg: {fileID: 21300000, guid: e723971a8cdbd1f44bfce2c6e746a9f7, type: 3}
+    BackImg: {fileID: 21300000, guid: 418601eb8d7401f45ab6b123ff304d92, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
-      baseStat: 25
+      baseStat: 20
       UpValue: 5
       MaxValue: 10
     - StatName: "\uACF5\uACA9\uC18D\uB3C4"
-      baseStat: 130
+      baseStat: 150
       UpValue: 10
       MaxValue: 10
     - StatName: "\uCE58\uBA85\uB370\uBBF8\uC9C0"
@@ -89,8 +89,8 @@ MonoBehaviour:
       UpValue: 20
       MaxValue: 5
     - StatName: "\uC2A4\uD0AC\uB370\uBBF8\uC9C0"
-      baseStat: 60
-      UpValue: 10
+      baseStat: 120
+      UpValue: 20
       MaxValue: 5
     - StatName: "\uACE8\uB4DC\uBCF4\uB108\uC2A4"
       baseStat: 10
@@ -101,7 +101,7 @@ MonoBehaviour:
       UpValue: 2
       MaxValue: 5
     baseCritPer: 5
-    GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
+    GetPointMoneyValue: 000000004c04000098080000301100007c150000c8190000141e000060220000ac260000f82a000000000000
   - FrontImg: {fileID: 21300000, guid: d937f48c71886e14eb1edb2d23e03111, type: 3}
     BackImg: {fileID: 21300000, guid: 09662d1cdc59089469ec6a72630c682e, type: 3}
     ThreeValues:

@@ -9,7 +9,7 @@ public class DataManager
 {
     //스테이지 셀렉트
     public int SelectedBossindex { get; set; } = 0;
-    public int SelectedCatIndex { get; set; } = (int)Define.CatName.Cheese;
+    public int SelectedCatIndex { get; set; } = 0;
     public BellData MyBellData { get; set; }
     public StoreData MyStoreData { get; set; }
     public SettingData MySettingData { get; set; }
@@ -306,6 +306,11 @@ public class DataManager
             CalThisCatStat(Define.StatName.extra, temp);
         }
         SaveAllDatas();
+    }
+
+    public string GetNowCatName()
+    {
+        return ((Define.CatName)SelectedCatIndex).ToString();
     }
 
     public int GetThisCatStat(Define.StatName statname)

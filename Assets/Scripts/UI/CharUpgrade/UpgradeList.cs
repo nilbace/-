@@ -34,7 +34,7 @@ public class UpgradeList : MonoBehaviour
         
 
         if(Managers.Data.MyCharDatas.charSaveDatas
-            [Managers.Data.SelectedCatIndex].StatLevels[6] > 0
+            [Managers.Data.MyCharDatas.nowSelectCatIndex].StatLevels[6] > 0
             && Managers.Data.GetThisCatStat((Define.StatName)n)  < charData.ThreeValues[n].MaxValue) 
         {
             UpgradeButton.interactable = true;
@@ -45,7 +45,7 @@ public class UpgradeList : MonoBehaviour
         }
 
         if(n==5 && Managers.Data.MyCharDatas.charSaveDatas
-            [Managers.Data.SelectedCatIndex].StatLevels[6] < 5)
+            [Managers.Data.MyCharDatas.nowSelectCatIndex].StatLevels[6] < 5)
         {
             UpgradeButton.interactable = false;
         }

@@ -12,7 +12,7 @@ public class StatManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        _nowcatindex = Managers.Data.SelectedCatIndex;
+        _nowcatindex = Managers.Data.MyCharDatas.nowSelectCatIndex;
         for(int i = 0; i<6; i++)
         {
             ResultStats[i] = playerdata.Chars[_nowcatindex].ThreeValues[i].baseStat +

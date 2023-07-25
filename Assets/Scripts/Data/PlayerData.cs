@@ -13,6 +13,7 @@ public class PlayerData : MonoBehaviour
 [System.Serializable]
 public class InGameData
 {
+    public string CatName;
     public Sprite FrontImg;
     public Sprite BackImg;
     
@@ -31,6 +32,7 @@ public class InGameData
 public class CharSaveDatas
 {
     public CharSaveData[] charSaveDatas;
+    public int nowSelectCatIndex;
 
     public CharSaveDatas()
     {
@@ -40,6 +42,16 @@ public class CharSaveDatas
             charSaveDatas[i] = new CharSaveData();
         }
         charSaveDatas[0].bought = true;
+
+        charSaveDatas[0].Name = "치즈냥이";
+        charSaveDatas[1].Name = "삼색냥이";
+        charSaveDatas[2].Name = "고등어냥이";
+        charSaveDatas[3].Name = "턱시도냥이";
+        charSaveDatas[4].Name = "샴";
+        charSaveDatas[5].Name = "뱅갈";
+
+
+        nowSelectCatIndex = 0;
     }
 }
 

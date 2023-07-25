@@ -20,7 +20,7 @@ public class CharUpgrade : MonoBehaviour
 
     private void Start()
     {
-        _NowCatData = playerData.Chars[Managers.Data.SelectedCatIndex];
+        _NowCatData = playerData.Chars[Managers.Data.MyCharDatas.nowSelectCatIndex];
         Init();
     }
 
@@ -45,13 +45,13 @@ public class CharUpgrade : MonoBehaviour
     public void GetPointByMoney()
     {
         if(Managers.Data.MyStoreData.MyGoldAmount >= _NowCatData.GetPointMoneyValue
-            [Managers.Data.MyCharDatas.charSaveDatas[Managers.Data.SelectedCatIndex].StatLevels[6]]
+            [Managers.Data.MyCharDatas.charSaveDatas[Managers.Data.MyCharDatas.nowSelectCatIndex].StatLevels[6]]
             
             && Managers.Data.GetThisCatStat(Define.StatName.Total) <= 9)
         {
             
             Managers.Data.MyStoreData.MyGoldAmount -= _NowCatData.GetPointMoneyValue
-            [Managers.Data.MyCharDatas.charSaveDatas[Managers.Data.SelectedCatIndex].StatLevels[6]];
+            [Managers.Data.MyCharDatas.charSaveDatas[Managers.Data.MyCharDatas.nowSelectCatIndex].StatLevels[6]];
 
             Managers.Data.CalThisCatStat(Define.StatName.extra, 1);
 

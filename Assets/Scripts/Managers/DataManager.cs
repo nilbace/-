@@ -9,7 +9,6 @@ public class DataManager
 {
     //스테이지 셀렉트
     public int SelectedBossindex { get; set; } = 0;
-    public int SelectedCatIndex { get; set; } = 0;
     public BellData MyBellData { get; set; }
     public StoreData MyStoreData { get; set; }
     public SettingData MySettingData { get; set; }
@@ -22,6 +21,7 @@ public class DataManager
     {
         LoadAllData();
         CalculateAndAddBell();
+        
     }
 
 
@@ -310,7 +310,21 @@ public class DataManager
 
     public string GetNowCatName()
     {
-        return ((Define.CatName)SelectedCatIndex).ToString();
+        return ((Define.CatName)MyCharDatas.nowSelectCatIndex).ToString();
+    }
+
+    public int GetCatStat(Define.CatName catname ,Define.StatName statname)
+    {
+        if (statname == Define.StatName.Total)
+        {
+            int temp = 0;
+            for (int i = 0; i < 7; i++)
+            {
+                temp += GetCatStat(catname ,(Define.StatName)i);
+            }
+            return temp;
+        }
+        return MyCharDatas.charSaveDatas[(int)catname].StatLevels[(int)statname];
     }
 
     public int GetThisCatStat(Define.StatName statname)
@@ -324,12 +338,12 @@ public class DataManager
             }
             return temp;
         }
-        return MyCharDatas.charSaveDatas[SelectedCatIndex].StatLevels[(int)statname];
+        return MyCharDatas.charSaveDatas[MyCharDatas.nowSelectCatIndex].StatLevels[(int)statname];
     }
 
     public void CalThisCatStat(Define.StatName statName, int n)
     {
-        MyCharDatas.charSaveDatas[SelectedCatIndex].StatLevels[(int)statName] += n;
+        MyCharDatas.charSaveDatas[MyCharDatas.nowSelectCatIndex].StatLevels[(int)statName] += n;
         SaveAllDatas();
     }
     

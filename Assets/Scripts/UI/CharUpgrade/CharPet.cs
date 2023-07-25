@@ -14,14 +14,21 @@ public class CharPet : MonoBehaviour
 
     [SerializeField] Slider[] StatSliders;
     [SerializeField] GameObject[] growlevel;
+
+    [Header("½ºÅ³")]
+    [SerializeField] TMP_Text skillName;
+    [SerializeField] TMP_Text skillInfo;
+    [SerializeField] Image    skillImg;
+
+
     [SerializeField] int[] MaxValues;
+
+    [SerializeField] CP_EachChar[] eachcar;
     public static CharPet instance;
 
     private void Awake()
     {
         instance = this;
-        thiscatData = PlayerData.Chars[Managers.Data.SelectedCatIndex];
-        GetComponent<Canvas>().worldCamera = Camera.main;
     }
     private void Start()
     {
@@ -30,9 +37,11 @@ public class CharPet : MonoBehaviour
 
     public void Init()
     {
+        thiscatData = PlayerData.Chars[Managers.Data.MyCharDatas.nowSelectCatIndex];
+
         int _temp = Managers.Data.GetThisCatStat(Define.StatName.Total);
 
-        CharName.text = "Lv." + _temp.ToString() + " " + Managers.Data.GetNowCatName();
+        CharName.text = "Lv." + _temp.ToString() + " " + thiscatData.CatName;
 
         for(int i = 0; i<6;i++)
         {
@@ -46,7 +55,14 @@ public class CharPet : MonoBehaviour
             growlevel[i].SetActive(true);
         }
 
+        skillName.text  = thiscatData.SkillName;
+        skillInfo.text  = thiscatData.SkillInfos;
+        skillImg.sprite = thiscatData.SkillIcon;
 
+        foreach(CP_EachChar temp in eachcar)
+        {
+            temp.Init();
+        }
     }
 
     int GetResultStat(int n)

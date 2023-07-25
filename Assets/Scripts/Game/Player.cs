@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
     {
         while(true)
         {
-            if(Managers.Data.SelectedCatIndex == 0)
+            if(Managers.Data.MyCharDatas.nowSelectCatIndex == 0)
             {
                 if (PowerLevel == 1)
                 {
@@ -132,7 +132,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            else if(Managers.Data.SelectedCatIndex == 1)
+            else if(Managers.Data.MyCharDatas.nowSelectCatIndex == 1)
             {
 
             }

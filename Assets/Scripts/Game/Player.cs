@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
         }
 
         bombImage.sprite = CharBombs[Managers.Data.SelectedCatIndex].BombSprite;
+        StartCoroutine(timeChecker());
     }
 
     private void FixedUpdate()
@@ -68,12 +69,13 @@ public class Player : MonoBehaviour
 
 
 
-        moveVec = new Vector3(x, y, 0).normalized * moveSpeed * Time.deltaTime;
+        moveVec = new Vector3(x, y, 0) * moveSpeed * Time.deltaTime;
         rigid.MovePosition((Vector3)rigid.position + moveVec);
 
         if (moveVec.sqrMagnitude == 0)
             return;
 
+        
         
     }
 
@@ -138,6 +140,36 @@ public class Player : MonoBehaviour
             }
 
 
+        }
+    }
+
+    IEnumerator timeChecker()
+    {
+        while(true)
+        {
+            if (Time.timeScale == 0)
+            {
+                if (Managers.Data.MySettingData.isFixedJoystick)
+                {
+                    Joystick[0].gameObject.SetActive(false);
+                }
+                else
+                {
+                    Joystick[1].gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                if (Managers.Data.MySettingData.isFixedJoystick)
+                {
+                    Joystick[0].gameObject.SetActive(true);
+                }
+                else
+                {
+                    Joystick[1].gameObject.SetActive(true);
+                }
+            }
+            yield return new WaitForSecondsRealtime(0.1f);
         }
     }
 }

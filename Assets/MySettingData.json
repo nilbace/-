@@ -1,5 +1,5 @@
 {
-    "isFixedJoystick": true,
+    "isFixedJoystick": false,
     "BGMSound": 0.09282831847667694,
     "SFXSound": 0.15651942789554597
 }

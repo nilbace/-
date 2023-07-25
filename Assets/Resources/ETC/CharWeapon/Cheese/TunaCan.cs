@@ -6,12 +6,16 @@ public class TunaCan : MonoBehaviour
 {
     [SerializeField] float MoveSpeed;
     [SerializeField] GameObject BoomEffect;
+    [SerializeField] float boomtime;
+    float timer;
     bool boomed = false;
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y > 0 && !boomed)
+        timer += Time.deltaTime;
+
+        if(timer > boomtime && !boomed)
         {
             boomed = true;
             Boom();

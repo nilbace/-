@@ -133,6 +133,7 @@ public class GameScene : MonoBehaviour
         Managers.UI.ShowPopup(Define.Popup.StageClear);
         Managers.Data.MyStoreData.MyGoldAmount += GoldAmount;
         Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] = ScoreAmount;
+        Managers.Data.MyHighScoreData.clearStageIndex = Managers.Data.SelectedBossindex;
         Managers.Data.SaveAllDatas();
     }
 
@@ -140,13 +141,9 @@ public class GameScene : MonoBehaviour
 
     #region Clear
 
-    public void ClearStage(int n)
-    {
-        StartCoroutine(showClearUI());
-    }
-
     IEnumerator showClearUI()
     {
+        
         yield return new WaitForSeconds(2f);
         Managers.UI.ShowPopup(Define.Popup.StageClear);
     }

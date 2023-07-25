@@ -81,7 +81,7 @@ public class DataManager
     {
         if (MyBellData.NowBellCount == 5)
         {
-            MyBellData.BellPlusTime = GetDateTime(MyBellData.BellPlusTime).AddMinutes(30).ToString();
+            MyBellData.BellPlusTime = DateTime.Now.AddMinutes(30).ToString();
             MyBellData.NowBellCount--;
             SaveBellData();
         }
@@ -184,7 +184,6 @@ public class DataManager
         if (!File.Exists(path))
         {
             MyStoreData = new StoreData();
-            MyStoreData.MyGoldAmount = 1000000;
             SaveStoreData();
         }
 
@@ -427,6 +426,7 @@ public class StageHighScoreData
 
     public StageHighScoreData()
     {
+        clearStageIndex = -1;
         for (int i = 0; i < HighScores.Length; i++)
         {
             HighScores[i] = 0;
@@ -437,6 +437,7 @@ public class StageHighScoreData
             GetReward[i] = false;
         }
     }
+    
 }
 
 

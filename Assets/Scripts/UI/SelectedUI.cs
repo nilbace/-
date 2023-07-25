@@ -18,7 +18,7 @@ public class SelectedUI : MonoBehaviour
 
     private void Start()
     {
-        for(int i =0; i < Managers.Data.MyHighScoreData.clearStageIndex + 1; i++)
+        for(int i =0; i <= Managers.Data.MyHighScoreData.clearStageIndex + 1; i++)
         {
             _stageBTNs[i].interactable = true;
         }
@@ -89,7 +89,8 @@ public class SelectedUI : MonoBehaviour
     {
         if(Managers.Data.CanUseBell())
         {
-            //Managers.Data.UseBell();
+            Managers.Data.UseBell();
+            Managers.Data.SaveAllDatas();
             Managers.Scene.LoadScene(Define.Scene.Game);
         }
     }

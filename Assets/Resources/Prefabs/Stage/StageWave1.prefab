@@ -152,13 +152,13 @@ MonoBehaviour:
       MonsterHP: 150
       WaveMoveSpeed: 3
       WaveDir: {x: 1, y: -1, z: 0}
-      SpawnPoint: {x: -3.7, y: 4}
+      SpawnPoint: {x: -3.7, y: 5}
     - WaveName: Wave31Right
       WaveMonster: {fileID: 5860076356670581586, guid: 67e8a34457e346343868f11a9bfeb7d3, type: 3}
       MonsterHP: 150
       WaveMoveSpeed: 3
       WaveDir: {x: -1, y: -1, z: 0}
-      SpawnPoint: {x: 3.7, y: 4}
+      SpawnPoint: {x: 3.7, y: 5}
     - WaveName: Wave32
       WaveMonster: {fileID: 1861192600613534411, guid: da0772ad124a617419b3106f4c7ab506, type: 3}
       MonsterHP: 150

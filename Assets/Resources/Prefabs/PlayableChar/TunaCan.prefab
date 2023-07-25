@@ -97,4 +97,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 2.77
   BoomEffect: {fileID: 8242848618480560982, guid: 7016fd25195041b458e98fa0ee3066d3, type: 3}
-  boomtime: 0.81
+  boomtime: 0.4

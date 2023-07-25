@@ -150,5 +150,12 @@ public class Define : MonoBehaviour
 
     }
 
+    [System.Serializable]
+    public class CharBomb
+    {
+        public GameObject BombGO;
+        public Sprite BombSprite;
+    }
+
 
 }

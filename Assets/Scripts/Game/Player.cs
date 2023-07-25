@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +21,12 @@ public class Player : MonoBehaviour
     [Header("Power")]
     public int PowerLevel = 1;
     [SerializeField] Define.BulletPosition _bulletpositionGroup;
+
+    [Header("Bomb")]
+    public UnityEngine.UI.Image bombImage;
+    public CharBomb[] CharBombs;
+
+
 
     public void PowerUp()
     {
@@ -50,26 +57,24 @@ public class Player : MonoBehaviour
             _nowjoystick = Joystick[1];
             Joystick[0].gameObject.SetActive(false);
         }
+
+        bombImage.sprite = CharBombs[Managers.Data.SelectedCatIndex].BombSprite;
     }
 
     private void FixedUpdate()
     {
-        float x = _nowjoystick.Horizontal * 0.5f;
-        float y = _nowjoystick.Vertical * 0.5f;
+        float x = _nowjoystick.Horizontal;
+        float y = _nowjoystick.Vertical;
 
-        moveVec = new Vector3(x, y, 0) * moveSpeed * Time.deltaTime;
+
+
+        moveVec = new Vector3(x, y, 0).normalized * moveSpeed * Time.deltaTime;
         rigid.MovePosition((Vector3)rigid.position + moveVec);
 
         if (moveVec.sqrMagnitude == 0)
             return;
 
-        if(Time.timeScale ==0 )
-        {
-            foreach(Joystick temp in Joystick)
-            {
-                temp.gameObject.SetActive(false);
-            }
-        }
+        
     }
 
     void SetStat()
@@ -79,6 +84,11 @@ public class Player : MonoBehaviour
         StartCoroutine(Shooting());
     }
 
+
+    public void ShootBomb()
+    {
+        Instantiate(CharBombs[Managers.Data.SelectedCatIndex].BombGO, transform.position, Quaternion.identity);
+    }
 
     IEnumerator Shooting()
     {

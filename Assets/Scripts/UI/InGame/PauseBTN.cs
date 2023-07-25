@@ -9,7 +9,8 @@ public class PauseBTN : MonoBehaviour
     [SerializeField] 
     void Start()
     {
-        
+        sliders[0].value = Managers.Data.MySettingData.BGMSound;
+        sliders[1].value = Managers.Data.MySettingData.SFXSound;
     }
 
     public void ContinueBTN()

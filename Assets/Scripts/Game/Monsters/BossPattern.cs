@@ -37,7 +37,7 @@ public class BossPattern : MonoBehaviour
 
 
     #region CommonPatterns
-    IEnumerator ShootHalfCircle()
+    IEnumerator ShootHalfCircle(float size = 1f)
     {
         float angle1 = 0f;
         for (int j = 0; j < 10; j++)
@@ -47,14 +47,14 @@ public class BossPattern : MonoBehaviour
             GameObject bullet = Instantiate(BulletPrefab);
             Vector3 temp = transform.position + new Vector3(0, -1, 0);
             bullet.GetComponent<MonsterBullet>().Setting(dir1, 3f, temp);
-            bullet.transform.localScale = Vector3.one * 1f;
+            bullet.transform.localScale = Vector3.one * size;
 
             angle1 -= 18f;
         }
         yield return null;
     }
 
-    IEnumerator ShootCircle()
+    IEnumerator ShootCircle(float size = 1f)
     {
         float angle2 = 18f;
         for (int j = 0; j < 10; j++)
@@ -64,51 +64,51 @@ public class BossPattern : MonoBehaviour
             GameObject bullet = Instantiate(BulletPrefab);
             Vector3 temp = transform.position + new Vector3(0, -1, 0);
             bullet.GetComponent<MonsterBullet>().Setting(dir1, 3f, temp);
-            bullet.transform.localScale = Vector3.one * 1f;
+            bullet.transform.localScale = Vector3.one * size;
 
             angle2 -= 36f;
         }
         yield return new WaitForSeconds(0.5f);
     }
 
-    IEnumerator Shoot3Way()
+    IEnumerator Shoot3Way(float size = 1f)
     {
         for (int j = 0; j < 5; j++)
         {
-            ShootBullet(_baseLeft, new Vector3(-0.5f, 0, 0));
-            ShootBullet(_basePattern);
-            ShootBullet(_baseRight, new Vector3(0.5f, 0f, 0));
+            ShootBullet(_baseLeft, new Vector3(-0.5f, 0, 0), size);
+            ShootBullet(_basePattern, null, size);
+            ShootBullet(_baseRight, new Vector3(0.5f, 0f, 0), size);
             yield return new WaitForSeconds(0.5f);
         }
     }
 
-    IEnumerator ShootDown5Time()
+    IEnumerator ShootDown5Time(float size = 1f)
     {
         for (int j = 0; j < 5; j++)
         {
-            ShootBullet(_basePattern, Vector3.right);
-            ShootBullet(_basePattern, Vector3.left);
+            ShootBullet(_basePattern, Vector3.right, size);
+            ShootBullet(_basePattern, Vector3.left, size);
             yield return new WaitForSeconds(0.5f);
         }
     }
 
-    IEnumerator Shoot2_3_2(float xValue = 0)
+    IEnumerator Shoot2_3_2(float xValue = 0, float size = 1f)
     {
         float offset12 = 0.8f;
 
-        ShootBullet(_basePattern, new Vector3(xValue - offset12 * 0.5f, 0f, 0f), 0.5f);
-        ShootBullet(_basePattern, new Vector3(xValue + offset12 * 0.5f, 0f, 0f), 0.5f);
+        ShootBullet(_basePattern, new Vector3(xValue - offset12 * 0.5f, 0f, 0f), 0.5f * size);
+        ShootBullet(_basePattern, new Vector3(xValue + offset12 * 0.5f, 0f, 0f), 0.5f * size);
 
         yield return new WaitForSeconds(0.3f);
 
-        ShootBullet(_basePattern, new Vector3(xValue - offset12, 0f, 0f), 0.5f);
-        ShootBullet(_basePattern, new Vector3(xValue , 0f, 0f), 0.5f);
-        ShootBullet(_basePattern, new Vector3(xValue + offset12 , 0f, 0f), 0.5f);
+        ShootBullet(_basePattern, new Vector3(xValue - offset12, 0f, 0f), 0.5f * size);
+        ShootBullet(_basePattern, new Vector3(xValue , 0f, 0f), 0.5f * size);
+        ShootBullet(_basePattern, new Vector3(xValue + offset12 , 0f, 0f), 0.5f * size);
 
         yield return new WaitForSeconds(0.3f);
 
-        ShootBullet(_basePattern, new Vector3(xValue - offset12 * 0.5f, 0f, 0f), 0.5f);
-        ShootBullet(_basePattern, new Vector3(xValue + offset12 * 0.5f, 0f, 0f), 0.5f);
+        ShootBullet(_basePattern, new Vector3(xValue - offset12 * 0.5f, 0f, 0f), 0.5f * size);
+        ShootBullet(_basePattern, new Vector3(xValue + offset12 * 0.5f, 0f, 0f), 0.5f * size);
 
         yield return new WaitForSeconds(0.3f);
     }
@@ -373,7 +373,7 @@ public class BossPattern : MonoBehaviour
                                 if (j == -1 || j == 1) offset2 = 0.5f;
                                 else offset2 = 1f;
 
-                                ShootBullet(_basePattern, new Vector3(offset2, 0, 0), 0.5f);
+                                ShootBullet(_basePattern, new Vector3( offset2, 0, 0), 0.5f);
                                 ShootBullet(_basePattern, new Vector3(-offset2, 0, 0), 0.5f);
                                 yield return new WaitForSeconds(0.5f);
                             }

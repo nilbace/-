@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StatManager : MonoBehaviour
 {
-    [SerializeField] PlayerData playerdata;
+    public PlayerData playerdata;
     public int[] ResultStats = new int[6];
     public static StatManager instance;
     public int _nowcatindex;

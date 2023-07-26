@@ -90,7 +90,7 @@ public class SelectedUI : MonoBehaviour
     {
         if(Managers.Data.CanUseBell())
         {
-            //Managers.Data.UseBell();
+            Managers.Data.UseBell();
             Managers.Data.SaveAllDatas();
             Managers.Scene.LoadScene(Define.Scene.Game);
         }

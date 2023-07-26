@@ -10,6 +10,7 @@ public class CharPet : MonoBehaviour
     [SerializeField] PlayerData PlayerData;
     InGameData thiscatData;
 
+    [SerializeField] Image CharSprite;
     [SerializeField] TMP_Text CharName;
 
     [SerializeField] Slider[] StatSliders;
@@ -41,6 +42,7 @@ public class CharPet : MonoBehaviour
 
         int _temp = Managers.Data.GetThisCatStat(Define.StatName.Total);
 
+        CharSprite.sprite = thiscatData.FrontImg;
         CharName.text = "Lv." + _temp.ToString() + " " + thiscatData.CatName;
 
         for(int i = 0; i<6;i++)
@@ -50,6 +52,10 @@ public class CharPet : MonoBehaviour
         StatSliders[6].value = (float)(thiscatData.baseCritPer / 10f);
 
         
+        for(int i = 0; i<10;i++)
+        {
+            growlevel[i].SetActive(false);
+        }
         for(int i =0; i<_temp; i++)
         {
             growlevel[i].SetActive(true);

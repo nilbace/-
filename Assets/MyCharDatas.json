@@ -25,7 +25,7 @@
                 0,
                 0,
                 0,
-                0
+                4
             ]
         },
         {
@@ -85,5 +85,5 @@
             ]
         }
     ],
-    "nowSelectCatIndex": 0
+    "nowSelectCatIndex": 1
 }

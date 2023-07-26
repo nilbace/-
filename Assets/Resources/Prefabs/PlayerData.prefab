@@ -108,9 +108,9 @@ MonoBehaviour:
       MaxValue: 5
     baseCritPer: 5
     GetPointMoneyValue: 000000004c04000098080000301100007c150000c8190000141e000060220000ac260000f82a000000000000
-    SkillName: 
-    SkillInfos: 
-    SkillIcon: {fileID: 0}
+    SkillName: "\uCD08\uCF54 \uC824\uB9AC"
+    SkillInfos: "\uC774\uAC74 \uB610 \uBB50\uB77C\uACE0 \uC4F0\uB0D0...."
+    SkillIcon: {fileID: 21300000, guid: 38e30d4b41d17314f8b841f0d8172108, type: 3}
   - CatName: 
     FrontImg: {fileID: 21300000, guid: d937f48c71886e14eb1edb2d23e03111, type: 3}
     BackImg: {fileID: 21300000, guid: 09662d1cdc59089469ec6a72630c682e, type: 3}

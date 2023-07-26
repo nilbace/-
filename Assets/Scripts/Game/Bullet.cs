@@ -11,16 +11,38 @@ public class Bullet : MonoBehaviour
     [SerializeField] float _moveSpeed;
     private Camera mainCamera;
     int _damage;
+    int critper;
+    int critDMG;
 
     private void Start()
     {
         mainCamera = Camera.main;
+        critDMG = Player.instance.resultStats[(int)Define.StatName.CritDmg];
+        critper = Player.instance.gameObject.GetComponent<StatManager>().playerdata.Chars[Managers.Data.MyCharDatas.nowSelectCatIndex].baseCritPer;
     }
-    public void SetBullet(Vector3 playerposition, float rotation, int damage)
+    public void SetBullet(Vector3 playerposition, float rotation, int damage, Sprite spriteee)
     {
         transform.rotation = Quaternion.Euler(0f, 0f, rotation);
         transform.position = playerposition;
-        _damage = damage;
+
+        _damage = CalculateCritDamage(damage, critper, critDMG);
+
+        GetComponent<SpriteRenderer>().sprite = spriteee;
+    }
+
+    public int CalculateCritDamage(int damage, int critPer, int critDMG)
+    {
+        int roll = Random.Range(1, 101); // Generate a random number between 1 and 100
+
+        // Check if the roll is within the critPer range
+        if (roll <= critPer)
+        {
+            // Calculate the crit damage and add it to the original damage
+            int critDamage = damage * critDMG / 100;
+            damage = critDamage;
+        }
+
+        return damage;
     }
 
 

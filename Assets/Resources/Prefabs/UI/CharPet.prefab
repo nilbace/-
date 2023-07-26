@@ -3902,6 +3902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerData: {fileID: 8184898511745690964, guid: 0190bd99db5f18a43bbccc38129c1081, type: 3}
+  CharSprite: {fileID: 4125024919873793227}
   CharName: {fileID: 4125024919216211431}
   StatSliders:
   - {fileID: 4125024920460804108}

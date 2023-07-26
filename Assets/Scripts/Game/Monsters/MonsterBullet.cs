@@ -7,7 +7,7 @@ public class MonsterBullet : MonoBehaviour
     Vector3 bulletDir;
     float bulletSpeed;
     [SerializeField] bool isSplit;
-    bool hassplited = false;
+    public bool hassplited = false;
     [SerializeField] float splittime;
     [SerializeField] GameObject baseBall;
 

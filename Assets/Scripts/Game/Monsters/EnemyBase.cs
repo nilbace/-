@@ -51,11 +51,17 @@ public class EnemyBase : MonoBehaviour
 
     void Dead()
     {
-        gameObject.SetActive(false);
+        
         if (IsBoss)
         {
             GameScene.instance.BossDead();
         }
+        else
+        {
+            
+            
+        }
+        gameObject.SetActive(false);
     }
 
     

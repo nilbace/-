@@ -7,6 +7,7 @@ public class DropItem : MonoBehaviour
     public enum ItemName {Magnet, Potion, Bomb }
     public ItemName thisItem;
     [SerializeField] float moveSpeed;
+    [SerializeField] GameObject Effect;
 
     private void Start()
     {
@@ -24,7 +25,6 @@ public class DropItem : MonoBehaviour
         {
             switch (thisItem)
             {
-                
                 case ItemName.Magnet:
                     Magnet.instance.OnMagnet(5);
                         
@@ -39,7 +39,21 @@ public class DropItem : MonoBehaviour
                     GameScene.instance.AddBomb();
                     break;
             }
-            Destroy(gameObject);
+            StartCoroutine(itemPickUP());
         }
+    }
+
+    IEnumerator itemPickUP()
+    {
+        GetComponent<SpriteRenderer>().sprite = null;
+        GetComponent<CircleCollider2D>().enabled = false;
+        GameObject go =  Instantiate(Effect, transform.position, Quaternion.identity);
+        if(thisItem == ItemName.Magnet)
+        {
+            go.transform.SetParent(Player.instance.transform);
+            go.transform.position = Player.instance.gameObject.transform.position;
+        }
+        yield return new WaitForSeconds(5f);
+        Destroy(go); Destroy(gameObject);
     }
 }

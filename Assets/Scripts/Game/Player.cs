@@ -93,10 +93,6 @@ public class Player : MonoBehaviour
     }
 
 
-    public void ShootBomb()
-    {
-        Instantiate(CharBombs[0].BombGO, transform.position, Quaternion.identity);
-    }
 
     IEnumerator Shooting()
     {

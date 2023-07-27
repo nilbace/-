@@ -6,6 +6,7 @@ public class DropGold : MonoBehaviour
 {
     int _goldAmount = 20;
     [SerializeField] float moveSpeed;
+    public bool onMagnet = false;
 
     private void Start()
     {
@@ -19,6 +20,12 @@ public class DropGold : MonoBehaviour
     private void Update()
     {
         transform.Translate(0, -moveSpeed * Time.deltaTime, 0);
+
+        if(onMagnet)
+        {
+            Vector3 temp = Player.instance.gameObject.transform.position - transform.position;
+            transform.Translate(temp.normalized * 5f * Time.deltaTime);
+        }
     }
 
 

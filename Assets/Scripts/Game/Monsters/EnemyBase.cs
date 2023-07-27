@@ -66,8 +66,30 @@ public class EnemyBase : MonoBehaviour
         {
             DropGolds();
             DropScores();
+            if (IsNamed)
+            {
+                DropRandItem();
+            }
         }
 
+    }
+
+    void DropRandItem()
+    {
+        int rand = Random.Range(1, 101);
+        string path = "Prefabs/MonItems/";
+        if(rand <= 10)
+        {
+            Instantiate(Resources.Load<GameObject>(path + "Potion"), transform.position, Quaternion.identity);
+        }
+        else if(rand <= 50)
+        {
+            Instantiate(Resources.Load<GameObject>(path + "Magnet"), transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(Resources.Load<GameObject>(path + "Bomb"), transform.position, Quaternion.identity);
+        }
     }
 
     void DropScores()

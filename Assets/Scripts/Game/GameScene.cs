@@ -40,7 +40,7 @@ public class GameScene : MonoBehaviour
         Time.timeScale = 1f;
         TempSound.instance.TurnONBGM(TempSound.BGMName.Stage);
         LoadWave(Managers.Data.SelectedBossindex);
-        SetHeart();
+        SetStartHeart();
         BossGO.SetActive(false);
     }
 
@@ -62,10 +62,22 @@ public class GameScene : MonoBehaviour
     }
 
     #region Heart
-    void SetHeart()
+    void SetStartHeart()
     {
         _heartCount = StatManager.instance.GetReusltStat(Define.StatName.HpBonus) - 1;
         for(int i = 0; i<= _heartCount; i++)
+        {
+            Hearts[i].SetActive(true);
+        }
+    }
+
+    void SetHeartIMG()
+    {
+        for(int i = 0; i <5;i++)
+        {
+            Hearts[i].SetActive(false);
+        }
+        for (int i = 0; i <= _heartCount; i++)
         {
             Hearts[i].SetActive(true);
         }
@@ -88,6 +100,15 @@ public class GameScene : MonoBehaviour
         Hearts[_heartCount].SetActive(false);
         _heartCount--;
     }
+
+    public void AddHeart()
+    {
+        _heartCount++;
+        SetHeartIMG();
+    }
+
+
+
     #endregion
 
     #region Score
@@ -138,6 +159,31 @@ public class GameScene : MonoBehaviour
     }
 
     #endregion
+
+    #region Bomb
+
+    int bombCount = 1;
+    [SerializeField] Button BombBTN;
+    [SerializeField] GameObject BombPrefab;
+    public void ShootBomb()
+    {
+        Instantiate(BombPrefab, transform.position, Quaternion.identity);
+        bombCount--;
+        if(bombCount <= 0 )
+        {
+            BombBTN.interactable = false;
+        }
+    }
+    
+    public void AddBomb()
+    {
+        bombCount++;
+        BombBTN.interactable = true;
+    }
+
+
+    #endregion
+
 
     #region Clear
 

@@ -1,6 +1,6 @@
 {
     "HighScores": [
-        16200,
+        0,
         0,
         0,
         0,
@@ -13,7 +13,7 @@
         0,
         0
     ],
-    "clearStageIndex": 1,
+    "clearStageIndex": 0,
     "GetReward": [
         false,
         false,

@@ -46,21 +46,25 @@ public class LobbyUI : MonoBehaviour
 
     public void StartBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Scene.LoadScene(Define.Scene.StageSelect);
     }
 
     public void OpenSetting()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ShowPopup(Define.Popup.Setting);
     }
 
     public void OpenCharPet()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ShowPopup(Define.Popup.CharPet);
     }
 
     public void StageSelectBackBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Scene.LoadScene(Define.Scene.Lobby);
     }
 }

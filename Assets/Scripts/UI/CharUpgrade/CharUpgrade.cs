@@ -38,13 +38,15 @@ public class CharUpgrade : MonoBehaviour
     }
     public void CloseBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         CharPet.instance.Init();
         Managers.UI.ClosePopup();
     }
 
     public void GetPointByMoney()
     {
-        if(Managers.Data.MyStoreData.MyGoldAmount >= _NowCatData.GetPointMoneyValue
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        if (Managers.Data.MyStoreData.MyGoldAmount >= _NowCatData.GetPointMoneyValue
             [Managers.Data.MyCharDatas.charSaveDatas[Managers.Data.MyCharDatas.nowSelectCatIndex].StatLevels[6]]
             
             && Managers.Data.GetThisCatStat(Define.StatName.Total) <= 9)
@@ -61,6 +63,7 @@ public class CharUpgrade : MonoBehaviour
 
     public void ResetStatBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Data.ResetCatStat();
         Init();
     }

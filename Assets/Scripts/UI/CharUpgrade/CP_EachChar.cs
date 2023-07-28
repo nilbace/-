@@ -43,6 +43,7 @@ public class CP_EachChar : MonoBehaviour
 
     public void UnLock_Gold(int n)
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         int mygold = Managers.Data.MyStoreData.MyGoldAmount;
 
         if(mygold > n)
@@ -56,6 +57,7 @@ public class CP_EachChar : MonoBehaviour
 
     public void UnLock_Ruby(int n)
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         int myruby = Managers.Data.MyStoreData.MyRubyAmount;
 
         if (myruby > n)
@@ -69,6 +71,7 @@ public class CP_EachChar : MonoBehaviour
 
     public void CharChange()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Data.MyCharDatas.nowSelectCatIndex = (int)catname;
         Managers.Data.SaveAllDatas();
 

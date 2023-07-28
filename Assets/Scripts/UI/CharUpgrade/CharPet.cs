@@ -82,11 +82,13 @@ public class CharPet : MonoBehaviour
     }
     public void CloseBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ClosePopup();
     }
 
     public void UpgradeBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ShowPopup(Define.Popup.CharUpgrade);
     }
 

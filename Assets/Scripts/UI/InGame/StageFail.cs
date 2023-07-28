@@ -12,16 +12,19 @@ public class StageFail : MonoBehaviour
 
     public void GoLobbyBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Scene.LoadScene(Define.Scene.Lobby);
     }
 
     public void StageSelBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Scene.LoadScene(Define.Scene.StageSelect);
     }
 
     public void CharPetBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ShowPopup(Define.Popup.CharPet);
     }
 }

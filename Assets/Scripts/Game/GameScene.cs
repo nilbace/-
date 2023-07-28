@@ -55,10 +55,16 @@ public class GameScene : MonoBehaviour
 
         if(_heartCount < 0 && !isDead)
         {
-            isDead = true;
-            Time.timeScale = 0;
-            Managers.UI.ShowPopup(Popup.StageFail);
+            StageFailed();
         }
+    }
+
+    void StageFailed()
+    {
+        isDead = true;
+        Time.timeScale = 0;
+        Managers.UI.ShowPopup(Popup.StageFail);
+        TempSound.instance.SFX(TempSound.EffectSoundName.result);
     }
 
     #region Heart
@@ -85,7 +91,8 @@ public class GameScene : MonoBehaviour
 
     public void PlayerGetDamage( int n = 1)
     {
-        if(n != 1)
+        TempSound.instance.SFX(TempSound.EffectSoundName.charDie2);
+        if (n != 1)
         {
             for(int i = _heartCount; i > _heartCount-n; i--)
             {
@@ -99,6 +106,8 @@ public class GameScene : MonoBehaviour
         
         Hearts[_heartCount].SetActive(false);
         _heartCount--;
+
+        Player.instance.GoInvincibleTime();
     }
 
     public void AddHeart()
@@ -165,6 +174,7 @@ public class GameScene : MonoBehaviour
     int bombCount = 1;
     [SerializeField] Button BombBTN;
     [SerializeField] GameObject BombPrefab;
+    [SerializeField] TMP_Text BomBTMP;
     public void ShootBomb()
     {
         Instantiate(BombPrefab, transform.position, Quaternion.identity);
@@ -173,12 +183,19 @@ public class GameScene : MonoBehaviour
         {
             BombBTN.interactable = false;
         }
+        RefreshBomBount();
     }
     
     public void AddBomb()
     {
         bombCount++;
         BombBTN.interactable = true;
+        RefreshBomBount();
+    }
+
+    void RefreshBomBount()
+    {
+        BomBTMP.text = bombCount.ToString();
     }
 
 
@@ -191,7 +208,9 @@ public class GameScene : MonoBehaviour
     {
         
         yield return new WaitForSeconds(2f);
+        TempSound.instance.SFX(TempSound.EffectSoundName.result);
         Managers.UI.ShowPopup(Define.Popup.StageClear);
+
     }
 
     #endregion

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PowerUpItem : MonoBehaviour
 {
+    [SerializeField] GameObject Effect;
     private void Start()
     {
         Destroy(gameObject, 10f);
@@ -16,8 +17,20 @@ public class PowerUpItem : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            TempSound.instance.SFX(TempSound.EffectSoundName.powerUp);
             collision.gameObject.GetComponent<Player>().PowerUp();
-            Destroy(gameObject);
+
+
+
+            GetComponent<SpriteRenderer>().sprite = null;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GameObject go = Instantiate(Effect);
+            go.transform.position = Player.instance.gameObject.transform.position;
+            go.transform.SetParent(Player.instance.gameObject.transform);
+
+            Destroy(go, 2f);
+
+            Destroy(gameObject, 4f);
         }
     }
 }

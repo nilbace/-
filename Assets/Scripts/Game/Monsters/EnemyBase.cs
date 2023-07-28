@@ -51,14 +51,16 @@ public class EnemyBase : MonoBehaviour
 
     void Dead()
     {
-        
+        TempSound.instance.SFX(TempSound.EffectSoundName.monSound1);
         if (IsBoss)
         {
             GameScene.instance.BossDead();
         }
         else
         {
-            
+            GameObject effect = Instantiate(Resources.Load<GameObject>("Effect/CFX_Poof"));
+            effect.transform.position = transform.position;
+            Destroy(effect, 2f);
             
         }
         gameObject.SetActive(false);

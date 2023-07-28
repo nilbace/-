@@ -27,16 +27,18 @@ public class DropItem : MonoBehaviour
             {
                 case ItemName.Magnet:
                     Magnet.instance.OnMagnet(5);
-                        
+                    TempSound.instance.SFX(TempSound.EffectSoundName.item);
                     break;
 
                 case ItemName.Potion:
                     GameScene.instance.AddHeart();
+                    TempSound.instance.SFX(TempSound.EffectSoundName.item);
                     break;
                     
 
                 case ItemName.Bomb:
                     GameScene.instance.AddBomb();
+                    TempSound.instance.SFX(TempSound.EffectSoundName.item);
                     break;
             }
             StartCoroutine(itemPickUP());

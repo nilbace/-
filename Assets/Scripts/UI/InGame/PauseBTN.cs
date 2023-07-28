@@ -16,11 +16,13 @@ public class PauseBTN : MonoBehaviour
     public void ContinueBTN()
     {
         Time.timeScale = 1f;
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ClosePopup();
     }
 
     public void QuitBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ShowPopup(Define.Popup.Quit);
     }
 

@@ -53,7 +53,7 @@ public class UpgradeList : MonoBehaviour
 
     public void Upgrade()
     {
-
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Data.CalThisCatStat((Define.StatName)_n, 1);
         Managers.Data.CalThisCatStat(Define.StatName.extra, -1);
         if (_n ==5)

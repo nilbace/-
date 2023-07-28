@@ -31,6 +31,7 @@ public class SettingUI : MonoBehaviour
 
     public void ClickJoystickFixBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Data.MySettingData.isFixedJoystick = !Managers.Data.MySettingData.isFixedJoystick;
         if(Managers.Data.MySettingData.isFixedJoystick)
         {
@@ -66,6 +67,7 @@ public class SettingUI : MonoBehaviour
 
     public void CloseBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ClosePopup();
     }
 }

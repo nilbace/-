@@ -35,6 +35,7 @@ public class DropGold : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             GameScene.instance.PlayerGetGold(_goldAmount);
+            TempSound.instance.SFX(TempSound.EffectSoundName.getCoin);
             Destroy(gameObject);
         }
     }

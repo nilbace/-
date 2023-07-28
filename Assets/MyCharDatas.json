@@ -5,7 +5,7 @@
             "bought": true,
             "TotalStatPoint": 0,
             "StatLevels": [
-                0,
+                1,
                 0,
                 0,
                 0,
@@ -16,7 +16,7 @@
         },
         {
             "Name": "삼색냥이",
-            "bought": false,
+            "bought": true,
             "TotalStatPoint": 0,
             "StatLevels": [
                 0,
@@ -85,5 +85,5 @@
             ]
         }
     ],
-    "nowSelectCatIndex": 0
+    "nowSelectCatIndex": 1
 }

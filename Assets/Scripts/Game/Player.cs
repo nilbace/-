@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     InGameData thisCatData;
     public static Player instance;
 
+    public float invincibleTime;
+
     [Header("Power")]
     public int PowerLevel = 1;
     [SerializeField] Define.BulletPosition _bulletpositionGroup;
@@ -98,6 +100,7 @@ public class Player : MonoBehaviour
     {
         while(true)
         {
+            TempSound.instance.SFX(TempSound.EffectSoundName.wea4);
             if (PowerLevel == 1)
             {
                 yield return new WaitForSeconds(_attackTerm);
@@ -163,5 +166,27 @@ public class Player : MonoBehaviour
             }
             yield return new WaitForSecondsRealtime(0.1f);
         }
+    }
+
+    public void GoInvincibleTime()
+    {
+        StartCoroutine(InvincibleTimes());
+    }
+
+
+    IEnumerator InvincibleTimes()
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
+
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        Color temp1 = GetComponent<SpriteRenderer>().color;
+        temp1.a = 0.5f;
+        sprite.color = temp1;
+
+        yield return new WaitForSeconds(invincibleTime);
+
+        GetComponent<BoxCollider2D>().enabled = true;
+        temp1.a = 1f;
+        sprite.color = temp1;
     }
 }

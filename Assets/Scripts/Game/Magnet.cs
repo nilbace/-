@@ -31,4 +31,5 @@ public class Magnet : MonoBehaviour
             collision.gameObject.GetComponent<DropGold>().onMagnet = true;
         }
     }
+
 }

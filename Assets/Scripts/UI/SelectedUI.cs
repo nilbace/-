@@ -37,12 +37,14 @@ public class SelectedUI : MonoBehaviour
 
     public void GoLobby()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Scene.LoadScene(Define.Scene.Lobby);
     }
 
     public void SelectStage(int k)
         //k은 0부터 시작 n은 1부터 시작
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         int n = k;
         Managers.Data.SelectedBossindex = n;
         StageInfoData thisStageData = stageInfos.datas[k];
@@ -88,7 +90,8 @@ public class SelectedUI : MonoBehaviour
 
     public void StartGame()
     {
-        if(Managers.Data.CanUseBell())
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        if (Managers.Data.CanUseBell())
         {
             Managers.Data.UseBell();
             Managers.Data.SaveAllDatas();

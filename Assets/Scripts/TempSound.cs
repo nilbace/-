@@ -5,10 +5,23 @@ using UnityEngine;
 public class TempSound : MonoBehaviour
 {
     AudioSource AudioSource;
+    public AudioSource EffectSound;
     public static TempSound instance;
     [SerializeField] AudioClip Lobby;
     [SerializeField] AudioClip Stage;
     public enum BGMName { None,Lobby, Stage }
+    public enum EffectSoundName {
+        button1,  
+        weaponSound4,
+        item,
+        getCoin,
+        powerUp,
+        charDie2,
+        monSound1,
+        result,
+        wea2, wea3, wea4
+    }
+
     BGMName _nowBGM = BGMName.None;
     // Start is called before the first frame update
 
@@ -30,6 +43,13 @@ public class TempSound : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         AudioSource = GetComponent<AudioSource>();
+    }
+
+    public void SFX(EffectSoundName ESN)
+    {
+        AudioClip temp = Resources.Load<AudioClip>($"SoundEffect/{ESN.ToString()}");
+        EffectSound.volume = Managers.Data.MySettingData.SFXSound;
+        EffectSound.PlayOneShot(temp);
     }
 
     private void Update()

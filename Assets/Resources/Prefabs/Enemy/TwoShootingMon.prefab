@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 1.72, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &5116972467350653531
@@ -98,12 +98,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myHP: 8.5
+  IsBoss: 0
+  IsNamed: 0
   toShootDelay: 1.3
   BulletPrefab: {fileID: 1655372175088003629, guid: ddfe97212284dac4795133026172990d, type: 3}
+  BulletSize: 0.2
   bulletDir: {x: 0, y: -1, z: 0}
-  bulletSpeed: 4.88
+  bulletSpeed: 3
   isTwoWay: 1
   twoOffset: {x: 0.88, y: 0, z: 0}
+  attackNumber: 0
+  attackTerm: 0
+  is_N_1_Left: 0
+  is_N_1_Right: 0
+  is_N_2: 0
+  is_N_3: 0
+  N_3_xValue: 0
 --- !u!61 &3086719149401078719
 BoxCollider2D:
   m_ObjectHideFlags: 0

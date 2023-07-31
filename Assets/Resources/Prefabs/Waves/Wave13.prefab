@@ -57,11 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895400, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895400, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.11
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895400, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: m_LocalPosition.z
@@ -113,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895406, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: ChangeDirTime
-      value: 2.6
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895407, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: m_Name
@@ -157,13 +157,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toShootDelay: 2
   BulletPrefab: {fileID: 1655372175088003629, guid: ddfe97212284dac4795133026172990d, type: 3}
-  BulletSize: 0.44
-  bulletDir: {x: 0, y: -1, z: 0}
-  bulletSpeed: 5.05
+  BulletSize: 0.2
+  bulletDir: {x: 0, y: -0.7, z: 0}
+  bulletSpeed: 2.5
   bulletNumbers: 020000000300000002000000
   twoBulletOffset: 0.55
   threeBulletOffset: 0.95
-  attackTerm: 0.3
+  attackTerm: 0.5
 --- !u!1001 &4452601977629685643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895400, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.11
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895400, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: m_LocalPosition.z
@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895406, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: ChangeDirTime
-      value: 2.6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6685549593562895407, guid: f00d9f550811db94d8938e6252f73c18, type: 3}
       propertyPath: m_Name
@@ -289,10 +289,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toShootDelay: 2
   BulletPrefab: {fileID: 1655372175088003629, guid: ddfe97212284dac4795133026172990d, type: 3}
-  BulletSize: 0.44
-  bulletDir: {x: 0, y: -1, z: 0}
-  bulletSpeed: 5.05
+  BulletSize: 0.2
+  bulletDir: {x: 0, y: -0.7, z: 0}
+  bulletSpeed: 2.5
   bulletNumbers: 020000000300000002000000
   twoBulletOffset: 0.55
   threeBulletOffset: 0.95
-  attackTerm: 0.3
+  attackTerm: 0.5

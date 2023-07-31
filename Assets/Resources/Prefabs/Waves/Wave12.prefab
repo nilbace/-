@@ -138,11 +138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: BulletSize
-      value: 0.49
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: attackTerm
-      value: 0.44
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: attackNumber
@@ -264,11 +264,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: BulletSize
-      value: 0.49
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: attackTerm
-      value: 0.44
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: attackNumber
@@ -390,11 +390,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: BulletSize
-      value: 0.49
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: attackTerm
-      value: 0.44
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: attackNumber

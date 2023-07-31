@@ -43,6 +43,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487552, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487552, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487552, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -83,6 +91,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: _myHP
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: is_N_1
       value: 1
       objectReference: {fileID: 0}
@@ -96,7 +108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: BulletSize
-      value: 0.46
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: N_3_xValue
@@ -107,7 +119,27 @@ PrefabInstance:
       value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: bulletDir.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: bulletDir.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: bulletSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: is_N_1_Left
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: twoOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: twoOffset.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
@@ -134,6 +166,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ec2830cbdccedb346a03acee8304eb82, type: 3}
+    - target: {fileID: 2886714046877487567, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5033532135144874021, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: m_Size.x
       value: 1.1434984
@@ -179,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bc6026e339e0af4cb877282b632dcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newDir: {x: 0, y: 0, z: 0}
+  newDir: {x: 0, y: -1, z: 0}
   ChangeDirTime: 0
   newSpeed: 0
   changeDirDelay: 1
@@ -195,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bc6026e339e0af4cb877282b632dcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newDir: {x: 0, y: -1, z: 0}
+  newDir: {x: 2, y: -1, z: 0}
   ChangeDirTime: 0
-  newSpeed: 4
+  newSpeed: 2
   changeDirDelay: 3.05

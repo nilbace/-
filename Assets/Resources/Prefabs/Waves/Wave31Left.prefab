@@ -43,6 +43,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487552, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487552, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487552, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -92,11 +100,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: BulletSize
-      value: 0.46
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: attackTerm
-      value: 0.28
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: bulletSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: is_N_1_Left
@@ -148,11 +160,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5586283456139344768, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: newSpeed
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5586283456139344768, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: changeDirDelay
-      value: 1.3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab12624462ba7b4da119431afb3c066, type: 3}

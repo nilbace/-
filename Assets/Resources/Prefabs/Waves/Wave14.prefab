@@ -137,11 +137,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: BulletSize
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: attackTerm
-      value: 0.2
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
+      propertyPath: bulletDir.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
+      propertyPath: bulletDir.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
+      propertyPath: bulletSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: attackNumber
@@ -149,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: toShootDelay
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff588ab091da6446a86629584f44284, type: 3}
@@ -263,11 +275,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: BulletSize
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: attackTerm
-      value: 0.2
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
+      propertyPath: bulletDir.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
+      propertyPath: bulletDir.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
+      propertyPath: bulletSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5116972467350653531, guid: 2ff588ab091da6446a86629584f44284, type: 3}
       propertyPath: attackNumber

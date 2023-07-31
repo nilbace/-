@@ -13,6 +13,7 @@ public class DataManager
     public StoreData MyStoreData { get; set; }
     public SettingData MySettingData { get; set; }
     public StageHighScoreData MyHighScoreData { get; set; }
+    public HousingData MyHousingData { get; set; }
     public CharSaveDatas MyCharDatas { get; set; }
     
 
@@ -34,6 +35,7 @@ public class DataManager
         LoadStoreData();
         LoadSettingData();
         LoadStageHighScoreData();
+        LoadHousingData();
         LoadCharDatas();
     }
 
@@ -43,6 +45,7 @@ public class DataManager
         SaveStoreData();
         SaveSettingData();
         SaveStageHighScoreData();
+        SaveHousingData();
         SaveCharDatas();
     }
 
@@ -292,7 +295,53 @@ public class DataManager
 
         MyHighScoreData = JsonUtility.FromJson<StageHighScoreData>(jsonData);
     }
+    #endregion
 
+    #region Housing
+    public void SaveHousingData()
+    {
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            path = Path.Combine(Application.persistentDataPath, "MyHousingData.json");
+        }
+        else
+        {
+            path = Path.Combine(Application.dataPath, "MyHousingData.json");
+        }
+        string jsonData = JsonUtility.ToJson(MyHousingData, true);
+
+        FileStream fileStream = new FileStream(path, FileMode.Create);
+        byte[] data = Encoding.UTF8.GetBytes(jsonData);
+        fileStream.Write(data, 0, data.Length);
+        fileStream.Close();
+    }
+    void LoadHousingData()
+    {
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            path = Path.Combine(Application.persistentDataPath, "MyHousingData.json");
+        }
+        else
+        {
+            path = Path.Combine(Application.dataPath, "MyHousingData.json");
+        }
+
+        if (!File.Exists(path))
+        {
+            MyHousingData = new HousingData();
+            SaveHousingData();
+        }
+
+        FileStream fileStream = new FileStream(path, FileMode.Open);
+        byte[] data = new byte[fileStream.Length];
+        fileStream.Read(data, 0, data.Length);
+        fileStream.Close();
+        string jsonData = Encoding.UTF8.GetString(data);
+
+        MyHousingData = JsonUtility.FromJson<HousingData>(jsonData);
+    }
     #endregion
 
     #region CharDatas
@@ -396,6 +445,9 @@ public class DataManager
     #endregion
 }
 
+
+
+
 [System.Serializable]
 public class BellData
 {
@@ -459,5 +511,25 @@ public class StageHighScoreData
     
 }
 
+
+[System.Serializable]
+public class HousingData
+{
+    public bool[] houses = new bool[12];
+    public bool[] talkBox = new bool[12];
+
+    public HousingData()
+    {
+        for (int i = 0; i < houses.Length; i++)
+        {
+            houses[i] = false;
+        }
+        for (int i = 0; i < talkBox.Length; i++)
+        {
+            talkBox[i] = false;
+        }
+    }
+
+}
 
 

@@ -71,10 +71,7 @@ public class GameScene : MonoBehaviour
     void SetStartHeart()
     {
         _heartCount = StatManager.instance.GetReusltStat(Define.StatName.HpBonus) - 1;
-        for(int i = 0; i<= _heartCount; i++)
-        {
-            Hearts[i].SetActive(true);
-        }
+        SetHeartIMG();
     }
 
     void SetHeartIMG()
@@ -144,8 +141,12 @@ public class GameScene : MonoBehaviour
         StartCoroutine(BossDie());
     }
 
+    bool bossAppeared = false;
     public void BossAppear(int MaxHP, EnemyBase _bossScript)
     {
+        if (bossAppeared) return;
+        bossAppeared = true;
+
         BossGO.SetActive(true);
         _bossMaxHP = MaxHP;
         _bossBase = _bossScript;
@@ -159,11 +160,14 @@ public class GameScene : MonoBehaviour
 
     IEnumerator BossDie()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         Time.timeScale = 0;
         Managers.UI.ShowPopup(Define.Popup.StageClear);
         Managers.Data.MyStoreData.MyGoldAmount += GoldAmount;
+
+        if(Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] < ScoreAmount)
         Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] = ScoreAmount;
+
         Managers.Data.MyHighScoreData.clearStageIndex = Managers.Data.SelectedBossindex + 1;
         Managers.Data.SaveAllDatas();
     }

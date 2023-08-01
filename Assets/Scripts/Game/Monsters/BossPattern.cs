@@ -37,10 +37,11 @@ public class BossPattern : MonoBehaviour
 
 
     #region CommonPatterns
-    IEnumerator ShootHalfCircle(float size = 1f)
+    IEnumerator ShootHalfCircle(float size = 1f, bool second = false)
     {
-        float angle1 = 40f;
-        for (int j = 0; j < 10; j++)
+        float angle1 = 0f;  float delta = 14;
+        if (second) angle1 -= delta * 0.5f;
+        for (int j = 0; j < 15; j++)
         {
             Vector3 dir1 = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle1), Mathf.Sin(Mathf.Deg2Rad * angle1), 0f);
 
@@ -49,7 +50,7 @@ public class BossPattern : MonoBehaviour
             bullet.GetComponent<MonsterBullet>().Setting(dir1, 3f, temp);
             bullet.transform.localScale = Vector3.one * size;
 
-            angle1 -= 26f;
+            angle1 -= delta;
         }
         yield return null;
     }
@@ -199,61 +200,91 @@ public class BossPattern : MonoBehaviour
                         break;
                     #region Pig
                     case 1: //큰거 두발 발사
-                        ShootBullet(_basePattern, Vector3.right *2, 1f);
-                        ShootBullet(_basePattern, Vector3.left  *2, 1f);
+                        ShootBullet(_basePattern, Vector3.right *0.5f, 0.7f);
+                        ShootBullet(_basePattern, Vector3.left  *0.5f, 0.7f);
+
+                        break;
+
+                    case 301: //큰거 두발 발사
+                        ShootBullet(_basePattern, Vector3.right * 1f, 0.7f);
+                        ShootBullet(_basePattern, Vector3.left * 1f, 0.7f);
 
                         break;
 
                     case 2: // 작게 5발 연속 발사
                         for(int j = 0; j <5; j++)
                         {
-                            ShootBullet(_basePattern, Vector3.right*1.3f);
-                            ShootBullet(_basePattern, Vector3.left*1.3f );
-                            yield return new WaitForSeconds(0.5f);
+                            ShootBullet(_basePattern, Vector3.right*0.8f , 0.5f);
+                            ShootBullet(_basePattern, Vector3.left*0.8f ,  0.5f);
+                            yield return new WaitForSeconds(0.7f);
+                        }
+                        break;
+
+                    case 302: // 작게 5발 연속 발사
+                        for (int j = 0; j < 5; j++)
+                        {
+                            ShootBullet(_basePattern, Vector3.right * 1.6f, 0.5f);
+                            ShootBullet(_basePattern, Vector3.left * 1.6f, 0.5f);
+                            yield return new WaitForSeconds(0.7f);
                         }
                         break;
 
                     case 3: //왼쪽으로 5번
                         for (int j = 0; j < 5; j++)
                         {
-                            ShootBullet(_baseLeft, new Vector3(-0.5f, 0,0) );
-                            ShootBullet(_baseLeft, new Vector3(1.1f, -0.7f, 0));
-                            yield return new WaitForSeconds(0.5f);
+                            ShootBullet(_baseLeft, new Vector3(-0.5f, 0,0), 0.5f );
+                            ShootBullet(_baseLeft, new Vector3(1.1f, -0.7f, 0), 0.5f);
+                            yield return new WaitForSeconds(0.7f);
                         }
                         break;
 
                     case 4: //오른쪽으로 5번
                         for (int j = 0; j < 5; j++)
                         {
-                            ShootBullet(_baseRight, new Vector3(-1.1f, -0.7f, 0));
-                            ShootBullet(_baseRight, new Vector3(0.5f, 0f, 0));
-                            yield return new WaitForSeconds(0.5f);
+                            ShootBullet(_baseRight, new Vector3(-1.1f, -0.7f, 0), 0.5f);
+                            ShootBullet(_baseRight, new Vector3(0.5f, 0f, 0), 0.5f);
+                            yield return new WaitForSeconds(0.7f);
                         }
                         break;
 
                     case 5: //큰거 4개
-                        ShootBullet(_basePattern, new Vector3(-2.2f,0,0),   1.2f);
-                        ShootBullet(_basePattern, new Vector3(-1.2f, 0, 0), 1.2f);
-                        ShootBullet(_basePattern, new Vector3(1.2f, 0, 0),  1.2f);
-                        ShootBullet(_basePattern, new Vector3(2.2f, 0, 0),  1.2f);
+                        ShootBullet(_basePattern, new Vector3(-2.2f, 0, 0), 0.7f);
+                        ShootBullet(_basePattern, new Vector3(-1.1f, 0, 0), 0.7f);
+                        ShootBullet(_basePattern, new Vector3(1.1f, 0, 0), 0.7f);
+                        ShootBullet(_basePattern, new Vector3(2.2f, 0, 0), 0.7f);
                         break;
 
-                    case 6: //원형으로 발사
-                        yield return StartCoroutine(ShootHalfCircle());
+                    case 6: //반원형으로 발사
+                        yield return StartCoroutine(ShootHalfCircle(0.5f));
+                        yield return new WaitForSeconds(0.5f);
+                        yield return StartCoroutine(ShootHalfCircle(0.5f, true));
                         break;
 
                     case 7:  //3갈래로 발사
                         for (int j = 0; j < 5; j++)
                         {
-                            ShootBullet(_baseLeft, new Vector3(-0.5f, 0, 0));
-                            ShootBullet(_basePattern );
-                            ShootBullet(_baseRight, new Vector3(0.5f, 0f, 0));
+                            ShootBullet(_baseLeft, new Vector3(-0.5f, 0, 0), 0.6f);
+                            ShootBullet(_basePattern, new Vector3(0f, 0, 0), 0.6f);
+                            ShootBullet(_baseRight, new Vector3(0.5f, 0f, 0), 0.6f);
                             yield return new WaitForSeconds(0.5f);
                         }
                         break;
 
                     case 8: //레이저 발사
-                        yield return StartCoroutine(FireLaser());
+                        yield return StartCoroutine(FireLaser(true));
+               
+                        break;
+
+                    case 500 ://case3,4 동시에 발사
+                        for (int j = 0; j < 5; j++)
+                        {
+                            ShootBullet(_baseLeft, new Vector3(-0.5f, 0, 0), 0.5f);
+                            ShootBullet(_baseLeft, new Vector3(1.1f, -0.7f, 0), 0.5f);
+                            ShootBullet(_baseRight, new Vector3(-1.1f, -0.7f, 0), 0.5f);
+                            ShootBullet(_baseRight, new Vector3(0.5f, 0f, 0), 0.5f);
+                            yield return new WaitForSeconds(0.7f);
+                        }
+
                         break;
 
                     #endregion
@@ -270,7 +301,7 @@ public class BossPattern : MonoBehaviour
                         ShootBullet(_basePattern, new Vector3(xValue - offset12 * 0.5f, 0f, 0f), 0.5f);
                         ShootBullet(_basePattern, new Vector3(xValue - offset12 * 1.5f, 0f, 0f), 0.5f);
 
-                        yield return new WaitForSeconds(0.3f);
+                        yield return new WaitForSeconds(0.4f);
 
                         ShootBullet(_basePattern, new Vector3(-xValue, 0f, 0f), 0.5f);
                         ShootBullet(_basePattern, new Vector3(-xValue + offset12, 0f, 0f), 0.5f);
@@ -279,30 +310,42 @@ public class BossPattern : MonoBehaviour
                         ShootBullet(_basePattern, new Vector3(xValue - offset12, 0f, 0f), 0.5f);
                         ShootBullet(_basePattern, new Vector3(xValue - offset12 * 2, 0f, 0f), 0.5f);
 
-                        yield return new WaitForSeconds(0.3f);
+                        yield return new WaitForSeconds(0.4f);
 
                         ShootBullet(_basePattern, new Vector3(-xValue + offset12 * 0.5f, 0f, 0f), 0.5f);
                         ShootBullet(_basePattern, new Vector3(-xValue + offset12 * 1.5f, 0f, 0f), 0.5f);
                         ShootBullet(_basePattern, new Vector3(xValue - offset12 * 0.5f, 0f, 0f), 0.5f);
                         ShootBullet(_basePattern, new Vector3(xValue - offset12 * 1.5f, 0f, 0f), 0.5f);
 
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(0.4f);
                         break;
 
                     case 11:  //양쪽 큰거, 가운데 작은거 두개
                         for(int j =0; j<2;j++)
                         {
-                            ShootBullet(_basePattern, Vector3.right * 2.3f, 1.5f);
-                            ShootBullet(_basePattern, Vector3.left * 2.3f, 1.5f);
-                            ShootBullet(_basePattern, Vector3.right * 0.2f, 0.5f);
-                            ShootBullet(_basePattern, Vector3.left * 0.2f, 0.5f);
-                            yield return new WaitForSeconds(1f);
+                            ShootBullet(_basePattern, Vector3.right * 2.3f, 0.8f);
+                            ShootBullet(_basePattern, Vector3.left * 2.3f, 0.8f);
+                            ShootBullet(_basePattern, Vector3.right * 0.3f, 0.5f);
+                            ShootBullet(_basePattern, Vector3.left * 0.3f, 0.5f);
+                            yield return new WaitForSeconds(0.6f);
                         }
+                        break;
+
+                    case 501: //case3,4 동시에 발사
+                        for (int j = 0; j < 5; j++)
+                        {
+                            ShootBullet(_baseLeft, new Vector3(0.1f, 0, 0), 0.5f);
+                            ShootBullet(_baseLeft, new Vector3(-1.1f, -0.7f, 0), 0.5f);
+                            ShootBullet(_baseRight, new Vector3(1.1f, -0.7f, 0), 0.5f);
+                            ShootBullet(_baseRight, new Vector3(-0.1f, 0f, 0), 0.5f);
+                            yield return new WaitForSeconds(0.7f);
+                        }
+
                         break;
 
                     #endregion
 
-                    #region chick
+                            #region chick
                     case 13:  //긴 총알 좌우에서 발사
                         ShootLongBullet(_basePattern, new Vector3(-2f,0f,0f));
                         ShootLongBullet(_basePattern, new Vector3(2f, 0f, 0f));

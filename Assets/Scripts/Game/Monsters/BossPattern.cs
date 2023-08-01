@@ -1322,7 +1322,7 @@ public class BossPattern : MonoBehaviour
 
     private Queue<GameObject> bulletPool = new Queue<GameObject>();
 
-    void ShootBullet(BulletPattern bulletPattern, Vector3? poz = null, float BulletSize = 1)
+    void ShootBullet(BulletPattern bulletPattern, Vector3? poz = null, float BulletSize = 1 , bool toPlayer = false)
     {
         GameObject bullet;
 
@@ -1337,6 +1337,8 @@ public class BossPattern : MonoBehaviour
         }
 
         Vector3 temp = transform.position + bulletPattern.Offset + (poz ?? Vector3.zero);
+
+        if (toPlayer) bulletPattern.BulletDir = temp - Player.instance.transform.position;
         bullet.GetComponent<MonsterBullet>().Setting(bulletPattern.BulletDir, bulletPattern.BulletSpeed, temp);
         bullet.transform.localScale = Vector3.one * BulletSize;
 

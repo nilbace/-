@@ -210,8 +210,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1213027170}
   m_HandleRect: {fileID: 1213027169}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.74535924
+  m_Value: 0.000036793306
+  m_Size: 0.74535936
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -253,7 +253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 103.5, y: -257.1889}
+  m_AnchoredPosition: {x: 110, y: -269}
   m_SizeDelta: {x: 471, y: 168.3778}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &851396781
@@ -511,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.005432129, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1018394442
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 8604873844549420770}
   - component: {fileID: 3027917789242127903}
   m_Layer: 5
-  m_Name: Charpet
+  m_Name: StageSel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -841,14 +841,14 @@ RectTransform:
   m_GameObject: {fileID: 3445654088924478255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0876377, y: 8.942342, z: 2.488754}
+  m_LocalScale: {x: 1.0876377, y: 6.5530596, z: 2.488754}
   m_Children: []
   m_Father: {fileID: 8730056899468897741}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 164, y: -556}
+  m_AnchoredPosition: {x: 199, y: -595}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8284084954243991011
@@ -1324,14 +1324,14 @@ RectTransform:
   m_GameObject: {fileID: 8730056900386213111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0876377, y: 8.942342, z: 2.488754}
+  m_LocalScale: {x: 1.0876377, y: 6.5530596, z: 2.488754}
   m_Children: []
   m_Father: {fileID: 8730056899468897741}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -156, y: -556}
+  m_AnchoredPosition: {x: -175, y: -594.9979}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8730056900386213107
@@ -1568,7 +1568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b67d1ea5af754047b71086e84f9225b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 940a85e61ed7aa048a1896f142667741, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

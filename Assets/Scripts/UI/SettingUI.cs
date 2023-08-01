@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class SettingUI : MonoBehaviour
 {
-    [SerializeField] GameObject JoystickSet;
     [SerializeField] Sprite[] truefalseImg;
     [SerializeField] Slider[] sliders;
     void Start()
@@ -16,14 +15,7 @@ public class SettingUI : MonoBehaviour
 
     void SetSettingPannel()
     {
-        if(Managers.Data.MySettingData.isFixedJoystick)
-        {
-            JoystickSet.GetComponent<Image>().sprite = truefalseImg[0];
-        }
-        else
-        {
-            JoystickSet.GetComponent<Image>().sprite = truefalseImg[1];
-        }
+        
 
         sliders[0].value = Managers.Data.MySettingData.BGMSound;
         sliders[1].value = Managers.Data.MySettingData.SFXSound;
@@ -33,14 +25,7 @@ public class SettingUI : MonoBehaviour
     {
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Data.MySettingData.isFixedJoystick = !Managers.Data.MySettingData.isFixedJoystick;
-        if(Managers.Data.MySettingData.isFixedJoystick)
-        {
-            JoystickSet.GetComponent<Image>().sprite = truefalseImg[0];
-        }
-        else
-        {
-            JoystickSet.GetComponent<Image>().sprite = truefalseImg[1];
-        }
+    
         Managers.Data.SaveSettingData();
     }
 

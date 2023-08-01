@@ -5,6 +5,12 @@ using UnityEngine;
 public class StageFail : MonoBehaviour
 {
     [SerializeField] TMPro.TMP_Text Scoretext;
+
+    private void Start()
+    {
+        setScore(GameScene.instance.ScoreAmount);
+    }
+
     public void setScore(int score)
     {
         Scoretext.text = score.ToString();

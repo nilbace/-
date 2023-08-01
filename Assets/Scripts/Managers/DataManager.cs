@@ -465,11 +465,15 @@ public class StoreData
 {
     public int MyGoldAmount;
     public int MyRubyAmount;
+    public int MySweepTicketAmount;
+    public int MyReviveTicKetAmount;
 
     public StoreData()
     {
         MyGoldAmount = 0;
         MyRubyAmount = 0;
+        MySweepTicketAmount = 0;
+        MyReviveTicKetAmount = 0;
     }
 }
 

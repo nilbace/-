@@ -16,16 +16,25 @@ public class SelectedUI : MonoBehaviour
     [SerializeField] Button[] _stageBTNs;
     [SerializeField] Button   _startBTN;
 
+    
+
+    
+
     private void Start()
     {
-        for(int i = 0; i <= Managers.Data.MyHighScoreData.clearStageIndex; i++)
-        {
-            if (i == 12) continue;
-            _stageBTNs[i].interactable = true;
-        }
-        
-        gameObject.SetActive(false);
-        if(Managers.Data.MyBellData.NowBellCount>0)
+        Init();
+    }
+
+    void Init()
+    {
+        //for(int i = 0; i <= Managers.Data.MyHighScoreData.clearStageIndex; i++)
+        //{
+        //    if (i == 12) continue;
+        //    _stageBTNs[i].interactable = true;
+        //}
+
+        //gameObject.SetActive(false);
+        if (Managers.Data.MyBellData.NowBellCount > 0)
         {
             _startBTN.interactable = true;
         }
@@ -33,6 +42,11 @@ public class SelectedUI : MonoBehaviour
         {
             _startBTN.interactable = false;
         }
+        sweepInit();
+        CatInit();
+
+        //temp
+        SelectStage(0);
     }
 
     public void GoLobby()
@@ -49,8 +63,8 @@ public class SelectedUI : MonoBehaviour
         Managers.Data.SelectedBossindex = n;
         StageInfoData thisStageData = stageInfos.datas[k];
 
-        _stageName.text = "STAGE" + (n+1).ToString();
-        _myHighScore.text = "BEST SCORE : " + Managers.Data.MyHighScoreData.HighScores[k].ToString();
+        _stageName.text = (n+1).ToString();
+        _myHighScore.text = Managers.Data.MyHighScoreData.HighScores[k].ToString();
         _321ReqScoreTmps[0].text = "점수 " +thisStageData.ThreeStarScore.ToString() + "점 이상";
         _321ReqScoreTmps[1].text = "점수 " + thisStageData.TwoStarScore.ToString() + "점 이상";
         _321ReqScoreTmps[2].text = "점수 " + thisStageData.OneStarScore.ToString() + "점 이상";
@@ -98,5 +112,73 @@ public class SelectedUI : MonoBehaviour
             Managers.Scene.LoadScene(Define.Scene.Game);
         }
     }
+
+    #region Sweep
+
+    int _nowSelSweepCount = 0;
+    int _nowSweepTicketCount;
+
+    [Header("Sweep")]
+    [SerializeField] TMP_Text nowSweepCount;
+    [SerializeField] TMP_Text selSweepCount;
+    [SerializeField] Button PlusBTN;
+    [SerializeField] Button MinBTN;
+
+    void sweepInit()
+    {
+        _nowSweepTicketCount = Managers.Data.MyStoreData.MySweepTicketAmount;
+        selSweepCount.text = _nowSelSweepCount.ToString();
+        nowSweepCount.text = _nowSweepTicketCount.ToString();
+        if (_nowSelSweepCount >= _nowSweepTicketCount)
+        {
+            PlusBTN.interactable = false;
+        }
+        else
+        {
+            PlusBTN.interactable = true;
+        }
+    }
+    public void PlusMinSweepBTN(int n)
+    {
+        _nowSelSweepCount += n;
+        Init();
+    }
+
+    #endregion
+
+    #region Cat
+    [Header("Cat")]
+    [SerializeField] TMP_Text catName;
+    [SerializeField] Image CatImg;
+
+    int _nowcatIndex;
+    string path = "Prefabs/PlayerData";
+
+
+    void CatInit()
+    {
+        _nowcatIndex = Managers.Data.MyCharDatas.nowSelectCatIndex;
+        PlayerData temp1 = Resources.Load<PlayerData>(path);
+        InGameData temp2 = temp1.Chars[_nowcatIndex];
+
+        catName.text = "Lv." + Managers.Data.GetThisCatStat(StatName.Total) + temp2.CatName;
+        CatImg.sprite = temp2.FrontImg;
+    }
+
+    private void FixedUpdate()
+    {
+        if(_nowcatIndex != Managers.Data.MyCharDatas.nowSelectCatIndex)
+        {
+            Init();
+        }
+    }
+
+    public void CatChangeBTN()
+    {
+        Managers.UI.ShowPopup(Popup.CharPet);
+    }
+
+
+    #endregion
 
 }

@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b554e2275478ac74a91075085bdf790d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myHP: 400
+  _myHP: 222222
   IsBoss: 1
   IsNamed: 0
 --- !u!50 &7185217140127674728
@@ -198,12 +198,20 @@ MonoBehaviour:
   RaserPrefab: {fileID: 2462214706568107475, guid: 117704c3a347e8c4aaf77170aefc769e, type: 3}
   SplitBall: {fileID: 0}
   BossPatternData:
-  - {x: 14, y: 2}
-  - {x: 15, y: 2}
-  - {x: 16, y: 2}
+  - {x: 14, y: 1}
+  - {x: 304, y: 0}
+  - {x: 14, y: -1}
+  - {x: 15, y: 0}
+  - {x: 13, y: 0}
+  - {x: 20, y: 1}
+  - {x: 13, y: 0}
+  - {x: 16, y: -1}
   - {x: 6, y: 2}
-  - {x: 6, y: 2}
-  - {x: 13, y: 2}
+  - {x: 6, y: 0}
+  - {x: 13, y: 0}
+  - {x: 15, y: 0}
+  - {x: 20, y: 0.5}
+  - {x: 16, y: 0}
 --- !u!114 &6203426069870456785
 MonoBehaviour:
   m_ObjectHideFlags: 0

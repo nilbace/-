@@ -345,42 +345,59 @@ public class BossPattern : MonoBehaviour
 
                     #endregion
 
-                            #region chick
+                    #region chick
+
+                    case 303: //큰거 두발 발사
+                        ShootBullet(_basePattern, Vector3.right * 0.5f, 0.7f, true) ;
+                        ShootBullet(_basePattern, Vector3.left * 0.5f, 0.7f, true);
+
+                        break;
+
+                    case 304: // 작게 5발 연속 발사
+                        for (int j = 0; j < 5; j++)
+                        {
+                            ShootBullet(_basePattern, Vector3.right * 0.8f, 0.5f, true);
+                            ShootBullet(_basePattern, Vector3.left * 0.8f, 0.5f, true);
+                            yield return new WaitForSeconds(0.7f);
+                        }
+                        break;
+
                     case 13:  //긴 총알 좌우에서 발사
-                        ShootLongBullet(_basePattern, new Vector3(-2f,0f,0f));
-                        ShootLongBullet(_basePattern, new Vector3(2f, 0f, 0f));
+                        ShootLongBullet(_basePattern, new Vector3(-2f,0f,0.7f));
+                        ShootLongBullet(_basePattern, new Vector3(2f, 0f, 0.7f));
+                        
                         break;
                     
 
                     case 14:   //좌우 한발, 가운데 한발
-                        ShootBullet(_basePattern, new Vector3(-2.2f, -0f, 0f) ,1.5f);
-                        ShootBullet(_basePattern, new Vector3(2.2f, -0f, 0f), 1.5f);
-                        yield return new WaitForSeconds(1f);
-                        ShootBullet(_basePattern, new Vector3(0.5f, -0f, 0f), 1.5f);
-                        ShootBullet(_basePattern, new Vector3(-0.5f, -0f, 0f), 1.5f);
+                        ShootBullet(_basePattern, new Vector3(-2.2f, -0f, 0f) , 1.0f);
+                        ShootBullet(_basePattern, new Vector3(2.2f, -0f, 0f), 1.0f);
+                        yield return new WaitForSeconds(0.5f);
+                        ShootBullet(_basePattern, new Vector3(0.5f, -0f, 0f), 0.7f);
+                        ShootBullet(_basePattern, new Vector3(-0.5f, -0f, 0f), 0.7f);
 
                         break;
 
 
                     case 15:    //왼쪽에서 3갈래 쏘고 복귀
                         transform.DOMoveX(-1f, 1f);
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(1.5f);
                         //왼쪽으로 이동
-                        yield return StartCoroutine(Shoot3Way());
+                        yield return StartCoroutine(Shoot3Way(0.7f));
                       
                         transform.DOMoveX(0f, 1f);
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(1.5f);
                         //돌아오기
                         break;
 
                     case 16:    //오른쪽에서 3갈래 쏘고 복귀
                         transform.DOMoveX(1f, 1f);
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(1.5f);
                         //왼쪽으로 이동
-                        yield return StartCoroutine(Shoot3Way());
+                        yield return StartCoroutine(Shoot3Way(0.7f));
 
                         transform.DOMoveX(0f, 1f);
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(1.5f);
                         //돌아오기
                         break;
                     #endregion
@@ -1338,7 +1355,7 @@ public class BossPattern : MonoBehaviour
 
         Vector3 temp = transform.position + bulletPattern.Offset + (poz ?? Vector3.zero);
 
-        if (toPlayer) bulletPattern.BulletDir = temp - Player.instance.transform.position;
+        if (toPlayer) bulletPattern.BulletDir = Player.instance.transform.position -temp;
         bullet.GetComponent<MonsterBullet>().Setting(bulletPattern.BulletDir, bulletPattern.BulletSpeed, temp);
         bullet.transform.localScale = Vector3.one * BulletSize;
 

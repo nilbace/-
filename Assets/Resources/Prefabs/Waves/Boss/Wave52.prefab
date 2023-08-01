@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970839705582343963}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.98, z: 0}
   m_LocalScale: {x: 0.21408229, y: 0.21408229, z: 0.21408229}
   m_Children: []
   m_Father: {fileID: 1546083690421515900}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b554e2275478ac74a91075085bdf790d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myHP: 400
+  _myHP: 222222
   IsBoss: 1
   IsNamed: 0
 --- !u!50 &2679765035935098378
@@ -167,11 +167,18 @@ MonoBehaviour:
   RaserPrefab: {fileID: 2462214706568107475, guid: 117704c3a347e8c4aaf77170aefc769e, type: 3}
   SplitBall: {fileID: 0}
   BossPatternData:
-  - {x: 10, y: 2}
-  - {x: 7, y: 2}
+  - {x: 11, y: 0}
+  - {x: 301, y: 1}
+  - {x: 500, y: 1}
+  - {x: 11, y: 0}
+  - {x: 301, y: 1.5}
+  - {x: 10, y: 0.3}
+  - {x: 1, y: 1}
+  - {x: 7, y: 1.5}
   - {x: 6, y: 1}
   - {x: 6, y: 2}
-  - {x: 11, y: 2}
+  - {x: 500, y: 0}
+  - {x: 1, y: 1}
 --- !u!114 &1193889123613636787
 MonoBehaviour:
   m_ObjectHideFlags: 0

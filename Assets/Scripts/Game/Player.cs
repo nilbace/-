@@ -77,14 +77,54 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float x = _nowjoystick.Horizontal;
-        float y = _nowjoystick.Vertical;
+        //float x = _nowjoystick.Horizontal;
+        //float y = _nowjoystick.Vertical;
 
-        moveVec = new Vector3(x, y, 0) * moveSpeed * Time.deltaTime;
-        rigid.MovePosition((Vector3)rigid.position + moveVec);
+        //moveVec = new Vector3(x, y, 0) * moveSpeed * Time.deltaTime;
+        //rigid.MovePosition((Vector3)rigid.position + moveVec);
 
-        if (moveVec.sqrMagnitude == 0)
-            return;        
+        //if (moveVec.sqrMagnitude == 0)
+        //    return;        
+    }
+    private Vector2 offset;
+    private bool isDragging = false;
+    private float minX = -2.4f;
+    private float maxX = 2.4f;
+    private float minY = -4.1f;
+    private float maxY = 2.6f;
+
+    private void Update()
+    {
+        // 드래그 시작
+        if(Time.timeScale == 1)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+
+                Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                {
+                    offset = transform.position - mouseWorldPos;
+                    isDragging = true;
+                }
+
+            }
+
+            // 드래그 중
+            if (isDragging && Input.GetMouseButton(0))
+            {
+                Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                float clampedX = Mathf.Clamp(mouseWorldPos.x + offset.x, minX, maxX);
+                float clampedY = Mathf.Clamp(mouseWorldPos.y + offset.y, minY, maxY);
+                transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+            }
+
+            // 드래그 끝
+            if (Input.GetMouseButtonUp(0))
+            {
+                isDragging = false;
+            }
+        }
     }
 
     void SetStat()

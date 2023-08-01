@@ -106,6 +106,7 @@ public class GameScene : MonoBehaviour
         
         Hearts[_heartCount].SetActive(false);
         _heartCount--;
+        //Player.instance.PowerLevel--;
 
         Player.instance.GoInvincibleTime();
     }

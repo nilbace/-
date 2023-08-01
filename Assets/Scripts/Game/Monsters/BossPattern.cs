@@ -39,7 +39,7 @@ public class BossPattern : MonoBehaviour
     #region CommonPatterns
     IEnumerator ShootHalfCircle(float size = 1f)
     {
-        float angle1 = 0f;
+        float angle1 = 40f;
         for (int j = 0; j < 10; j++)
         {
             Vector3 dir1 = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle1), Mathf.Sin(Mathf.Deg2Rad * angle1), 0f);
@@ -49,7 +49,7 @@ public class BossPattern : MonoBehaviour
             bullet.GetComponent<MonsterBullet>().Setting(dir1, 3f, temp);
             bullet.transform.localScale = Vector3.one * size;
 
-            angle1 -= 18f;
+            angle1 -= 26f;
         }
         yield return null;
     }
@@ -199,16 +199,16 @@ public class BossPattern : MonoBehaviour
                         break;
                     #region Pig
                     case 1: //큰거 두발 발사
-                        ShootBullet(_basePattern, Vector3.right *2, 1.5f);
-                        ShootBullet(_basePattern, Vector3.left  *2, 1.5f);
+                        ShootBullet(_basePattern, Vector3.right *2, 1f);
+                        ShootBullet(_basePattern, Vector3.left  *2, 1f);
 
                         break;
 
                     case 2: // 작게 5발 연속 발사
                         for(int j = 0; j <5; j++)
                         {
-                            ShootBullet(_basePattern, Vector3.right);
-                            ShootBullet(_basePattern, Vector3.left );
+                            ShootBullet(_basePattern, Vector3.right*1.3f);
+                            ShootBullet(_basePattern, Vector3.left*1.3f );
                             yield return new WaitForSeconds(0.5f);
                         }
                         break;

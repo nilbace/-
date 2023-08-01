@@ -17,7 +17,7 @@ public class UIManager
 
         _popupStack.Push(popupinstance);
 
-        popupinstance.GetComponent<Canvas>().sortingOrder = _popupStack.Count;
+        popupinstance.GetComponent<Canvas>().sortingOrder = _popupStack.Count + 20;
     }
 
     public void ClosePopup()

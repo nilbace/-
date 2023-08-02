@@ -13,6 +13,7 @@ public class Quit : MonoBehaviour
     public void ContinueBTN()
     {
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
-        GameScene.instance.Quit_Continue();
+        Time.timeScale = 1;
+        Managers.UI.ClosePopup();
     }
 }

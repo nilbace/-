@@ -1,6 +1,7 @@
 {
-    "MyGoldAmount": 869070,
-    "MyRubyAmount": 0,
-    "MySweepTicketAmount": 0,
-    "MyReviveTicKetAmount": 0
+    "MyGoldAmount": 500000,
+    "MyRubyAmount": 500,
+    "MySweepTicketAmount": 5,
+    "MyReviveTicKetAmount": 0,
+    "MySkipCouponAmount": 5
 }

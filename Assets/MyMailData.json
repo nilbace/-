@@ -1,0 +1,13 @@
+{
+    "MailBox": [
+        {
+            "CoinAmount": 500000,
+            "RubyAmount": 500,
+            "BellAmount": 50,
+            "SweepAmount": 5,
+            "SkipCouponAmount": 5,
+            "MailText": "개발자 치트"
+        }
+    ],
+    "MailAmount": 1
+}

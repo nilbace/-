@@ -16,24 +16,29 @@ public class SelectedUI : MonoBehaviour
     [SerializeField] Button[] _stageBTNs;
     [SerializeField] Button   _startBTN;
 
-    
-
-    
-
     private void Start()
     {
+        FirstInit();
         Init();
+    }
+
+    void FirstInit()
+    {
+        for (int i = 0; i < 12; i++)
+        {
+            _stageBTNs[i].interactable = false;
+        }
+        for (int i = 0; i <= Managers.Data.MyHighScoreData.clearStageIndex; i++)
+        {
+            if (i == 12) continue;
+            _stageBTNs[i].interactable = true;
+        }
+        gameObject.SetActive(false);
     }
 
     void Init()
     {
-        //for(int i = 0; i <= Managers.Data.MyHighScoreData.clearStageIndex; i++)
-        //{
-        //    if (i == 12) continue;
-        //    _stageBTNs[i].interactable = true;
-        //}
-
-        //gameObject.SetActive(false);
+        
         if (Managers.Data.MyBellData.NowBellCount > 0)
         {
             _startBTN.interactable = true;
@@ -45,8 +50,6 @@ public class SelectedUI : MonoBehaviour
         sweepInit();
         CatInit();
 
-        //temp
-        SelectStage(0);
     }
 
     public void GoLobby()
@@ -54,12 +57,13 @@ public class SelectedUI : MonoBehaviour
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Scene.LoadScene(Define.Scene.Lobby);
     }
-
+    int _nowSelectedStage;
     public void SelectStage(int k)
         //k은 0부터 시작 n은 1부터 시작
     {
+        gameObject.SetActive(true);
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
-        int n = k;
+        int n = k;  _nowSelectedStage = k;
         Managers.Data.SelectedBossindex = n;
         StageInfoData thisStageData = stageInfos.datas[k];
 
@@ -75,12 +79,13 @@ public class SelectedUI : MonoBehaviour
 
         _bossImg.sprite = thisStageData.BossImg;
 
-
+        SweepBTN.interactable = false;
         if(myscore >= thisStageData.ThreeStarScore)
         {
             _123stars[0].SetActive(true);
             _123stars[1].SetActive(true);
             _123stars[2].SetActive(true);
+            SweepBTN.interactable = true;
         }
         else if(myscore >= thisStageData.TwoStarScore)
         {
@@ -123,6 +128,7 @@ public class SelectedUI : MonoBehaviour
     [SerializeField] TMP_Text selSweepCount;
     [SerializeField] Button PlusBTN;
     [SerializeField] Button MinBTN;
+    [SerializeField] Button SweepBTN;
 
     void sweepInit()
     {
@@ -137,10 +143,22 @@ public class SelectedUI : MonoBehaviour
         {
             PlusBTN.interactable = true;
         }
+
+        
     }
     public void PlusMinSweepBTN(int n)
     {
         _nowSelSweepCount += n;
+        Init();
+    }
+
+    void UseSweepTicket()
+    {
+        int temp = Managers.Data.MyHighScoreData.HighGoldScores[_nowSelectedStage] * _nowSelSweepCount;
+
+        Managers.Data.MyStoreData.MySweepTicketAmount -= _nowSelSweepCount;
+        Managers.Data.MyStoreData.MyGoldAmount += temp;
+        _nowSelSweepCount = 0;
         Init();
     }
 

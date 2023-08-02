@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using System.Text;
 
-public class DataManager 
+public class DataManager
 {
     //스테이지 셀렉트
     public int SelectedBossindex { get; set; } = 0;
@@ -15,14 +15,16 @@ public class DataManager
     public StageHighScoreData MyHighScoreData { get; set; }
     public HousingData MyHousingData { get; set; }
     public CharSaveDatas MyCharDatas { get; set; }
-    
+    public MailData MyMailData { get; set; }
+    public PetStat MyPetStat { get; set; }
+
 
 
     public void Init()
     {
         LoadAllData();
         CalculateAndAddBell();
-        
+
     }
 
 
@@ -37,6 +39,7 @@ public class DataManager
         LoadStageHighScoreData();
         LoadHousingData();
         LoadCharDatas();
+        LoadMailData();
     }
 
     public void SaveAllDatas()
@@ -47,6 +50,7 @@ public class DataManager
         SaveStageHighScoreData();
         SaveHousingData();
         SaveCharDatas();
+        SaveMailData();
     }
 
     #endregion
@@ -58,12 +62,12 @@ public class DataManager
         string temp = (GetDateTime(MyBellData.BellPlusTime) - DateTime.Now).Minutes.ToString()
             + ":" + (GetDateTime(MyBellData.BellPlusTime) - DateTime.Now).Seconds.ToString();
 
-        return temp; 
+        return temp;
     }
 
     public void CalculateAndAddBell()
     {
-        while(MyBellData.NowBellCount < 5 && DateTime.Now > GetDateTime(MyBellData.BellPlusTime))
+        while (MyBellData.NowBellCount < 5 && DateTime.Now > GetDateTime(MyBellData.BellPlusTime))
         {
             MyBellData.NowBellCount++;
             MyBellData.BellPlusTime = GetDateTime(MyBellData.BellPlusTime).AddMinutes(30).ToString();
@@ -73,7 +77,7 @@ public class DataManager
 
     public bool CanUseBell()
     {
-        if(MyBellData.NowBellCount > 0)
+        if (MyBellData.NowBellCount > 0)
         {
             return true;
         }
@@ -124,7 +128,7 @@ public class DataManager
             path = Path.Combine(Application.dataPath, "MyBellData.json");
         }
 
-        if(!File.Exists(path))
+        if (!File.Exists(path))
         {
             MyBellData = new BellData();
             SaveBellData();
@@ -248,8 +252,7 @@ public class DataManager
     }
     #endregion
 
-
-    #region HighScore
+    #region HighScoreAndPetStat
     public void SaveStageHighScoreData()
     {
         string path;
@@ -294,7 +297,10 @@ public class DataManager
         string jsonData = Encoding.UTF8.GetString(data);
 
         MyHighScoreData = JsonUtility.FromJson<StageHighScoreData>(jsonData);
+
     }
+
+    
     #endregion
 
     #region Housing
@@ -348,7 +354,7 @@ public class DataManager
 
     public void ResetCatStat()
     {
-        for(int i = 0; i<6;i++)
+        for (int i = 0; i < 6; i++)
         {
             int temp = GetThisCatStat((Define.StatName)i);
             CalThisCatStat((Define.StatName)i, -temp);
@@ -362,14 +368,14 @@ public class DataManager
         return ((Define.CatName)MyCharDatas.nowSelectCatIndex).ToString();
     }
 
-    public int GetCatStat(Define.CatName catname ,Define.StatName statname)
+    public int GetCatStat(Define.CatName catname, Define.StatName statname)
     {
         if (statname == Define.StatName.Total)
         {
             int temp = 0;
             for (int i = 0; i < 7; i++)
             {
-                temp += GetCatStat(catname ,(Define.StatName)i);
+                temp += GetCatStat(catname, (Define.StatName)i);
             }
             return temp;
         }
@@ -378,10 +384,10 @@ public class DataManager
 
     public int GetThisCatStat(Define.StatName statname)
     {
-        if(statname == Define.StatName.Total)
+        if (statname == Define.StatName.Total)
         {
             int temp = 0;
-            for(int i = 0; i < 7;i++)
+            for (int i = 0; i < 7; i++)
             {
                 temp += GetThisCatStat((Define.StatName)i);
             }
@@ -395,7 +401,7 @@ public class DataManager
         MyCharDatas.charSaveDatas[MyCharDatas.nowSelectCatIndex].StatLevels[(int)statName] += n;
         SaveAllDatas();
     }
-    
+
     public void SaveCharDatas()
     {
         string path;
@@ -443,6 +449,140 @@ public class DataManager
     }
 
     #endregion
+
+    #region Mail
+    void SaveMailData()
+    {
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            path = Path.Combine(Application.persistentDataPath, "MyMailData.json");
+        }
+        else
+        {
+            path = Path.Combine(Application.dataPath, "MyMailData.json");
+        }
+        string jsonData = JsonUtility.ToJson(MyMailData, true);
+
+        FileStream fileStream = new FileStream(path, FileMode.Create);
+        byte[] data = Encoding.UTF8.GetBytes(jsonData);
+        fileStream.Write(data, 0, data.Length);
+        fileStream.Close();
+    }
+
+    void LoadMailData()
+    {
+        string path;
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            path = Path.Combine(Application.persistentDataPath, "MyMailData.json");
+        }
+        else
+        {
+            path = Path.Combine(Application.dataPath, "MyMailData.json");
+        }
+
+        if (!File.Exists(path))
+        {
+            MyMailData = new MailData();
+            SaveMailData();
+        }
+
+        FileStream fileStream = new FileStream(path, FileMode.Open);
+        byte[] data = new byte[fileStream.Length];
+        fileStream.Read(data, 0, data.Length);
+        fileStream.Close();
+        string jsonData = Encoding.UTF8.GetString(data);
+
+        MyMailData = JsonUtility.FromJson<MailData>(jsonData);
+    }
+
+    public void GetAndDestroyMail(int i)
+    {
+        MyMailData.MailBox.RemoveAt(i);
+        MyMailData.MailAmount--;
+        SaveAllDatas();
+    }
+
+    public void MakeAndAddMail(int gold = 0, int ruby = 0, int bell = 0, int sweep = 0, int skip = 0, string text = null)
+    {
+        OneMail temp = new OneMail();
+        temp.CoinAmount = gold;
+        temp.RubyAmount = ruby;
+        temp.BellAmount = bell;
+        temp.SweepAmount = sweep;
+        temp.SkipCouponAmount = skip;
+        temp.MailText = text;
+        MyMailData.MailBox.Add(temp);
+        MyMailData.MailAmount++;
+        SaveAllDatas();
+    }
+
+
+
+    #endregion
+
+    #region PetStat
+    public PetStat GetPetResultStat()
+    {
+        MyPetStat = new PetStat();
+        int nowclearindex = MyHighScoreData.clearStageIndex;
+        for (int i = 0; i <= nowclearindex - 1; i++)
+        {
+            if (i == 12) continue;
+            switch (i)
+            {
+                case 0:
+                    AddPetStat(5, 0, 5, 0, 0, 0);
+                    break;
+                case 1:
+                    AddPetStat(0, 0, 0, 5, 1, 0);
+                    break;
+                case 2:
+                    AddPetStat(0, 1, 5, 0, 0, 0);
+                    break;
+                case 3:
+                    AddPetStat(0, 2, 0, 0, 1, 0);
+                    break;
+                case 4:
+                    AddPetStat(10, 0, 5, 0, 0, 0);
+                    break;
+                case 5:
+                    AddPetStat(0, 3, 0, 0, 1, 0);
+                    break;
+                case 6:
+                    AddPetStat(10, 0, 0, 10, 0, 0);
+                    break;
+                case 7:
+                    AddPetStat(10, 4, 10, 0, 2, 0);
+                    break;
+                case 8:
+                    AddPetStat(15, 5, 0, 10, 2, 0);
+                    break;
+                case 9:
+                    AddPetStat(15, 7, 10, 10, 0, 0);
+                    break;
+                case 10:
+                    AddPetStat(15, 8, 0, 15, 3, 0);
+                    break;
+                case 11:
+                    AddPetStat(20, 10, 15, 0, 0, 10);
+                    break;
+            }
+        }
+        return MyPetStat;
+    }
+
+    void AddPetStat(int atk, int critper, int atkspeed, int goldB, int score, int life)
+    {
+        MyPetStat.petatk += atk;
+        MyPetStat.petCritper += critper;
+        MyPetStat.petAtkSpeed += atkspeed;
+        MyPetStat.petGoldBonus += goldB;
+        MyPetStat.ScoreBonus += score;
+        MyPetStat.HeartBonus += life;
+    }
+    #endregion
 }
 
 
@@ -467,6 +607,7 @@ public class StoreData
     public int MyRubyAmount;
     public int MySweepTicketAmount;
     public int MyReviveTicKetAmount;
+    public int MySkipCouponAmount;
 
     public StoreData()
     {
@@ -474,6 +615,7 @@ public class StoreData
         MyRubyAmount = 0;
         MySweepTicketAmount = 0;
         MyReviveTicKetAmount = 0;
+        MySkipCouponAmount = 0;
     }
 }
 
@@ -496,6 +638,7 @@ public class SettingData
 public class StageHighScoreData
 {
     public int[] HighScores = new int[12];
+    public int[] HighGoldScores = new int[12];
     public int clearStageIndex;
     public bool[] GetReward = new bool[36];
 
@@ -505,6 +648,7 @@ public class StageHighScoreData
         for (int i = 0; i < HighScores.Length; i++)
         {
             HighScores[i] = 0;
+            HighGoldScores[i] = 0;
         }
         clearStageIndex = 0;
         for (int i = 0; i < GetReward.Length; i++)
@@ -536,4 +680,48 @@ public class HousingData
 
 }
 
+[System.Serializable]
+public class OneMail
+{
+    public int CoinAmount;
+    public int RubyAmount;
+    public int BellAmount;
+    public int SweepAmount;
+    public int SkipCouponAmount;
+    public string MailText;
+
+    public OneMail()
+    {
+        CoinAmount = 0;
+        RubyAmount = 0;
+        BellAmount = 0;
+        SweepAmount = 0;
+        SkipCouponAmount = 0;
+        MailText = null;
+    }
+}
+
+[System.Serializable]
+public class MailData
+{
+    public List<OneMail> MailBox = new List<OneMail>();
+    public int MailAmount;
+
+    public MailData()
+    {
+        
+        MailAmount = 0;
+    }
+}
+
+[System.Serializable]
+public class PetStat
+{
+    public int petatk;
+    public int petCritper;
+    public int petAtkSpeed;
+    public int petGoldBonus;
+    public int ScoreBonus;
+    public int HeartBonus;
+}
 

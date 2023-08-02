@@ -168,6 +168,9 @@ public class GameScene : MonoBehaviour
         if(Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] < ScoreAmount)
         Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] = ScoreAmount;
 
+        if (Managers.Data.MyHighScoreData.HighGoldScores[Managers.Data.SelectedBossindex] < GoldAmount)
+            Managers.Data.MyHighScoreData.HighGoldScores[Managers.Data.SelectedBossindex] = GoldAmount;
+
         Managers.Data.MyHighScoreData.clearStageIndex = Managers.Data.SelectedBossindex + 1;
         Managers.Data.SaveAllDatas();
     }
@@ -241,7 +244,7 @@ public class GameScene : MonoBehaviour
     public void PauseBTN()
     {
         Time.timeScale = 0;
-        Managers.UI.ShowPopup(Define.Popup.Pause);
+        Managers.UI.ShowPopup(Define.Popup.Quit);
     }
 
     public void Quit_Continue()

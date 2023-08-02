@@ -67,4 +67,16 @@ public class LobbyUI : MonoBehaviour
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Scene.LoadScene(Define.Scene.Lobby);
     }
+
+    public void OpenMailBox()
+    {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        Managers.UI.ShowPopup(Define.Popup.MailBox);
+    }
+
+    public void PetBTN()
+    {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        Managers.UI.ShowPopup(Define.Popup.Pet);
+    }
 }

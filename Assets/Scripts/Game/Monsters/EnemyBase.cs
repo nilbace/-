@@ -14,11 +14,20 @@ public class EnemyBase : MonoBehaviour
 
     string ItemPath = "Prefabs/MonItems/";
 
-    private void Start()
+    protected void Start()
     {
         if(IsBoss)
         {
             GameScene.instance.BossAppear((int)_myHP, this);
+        }
+
+        if(IsNamed)
+        {
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Named/" + Managers.Data.SelectedBossindex);
+        }
+        else if(!IsNamed && !IsBoss)
+        {
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Mini/" + Managers.Data.SelectedBossindex);
         }
     }
     public void SetMonster(Define.WaveData waveData)

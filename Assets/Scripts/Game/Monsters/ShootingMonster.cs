@@ -23,6 +23,7 @@ public class ShootingMonster : EnemyBase
     [SerializeField] float N_3_xValue;
     void Start()
     {
+        base.Start();
         StartCoroutine(Shooting());
     }
 

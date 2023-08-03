@@ -8,6 +8,7 @@ public class ZMonsters : EnemyBase
     [SerializeField] float movedelay;
     private void Start()
     {
+        base.Start();
         StartCoroutine(GoZ());
     }
 

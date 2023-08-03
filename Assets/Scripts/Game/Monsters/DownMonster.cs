@@ -8,6 +8,7 @@ public class DownMonster : EnemyBase
     [SerializeField] float ChangeDirTime;
     private void Start()
     {
+        base.Start();
         StartCoroutine(GoDown());
     }
 

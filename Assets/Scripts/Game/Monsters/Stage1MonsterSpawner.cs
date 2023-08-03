@@ -31,6 +31,7 @@ public class Stage1MonsterSpawner : MonoBehaviour
     {
          GameObject waveMonsters = Instantiate(waveData.WaveMonster);
          waveMonsters.transform.position = waveData.SpawnPoint;
+
          EnemyBase[] enemyBases = waveMonsters.GetComponentsInChildren<EnemyBase>();
          foreach (EnemyBase enemyBase in enemyBases)
          {

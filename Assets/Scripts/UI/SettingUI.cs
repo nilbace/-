@@ -7,8 +7,10 @@ public class SettingUI : MonoBehaviour
 {
     [SerializeField] Sprite[] truefalseImg;
     [SerializeField] Slider[] sliders;
+    [SerializeField] TMPro.TMP_InputField couponField;
     void Start()
     {
+        couponField.text = "쿠폰을 입력하세요";
         SetSettingPannel();
     }
 
@@ -54,5 +56,16 @@ public class SettingUI : MonoBehaviour
     {
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ClosePopup();
+    }
+
+    public void InputEnd()
+    {
+        if (couponField.text == "Nyaongjima" && Managers.Data.MyStoreData.NyaongjimaCouponUsed == false)
+        {
+            couponField.text = "상품이 지급되었습니다!";
+            Managers.Data.MakeAndAddMail(1000, 10, 0, 0, 0, 10, "찾아와줘서 감사하다냥");
+            Managers.Data.MyStoreData.NyaongjimaCouponUsed = true;
+            Managers.Data.SaveAllDatas();
+        }
     }
 }

@@ -42,10 +42,11 @@ public class MailBox : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
+    [ContextMenu("치트")]
 
     void tempAdd()
     {
-        Managers.Data.MakeAndAddMail(500000, 500, 50, 5, 5, "개발자 치트");
+        Managers.Data.MakeAndAddMail(500000, 500, 50, 5, 5,5, "개발자 치트");
     }
 
     public void CLoseBTN()

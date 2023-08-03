@@ -1,8 +1,6 @@
 {
     "houses": [
         true,
-        true,
-        true,
         false,
         false,
         false,
@@ -11,9 +9,13 @@
         false,
         false,
         false,
-        false
+        false,
+        false,
+        false,
+        true
     ],
     "talkBox": [
+        true,
         false,
         false,
         false,
@@ -25,6 +27,6 @@
         false,
         false,
         false,
-        false
+        true
     ]
 }

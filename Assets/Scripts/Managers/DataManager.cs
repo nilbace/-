@@ -504,7 +504,7 @@ public class DataManager
         SaveAllDatas();
     }
 
-    public void MakeAndAddMail(int gold = 0, int ruby = 0, int bell = 0, int sweep = 0, int skip = 0, string text = null)
+    public void MakeAndAddMail(int gold = 0, int ruby = 0, int bell = 0, int sweep = 0, int skip = 0, int revive = 0, string text = null)
     {
         OneMail temp = new OneMail();
         temp.CoinAmount = gold;
@@ -512,6 +512,7 @@ public class DataManager
         temp.BellAmount = bell;
         temp.SweepAmount = sweep;
         temp.SkipCouponAmount = skip;
+        temp.ReviveTicketAmount = revive;
         temp.MailText = text;
         MyMailData.MailBox.Add(temp);
         MyMailData.MailAmount++;
@@ -608,7 +609,7 @@ public class StoreData
     public int MySweepTicketAmount;
     public int MyReviveTicKetAmount;
     public int MySkipCouponAmount;
-
+    public bool NyaongjimaCouponUsed;
     public StoreData()
     {
         MyGoldAmount = 0;
@@ -616,6 +617,7 @@ public class StoreData
         MySweepTicketAmount = 0;
         MyReviveTicKetAmount = 0;
         MySkipCouponAmount = 0;
+        NyaongjimaCouponUsed = false;
     }
 }
 
@@ -663,8 +665,8 @@ public class StageHighScoreData
 [System.Serializable]
 public class HousingData
 {
-    public bool[] houses = new bool[12];
-    public bool[] talkBox = new bool[12];
+    public bool[] houses = new bool[13];
+    public bool[] talkBox = new bool[13];
 
     public HousingData()
     {
@@ -672,10 +674,11 @@ public class HousingData
         {
             houses[i] = false;
         }
-        for (int i = 0; i < talkBox.Length; i++)
+        for (int i = 0; i < talkBox.Length - 1; i++)
         {
             talkBox[i] = false;
         }
+        talkBox[12] = true;
     }
 
 }
@@ -688,6 +691,7 @@ public class OneMail
     public int BellAmount;
     public int SweepAmount;
     public int SkipCouponAmount;
+    public int ReviveTicketAmount;
     public string MailText;
 
     public OneMail()
@@ -697,6 +701,7 @@ public class OneMail
         BellAmount = 0;
         SweepAmount = 0;
         SkipCouponAmount = 0;
+        ReviveTicketAmount = 0;
         MailText = null;
     }
 }

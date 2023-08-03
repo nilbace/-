@@ -19,6 +19,7 @@ public class Mail : MonoBehaviour
         UpdateItem(2, thisMail.BellAmount);
         UpdateItem(3, thisMail.SweepAmount);
         UpdateItem(4, thisMail.SkipCouponAmount);
+        UpdateItem(5, thisMail.ReviveTicketAmount);
         mailText.text = thisMail.MailText;
     }
 
@@ -42,6 +43,7 @@ public class Mail : MonoBehaviour
         Managers.Data.MyBellData.NowBellCount += thisMail.BellAmount;
         Managers.Data.MyStoreData.MySweepTicketAmount += thisMail.SweepAmount;
         Managers.Data.MyStoreData.MySkipCouponAmount += thisMail.SkipCouponAmount;
+        Managers.Data.MyStoreData.MyReviveTicKetAmount += thisMail.ReviveTicketAmount;
 
         Managers.Data.GetAndDestroyMail(mailindex);
         MailBox.instance.Init();

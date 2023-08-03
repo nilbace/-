@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FlyingLob : MonoBehaviour
 {
+    [SerializeField] float moveSPeed;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -23,6 +24,6 @@ public class FlyingLob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, -4 * Time.deltaTime, 0);
+        transform.Translate(0, -moveSPeed * Time.deltaTime, 0);
     }
 }

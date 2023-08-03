@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 7852752602627403278}
   - component: {fileID: 7852752602627403273}
   - component: {fileID: 6438862335061553332}
+  - component: {fileID: 9143584547711859728}
   m_Layer: 0
   m_Name: Pig
   m_TagString: Enemy
@@ -62,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 5950153125099052828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.30581, y: 0.30581, z: 0.30581}
+  m_LocalScale: {x: 0.21524498, y: 0.21524498, z: 0.21524498}
   m_Children: []
   m_Father: {fileID: 6682829560705482363}
   m_RootOrder: 0
@@ -226,3 +227,23 @@ MonoBehaviour:
   ChangeDirTime: 0
   newSpeed: 0
   changeDirDelay: 0.5
+--- !u!95 &9143584547711859728
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5950153125099052828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f14369c9b32da124c90b6317d9eed299, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

@@ -114,7 +114,7 @@ public class BossPattern : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
     }
 
-    IEnumerator ShootSpiral()
+    IEnumerator ShootSpiral(float size = 0.7f)
     {
         float angle1 = 0f; float angle2 = 180f;
             for (int i = 0; i < 10; i++)
@@ -125,12 +125,12 @@ public class BossPattern : MonoBehaviour
                 GameObject bullet = Instantiate(BulletPrefab);
                 Vector3 temp = transform.position;
                 bullet.GetComponent<MonsterBullet>().Setting(dir1, 3f, temp);
-                bullet.transform.localScale = Vector3.one * 0.7f;
+                bullet.transform.localScale = Vector3.one * size;
 
                 GameObject bullet2 = Instantiate(BulletPrefab);
                 Vector3 temp2 = transform.position;
                 bullet2.GetComponent<MonsterBullet>().Setting(dir2, 3f, temp2);
-                bullet2.transform.localScale = Vector3.one * 0.7f;
+                bullet2.transform.localScale = Vector3.one * size;
 
                 angle1 += 18f; angle2 += 18f;
                 yield return new WaitForSeconds(0.1f);
@@ -255,9 +255,9 @@ public class BossPattern : MonoBehaviour
                         break;
 
                     case 6: //반원형으로 발사
-                        yield return StartCoroutine(ShootHalfCircle(0.5f));
-                        yield return new WaitForSeconds(0.5f);
-                        yield return StartCoroutine(ShootHalfCircle(0.5f, true));
+                        yield return StartCoroutine(ShootHalfCircle(0.4f));
+                        yield return new WaitForSeconds(0.7f);
+                        yield return StartCoroutine(ShootHalfCircle(0.4f, true));
                         break;
 
                     case 7:  //3갈래로 발사
@@ -475,7 +475,7 @@ public class BossPattern : MonoBehaviour
                         transform.DOMoveY(0.5f, 0.5f);
                         yield return new WaitForSeconds(0.5f);
 
-                        yield return StartCoroutine(ShootCircle());
+                        yield return StartCoroutine(ShootCircle(0.7f));
 
                         transform.DOMoveY(3.5f, 0.5f);
                         yield return new WaitForSeconds(0.5f);
@@ -512,11 +512,23 @@ public class BossPattern : MonoBehaviour
                         ShootLongBullet(_basePattern, new Vector3(-2, -2, 0));
                         ShootLongBullet(_basePattern, new Vector3(0, -2, 0));
                         ShootLongBullet(_basePattern, new Vector3(2, -2, 0));
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(0.5f);
                         ShootLongBullet(_basePattern, new Vector3(1, 0, 0));
                         ShootLongBullet(_basePattern, new Vector3(-1, 0, 0));
 
                         break;
+
+                 
+
+                    case 400:    //왼쪽에서 3갈래 발사
+                        transform.DOMoveX(-1f, 1f);
+                        yield return new WaitForSeconds(1.5f);
+                        //왼쪽으로 이동
+                        yield return StartCoroutine(Shoot3Way(0.7f));
+
+                     
+                        break;
+
 
                     //왼쪽에서 3갈래
                     //15번 닭과 공유
@@ -525,7 +537,7 @@ public class BossPattern : MonoBehaviour
                         transform.DOMoveX(-1f, 1f);
                         yield return new WaitForSeconds(1f);
                         //왼쪽으로 이동
-                        yield return StartCoroutine(ShootCircle());
+                        yield return StartCoroutine(ShootCircle(0.8f));
 
                         transform.DOMoveX(0f, 1f);
                         yield return new WaitForSeconds(1f);
@@ -533,6 +545,8 @@ public class BossPattern : MonoBehaviour
                         break;
 
                     //22번 원숭이와 공유
+
+               
 
                     case 26: 
                         //4번 웨이브 소환
@@ -543,22 +557,22 @@ public class BossPattern : MonoBehaviour
                         transform.DOMoveY(0.5f, 0.5f);
                         yield return new WaitForSeconds(0.5f);
 
-                        yield return StartCoroutine(ShootSpiral());
+                        yield return StartCoroutine(ShootSpiral(0.5f));
 
-                        transform.DOMoveY(3.5f, 0.5f);
+                        transform.DOMoveY(2.5f, 0.5f);
                         yield return new WaitForSeconds(0.5f);
                         break;
 
                     case 28: //몬스터1 + 반원 탄막
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(1);
-                        yield return StartCoroutine(ShootHalfCircle());
+                        yield return StartCoroutine(ShootHalfCircle(0.4f));
                         break;
 
                     case 29: // 오른쪽으로 가면서 탄환 발사
                         for(int j = 0; j<5;j++)
                         {
-                            ShootBullet(_basePattern, null, 0.5f);
-                            yield return new WaitForSeconds(0.2f);
+                            ShootBullet(_basePattern, null, 0.5f, true);
+                            yield return new WaitForSeconds(0.5f);
                         }
 
                         transform.DOMoveX(1f, 0.5f);
@@ -566,8 +580,8 @@ public class BossPattern : MonoBehaviour
 
                         for (int j = 0; j < 5; j++)
                         {
-                            ShootBullet(_basePattern, null, 0.5f);
-                            yield return new WaitForSeconds(0.2f);
+                            ShootBullet(_basePattern, null, 0.5f, true);
+                            yield return new WaitForSeconds(0.5f);
                         }
 
                         transform.DOMoveX(2f, 0.5f);
@@ -575,8 +589,8 @@ public class BossPattern : MonoBehaviour
 
                         for (int j = 0; j < 5; j++)
                         {
-                            ShootBullet(_basePattern, null, 0.5f);
-                            yield return new WaitForSeconds(0.2f);
+                            ShootBullet(_basePattern, null, 0.5f, true);
+                            yield return new WaitForSeconds(0.5f);
                         }
 
                         transform.DOMoveX(0f, 0.5f);
@@ -601,17 +615,17 @@ public class BossPattern : MonoBehaviour
                     case 31: //왼쪽 > 가운데 > 오른쪽 쪼개지는총알
                         transform.DOMoveX(-1f, 0.5f);
                         yield return new WaitForSeconds(0.5f);
-                        ShootSplitBall(_basePattern);
+                        ShootSplitBall(_basePattern, null, 0.5f);
                         yield return new WaitForSeconds(0.5f);
 
                         transform.DOMoveX(0f, 0.5f);
                         yield return new WaitForSeconds(0.5f);
-                        ShootSplitBall(_basePattern);
+                        ShootSplitBall(_basePattern, null, 0.5f ,1.4f);
                         yield return new WaitForSeconds(0.5f);
 
                         transform.DOMoveX(1f, 0.5f);
                         yield return new WaitForSeconds(0.5f);
-                        ShootSplitBall(_basePattern);
+                        ShootSplitBall(_basePattern, null, 0.5f, 0.9f);
                         yield return new WaitForSeconds(0.5f);
 
                         transform.DOMoveX(0f, 0.5f);
@@ -625,7 +639,7 @@ public class BossPattern : MonoBehaviour
 
                         transform.DOMoveY(0.5f, 0.3f);
                         yield return new WaitForSeconds(0.3f);
-                        StartCoroutine(Shoot3Way());
+                        StartCoroutine(Shoot3Way(0.7f));
                         transform.DOMove(new Vector3(0, 3.5f, 0), 2f);
                         yield return new WaitForSeconds(2f);
                         
@@ -635,7 +649,7 @@ public class BossPattern : MonoBehaviour
                     case 33:  //원형으로 쏘기 + 잡몹소환
                         for(int j =0; j<2; j++)
                         {
-                            StartCoroutine(ShootCircle());
+                            StartCoroutine(ShootCircle(0.7f));
                             Stage1MonsterSpawner.instance.SpawnMonsterWave(4);
                             Stage1MonsterSpawner.instance.SpawnMonsterWave(12);
                         }
@@ -669,8 +683,8 @@ public class BossPattern : MonoBehaviour
 
                         for(int j =0; j<5; j++)
                         {
-                            ShootBullet(_basePattern, new Vector3(-1, 0, 0));
-                            ShootBullet(_basePattern, new Vector3(1, 0, 0));
+                            ShootBullet(_basePattern, new Vector3(-1, 0, 0), 0.7f);
+                            ShootBullet(_basePattern, new Vector3(1, 0, 0), 0.7f);
                             yield return new WaitForSeconds(0.4f);
                         }
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
@@ -680,9 +694,9 @@ public class BossPattern : MonoBehaviour
                         break;
 
                     case 36:  //2_3_2 두번
-                        yield return StartCoroutine(Shoot2_3_2());
+                        yield return StartCoroutine(Shoot2_3_2(-0.7f));
                         yield return new WaitForSeconds(0.4f);
-                        yield return StartCoroutine(Shoot2_3_2());
+                        yield return StartCoroutine(Shoot2_3_2(0.7f));
                         break;
 
                     //마지막은 27번
@@ -700,8 +714,8 @@ public class BossPattern : MonoBehaviour
 
                         for(int j = 0; j<5; j++)
                         {
-                            ShootBullet(Left2_37, new Vector3(2, -1, 0));
-                            ShootBullet(Right2_37, new Vector3(-2, -1, 0));
+                            ShootBullet(Left2_37, new Vector3(2, -1, 0), 0.5f);
+                            ShootBullet(Right2_37, new Vector3(-2, -1, 0), 0.5f);
                             yield return new WaitForSeconds(0.5f);
                         }
 
@@ -713,29 +727,29 @@ public class BossPattern : MonoBehaviour
 
                         for (int j = 0; j < 5; j++)
                         {
-                            ShootBullet(Left2_38, new Vector3(-1, -1, 0));
-                            ShootBullet(Right2_38, new Vector3(1, -1, 0));
+                            ShootBullet(Left2_38, new Vector3(-1, -1, 0), 0.5f);
+                            ShootBullet(Right2_38, new Vector3(1, -1, 0), 0.5f);
                             yield return new WaitForSeconds(0.5f);
                         }
 
                         break;
 
                     case 39:  //원형쏘기 두번+1번몹
-                        StartCoroutine(ShootCircle());
+                        StartCoroutine(ShootCircle(0.5f));
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(1);
                         yield return new WaitForSeconds(1f);
-                        StartCoroutine(ShootCircle());
+                        StartCoroutine(ShootCircle(0.5f));
 
                         break;
 
                     case 40: //왼쪽아래 원형 > 오른쪽아래 원형 > 복귀
                         transform.DOMove(new Vector3(-1.5f, 0.5f, 0), 1);
                         yield return new WaitForSeconds(1);
-                        StartCoroutine(ShootCircle());
+                        StartCoroutine(ShootCircle(0.5f));
 
                         transform.DOMove(new Vector3(1.5f, 0.5f, 0), 1);
                         yield return new WaitForSeconds(1);
-                        StartCoroutine(ShootCircle());
+                        StartCoroutine(ShootCircle(0.5f));
 
 
                         transform.DOMove(new Vector3(0, 3.5f, 0), 1);
@@ -748,7 +762,7 @@ public class BossPattern : MonoBehaviour
                         for(float j = -1.5f; j<= 1.5f; j++)
                         {
                             float k = j * 1.5f;
-                            ShootSplitBall(_basePattern, new Vector3(k, 0,0));
+                            ShootSplitBall(_basePattern, new Vector3(k, 0,0), 0.4f);
                         }
 
                         break;
@@ -757,22 +771,28 @@ public class BossPattern : MonoBehaviour
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(3);
                         yield return new WaitForSeconds(1);
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
-                        StartCoroutine(ShootHalfCircle());
+                        StartCoroutine(ShootHalfCircle(0.5f));
 
                         break;
 
                     case 43:  //잡몹 + 반원
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(3);
                         yield return new WaitForSeconds(1);
-                        StartCoroutine(ShootHalfCircle());
+                        StartCoroutine(ShootHalfCircle(0.5f));
                         break;
 
 
-                    case 44:  // 잡몹 + 232
+                    case 44:  // 잡몹 + 왼쪽 이동 후 세갈래
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(12);
-                        yield return new WaitForSeconds(1);
-                        yield return StartCoroutine(Shoot2_3_2());
+                        yield return new WaitForSeconds(2);
+                        transform.DOMoveX(-1f, 1f);
+                        yield return new WaitForSeconds(1.5f);
+                        //왼쪽으로 이동
+                        yield return StartCoroutine(Shoot3Way(0.5f));
 
+                        transform.DOMoveX(0f, 1f);
+                        yield return new WaitForSeconds(1.5f);
+                        //돌아오기
                         break;
 
                     #endregion
@@ -798,11 +818,11 @@ public class BossPattern : MonoBehaviour
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
-                        StartCoroutine(ShootHalfCircle());
+                        StartCoroutine(ShootHalfCircle(0.3f));
 
                         yield return new WaitForSeconds(3f);
 
-                        StartCoroutine(ShootHalfCircle());
+                        StartCoroutine(ShootHalfCircle(0.3f));
                         break;
 
                         //내려와서 나선 탄막 27번
@@ -812,7 +832,7 @@ public class BossPattern : MonoBehaviour
                         transform.DOMoveX(-1f, 0.3f);
                         yield return new WaitForSeconds(0.3f);
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
-                        yield return StartCoroutine(Shoot3Way());
+                        yield return StartCoroutine(Shoot3Way(0.5f));
 
                         transform.DOMoveX(0f, 0.3f);
                         yield return new WaitForSeconds(0.3f);
@@ -838,7 +858,7 @@ public class BossPattern : MonoBehaviour
                     //다시 27+48 패턴
 
                     case 50: //원형 + 대각선 스플릿
-                        StartCoroutine(ShootCircle());
+                        StartCoroutine(ShootCircle(0.5f));
                         yield return new WaitForSeconds(1f);
                         ShootSplitBall(_baseLeft);
                         ShootSplitBall(_baseRight);
@@ -846,7 +866,7 @@ public class BossPattern : MonoBehaviour
                         break;
 
                     case 51: //원형 + 그냥 스플릿
-                        StartCoroutine(ShootCircle());
+                        StartCoroutine(ShootCircle(0.5f));
                         yield return new WaitForSeconds(1f);
                         ShootSplitBall(_basePattern , new Vector3(-1,0,0));
                         ShootSplitBall(_basePattern, new Vector3(1, 0, 0));
@@ -1414,12 +1434,12 @@ public class BossPattern : MonoBehaviour
         longBulletPool.Enqueue(bullet);
     }
 
-    void ShootSplitBall(BulletPattern bulletPattern, Vector3? poz = null, float BulletSize = 1)
+    void ShootSplitBall(BulletPattern bulletPattern, Vector3? poz = null, float BulletSize = 1, float splittime = 1.9f)
     {
         GameObject _splitball = Instantiate(SplitBall);
-
         Vector3 temp = transform.position + bulletPattern.Offset + (poz ?? Vector3.zero);
         _splitball.GetComponent<MonsterBullet>().Setting(bulletPattern.BulletDir, bulletPattern.BulletSpeed, temp);
+        _splitball.GetComponent<MonsterBullet>().splittime = splittime;
         _splitball.transform.localScale = Vector3.one * BulletSize;
     }
 }

@@ -194,7 +194,7 @@ MonoBehaviour:
       MonsterHP: 400
       WaveMoveSpeed: 3
       WaveDir: {x: 0, y: -1, z: 0}
-      SpawnPoint: {x: 0, y: 5}
+      SpawnPoint: {x: 0, y: 2}
     - WaveName: Wave55
       WaveMonster: {fileID: 724415442272161799, guid: fee0a04e2a2e7a94b97921025f4ca82b, type: 3}
       MonsterHP: 400
@@ -232,6 +232,8 @@ MonoBehaviour:
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 5}
   _waveControlData:
+  - {x: 3, y: 99}
+  - {x: 4, y: 56}
   - {x: 4, y: 4}
   - {x: 4, y: 6}
   - {x: 4, y: 7}
@@ -260,8 +262,6 @@ MonoBehaviour:
   - {x: 4, y: 3}
   - {x: 4, y: 14}
   - {x: 4, y: 13}
-  - {x: 0, y: 99}
-  - {x: 4, y: 56}
   Log: {fileID: 7020389787168640034, guid: 9b59e65c40d13bf429c3f9f5054cec79, type: 3}
   LogWarning: {fileID: 4302185438866433526, guid: ba7a78c103191db4aba303a93e3d111c, type: 3}
   PowerUp: {fileID: 6953580092862893647, guid: 2590ade27882701498c7bb5906d63550, type: 3}

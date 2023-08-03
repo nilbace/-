@@ -8,7 +8,7 @@ public class MonsterBullet : MonoBehaviour
     float bulletSpeed;
     [SerializeField] bool isSplit;
     public bool hassplited = false;
-    [SerializeField] float splittime;
+    public float splittime;
     [SerializeField] GameObject baseBall;
 
     private void Start()
@@ -48,11 +48,13 @@ public class MonsterBullet : MonoBehaviour
         hassplited = true;
 
         GameObject ball1 = Instantiate(baseBall);
+        ball1.transform.localScale = Vector3.one * 0.4f;
         Vector3 leftRotate = Quaternion.Euler(0f, 0f, 90f) * bulletDir;
         ball1.GetComponent<MonsterBullet>().Setting(leftRotate, bulletSpeed, transform.position);
         ball1.GetComponent<MonsterBullet>().Splited();
 
         GameObject ball2 = Instantiate(baseBall);
+        ball2.transform.localScale = Vector3.one * 0.4f;
         Vector3 rightRotate = Quaternion.Euler(0f, 0f, -90f) * bulletDir;
         ball2.GetComponent<MonsterBullet>().Setting(rightRotate, bulletSpeed, transform.position);
         ball2.GetComponent<MonsterBullet>().Splited();

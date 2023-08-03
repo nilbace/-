@@ -39,7 +39,7 @@ public class GameScene : MonoBehaviour
     {
         Time.timeScale = 1f;
         TempSound.instance.TurnONBGM(TempSound.BGMName.Stage);
-        //LoadWave(Managers.Data.SelectedBossindex);
+        LoadWave(Managers.Data.SelectedBossindex);
         SetStartHeart();
         BossGO.SetActive(false);
     }
@@ -167,9 +167,6 @@ public class GameScene : MonoBehaviour
 
         if(Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] < ScoreAmount)
         Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] = ScoreAmount;
-
-        if (Managers.Data.MyHighScoreData.HighGoldScores[Managers.Data.SelectedBossindex] < GoldAmount)
-            Managers.Data.MyHighScoreData.HighGoldScores[Managers.Data.SelectedBossindex] = GoldAmount;
 
         Managers.Data.MyHighScoreData.clearStageIndex = Managers.Data.SelectedBossindex + 1;
         Managers.Data.SaveAllDatas();

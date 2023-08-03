@@ -23,9 +23,10 @@ public class InGameData
 
     public int[] GetPointMoneyValue = new int[10];
 
-    public string SkillName;
     public string SkillInfos;
     public Sprite SkillIcon;
+    public string Skill2Infos;
+    public Sprite Skill2Icon;
 }
 
 [System.Serializable]

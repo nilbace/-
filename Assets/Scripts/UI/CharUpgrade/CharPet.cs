@@ -17,9 +17,10 @@ public class CharPet : MonoBehaviour
     [SerializeField] GameObject[] growlevel;
 
     [Header("½ºÅ³")]
-    [SerializeField] TMP_Text skillName;
     [SerializeField] TMP_Text skillInfo;
     [SerializeField] Image    skillImg;
+    [SerializeField] TMP_Text skill2info;
+    [SerializeField] Image    skill2img;
 
 
     [SerializeField] int[] MaxValues;
@@ -56,14 +57,16 @@ public class CharPet : MonoBehaviour
         {
             growlevel[i].SetActive(false);
         }
+
         for(int i =0; i<_temp; i++)
         {
             growlevel[i].SetActive(true);
         }
 
-        skillName.text  = thiscatData.SkillName;
         skillInfo.text  = thiscatData.SkillInfos;
         skillImg.sprite = thiscatData.SkillIcon;
+        skill2info.text = thiscatData.Skill2Infos;
+        skill2img.sprite = thiscatData.Skill2Icon;
 
         foreach(CP_EachChar temp in eachcar)
         {

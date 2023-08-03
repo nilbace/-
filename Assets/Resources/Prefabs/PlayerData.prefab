@@ -74,10 +74,12 @@ MonoBehaviour:
       MaxValue: 5
     baseCritPer: 5
     GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
-    SkillName: "\uC0DD\uC120\uAC00\uC2DC"
-    SkillInfos: "\uCE58\uC988\uB0E5\uC774\uC758 \uCE68\uB0C4\uC0C8\uAC00 \uB098\uB294\uAC83
-      \uAC19\uAE30\uB3C4...?"
+    SkillInfos: "\uB0E5\uC774\uAC00 \uBA39\uACE0 \uB0A8\uAE34 \uC0DD\uC120\uAC00\uC2DC\uB97C
+      \uB358\uC9D1\uB2C8\uB2E4!"
     SkillIcon: {fileID: 21300000, guid: bf0721d0aeaab6d4daa20f09c9a6496c, type: 3}
+    Skill2Infos: "\uB0E5\uC774\uAC00 \uC0C1\uD55C \uC0DD\uC120\uAC00\uC2DC\uB97C
+      \uB358\uC9D1\uB2C8\uB2E4!"
+    Skill2Icon: {fileID: 21300000, guid: 84768cbbe1483c4458b6d7da3a590563, type: 3}
   - CatName: "\uC0BC\uC0C9\uB0E5\uC774"
     FrontImg: {fileID: 21300000, guid: 6925933fbbf75bb42a68112df67be6c3, type: 3}
     BackImg: {fileID: 21300000, guid: 096d1a1d45c5c654a9ad4f2d987c7ca3, type: 3}
@@ -108,9 +110,12 @@ MonoBehaviour:
       MaxValue: 5
     baseCritPer: 5
     GetPointMoneyValue: 000000004c04000098080000301100007c150000c8190000141e000060220000ac260000f82a000000000000
-    SkillName: "\uCD08\uCF54 \uC824\uB9AC"
-    SkillInfos: "\uC774\uAC74 \uB610 \uBB50\uB77C\uACE0 \uC4F0\uB0D0...."
+    SkillInfos: "\uB0E5\uC774\uAC00 \uC624\uB978\uCABD \uBC1C\uBC14\uB2E5\uC73C\uB85C
+      \uACF5\uACA9\uD569\uB2C8\uB2E4!"
     SkillIcon: {fileID: 21300000, guid: 38e30d4b41d17314f8b841f0d8172108, type: 3}
+    Skill2Infos: "\uB0E5\uC774\uAC00 \uC67C\uCABD \uBC1C\uBC14\uB2E5\uC73C\uB85C
+      \uACF5\uACA9\uD569\uB2C8\uB2E4!"
+    Skill2Icon: {fileID: 21300000, guid: 026e5f32ab8123f499adb276518fe957, type: 3}
   - CatName: "\uACE0\uB4F1\uC5B4\uB0E5\uC774"
     FrontImg: {fileID: 21300000, guid: c655bb35ffeb08c4aaa7064e98558b82, type: 3}
     BackImg: {fileID: 21300000, guid: c02cba7690d0cc44daf5498b1d1b5611, type: 3}
@@ -141,9 +146,12 @@ MonoBehaviour:
       MaxValue: 5
     baseCritPer: 5
     GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
-    SkillName: 
-    SkillInfos: 
-    SkillIcon: {fileID: 0}
+    SkillInfos: "\uB0E5\uC774\uAC00 \uC88B\uC544\uD558\uB294 \uACE0\uB4F1\uC5B4\uB97C
+      \uB358\uC9D1\uB2C8\uB2E4!"
+    SkillIcon: {fileID: 21300000, guid: 4b8f8fa1cd267334bb7b514ecdd23cc9, type: 3}
+    Skill2Infos: "\uB0E5\uC774\uAC00 \uBA39\uACE0 \uB0A8\uAE34 \uC791\uC740 \uC0DD\uC120\uAC00\uC2DC\uB97C
+      \uB358\uC9D1\uB2C8\uB2E4!"
+    Skill2Icon: {fileID: 21300000, guid: eada79fff9ec572489dafc644b9f9938, type: 3}
   - CatName: "\uD131\uC2DC\uB3C4\uB0E5\uC774"
     FrontImg: {fileID: 21300000, guid: 339d12fc9c2f94a44a27caca80f057cc, type: 3}
     BackImg: {fileID: 21300000, guid: 949db3395aec392408d2a52bed96dc30, type: 3}
@@ -174,9 +182,11 @@ MonoBehaviour:
       MaxValue: 5
     baseCritPer: 5
     GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
-    SkillName: 
-    SkillInfos: 
-    SkillIcon: {fileID: 0}
+    SkillInfos: "\uB0E5\uC774\uC758 \uB098\uBE44\uB125\uD0C0\uC774\uB97C \uB358\uC9D1\uB2C8\uB2E4!"
+    SkillIcon: {fileID: 21300000, guid: 9b587139810f6ca41b420e4bdd671111, type: 3}
+    Skill2Infos: "\uB0E5\uC774\uAC00 \uB530\uB77C\uB2E4\uB2C8\uB294 \uB178\uB780\uB098\uBE44\uB97C
+      \uBCF4\uB0C5\uB2C8\uB2E4!"
+    Skill2Icon: {fileID: 21300000, guid: 36f49556628258344a2eec8bfeb98d26, type: 3}
   - CatName: "\uC0F4 \uB0AD\uC774"
     FrontImg: {fileID: 21300000, guid: 16670aeecb927244687215bc7ed818a9, type: 3}
     BackImg: {fileID: 21300000, guid: 2ada059506557b545afc545f9f9a9133, type: 3}
@@ -207,9 +217,11 @@ MonoBehaviour:
       MaxValue: 5
     baseCritPer: 5
     GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
-    SkillName: 
-    SkillInfos: 
-    SkillIcon: {fileID: 0}
+    SkillInfos: "\uB0E5\uC774\uC758 \uD138\uBB49\uCE58\uB97C \uB358\uC9D1\uB2C8\uB2E4!"
+    SkillIcon: {fileID: 21300000, guid: 2d7f1cf968f8aaa4c8f302daeb07a1c1, type: 3}
+    Skill2Infos: "\uB0E5\uC774\uB97C \uB530\uB77C\uB2E4\uB2C8\uB294 \uD30C\uB780\uB098\uBE44\uB97C
+      \uBCF4\uB0C5\uB2C8\uB2E4!"
+    Skill2Icon: {fileID: 21300000, guid: 18b9e93a083e45d44b64f1cd6e543a6e, type: 3}
   - CatName: "\uBC45\uAC08\uB0E5\uC774"
     FrontImg: {fileID: 21300000, guid: fe87d5b2796de694bb1328989cb73ee5, type: 3}
     BackImg: {fileID: 21300000, guid: 5a9e40b070ffc514881827d6efb21423, type: 3}
@@ -240,6 +252,9 @@ MonoBehaviour:
       MaxValue: 5
     baseCritPer: 5
     GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
-    SkillName: 
-    SkillInfos: 
-    SkillIcon: {fileID: 0}
+    SkillInfos: "\uB0E5\uC774\uAC00 \uAC16\uACE0 \uB180\uB358 \uC7A5\uB09C\uAC10
+      \uACF5\uC744 \uB358\uC9D1\uB2C8\uB2E4!"
+    SkillIcon: {fileID: 21300000, guid: f576bbafd83a0c5409db8cc123c2cd29, type: 3}
+    Skill2Infos: "\uB0E5\uC774\uC758 \uCD5C\uC560 \uC7A5\uB09C\uAC10 \uACF5\uC744
+      \uB358\uC9D1\uB2C8\uB2E4!"
+    Skill2Icon: {fileID: 21300000, guid: 4469535bfe7e9d0478435ce774474176, type: 3}

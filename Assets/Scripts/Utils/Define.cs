@@ -38,6 +38,7 @@ public class Define : MonoBehaviour
         StageFail,
         MailBox,
         Pet,
+        Store,
         MaxCount
     }
 

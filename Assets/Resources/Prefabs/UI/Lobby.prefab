@@ -447,13 +447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8e8a48d1b1ff641bf1bd8d2545cd3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bells:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   bellPlusText: {fileID: 8994239844261870453}
+  NowBellText: {fileID: 7464733033895357529}
   moneyText: {fileID: 5915532086549036100}
   RubyText: {fileID: 5915532086715521018}
 --- !u!1 &5915532086522142495

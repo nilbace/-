@@ -731,6 +731,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1963128282 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7662997344489200447, guid: 41841a0e75ce1c740816ca8f2fee06d4, type: 3}
+  m_PrefabInstance: {fileID: 990897852091103658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2004559614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -862,6 +873,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1783835593}
+    - target: {fileID: 6906359431753596674, guid: 41841a0e75ce1c740816ca8f2fee06d4, type: 3}
+      propertyPath: NowBellText
+      value: 
+      objectReference: {fileID: 1963128282}
     - target: {fileID: 6906359431753596675, guid: 41841a0e75ce1c740816ca8f2fee06d4, type: 3}
       propertyPath: m_Name
       value: SelLobbyUP

@@ -63,7 +63,6 @@ public class TempSound : MonoBehaviour
         {
             _nowBGM = name;
             AudioSource.Stop();
-            
             if (name == BGMName.Lobby)
             {
                 AudioSource.clip = Lobby;

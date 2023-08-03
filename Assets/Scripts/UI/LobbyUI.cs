@@ -5,6 +5,7 @@ using UnityEngine;
 public class LobbyUI : MonoBehaviour
 {
     [SerializeField] TMPro.TMP_Text bellPlusText;
+    [SerializeField] TMPro.TMP_Text NowBellText;
     [SerializeField] TMPro.TMP_Text moneyText;
     [SerializeField] TMPro.TMP_Text RubyText;
 
@@ -18,32 +19,26 @@ public class LobbyUI : MonoBehaviour
     {
         Managers.Data.CalculateAndAddBell();
 
-        if(Managers.Data.MyBellData.NowBellCount == 5)
-        {
-            bellPlusText.gameObject.SetActive(false);
-        }
+        NowBellText.text = Managers.Data.MyBellData.NowBellCount.ToString();
+        if (Managers.Data.MyBellData.NowBellCount >= 5)
+            bellPlusText.text = "";
         else
-        {
-            bellPlusText.gameObject.SetActive(true);
             bellPlusText.text = Managers.Data.LastTimeForBell();
-        }
-   
 
         moneyText.text = Define.FormatNumber(Managers.Data.MyStoreData.MyGoldAmount);
         RubyText.text = Define.FormatNumber(Managers.Data.MyStoreData.MyRubyAmount);
-    }
-
-    [ContextMenu("데이터 임시 체크")]
-    void showdata()
-    {
-        moneyText.text = Define.FormatNumber(Managers.Data.MyStoreData.MyGoldAmount) 
-            + " / " + Define.FormatNumber(Managers.Data.MyStoreData.MyRubyAmount);
     }
 
     public void StartBTN()
     {
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Scene.LoadScene(Define.Scene.StageSelect);
+    }
+
+    public void ShopBTN()
+    {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        Managers.UI.ShowPopup(Define.Popup.Store);
     }
 
     public void OpenSetting()

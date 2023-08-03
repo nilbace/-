@@ -26,6 +26,7 @@ public class GameScene : MonoBehaviour
     [SerializeField] TMP_Text GoldTMP;
     public int GoldAmount { get; set; }
 
+    [SerializeField] bool heejuneMode;
     private void Awake()
     {
         instance = this;
@@ -39,7 +40,7 @@ public class GameScene : MonoBehaviour
     {
         Time.timeScale = 1f;
         TempSound.instance.TurnONBGM(TempSound.BGMName.Stage);
-        LoadWave(Managers.Data.SelectedBossindex);
+        if(!heejuneMode) LoadWave(Managers.Data.SelectedBossindex);
         SetStartHeart();
         BossGO.SetActive(false);
     }

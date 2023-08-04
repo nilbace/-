@@ -144,15 +144,16 @@ public class SelectedUI : MonoBehaviour
             PlusBTN.interactable = true;
         }
 
-        if(_nowSelSweepCount <=0)
+        if(_nowSelSweepCount == 0)
         {
+            SweepBTN.interactable = false;
             MinBTN.interactable = false;
         }
         else
         {
-            PlusBTN.interactable = true;
+            SweepBTN.interactable = true;
+            MinBTN.interactable = true;
         }
-
         
     }
     public void PlusMinSweepBTN(int n)

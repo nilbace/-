@@ -39,6 +39,7 @@ public class Define : MonoBehaviour
         MailBox,
         Pet,
         Store,
+        SweepResult,
         MaxCount
     }
 

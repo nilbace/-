@@ -169,6 +169,9 @@ public class GameScene : MonoBehaviour
         if(Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] < ScoreAmount)
         Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] = ScoreAmount;
 
+        if (Managers.Data.MyHighScoreData.HighGoldScores[Managers.Data.SelectedBossindex] < GoldAmount)
+            Managers.Data.MyHighScoreData.HighGoldScores[Managers.Data.SelectedBossindex] = GoldAmount;
+
         Managers.Data.MyHighScoreData.clearStageIndex = Managers.Data.SelectedBossindex + 1;
         Managers.Data.SaveAllDatas();
     }

@@ -161,12 +161,15 @@ public class SelectedUI : MonoBehaviour
         Init();
     }
 
-    void UseSweepTicket()
+    public void UseSweepTicket()
     {
         int temp = Managers.Data.MyHighScoreData.HighGoldScores[_nowSelectedStage] * _nowSelSweepCount;
 
         Managers.Data.MyStoreData.MySweepTicketAmount -= _nowSelSweepCount;
         Managers.Data.MyStoreData.MyGoldAmount += temp;
+        
+        Managers.UI.ShowPopup(Define.Popup.SweepResult);
+        GameObject.Find("SweepResult(Clone)").GetComponent<SweepResult>().Setting(_nowSelSweepCount);
         _nowSelSweepCount = 0;
         Init();
     }

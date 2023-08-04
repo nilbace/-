@@ -51,6 +51,7 @@ public class MailBox : MonoBehaviour
 
     public void CLoseBTN()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ClosePopup();
     }
 }

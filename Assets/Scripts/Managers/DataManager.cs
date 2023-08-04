@@ -624,13 +624,11 @@ public class StoreData
 [System.Serializable]
 public class SettingData
 {
-    public bool isFixedJoystick;
     public float BGMSound;
     public float SFXSound;
 
     public SettingData()
     {
-        this.isFixedJoystick = true;
         BGMSound = 1f;
         SFXSound = 1f;
     }

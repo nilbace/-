@@ -34,6 +34,7 @@ public class GameScene : MonoBehaviour
     void Start()
     {
         Init();
+        ChangeBack();
     }
 
     void Init()
@@ -44,6 +45,48 @@ public class GameScene : MonoBehaviour
         SetStartHeart();
         BossGO.SetActive(false);
     }
+
+    #region BackGroundChagne
+    [SerializeField] Image[] skies;
+    [SerializeField] Image back;
+    void ChangeBack()
+    {
+        int temp = Managers.Data.SelectedBossindex;
+        string path = "ETC/NewMaps/";
+        if (temp == 0 || temp ==1 || temp == 10 || temp==11) //¹ã
+        {
+            foreach(Image sky in skies)
+            {
+                sky.sprite = Resources.Load<Sprite>(path + "N_S");
+            }
+            back.sprite = Resources.Load<Sprite>(path + "N_B");
+        }
+        else if(temp == 2 || temp==3)  //Àú³á
+        {
+            foreach (Image sky in skies)
+            {
+                sky.sprite = Resources.Load<Sprite>(path + "E_S");
+            }
+            back.sprite = Resources.Load<Sprite>(path + "E_B");
+        }
+        else if(temp==4||temp==5||temp==6||temp==7)
+        {
+            foreach (Image sky in skies)
+            {
+                sky.sprite = Resources.Load<Sprite>(path + "M_S");
+            }
+            back.sprite = Resources.Load<Sprite>(path + "M_B");
+        }
+        else
+        {
+            foreach (Image sky in skies)
+            {
+                sky.sprite = Resources.Load<Sprite>(path + "D_S");
+            }
+            back.sprite = Resources.Load<Sprite>(path + "D_B");
+        }
+    }
+    #endregion
 
     void Update()
     {

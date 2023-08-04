@@ -186,17 +186,17 @@ MonoBehaviour:
   - {fileID: 0}
   moveSpeed: 5.13
   bulletPool: {fileID: 0}
-  resultStats: 000000000000000000000000000000000000000000000000
+  resultStats: 2300000082000000c80000003c0000000a0000001e000000
   invincibleTime: 0.61
-  PowerLevel: 1
+  PowerLevel: 3
   _bulletpositionGroup:
     Level1: {x: 0, y: 0.8, z: 0}
     Level2_1: {x: -0.2, y: 0.8, z: 0}
     Level2_2: {x: 0.2, y: 0.8, z: 0}
-    Level3_1: {x: -1, y: 0.5, z: 0}
+    Level3_1: {x: -0.52, y: 0.5, z: 0}
     Level3_2: {x: -0.2, y: 0.8, z: 0}
     Level3_3: {x: 0.2, y: 0.8, z: 0}
-    Level3_4: {x: 1, y: 0.5, z: 0}
+    Level3_4: {x: 0.52, y: 0.5, z: 0}
   bombImage: {fileID: 0}
   CharBombs:
   - BombGO: {fileID: 506899500942952207, guid: d608ecb487ab4064d8c3a6aad0a1181d, type: 3}

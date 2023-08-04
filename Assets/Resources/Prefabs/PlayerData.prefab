@@ -183,7 +183,7 @@ MonoBehaviour:
     baseCritPer: 5
     GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
     SkillInfos: "\uB0E5\uC774\uC758 \uB098\uBE44\uB125\uD0C0\uC774\uB97C \uB358\uC9D1\uB2C8\uB2E4!"
-    SkillIcon: {fileID: 21300000, guid: 9b587139810f6ca41b420e4bdd671111, type: 3}
+    SkillIcon: {fileID: 21300000, guid: 4d1d5963cc1898142bd0865ea62cc5df, type: 3}
     Skill2Infos: "\uB0E5\uC774\uAC00 \uB530\uB77C\uB2E4\uB2C8\uB294 \uB178\uB780\uB098\uBE44\uB97C
       \uBCF4\uB0C5\uB2C8\uB2E4!"
     Skill2Icon: {fileID: 21300000, guid: 36f49556628258344a2eec8bfeb98d26, type: 3}
@@ -254,7 +254,7 @@ MonoBehaviour:
     GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
     SkillInfos: "\uB0E5\uC774\uAC00 \uAC16\uACE0 \uB180\uB358 \uC7A5\uB09C\uAC10
       \uACF5\uC744 \uB358\uC9D1\uB2C8\uB2E4!"
-    SkillIcon: {fileID: 21300000, guid: f576bbafd83a0c5409db8cc123c2cd29, type: 3}
+    SkillIcon: {fileID: 21300000, guid: ae24299b10dd42a4f9df13d55d8b2b87, type: 3}
     Skill2Infos: "\uB0E5\uC774\uC758 \uCD5C\uC560 \uC7A5\uB09C\uAC10 \uACF5\uC744
       \uB358\uC9D1\uB2C8\uB2E4!"
     Skill2Icon: {fileID: 21300000, guid: 4469535bfe7e9d0478435ce774474176, type: 3}

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class SettingUI : MonoBehaviour
 {
-    [SerializeField] Sprite[] truefalseImg;
     [SerializeField] Slider[] sliders;
     [SerializeField] TMPro.TMP_InputField couponField;
     void Start()
@@ -23,13 +22,7 @@ public class SettingUI : MonoBehaviour
         sliders[1].value = Managers.Data.MySettingData.SFXSound;
     }
 
-    public void ClickJoystickFixBTN()
-    {
-        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
-        Managers.Data.MySettingData.isFixedJoystick = !Managers.Data.MySettingData.isFixedJoystick;
-    
-        Managers.Data.SaveSettingData();
-    }
+
 
     public void OnBGMSliderValueChanged()
     {

@@ -5,8 +5,6 @@ using static Define;
 
 public class Player : MonoBehaviour
 {
-    public Joystick[] Joystick;
-    Joystick _nowjoystick;
 
     Rigidbody2D rigid;
     public float moveSpeed;
@@ -60,19 +58,7 @@ public class Player : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = thisCatData.BackImg;
         SetStat();
 
-        if (Managers.Data.MySettingData.isFixedJoystick)
-        {
-            _nowjoystick = Joystick[0];
-            Joystick[1].gameObject.SetActive(false);
-        }
-        else
-        {
-            _nowjoystick = Joystick[1];
-            Joystick[0].gameObject.SetActive(false);
-        }
-
         bombImage.sprite = CharBombs[0].BombSprite;
-        StartCoroutine(timeChecker());
     }
 
     private void FixedUpdate()
@@ -88,9 +74,9 @@ public class Player : MonoBehaviour
     }
     private Vector2 offset;
     private bool isDragging = false;
-    private float minX = -2.4f;
-    private float maxX = 2.4f;
-    private float minY = -4.1f;
+    private float minX = -2.7f;
+    private float maxX = 2.7f;
+    private float minY = -4.6f;
     private float maxY = 2.6f;
 
     private void Update()
@@ -163,7 +149,7 @@ public class Player : MonoBehaviour
             {
                 yield return new WaitForSeconds(_attackTerm);
                 GameObject bullet1 = bulletPool.GetBullet();
-                bullet1.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_1, 15f, resultStats[0], thisCatData.SkillIcon);
+                bullet1.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_1, 15f, resultStats[0], thisCatData.Skill2Icon);
 
                 GameObject bullet2 = bulletPool.GetBullet();
                 bullet2.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_2, 0f, resultStats[0], thisCatData.SkillIcon);
@@ -172,39 +158,8 @@ public class Player : MonoBehaviour
                 bullet3.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_3, 0f, resultStats[0], thisCatData.SkillIcon);
 
                 GameObject bullet4 = bulletPool.GetBullet();
-                bullet4.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_4, -15f, resultStats[0], thisCatData.SkillIcon);
+                bullet4.GetComponent<Bullet>().SetBullet(transform.position + _bulletpositionGroup.Level3_4, -15f, resultStats[0], thisCatData.Skill2Icon);
             }
-
-        }
-    }
-
-    IEnumerator timeChecker()
-    {
-        while(true)
-        {
-            if (Time.timeScale == 0)
-            {
-                if (Managers.Data.MySettingData.isFixedJoystick)
-                {
-                    Joystick[0].gameObject.SetActive(false);
-                }
-                else
-                {
-                    Joystick[1].gameObject.SetActive(false);
-                }
-            }
-            else
-            {
-                if (Managers.Data.MySettingData.isFixedJoystick)
-                {
-                    Joystick[0].gameObject.SetActive(true);
-                }
-                else
-                {
-                    Joystick[1].gameObject.SetActive(true);
-                }
-            }
-            yield return new WaitForSecondsRealtime(0.1f);
         }
     }
 

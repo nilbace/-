@@ -73,26 +73,29 @@ public class MovingPet : MonoBehaviour
 
     public void UnlockTalk()
     {
-        if (Managers.Data.MyStoreData.MyGoldAmount >= 500)
+        if (Managers.Data.MyHousingData.talkBox[petIndex] == false)//중복해금방지
         {
-            Managers.Data.MyHousingData.talkBox[petIndex] = true;
-            Managers.Data.MyStoreData.MyGoldAmount -= 500;
-            Managers.Data.SaveAllDatas();
-            GameObject copyunlockEffect = Instantiate(unlockEffect, talkText.gameObject.transform.position, talkText.gameObject.transform.rotation);
-            copyunlockEffect.SetActive(true);
-            TouchPet();
-        }
-        else
-        {
-            talkText.text = "골드가 부족해 ㅠㅅㅠ";
-            talkText.gameObject.SetActive(true);
-            unlock.SetActive(false);
-            //코루틴 중복방지
-            if (runningCoroutine != null)
+            if (Managers.Data.MyStoreData.MyGoldAmount >= 500)
             {
-                StopCoroutine(runningCoroutine);
+                Managers.Data.MyHousingData.talkBox[petIndex] = true;
+                Managers.Data.MyStoreData.MyGoldAmount -= 500;
+                Managers.Data.SaveAllDatas();
+                GameObject copyunlockEffect = Instantiate(unlockEffect, talkText.gameObject.transform.position, talkText.gameObject.transform.rotation);
+                copyunlockEffect.SetActive(true);
+                TouchPet();
             }
-            runningCoroutine = StartCoroutine(CloseBubble());
+            else
+            {
+                talkText.text = "골드가 부족해 ㅠㅅㅠ";
+                talkText.gameObject.SetActive(true);
+                unlock.SetActive(false);
+                //코루틴 중복방지
+                if (runningCoroutine != null)
+                {
+                    StopCoroutine(runningCoroutine);
+                }
+                runningCoroutine = StartCoroutine(CloseBubble());
+            }
         }
     }
 

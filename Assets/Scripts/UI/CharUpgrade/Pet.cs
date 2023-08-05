@@ -38,7 +38,8 @@ public class Pet : MonoBehaviour
         {
             if (i == 12) continue;
             int tempnum = 1000; tempnum += i * 200;
-            Locks[i].onClick.AddListener( () => UnLockPet(tempnum, i-1));
+            print($"전달 전 i값{i}");
+            Locks[i].onClick.AddListener( () => UnLockPet(tempnum, i));
             Locks[i].transform.GetComponentInChildren<TMPro.TMP_Text>().text = tempnum.ToString() + "G";
             if (Managers.Data.MyHighScoreData.boughtpet[i] == true)
             {

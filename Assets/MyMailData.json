@@ -1,23 +1,4 @@
 {
-    "MailBox": [
-        {
-            "CoinAmount": 0,
-            "RubyAmount": 3000,
-            "BellAmount": 0,
-            "SweepAmount": 0,
-            "SkipCouponAmount": 0,
-            "ReviveTicketAmount": 0,
-            "MailText": "3000루비 패키지"
-        },
-        {
-            "CoinAmount": 30000,
-            "RubyAmount": 300,
-            "BellAmount": 0,
-            "SweepAmount": 0,
-            "SkipCouponAmount": 0,
-            "ReviveTicketAmount": 0,
-            "MailText": "부자 패키지"
-        }
-    ],
-    "MailAmount": 2
+    "MailBox": [],
+    "MailAmount": 0
 }

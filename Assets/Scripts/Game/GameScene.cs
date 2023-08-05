@@ -52,6 +52,7 @@ public class GameScene : MonoBehaviour
     void ChangeBack()
     {
         int temp = Managers.Data.SelectedBossindex;
+
         string path = "ETC/NewMaps/";
         if (temp == 0 || temp ==1 || temp == 10 || temp==11) //นใ
         {
@@ -85,6 +86,7 @@ public class GameScene : MonoBehaviour
             }
             back.sprite = Resources.Load<Sprite>(path + "D_B");
         }
+
     }
     #endregion
 
@@ -182,7 +184,7 @@ public class GameScene : MonoBehaviour
 
     public void BossDead()
     {
-        StartCoroutine(BossDie());
+        StartCoroutine(BossDieAndStageClear());
     }
 
     bool bossAppeared = false;
@@ -202,7 +204,7 @@ public class GameScene : MonoBehaviour
         return ((float)_bossBase.MonsterHP / _bossMaxHP * 100);
     }
 
-    IEnumerator BossDie()
+    IEnumerator BossDieAndStageClear()
     {
         yield return new WaitForSeconds(5f);
         Time.timeScale = 0;
@@ -214,6 +216,8 @@ public class GameScene : MonoBehaviour
 
         if (Managers.Data.MyHighScoreData.HighGoldScores[Managers.Data.SelectedBossindex] < GoldAmount)
             Managers.Data.MyHighScoreData.HighGoldScores[Managers.Data.SelectedBossindex] = GoldAmount;
+
+
 
         Managers.Data.MyHighScoreData.clearStageIndex = Managers.Data.SelectedBossindex + 1;
         Managers.Data.SaveAllDatas();

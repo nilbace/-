@@ -13,6 +13,7 @@ public class Pet : MonoBehaviour
     [SerializeField] TMP_Text GoldTMP;
     [SerializeField] TMP_Text ScoreTMP;
     [SerializeField] TMP_Text LifeTMP;
+    [SerializeField] Button[] Locks;
 
     void Start()
     {
@@ -28,12 +29,29 @@ public class Pet : MonoBehaviour
             trans[i] = twelve.GetChild(i).GetChild(1);
         }
 
+        for (int i = 0; i < 12; i++)
+        {
+            Locks[i].transform.GetComponentInChildren<TMPro.TMP_Text>().text = $"스테이지{i + 1}을 클리어하세요";
+        }
+
         for (int i = 0; i <= nowclearindex - 1; i++)
         {
             if (i == 12) continue;
-            trans[i].gameObject.SetActive(false);
+            int tempnum = 1000; tempnum += i * 200;
+            Locks[i].onClick.AddListener( () => UnLockPet(tempnum, i-1));
+            Locks[i].transform.GetComponentInChildren<TMPro.TMP_Text>().text = tempnum.ToString() + "G";
+            if (Managers.Data.MyHighScoreData.boughtpet[i] == true)
+            {
+                Locks[i].gameObject.SetActive(false);
+            }
+            else
+            {
+                Locks[i].gameObject.SetActive(true);
+            }
 
         }
+
+        
 
         PetStat temp = Managers.Data.GetPetResultStat();
         atkTMP.text = temp.petatk.ToString();
@@ -43,6 +61,18 @@ public class Pet : MonoBehaviour
         ScoreTMP.text = temp.ScoreBonus.ToString() + "%";
         LifeTMP.text = (temp.HeartBonus / 10).ToString();
 
+    }
+
+    void UnLockPet(int gold, int index)
+    {
+        print(index);
+        if(gold <= Managers.Data.MyStoreData.MyGoldAmount)
+        {
+            Managers.Data.MyStoreData.MyGoldAmount -= gold;
+            Managers.Data.MyHighScoreData.boughtpet[index] = true;
+            Managers.Data.SaveAllDatas();
+            Init();
+        }
     }
 
     public void CloseBTN()

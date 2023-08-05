@@ -18,7 +18,8 @@ public class Bullet : MonoBehaviour
     {
         mainCamera = Camera.main;
         critDMG = Player.instance.resultStats[(int)Define.StatName.CritDmg];
-        critper = Player.instance.gameObject.GetComponent<StatManager>().playerdata.Chars[Managers.Data.MyCharDatas.nowSelectCatIndex].baseCritPer;
+        critper = Player.instance.gameObject.GetComponent<StatManager>().playerdata.Chars[Managers.Data.MyCharDatas.nowSelectCatIndex].baseCritPer
+            +Managers.Data.GetPetResultStat().petCritper;
     }
     public void SetBullet(Vector3 playerposition, float rotation, int damage, Sprite spriteee)
     {

@@ -641,6 +641,7 @@ public class StageHighScoreData
     public int[] HighGoldScores = new int[12];
     public int clearStageIndex;
     public bool[] GetReward = new bool[36];
+    public bool[] boughtpet = new bool[12];
 
     public StageHighScoreData()
     {
@@ -654,6 +655,10 @@ public class StageHighScoreData
         for (int i = 0; i < GetReward.Length; i++)
         {
             GetReward[i] = false;
+        }
+        for(int i = 0; i <12;i++)
+        {
+            boughtpet[i] = false;
         }
     }
     

@@ -13,10 +13,29 @@ public class StatManager : MonoBehaviour
     {
         instance = this;
         _nowcatindex = Managers.Data.MyCharDatas.nowSelectCatIndex;
+        PetStat temp = Managers.Data.GetPetResultStat();
         for(int i = 0; i<6; i++)
         {
             ResultStats[i] = playerdata.Chars[_nowcatindex].ThreeValues[i].baseStat +
                 playerdata.Chars[_nowcatindex].ThreeValues[i].UpValue * Managers.Data.MyCharDatas.charSaveDatas[_nowcatindex].StatLevels[i];
+
+            switch (i)
+            {
+                case 0:
+                    ResultStats[i] += temp.petatk;
+                    break;
+                case 1:
+                    ResultStats[i] += temp.petAtkSpeed;
+                    break;
+                case 4:
+                    ResultStats[i] += temp.petGoldBonus;
+                    break;
+                case 5:
+                    ResultStats[i] += temp.HeartBonus;
+                    break;
+
+            }
+            
         }
     }
 

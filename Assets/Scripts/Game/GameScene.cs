@@ -207,7 +207,12 @@ public class GameScene : MonoBehaviour
     IEnumerator BossDieAndStageClear()
     {
         yield return new WaitForSeconds(5f);
+
+        float goldper = (float)(Player.instance.resultStats[4]+100) / 100f;
+        GoldAmount = (int)(GoldAmount * goldper);
         Time.timeScale = 0;
+
+
         Managers.UI.ShowPopup(Define.Popup.StageClear);
         Managers.Data.MyStoreData.MyGoldAmount += GoldAmount;
 

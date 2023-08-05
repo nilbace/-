@@ -1,6 +1,6 @@
 {
     "HighScores": [
-        16400,
+        12345,
         0,
         0,
         0,
@@ -14,7 +14,7 @@
         0
     ],
     "HighGoldScores": [
-        1450,
+        0,
         0,
         0,
         0,
@@ -27,10 +27,10 @@
         0,
         0
     ],
-    "clearStageIndex": 1,
+    "clearStageIndex": 12,
     "GetReward": [
-        true,
-        true,
+        false,
+        false,
         false,
         false,
         false,
@@ -65,5 +65,19 @@
         false,
         false,
         false
+    ],
+    "boughtpet": [
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
     ]
 }

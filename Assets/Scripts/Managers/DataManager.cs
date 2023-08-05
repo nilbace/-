@@ -531,6 +531,7 @@ public class DataManager
         for (int i = 0; i <= nowclearindex - 1; i++)
         {
             if (i == 12) continue;
+            if (MyHighScoreData.boughtpet[i] == false) continue;
             switch (i)
             {
                 case 0:

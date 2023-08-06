@@ -131,7 +131,7 @@ MonoBehaviour:
       SpawnPoint: {x: 0, y: 6}
     - WaveName: Wave13
       WaveMonster: {fileID: 4452601977093224037, guid: 10c66796ab9f2924992de79b9edb0e4b, type: 3}
-      MonsterHP: 60
+      MonsterHP: 50
       WaveMoveSpeed: 1
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 4.98}
@@ -149,13 +149,13 @@ MonoBehaviour:
       SpawnPoint: {x: 0, y: 6}
     - WaveName: Wave31Left
       WaveMonster: {fileID: 5860076356670581586, guid: e4ff3b93448de7943b29d3fb64f3a20b, type: 3}
-      MonsterHP: 150
+      MonsterHP: 300
       WaveMoveSpeed: 0.7
       WaveDir: {x: 1, y: -1, z: 0}
       SpawnPoint: {x: -2.5, y: 5}
     - WaveName: Wave31Right
       WaveMonster: {fileID: 5860076356670581586, guid: 67e8a34457e346343868f11a9bfeb7d3, type: 3}
-      MonsterHP: 150
+      MonsterHP: 300
       WaveMoveSpeed: 0.7
       WaveDir: {x: -1, y: -1, z: 0}
       SpawnPoint: {x: 2.5, y: 5}
@@ -176,7 +176,7 @@ MonoBehaviour:
       MonsterHP: 8000
       WaveMoveSpeed: 3
       WaveDir: {x: 0, y: -1, z: 0}
-      SpawnPoint: {x: 0, y: 5}
+      SpawnPoint: {x: 0, y: 2}
     - WaveName: Wave52
       WaveMonster: {fileID: 9180555276336733649, guid: 1acff2dc0ba8f8a42a9f17f1d7e5b052, type: 3}
       MonsterHP: 400

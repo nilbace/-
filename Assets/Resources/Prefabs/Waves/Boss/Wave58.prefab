@@ -28,6 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6697095854075706005}
+  - {fileID: 3192266315079706354}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61,7 +62,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6320006714880372350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.84, z: 0}
   m_LocalScale: {x: 0.2555318, y: 0.2555318, z: 0.2555318}
   m_Children: []
   m_Father: {fileID: 6455965276204093209}
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b554e2275478ac74a91075085bdf790d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myHP: 400
+  _myHP: 55555
   IsBoss: 1
   IsNamed: 0
 --- !u!50 &7628122228325080943
@@ -198,18 +199,18 @@ MonoBehaviour:
   RaserPrefab: {fileID: 6544904726160064764, guid: 46bac7a73c237724084b9d7cce16f439, type: 3}
   SplitBall: {fileID: 1655372175088003629, guid: 06d2a28a870a60645b546439095e902d, type: 3}
   BossPatternData:
-  - {x: 45, y: 3}
-  - {x: 46, y: 3}
-  - {x: 27, y: 3}
-  - {x: 47, y: 3}
+  - {x: 45, y: 1}
+  - {x: 46, y: 1}
+  - {x: 27, y: 1}
+  - {x: 47, y: 1}
   - {x: 27, y: 0}
-  - {x: 48, y: 3}
-  - {x: 49, y: 3}
+  - {x: 48, y: 1}
+  - {x: 49, y: 0}
   - {x: 27, y: 0}
-  - {x: 48, y: 3}
-  - {x: 50, y: 3}
-  - {x: 51, y: 3}
-  - {x: 52, y: 3}
+  - {x: 48, y: 1}
+  - {x: 50, y: 1}
+  - {x: 51, y: 1}
+  - {x: 52, y: 1}
 --- !u!114 &6664609533866721750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,3 +227,69 @@ MonoBehaviour:
   ChangeDirTime: 0
   newSpeed: 0
   changeDirDelay: 0.5
+--- !u!1001 &78653642
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6455965276204093209}
+    m_Modifications:
+    - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566009, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: _wavesData.waveDatas.Array.data[28].WaveMonster
+      value: 
+      objectReference: {fileID: 3714091697221412020}
+    - target: {fileID: 3192266315141566010, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: m_Name
+      value: TempWave
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82c568539f30119489f69147377be845, type: 3}
+--- !u!4 &3192266315079706354 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
+  m_PrefabInstance: {fileID: 78653642}
+  m_PrefabAsset: {fileID: 0}

@@ -41,6 +41,7 @@ public class Define : MonoBehaviour
         Store,
         SweepResult,
         Devs,
+        PetD,
         MaxCount
     }
 

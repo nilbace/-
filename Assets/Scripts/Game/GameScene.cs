@@ -11,6 +11,8 @@ public class GameScene : MonoBehaviour
 
     public StageInfoDatas stageInfoDatas;
 
+    [SerializeField] GameObject StoryCutScenePrefeb;
+
     [SerializeField] GameObject[] Hearts;
     int _heartCount = 0;
     bool isDead = false;
@@ -49,7 +51,6 @@ public class GameScene : MonoBehaviour
     #region BackGroundChagne
     [SerializeField] Image[] skies;
     [SerializeField] Image back;
-    [SerializeField] Image[] Grounds;
     void ChangeBack()
     {
         int temp = Managers.Data.SelectedBossindex;
@@ -61,13 +62,7 @@ public class GameScene : MonoBehaviour
             {
                 sky.sprite = Resources.Load<Sprite>(path + "N_S");
             }
-
             back.sprite = Resources.Load<Sprite>(path + "N_B");
-
-            foreach (Image gro in Grounds)
-            {
-                gro.sprite = Resources.Load<Sprite>(path + "BlackGround");
-            }
         }
         else if(temp == 2 || temp==3)  //저녁
         {
@@ -77,7 +72,7 @@ public class GameScene : MonoBehaviour
             }
             back.sprite = Resources.Load<Sprite>(path + "E_B");
         }
-        else if(temp==4||temp==5||temp==6||temp==7) //아침
+        else if(temp==4||temp==5||temp==6||temp==7)
         {
             foreach (Image sky in skies)
             {
@@ -85,17 +80,13 @@ public class GameScene : MonoBehaviour
             }
             back.sprite = Resources.Load<Sprite>(path + "M_B");
         }
-        else  //새벽
+        else
         {
             foreach (Image sky in skies)
             {
                 sky.sprite = Resources.Load<Sprite>(path + "D_S");
             }
             back.sprite = Resources.Load<Sprite>(path + "D_B");
-            foreach (Image gro in Grounds)
-            {
-                gro.sprite = Resources.Load<Sprite>(path + "BlackGround");
-            }
         }
 
     }
@@ -227,15 +218,26 @@ public class GameScene : MonoBehaviour
         Managers.UI.ShowPopup(Define.Popup.StageClear);
         Managers.Data.MyStoreData.MyGoldAmount += GoldAmount;
 
-        if(Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] < ScoreAmount)
+        //최초클리어일 때 추가동작들
+        if (Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] == 0)
+        {
+            //스테이지 해금데이터 갱신
+            Managers.Data.MyHighScoreData.clearStageIndex = Managers.Data.SelectedBossindex + 1;
+
+            //스토리컷씬 팝업
+            Time.timeScale = 1;
+            Player.instance.gamePlay = false;
+
+            GameObject story = Instantiate(StoryCutScenePrefeb);
+            story.GetComponent<StorySelect>().StoryOpen(Managers.Data.SelectedBossindex);
+        }
+
+        if (Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] < ScoreAmount)
         Managers.Data.MyHighScoreData.HighScores[Managers.Data.SelectedBossindex] = ScoreAmount;
 
         if (Managers.Data.MyHighScoreData.HighGoldScores[Managers.Data.SelectedBossindex] < GoldAmount)
             Managers.Data.MyHighScoreData.HighGoldScores[Managers.Data.SelectedBossindex] = GoldAmount;
 
-
-
-        Managers.Data.MyHighScoreData.clearStageIndex = Managers.Data.SelectedBossindex + 1;
         Managers.Data.SaveAllDatas();
     }
 

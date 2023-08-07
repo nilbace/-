@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     InGameData thisCatData;
     public static Player instance;
+    public bool gamePlay = true;
 
     public float invincibleTime;
 
@@ -124,7 +125,7 @@ public class Player : MonoBehaviour
 
     IEnumerator Shooting()
     {
-        while(true)
+        while(gamePlay)
         {
             TempSound.instance.SFX(TempSound.EffectSoundName.wea4);
             if (PowerLevel == 1)

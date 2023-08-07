@@ -1584,6 +1584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageInfoDatas: {fileID: 4178019880599631432, guid: 8bb6d530eeea0e641949c017463e8654, type: 3}
+  StoryCutScenePrefeb: {fileID: 113124444634611027, guid: b3c1bc50a7cabcb439faba640a3c199e, type: 3}
   Hearts:
   - {fileID: 795246073}
   - {fileID: 1688343112}
@@ -1599,10 +1600,6 @@ MonoBehaviour:
   - {fileID: 1822892997}
   - {fileID: 1642894981}
   back: {fileID: 260449527}
-  Grounds:
-  - {fileID: 1780312301}
-  - {fileID: 600987543}
-  - {fileID: 2070352423}
   BombBTN: {fileID: 410056333}
   BombPrefab: {fileID: 506899500942952207, guid: d608ecb487ab4064d8c3a6aad0a1181d, type: 3}
   BomBTMP: {fileID: 2048802040}

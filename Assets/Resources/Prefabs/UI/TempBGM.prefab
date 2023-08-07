@@ -48,6 +48,7 @@ MonoBehaviour:
   EffectSound: {fileID: 873006892}
   Lobby: {fileID: 8300000, guid: 2a586c4d229fbd1468277a2856bbe984, type: 3}
   Stage: {fileID: 8300000, guid: 2bd6620c666c0f14f9e9a1f31ed37f5d, type: 3}
+  Story: {fileID: 8300000, guid: c80900e28e7cbea499df090ea5ee7af2, type: 3}
 --- !u!82 &5798780128469706253
 AudioSource:
   m_ObjectHideFlags: 0

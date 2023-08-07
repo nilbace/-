@@ -9,6 +9,7 @@ public class DataManager
 {
     //스테이지 셀렉트
     public int SelectedBossindex { get; set; } = 0;
+    public int NowSelectedPet { get; set; }
     public BellData MyBellData { get; set; }
     public StoreData MyStoreData { get; set; }
     public SettingData MySettingData { get; set; }

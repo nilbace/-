@@ -9,7 +9,16 @@ public class TempSound : MonoBehaviour
     public static TempSound instance;
     [SerializeField] AudioClip Lobby;
     [SerializeField] AudioClip Stage;
-    public enum BGMName { None,Lobby, Stage }
+    [SerializeField] AudioClip Story;
+    [SerializeField] AudioClip Prologue;
+
+    public enum BGMName { 
+        None,
+        Lobby, 
+        Stage,
+        Story,
+        Prologue
+    }
     public enum EffectSoundName {
         button1,  
         weaponSound4,
@@ -19,10 +28,11 @@ public class TempSound : MonoBehaviour
         charDie2,
         monSound1,
         result,
-        wea2, wea3, wea4
+        wea2, wea3, wea4,
+        talk
     }
 
-    BGMName _nowBGM = BGMName.None;
+    public BGMName _nowBGM = BGMName.None;
     // Start is called before the first frame update
 
     private void Awake()
@@ -36,13 +46,13 @@ public class TempSound : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        AudioSource = GetComponent<AudioSource>();
     }
 
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        AudioSource = GetComponent<AudioSource>();
     }
 
     public void SFX(EffectSoundName ESN)
@@ -59,10 +69,11 @@ public class TempSound : MonoBehaviour
 
     public void TurnONBGM(BGMName name)
     {
-        if(_nowBGM != name)
+        if(name != BGMName.None && _nowBGM != name)
         {
             _nowBGM = name;
-            AudioSource.Stop();
+            if(AudioSource.isPlaying)
+                AudioSource.Stop();
             if (name == BGMName.Lobby)
             {
                 AudioSource.clip = Lobby;
@@ -71,6 +82,16 @@ public class TempSound : MonoBehaviour
             else if(name == BGMName.Stage)
             {
                 AudioSource.clip = Stage;
+                AudioSource.Play();
+            }
+            else if (name == BGMName.Story)
+            {
+                AudioSource.clip = Story;
+                AudioSource.Play();
+            }
+            else if (name == BGMName.Prologue)
+            {
+                AudioSource.clip = Prologue;
                 AudioSource.Play();
             }
         }

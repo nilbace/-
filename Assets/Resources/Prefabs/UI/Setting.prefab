@@ -296,7 +296,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 178262032}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1394588806}
+        m_TargetAssemblyTypeName: SettingUI, Assembly-CSharp
+        m_MethodName: DevsBTN
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &212803284
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -620,7 +632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 104, y: -244}
+  m_AnchoredPosition: {x: 88, y: -244}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1074196252
@@ -874,7 +886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1443,9 +1455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc1c232c79dfa445af0ee51bb3c545e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  truefalseImg:
-  - {fileID: 21300000, guid: f752e1b9f8ae1a142bdb73b406d9438c, type: 3}
-  - {fileID: 21300000, guid: 34dfd857bb31e46419bd13d35e8d5414, type: 3}
   sliders:
   - {fileID: 6718273}
   - {fileID: 957294763}
@@ -1940,7 +1949,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 406686743398456753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1394588806}
+        m_TargetAssemblyTypeName: SettingUI, Assembly-CSharp
+        m_MethodName: OpenInsta
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6073496776843383371
 GameObject:
   m_ObjectHideFlags: 0

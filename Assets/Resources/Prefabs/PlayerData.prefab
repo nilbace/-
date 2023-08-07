@@ -45,8 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Chars:
   - CatName: "\uCE58\uC988\uB0E5\uC774"
-    FrontImg: {fileID: 21300000, guid: 3c6d4809bf7445e4fb51740ea19e8af4, type: 3}
-    BackImg: {fileID: 21300000, guid: d698214505e376a4995026da112e2881, type: 3}
+    FrontImg: {fileID: 21300000, guid: c4ea55f2585d0e14a9f3a2013b0443a9, type: 3}
+    BackImg: {fileID: 21300000, guid: 8b02124e6c99e8f42b3fb86c1e40c9e6, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
       baseStat: 25
@@ -81,8 +81,8 @@ MonoBehaviour:
       \uB358\uC9D1\uB2C8\uB2E4!"
     Skill2Icon: {fileID: 21300000, guid: 84768cbbe1483c4458b6d7da3a590563, type: 3}
   - CatName: "\uC0BC\uC0C9\uB0E5\uC774"
-    FrontImg: {fileID: 21300000, guid: 6925933fbbf75bb42a68112df67be6c3, type: 3}
-    BackImg: {fileID: 21300000, guid: 096d1a1d45c5c654a9ad4f2d987c7ca3, type: 3}
+    FrontImg: {fileID: 21300000, guid: 1d89886016c10874b9362d521ab66d4a, type: 3}
+    BackImg: {fileID: 21300000, guid: 69f68b8fad8224842a13255a3c03a026, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
       baseStat: 20
@@ -117,8 +117,8 @@ MonoBehaviour:
       \uACF5\uACA9\uD569\uB2C8\uB2E4!"
     Skill2Icon: {fileID: 21300000, guid: 026e5f32ab8123f499adb276518fe957, type: 3}
   - CatName: "\uACE0\uB4F1\uC5B4\uB0E5\uC774"
-    FrontImg: {fileID: 21300000, guid: c655bb35ffeb08c4aaa7064e98558b82, type: 3}
-    BackImg: {fileID: 21300000, guid: c02cba7690d0cc44daf5498b1d1b5611, type: 3}
+    FrontImg: {fileID: 21300000, guid: e9c59d8eaab83f545a66b673865ebf2b, type: 3}
+    BackImg: {fileID: 21300000, guid: b27109ceb65b7e3488dabd53d2f7c7b5, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
       baseStat: 25
@@ -153,8 +153,8 @@ MonoBehaviour:
       \uB358\uC9D1\uB2C8\uB2E4!"
     Skill2Icon: {fileID: 21300000, guid: eada79fff9ec572489dafc644b9f9938, type: 3}
   - CatName: "\uD131\uC2DC\uB3C4\uB0E5\uC774"
-    FrontImg: {fileID: 21300000, guid: 339d12fc9c2f94a44a27caca80f057cc, type: 3}
-    BackImg: {fileID: 21300000, guid: 949db3395aec392408d2a52bed96dc30, type: 3}
+    FrontImg: {fileID: 21300000, guid: 86cb8a37c0ce6534289834b708b4def0, type: 3}
+    BackImg: {fileID: 21300000, guid: b9562f458a2e73441b2858c720950ec6, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
       baseStat: 25
@@ -188,8 +188,8 @@ MonoBehaviour:
       \uBCF4\uB0C5\uB2C8\uB2E4!"
     Skill2Icon: {fileID: 21300000, guid: 36f49556628258344a2eec8bfeb98d26, type: 3}
   - CatName: "\uC0F4 \uB0AD\uC774"
-    FrontImg: {fileID: 21300000, guid: 16670aeecb927244687215bc7ed818a9, type: 3}
-    BackImg: {fileID: 21300000, guid: 2ada059506557b545afc545f9f9a9133, type: 3}
+    FrontImg: {fileID: 21300000, guid: cedb5596fb7fc45439e8f2bbd2a96ae7, type: 3}
+    BackImg: {fileID: 21300000, guid: 5ed594c06bde5294f9af914bc5709a64, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
       baseStat: 25
@@ -223,8 +223,8 @@ MonoBehaviour:
       \uBCF4\uB0C5\uB2C8\uB2E4!"
     Skill2Icon: {fileID: 21300000, guid: 18b9e93a083e45d44b64f1cd6e543a6e, type: 3}
   - CatName: "\uBC45\uAC08\uB0E5\uC774"
-    FrontImg: {fileID: 21300000, guid: fe87d5b2796de694bb1328989cb73ee5, type: 3}
-    BackImg: {fileID: 21300000, guid: 5a9e40b070ffc514881827d6efb21423, type: 3}
+    FrontImg: {fileID: 21300000, guid: 52b3165244a5a124bba981b1bcb36a60, type: 3}
+    BackImg: {fileID: 21300000, guid: c99f812e0b23cc34082d8c7fa1764237, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
       baseStat: 25

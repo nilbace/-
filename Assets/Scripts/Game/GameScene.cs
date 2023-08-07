@@ -49,6 +49,7 @@ public class GameScene : MonoBehaviour
     #region BackGroundChagne
     [SerializeField] Image[] skies;
     [SerializeField] Image back;
+    [SerializeField] Image[] Grounds;
     void ChangeBack()
     {
         int temp = Managers.Data.SelectedBossindex;
@@ -60,7 +61,13 @@ public class GameScene : MonoBehaviour
             {
                 sky.sprite = Resources.Load<Sprite>(path + "N_S");
             }
+
             back.sprite = Resources.Load<Sprite>(path + "N_B");
+
+            foreach (Image gro in Grounds)
+            {
+                gro.sprite = Resources.Load<Sprite>(path + "BlackGround");
+            }
         }
         else if(temp == 2 || temp==3)  //저녁
         {
@@ -70,7 +77,7 @@ public class GameScene : MonoBehaviour
             }
             back.sprite = Resources.Load<Sprite>(path + "E_B");
         }
-        else if(temp==4||temp==5||temp==6||temp==7)
+        else if(temp==4||temp==5||temp==6||temp==7) //아침
         {
             foreach (Image sky in skies)
             {
@@ -78,13 +85,17 @@ public class GameScene : MonoBehaviour
             }
             back.sprite = Resources.Load<Sprite>(path + "M_B");
         }
-        else
+        else  //새벽
         {
             foreach (Image sky in skies)
             {
                 sky.sprite = Resources.Load<Sprite>(path + "D_S");
             }
             back.sprite = Resources.Load<Sprite>(path + "D_B");
+            foreach (Image gro in Grounds)
+            {
+                gro.sprite = Resources.Load<Sprite>(path + "BlackGround");
+            }
         }
 
     }

@@ -22,6 +22,11 @@ public class SettingUI : MonoBehaviour
         sliders[1].value = Managers.Data.MySettingData.SFXSound;
     }
 
+    public void OpenInsta()
+    {
+        Application.OpenURL("https://www.instagram.com/na0ojima_official/");
+    }
+
 
 
     public void OnBGMSliderValueChanged()
@@ -44,6 +49,10 @@ public class SettingUI : MonoBehaviour
         }
     }
 
+    public void DevsBTN()
+    {
+        Managers.UI.ShowPopup(Define.Popup.Devs);
+    }
 
     public void CloseBTN()
     {

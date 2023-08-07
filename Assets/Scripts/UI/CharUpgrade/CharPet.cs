@@ -17,10 +17,9 @@ public class CharPet : MonoBehaviour
     [SerializeField] GameObject[] growlevel;
 
     [Header("½ºÅ³")]
-    [SerializeField] TMP_Text skillInfo;
-    [SerializeField] Image    skillImg;
-    [SerializeField] TMP_Text skill2info;
-    [SerializeField] Image    skill2img;
+
+    [SerializeField] Sprite[] skillImgs;
+    [SerializeField] Image BigSkillImg;
 
 
     [SerializeField] int[] MaxValues;
@@ -40,6 +39,8 @@ public class CharPet : MonoBehaviour
     public void Init()
     {
         thiscatData = PlayerData.Chars[Managers.Data.MyCharDatas.nowSelectCatIndex];
+        int index = Managers.Data.MyCharDatas.nowSelectCatIndex;
+        BigSkillImg.sprite = skillImgs[index];
 
         int _temp = Managers.Data.GetThisCatStat(Define.StatName.Total);
 
@@ -63,10 +64,7 @@ public class CharPet : MonoBehaviour
             growlevel[i].SetActive(true);
         }
 
-        skillInfo.text  = thiscatData.SkillInfos;
-        skillImg.sprite = thiscatData.SkillIcon;
-        skill2info.text = thiscatData.Skill2Infos;
-        skill2img.sprite = thiscatData.Skill2Icon;
+
 
         foreach(CP_EachChar temp in eachcar)
         {

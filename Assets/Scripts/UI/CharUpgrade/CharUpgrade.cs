@@ -29,10 +29,11 @@ public class CharUpgrade : MonoBehaviour
         ReqGoldToGetPoint.text = Define.FormatNumber(_NowCatData.GetPointMoneyValue
             [Managers.Data.GetThisCatStat(Define.StatName.Total)]);
 
-        ExtraPoint.text = "잔여포인트 : " + Managers.Data.GetThisCatStat(Define.StatName.extra).ToString();
+        ExtraPoint.text =  Managers.Data.GetThisCatStat(Define.StatName.extra).ToString();
 
         for(int i = 0; i<6; i++)
         {
+            if (i == 3) continue;
             UpgradeLists[i].Setting(_NowCatData, i);
         }
     }

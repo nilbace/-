@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16670aeecb927244687215bc7ed818a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57c75a190e3ef5d48a759e0f0d280eeb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1632,7 +1632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fe87d5b2796de694bb1328989cb73ee5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99cf66c494ba34c42b86eee59d5f64c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1974,7 +1974,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 339d12fc9c2f94a44a27caca80f057cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa3c75dfe372abb43bed4e85829d0783, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4007,7 +4007,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4125024919485720401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7082,7 +7082,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6925933fbbf75bb42a68112df67be6c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57c75a190e3ef5d48a759e0f0d280eeb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7495,7 +7495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3c6d4809bf7445e4fb51740ea19e8af4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06e3a14acf9d4964dbf844b534f60ec6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8277,7 +8277,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c655bb35ffeb08c4aaa7064e98558b82, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 051dcaf910a0b714fa0487ea45575c1e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -13,12 +13,15 @@ public class Store : MonoBehaviour
     }
 
     void SuccessBuy()
+    //°áÁ¦ ¼º°ø½Ã ÆË¾÷Ã¢ ¶ß´Â°Í
     {
+        
         Managers.UI.ShowPopup(Define.Popup.PaySuccess);
         Pays.instance.Setting(Pays.Result.Success);
     }
 
     void FailBuy()
+    //°áÁ¦ ½ÇÆÐ½Ã ÆË¾÷Ã¢ ¶ß´Â°Í
     {
         Managers.UI.ShowPopup(Define.Popup.PaySuccess);
         Pays.instance.Setting(Pays.Result.Fail);

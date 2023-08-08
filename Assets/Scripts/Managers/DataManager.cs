@@ -512,8 +512,13 @@ public class DataManager
         temp.RubyAmount = ruby;
         temp.BellAmount = bell;
         temp.SweepAmount = sweep;
+        //º“≈¡±«
         temp.SkipCouponAmount = skip;
+        //±§∞Ì Ω∫≈µ
+
         temp.ReviveTicketAmount = revive;
+        //∫Œ»∞±«
+
         temp.MailText = text;
         MyMailData.MailBox.Add(temp);
         MyMailData.MailAmount++;

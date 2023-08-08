@@ -2784,7 +2784,7 @@ GameObject:
   - component: {fileID: 2022489659}
   - component: {fileID: 2022489658}
   m_Layer: 5
-  m_Name: Image
+  m_Name: StageClaer
   m_TagString: StageClaer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

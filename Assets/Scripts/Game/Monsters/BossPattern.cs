@@ -493,6 +493,7 @@ public class BossPattern : MonoBehaviour
                         for (int j =0; j <3; j++)
                         {
                             GameObject mon2 = Instantiate(gameObject, transform.position, Quaternion.identity);
+                            mon2.GetComponent<EnemyBase>().IsClone = true;
                             Vector3 temppoz = _pozs[j];
                             Color tempColor = mon2.GetComponent<SpriteRenderer>().color;
                             tempColor.r = tempColor.g = tempColor.b = 0.4f;

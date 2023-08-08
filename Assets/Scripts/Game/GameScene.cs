@@ -29,6 +29,7 @@ public class GameScene : MonoBehaviour
     public int GoldAmount { get; set; }
 
     [SerializeField] bool heejuneMode;
+    GameObject StageClaerImg;
     private void Awake()
     {
         instance = this;
@@ -37,6 +38,8 @@ public class GameScene : MonoBehaviour
     {
         Init();
         ChangeBack();
+        StageClaerImg = GameObject.FindGameObjectWithTag("StageClaer");
+        StageClaerImg.SetActive(false);
     }
 
     void Init()
@@ -208,7 +211,9 @@ public class GameScene : MonoBehaviour
 
     IEnumerator BossDieAndStageClear()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
+        StageClaerImg.SetActive(false);
+        yield return new WaitForSeconds(4f);
 
         float goldper = (float)(Player.instance.resultStats[4]+100) / 100f;
         GoldAmount = (int)(GoldAmount * goldper);

@@ -26,7 +26,25 @@
             "SkipCouponAmount": 10,
             "ReviveTicketAmount": 0,
             "MailText": "상점 구매 상품(광고 스킵 쿠폰)"
+        },
+        {
+            "CoinAmount": 1300,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지4 1별 보상"
+        },
+        {
+            "CoinAmount": 2600,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지4 2별 보상"
         }
     ],
-    "MailAmount": 3
+    "MailAmount": 5
 }

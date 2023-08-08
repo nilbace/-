@@ -11,6 +11,7 @@ public class EnemyBase : MonoBehaviour
     public float MonsterHP { get { return _myHP; } set { _myHP = value; } }
     public bool IsBoss = false;
     public bool IsNamed = false;
+    public bool IsClone = false;
 
     string ItemPath = "Prefabs/MonItems/";
 
@@ -79,7 +80,7 @@ public class EnemyBase : MonoBehaviour
 
     private void OnDisable()
     {
-        if (Time.timeScale != 0 && _myHP <= 0)
+        if (Time.timeScale != 0 && _myHP <= 0 && !IsClone)
         {
             DropGolds();
             DropScores();

@@ -18,6 +18,8 @@ public class Pet : MonoBehaviour
 
     public static Pet instance;
 
+    bool pettu = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -31,6 +33,14 @@ public class Pet : MonoBehaviour
     void Start()
     {
         Init();
+
+        bool pettu = PlayerPrefs.GetInt("pettu", 0) == 1;
+
+        if (!pettu)
+        {
+            Managers.Data.StartTuitorial(Define.Tutorials.Pet);
+            PlayerPrefs.SetInt("pettu", 1);
+        }
     }
 
     public void Init()

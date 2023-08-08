@@ -9,11 +9,22 @@ public class LobbyUI : MonoBehaviour
     [SerializeField] TMPro.TMP_Text moneyText;
     [SerializeField] TMPro.TMP_Text RubyText;
 
+    bool lobbytu = false;
+
     private void Start()
     {
         Time.timeScale = 1f;
         TempSound.instance.TurnONBGM(TempSound.BGMName.Lobby);
+
+        bool lobbytu = PlayerPrefs.GetInt("lobbytu", 0) == 1;
+
+        if (!lobbytu)
+        {
+            Managers.Data.StartTuitorial(Define.Tutorials.Lobby);
+            PlayerPrefs.SetInt("lobbytu", 1);
+        }
     }
+
 
     private void FixedUpdate()
     {

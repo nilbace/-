@@ -44,7 +44,15 @@ public class Define : MonoBehaviour
         PetD,
         SilverGun,
         PaySuccess,
+        Tutorial,
         MaxCount
+    }
+
+    public enum Tutorials
+    {
+        Lobby,
+        Pet,
+        Stage,
     }
 
     public enum Sound

@@ -586,6 +586,14 @@ public class DataManager
         MyPetStat.HeartBonus += life;
     }
     #endregion
+
+
+
+    public void StartTuitorial(Define.Tutorials tutorialE)
+    {
+        Managers.UI.ShowPopup(Define.Popup.Tutorial);
+        tutorial.instance.Setting(tutorialE);
+    }
 }
 
 

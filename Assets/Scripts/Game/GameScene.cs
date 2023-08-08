@@ -30,6 +30,7 @@ public class GameScene : MonoBehaviour
 
     [SerializeField] bool heejuneMode;
     GameObject StageClaerImg;
+    bool seltu = false;
     private void Awake()
     {
         instance = this;
@@ -49,6 +50,14 @@ public class GameScene : MonoBehaviour
         if(!heejuneMode) LoadWave(Managers.Data.SelectedBossindex);
         SetStartHeart();
         BossGO.SetActive(false);
+
+        bool seltu = PlayerPrefs.GetInt("seltu", 0) == 1;
+
+        if (!seltu)
+        {
+            Managers.Data.StartTuitorial(Define.Tutorials.Stage);
+            PlayerPrefs.SetInt("seltu", 1);
+        }
     }
 
     #region BackGroundChagne

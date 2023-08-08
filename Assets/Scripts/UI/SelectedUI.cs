@@ -16,10 +16,14 @@ public class SelectedUI : MonoBehaviour
     [SerializeField] Button[] _stageBTNs;
     [SerializeField] Button   _startBTN;
 
+    
+
     private void Start()
     {
         FirstInit();
         Init();
+
+        
     }
 
     void FirstInit()

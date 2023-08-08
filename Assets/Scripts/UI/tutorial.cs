@@ -74,6 +74,7 @@ public class tutorial : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
             {
+                Time.timeScale = 1f;
                 Managers.UI.ClosePopup();
             }
         }

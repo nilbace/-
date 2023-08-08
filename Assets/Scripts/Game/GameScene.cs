@@ -55,6 +55,7 @@ public class GameScene : MonoBehaviour
 
         if (!seltu)
         {
+            Time.timeScale = 0f;
             Managers.Data.StartTuitorial(Define.Tutorials.Stage);
             PlayerPrefs.SetInt("seltu", 1);
         }

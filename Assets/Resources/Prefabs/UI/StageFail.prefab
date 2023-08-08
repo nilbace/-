@@ -511,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00076293945, y: 0}
+  m_AnchoredPosition: {x: -0.0041656494, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1018394442
@@ -1167,9 +1167,8 @@ GameObject:
   - component: {fileID: 8730056899468897743}
   - component: {fileID: 8730056899468897744}
   - component: {fileID: 505391362578215698}
-  - component: {fileID: 5360499495912616792}
   m_Layer: 5
-  m_Name: StageClear
+  m_Name: StageFail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1275,27 +1274,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scoretext: {fileID: 5866821665382993112}
---- !u!114 &5360499495912616792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8730056899468897745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a77b5499f7d113429360be62a4f0d4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Stars:
-  - {fileID: 9117438370272790651}
-  - {fileID: 1761577656038527856}
-  - {fileID: 6358521520225342199}
-  Rewards:
-  - {fileID: 869541692}
-  - {fileID: 1062838335}
-  - {fileID: 957345432}
-  ScoreText: {fileID: 5866821665382993112}
 --- !u!1 &8730056900386213111
 GameObject:
   m_ObjectHideFlags: 0

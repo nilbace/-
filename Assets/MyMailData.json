@@ -53,7 +53,142 @@
             "SkipCouponAmount": 0,
             "ReviveTicketAmount": 0,
             "MailText": "스테이지1 2별 보상"
+        },
+        {
+            "CoinAmount": 1100,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지2 1별 보상"
+        },
+        {
+            "CoinAmount": 2200,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지2 2별 보상"
+        },
+        {
+            "CoinAmount": 0,
+            "RubyAmount": 300,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "300루비 패키지"
+        },
+        {
+            "CoinAmount": 0,
+            "RubyAmount": 100,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "100루비 패키지"
+        },
+        {
+            "CoinAmount": 0,
+            "RubyAmount": 300,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "300루비 패키지"
+        },
+        {
+            "CoinAmount": 0,
+            "RubyAmount": 500,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "500루비 패키지"
+        },
+        {
+            "CoinAmount": 0,
+            "RubyAmount": 5000,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "5000루비 패키지"
+        },
+        {
+            "CoinAmount": 30000,
+            "RubyAmount": 300,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "부자 패키지"
+        },
+        {
+            "CoinAmount": 30000,
+            "RubyAmount": 300,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "부자 패키지"
+        },
+        {
+            "CoinAmount": 30000,
+            "RubyAmount": 300,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "부자 패키지"
+        },
+        {
+            "CoinAmount": 10000,
+            "RubyAmount": 100,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스타터 패키지"
+        },
+        {
+            "CoinAmount": 10000,
+            "RubyAmount": 100,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스타터 패키지"
+        },
+        {
+            "CoinAmount": 10000,
+            "RubyAmount": 100,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스타터 패키지"
+        },
+        {
+            "CoinAmount": 10000,
+            "RubyAmount": 100,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스타터 패키지"
+        },
+        {
+            "CoinAmount": 30000,
+            "RubyAmount": 300,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "부자 패키지"
         }
     ],
-    "MailAmount": 6
+    "MailAmount": 21
 }

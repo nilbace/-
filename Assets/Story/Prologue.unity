@@ -4713,7 +4713,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 3684850729796874734}
           m_TargetAssemblyTypeName: StorySelect, Assembly-CSharp
-          m_MethodName: StoryExit
+          m_MethodName: GoToLobby
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

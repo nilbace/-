@@ -1425,7 +1425,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3016585879598962988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1459,6 +1459,7 @@ MonoBehaviour:
   - {fileID: 6718273}
   - {fileID: 957294763}
   couponField: {fileID: 4358846496062422964}
+  Coupon7s: 
 --- !u!1 &3505033466446583675
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,8 +48,8 @@ public class CharSaveDatas
         charSaveDatas[1].Name = "»ï»ö³ÉÀÌ";
         charSaveDatas[2].Name = "°íµî¾î³ÉÀÌ";
         charSaveDatas[3].Name = "ÅÎ½Ãµµ³ÉÀÌ";
-        charSaveDatas[4].Name = "¼¤";
-        charSaveDatas[5].Name = "¹ğ°¥";
+        charSaveDatas[4].Name = "¹ğ°¥";
+        charSaveDatas[5].Name = "¼¤";
 
 
         nowSelectCatIndex = 0;

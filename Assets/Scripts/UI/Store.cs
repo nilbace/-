@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class Store : MonoBehaviour
 {
+
+    private void Start()
+    {
+        
+    }
     public void Bell5Ruby30()
     {
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
@@ -37,6 +44,16 @@ public class Store : MonoBehaviour
             Managers.Data.SaveAllDatas();
         }
     }
+
+
+
+    public void SilverGunOpen()
+    {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        Managers.UI.ShowPopup(Define.Popup.SilverGun);
+    }
+    
+
 
     public void StarterPackage()
     {

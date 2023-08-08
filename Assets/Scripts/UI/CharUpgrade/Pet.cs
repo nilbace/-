@@ -16,18 +16,31 @@ public class Pet : MonoBehaviour
     [SerializeField] Transform ParentTR;
     [SerializeField] EachPet[] eachpets;
 
+    public static Pet instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     void Start()
     {
         Init();
     }
 
-    void Init()
+    public void Init()
     {
         int nowclearindex = Managers.Data.MyHighScoreData.clearStageIndex;
 
         for(int i = 0; i<12;i++)
         {
-            eachpets[i].GetComponent<EachPet>().Setting(PetImgs[i], i);
+            int temp2 = i;
+            eachpets[i].GetComponent<EachPet>().Setting(PetImgs[i], temp2);
         }
         
         PetStat temp = Managers.Data.GetPetResultStat();

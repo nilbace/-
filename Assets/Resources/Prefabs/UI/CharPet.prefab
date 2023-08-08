@@ -1262,7 +1262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1d89886016c10874b9362d521ab66d4a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cedb5596fb7fc45439e8f2bbd2a96ae7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3824,7 +3824,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e2204e8b2e07f39419dce45e81a553c4, type: 3}
   - {fileID: 21300000, guid: a7be9ef7cdce0774491952a43805316b, type: 3}
   - {fileID: 21300000, guid: 0b22730270169cd458fff77361e8d2d0, type: 3}
-  - {fileID: 21300000, guid: ea66f167c2da84945a03500f8acac767, type: 3}
+  - {fileID: 21300000, guid: c55d22bc29b3acb4d84949c80c354866, type: 3}
   BigSkillImg: {fileID: 300673040281940862}
   MaxValues: 6e000000f00000002c010000f0000000aa000000320000000a000000
   eachcar:
@@ -4368,7 +4368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1167.1433, y: 0.00008647535}
+  m_AnchoredPosition: {x: -0.008056641, y: 0.00008647535}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2327180206377482916
@@ -5123,7 +5123,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4125024919260462026}
   m_HandleRect: {fileID: 4125024919260462027}
   m_Direction: 0
-  m_Value: 0.99999285
+  m_Value: 0.0000052294467
   m_Size: 0.43355015
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7177,7 +7177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552cf6bfc982a5342b92c021f591677e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catname: 4
+  catname: 5
   Name: {fileID: 1426358044328215012}
   CheckBox: {fileID: 4363063034889175683}
   CharBTN: {fileID: 677075539951389461}
@@ -8109,11 +8109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552cf6bfc982a5342b92c021f591677e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catname: 5
+  catname: 4
   Name: {fileID: 935241668652884292}
   CheckBox: {fileID: 1548789480533870026}
   CharBTN: {fileID: 2863935994410059997}
-  Locker: {fileID: 0}
+  Locker: {fileID: 4730278296550605591}
 --- !u!114 &6157695597466172722
 MonoBehaviour:
   m_ObjectHideFlags: 0

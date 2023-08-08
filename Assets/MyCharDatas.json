@@ -5,9 +5,9 @@
             "bought": true,
             "TotalStatPoint": 0,
             "StatLevels": [
-                7,
-                2,
-                1,
+                0,
+                0,
+                0,
                 0,
                 0,
                 0,
@@ -33,7 +33,7 @@
             "bought": true,
             "TotalStatPoint": 0,
             "StatLevels": [
-                10,
+                0,
                 0,
                 0,
                 0,
@@ -53,7 +53,21 @@
                 0,
                 0,
                 0,
-                10
+                0
+            ]
+        },
+        {
+            "Name": "뱅갈",
+            "bought": true,
+            "TotalStatPoint": 0,
+            "StatLevels": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
             ]
         },
         {
@@ -69,21 +83,7 @@
                 0,
                 0
             ]
-        },
-        {
-            "Name": "뱅갈",
-            "bought": false,
-            "TotalStatPoint": 0,
-            "StatLevels": [
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0
-            ]
         }
     ],
-    "nowSelectCatIndex": 0
+    "nowSelectCatIndex": 3
 }

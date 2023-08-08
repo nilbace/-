@@ -19,7 +19,9 @@ public class EachPet : MonoBehaviour
     public void Setting(Sprite Img, int index)
     {
         charImg.sprite = Img;
+        thispetIndex = index;
 
+        charImg.gameObject.GetComponent<Button>().onClick.RemoveAllListeners();
         charImg.gameObject.GetComponent<Button>().onClick.AddListener(() => setDataPetIndex());
 
         charNameTMP.text = GetNameByIndex(index);
@@ -36,6 +38,8 @@ public class EachPet : MonoBehaviour
 
         LockerText.text = (index + 1).ToString();
     }
+
+  
 
     void setDataPetIndex()
     {

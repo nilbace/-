@@ -76,6 +76,8 @@ public class PetD : MonoBehaviour
 
             unLockBTN.onClick.RemoveAllListeners();
             Managers.Data.SaveAllDatas();
+
+            Pet.instance.Init();
             Init();
         }
     }

@@ -42,6 +42,7 @@ public class Define : MonoBehaviour
         SweepResult,
         Devs,
         PetD,
+        SilverGun,
         MaxCount
     }
 
@@ -144,8 +145,9 @@ public class Define : MonoBehaviour
         ThreeColor,
         Mackerel,
         Tuxedo,
-        Siamese,
+        
         Bengal,
+        Siamese,
         MaxCount
     }
 

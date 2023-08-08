@@ -85,7 +85,7 @@ MonoBehaviour:
     BackImg: {fileID: 21300000, guid: 69f68b8fad8224842a13255a3c03a026, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
-      baseStat: 20
+      baseStat: 30
       UpValue: 5
       MaxValue: 10
     - StatName: "\uACF5\uACA9\uC18D\uB3C4"
@@ -121,11 +121,11 @@ MonoBehaviour:
     BackImg: {fileID: 21300000, guid: b27109ceb65b7e3488dabd53d2f7c7b5, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
-      baseStat: 25
+      baseStat: 40
       UpValue: 5
       MaxValue: 10
     - StatName: "\uACF5\uACA9\uC18D\uB3C4"
-      baseStat: 130
+      baseStat: 140
       UpValue: 10
       MaxValue: 10
     - StatName: "\uCE58\uBA85\uB370\uBBF8\uC9C0"
@@ -145,7 +145,7 @@ MonoBehaviour:
       UpValue: 2
       MaxValue: 5
     baseCritPer: 5
-    GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
+    GetPointMoneyValue: 000000004c04000098080000301100007c150000c8190000141e000060220000ac260000f82a000000000000
     SkillInfos: "\uB0E5\uC774\uAC00 \uC88B\uC544\uD558\uB294 \uACE0\uB4F1\uC5B4\uB97C
       \uB358\uC9D1\uB2C8\uB2E4!"
     SkillIcon: {fileID: 21300000, guid: 4b8f8fa1cd267334bb7b514ecdd23cc9, type: 3}
@@ -157,31 +157,31 @@ MonoBehaviour:
     BackImg: {fileID: 21300000, guid: b9562f458a2e73441b2858c720950ec6, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
-      baseStat: 25
-      UpValue: 5
-      MaxValue: 10
-    - StatName: "\uACF5\uACA9\uC18D\uB3C4"
-      baseStat: 130
+      baseStat: 45
       UpValue: 10
+      MaxValue: 7
+    - StatName: "\uACF5\uACA9\uC18D\uB3C4"
+      baseStat: 150
+      UpValue: 20
       MaxValue: 10
     - StatName: "\uCE58\uBA85\uB370\uBBF8\uC9C0"
       baseStat: 200
-      UpValue: 20
-      MaxValue: 5
+      UpValue: 50
+      MaxValue: 2
     - StatName: "\uC2A4\uD0AC\uB370\uBBF8\uC9C0"
       baseStat: 60
       UpValue: 10
       MaxValue: 5
     - StatName: "\uACE8\uB4DC\uBCF4\uB108\uC2A4"
-      baseStat: 10
-      UpValue: 10
-      MaxValue: 10
+      baseStat: 30
+      UpValue: 20
+      MaxValue: 5
     - StatName: HP
       baseStat: 30
       UpValue: 2
       MaxValue: 5
     baseCritPer: 5
-    GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
+    GetPointMoneyValue: 00000000b004000060090000c012000070170000201c0000d020000080250000302a0000e02e000000000000
     SkillInfos: "\uB0E5\uC774\uC758 \uB098\uBE44\uB125\uD0C0\uC774\uB97C \uB358\uC9D1\uB2C8\uB2E4!"
     SkillIcon: {fileID: 21300000, guid: 4d1d5963cc1898142bd0865ea62cc5df, type: 3}
     Skill2Infos: "\uB0E5\uC774\uAC00 \uB530\uB77C\uB2E4\uB2C8\uB294 \uB178\uB780\uB098\uBE44\uB97C
@@ -192,31 +192,31 @@ MonoBehaviour:
     BackImg: {fileID: 21300000, guid: c99f812e0b23cc34082d8c7fa1764237, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
-      baseStat: 25
-      UpValue: 5
-      MaxValue: 10
-    - StatName: "\uACF5\uACA9\uC18D\uB3C4"
-      baseStat: 130
+      baseStat: 40
       UpValue: 10
+      MaxValue: 7
+    - StatName: "\uACF5\uACA9\uC18D\uB3C4"
+      baseStat: 120
+      UpValue: 20
       MaxValue: 10
     - StatName: "\uCE58\uBA85\uB370\uBBF8\uC9C0"
       baseStat: 200
-      UpValue: 20
-      MaxValue: 5
+      UpValue: 25
+      MaxValue: 4
     - StatName: "\uC2A4\uD0AC\uB370\uBBF8\uC9C0"
       baseStat: 60
       UpValue: 10
       MaxValue: 5
     - StatName: "\uACE8\uB4DC\uBCF4\uB108\uC2A4"
-      baseStat: 10
-      UpValue: 10
-      MaxValue: 10
+      baseStat: 20
+      UpValue: 30
+      MaxValue: 5
     - StatName: HP
       baseStat: 30
       UpValue: 2
       MaxValue: 5
     baseCritPer: 5
-    GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
+    GetPointMoneyValue: 00000000b004000060090000c012000070170000201c0000d020000080250000302a0000e02e000000000000
     SkillInfos: "\uB0E5\uC774\uAC00 \uAC16\uACE0 \uB180\uB358 \uC7A5\uB09C\uAC10
       \uACF5\uC744 \uB358\uC9D1\uB2C8\uB2E4!"
     SkillIcon: {fileID: 21300000, guid: ae24299b10dd42a4f9df13d55d8b2b87, type: 3}
@@ -228,31 +228,31 @@ MonoBehaviour:
     BackImg: {fileID: 21300000, guid: 5ed594c06bde5294f9af914bc5709a64, type: 3}
     ThreeValues:
     - StatName: "\uACF5\uACA9\uB825"
-      baseStat: 25
-      UpValue: 5
-      MaxValue: 10
-    - StatName: "\uACF5\uACA9\uC18D\uB3C4"
-      baseStat: 130
+      baseStat: 50
       UpValue: 10
+      MaxValue: 7
+    - StatName: "\uACF5\uACA9\uC18D\uB3C4"
+      baseStat: 140
+      UpValue: 20
       MaxValue: 10
     - StatName: "\uCE58\uBA85\uB370\uBBF8\uC9C0"
       baseStat: 200
-      UpValue: 20
-      MaxValue: 5
+      UpValue: 50
+      MaxValue: 2
     - StatName: "\uC2A4\uD0AC\uB370\uBBF8\uC9C0"
       baseStat: 60
       UpValue: 10
       MaxValue: 5
     - StatName: "\uACE8\uB4DC\uBCF4\uB108\uC2A4"
-      baseStat: 10
-      UpValue: 10
-      MaxValue: 10
-    - StatName: HP
       baseStat: 30
+      UpValue: 20
+      MaxValue: 130
+    - StatName: HP
+      baseStat: 40
       UpValue: 2
       MaxValue: 5
     baseCritPer: 5
-    GetPointMoneyValue: 00000000e8030000d0070000a00f00008813000070170000581b0000401f0000282300001027000000000000
+    GetPointMoneyValue: 0000000014050000280a00005014000064190000781e00008c230000a0280000b42d0000c832000000000000
     SkillInfos: "\uB0E5\uC774\uC758 \uD138\uBB49\uCE58\uB97C \uB358\uC9D1\uB2C8\uB2E4!"
     SkillIcon: {fileID: 21300000, guid: 2d7f1cf968f8aaa4c8f302daeb07a1c1, type: 3}
     Skill2Infos: "\uB0E5\uC774\uB97C \uB530\uB77C\uB2E4\uB2C8\uB294 \uD30C\uB780\uB098\uBE44\uB97C

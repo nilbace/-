@@ -1,4 +1,32 @@
 {
-    "MailBox": [],
-    "MailAmount": 0
+    "MailBox": [
+        {
+            "CoinAmount": 0,
+            "RubyAmount": 0,
+            "BellAmount": 5,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "상점 구매 상품(방울)"
+        },
+        {
+            "CoinAmount": 0,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 1,
+            "ReviveTicketAmount": 0,
+            "MailText": "상점 구매 상품(광고 스킵 쿠폰)"
+        },
+        {
+            "CoinAmount": 0,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 10,
+            "ReviveTicketAmount": 0,
+            "MailText": "상점 구매 상품(광고 스킵 쿠폰)"
+        }
+    ],
+    "MailAmount": 3
 }

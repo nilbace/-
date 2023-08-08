@@ -70,10 +70,10 @@ public class SilverGun : MonoBehaviour
         int gold = GenerateRandomValue();
 
         if (ruby == 1)
-            Managers.Data.MakeAndAddMail(gold, 30, 0, 0, 0, 0, "은총 상자");
+            Managers.Data.MakeAndAddMail(gold, 30, 0, 0, 0, 0, "상점 구매 상품 (은총 상자)");
         else
         {
-            Managers.Data.MakeAndAddMail(gold, 0, 0, 0, 0, 0, "은총 상자");
+            Managers.Data.MakeAndAddMail(gold, 0, 0, 0, 0, 0, "상점 구매 상품 (은총 상자)");
         }
 
         Managers.Data.SaveAllDatas();

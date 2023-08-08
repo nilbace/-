@@ -29,7 +29,7 @@ public class Store : MonoBehaviour
         if (Managers.Data.MyStoreData.MyRubyAmount >= 30)
         {
             Managers.Data.MyStoreData.MyRubyAmount -= 30;
-            Managers.Data.MyBellData.NowBellCount += 5;
+            Managers.Data.MakeAndAddMail(0, 0, 5, 0, 0, 0, "상점 구매 상품(방울)");
             Managers.Data.SaveAllDatas();
             SuccessBuy();
         }
@@ -44,7 +44,7 @@ public class Store : MonoBehaviour
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         if (Managers.Data.MyStoreData.MyGoldAmount >= 500)
         {
-            Managers.Data.MyStoreData.MySkipCouponAmount++;
+            Managers.Data.MakeAndAddMail(0, 0, 0, 0, 1, 0, "상점 구매 상품(광고 스킵 쿠폰)");
             Managers.Data.MyStoreData.MyGoldAmount -= 500;
             Managers.Data.SaveAllDatas();
             SuccessBuy();
@@ -61,7 +61,7 @@ public class Store : MonoBehaviour
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         if (Managers.Data.MyStoreData.MyGoldAmount >= 4500)
         {
-            Managers.Data.MyStoreData.MySkipCouponAmount+= 10;
+            Managers.Data.MakeAndAddMail(0, 0, 0, 0, 10, 0, "상점 구매 상품(광고 스킵 쿠폰)");
             Managers.Data.MyStoreData.MyGoldAmount -= 4500;
             Managers.Data.SaveAllDatas();
             SuccessBuy();

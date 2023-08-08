@@ -43,6 +43,7 @@ public class Define : MonoBehaviour
         Devs,
         PetD,
         SilverGun,
+        PaySuccess,
         MaxCount
     }
 

@@ -118,8 +118,11 @@ public class GameScene : MonoBehaviour
 
         if(_heartCount < 0 && !isDead)
         {
-            if(!hasRevived)
+            isDead = true;
+            Time.timeScale = 0;
+            if (!hasRevived)
             {
+                hasRevived = true;
                 ShowRevive();
             }
             else
@@ -131,8 +134,7 @@ public class GameScene : MonoBehaviour
 
     void StageFailed()
     {
-        isDead = true;
-        Time.timeScale = 0;
+        
         Managers.UI.ShowPopup(Popup.StageFail);
         TempSound.instance.SFX(TempSound.EffectSoundName.result);
     }
@@ -161,6 +163,8 @@ public class GameScene : MonoBehaviour
     {
         isDead = false;
         SetStartHeart();
+        Time.timeScale = 1;
+        Managers.UI.ClosePopup();
     }
 
 

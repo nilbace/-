@@ -45,6 +45,7 @@ public class Define : MonoBehaviour
         SilverGun,
         PaySuccess,
         Tutorial,
+        Revive,
         MaxCount
     }
 

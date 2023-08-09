@@ -15,7 +15,7 @@ public class GameScene : MonoBehaviour
 
     [SerializeField] GameObject[] Hearts;
     int _heartCount = 0;
-    bool isDead = false;
+    public bool isDead = false;
 
     bool _bossAppear;
     int _bossMaxHP;
@@ -50,6 +50,8 @@ public class GameScene : MonoBehaviour
         if(!heejuneMode) LoadWave(Managers.Data.SelectedBossindex);
         SetStartHeart();
         BossGO.SetActive(false);
+
+        ReviveInit();
 
         bool seltu = PlayerPrefs.GetInt("seltu", 0) == 1;
 
@@ -116,7 +118,14 @@ public class GameScene : MonoBehaviour
 
         if(_heartCount < 0 && !isDead)
         {
-            StageFailed();
+            if(!hasRevived)
+            {
+                ShowRevive();
+            }
+            else
+            {
+                StageFailed();
+            }
         }
     }
 
@@ -127,6 +136,35 @@ public class GameScene : MonoBehaviour
         Managers.UI.ShowPopup(Popup.StageFail);
         TempSound.instance.SFX(TempSound.EffectSoundName.result);
     }
+
+
+    #region Revive
+
+    bool hasRevived = false;
+    public bool hasReviveCoupon;
+
+    void ReviveInit()
+    {
+        if(Managers.Data.MyStoreData.MyReviveTicKetAmount > 0)
+        {
+            hasReviveCoupon = true;
+        }
+    }
+
+    void ShowRevive()
+    {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        Managers.UI.ShowPopup(Define.Popup.Revive);
+    }
+
+    public    void Revive()
+    {
+        isDead = false;
+        SetStartHeart();
+    }
+
+
+    #endregion
 
     #region Heart
     void SetStartHeart()

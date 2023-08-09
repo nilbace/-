@@ -32,11 +32,11 @@ public class tutorial : MonoBehaviour
 
     IEnumerator ChangeText()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
         explain.text = "2초 후에 설명창을 닫을 수 있습니다";
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
         explain.text = "1초 후에 설명창을 닫을 수 있습니다";
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
         explain.text = "아무 곳이나 눌러 창을 닫으세요";
         canClose = true;
     }

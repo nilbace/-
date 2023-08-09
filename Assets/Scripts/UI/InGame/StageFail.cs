@@ -33,4 +33,10 @@ public class StageFail : MonoBehaviour
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ShowPopup(Define.Popup.CharPet);
     }
+
+    public void RetryBTN()
+    {
+        Managers.Scene.LoadScene(Define.Scene.StageSelect);
+        Managers.Scene.LoadScene(Define.Scene.Game);
+    }
 }

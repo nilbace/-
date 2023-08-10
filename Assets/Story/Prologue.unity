@@ -4526,18 +4526,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Story
       objectReference: {fileID: 0}
-    - target: {fileID: 113124444634611027, guid: b3c1bc50a7cabcb439faba640a3c199e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 799024131409399148, guid: b3c1bc50a7cabcb439faba640a3c199e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3365920400046973582, guid: b3c1bc50a7cabcb439faba640a3c199e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4286352362171530997, guid: b3c1bc50a7cabcb439faba640a3c199e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4580,6 +4568,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4286352362171530997, guid: b3c1bc50a7cabcb439faba640a3c199e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143428046926746114, guid: b3c1bc50a7cabcb439faba640a3c199e, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

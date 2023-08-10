@@ -82,6 +82,7 @@ public class SilverGun : MonoBehaviour
         Managers.UI.ShowPopup(Define.Popup.PaySuccess);
         Pays.instance.Setting(Pays.Result.Success);
         silverCooltime = DateTime.Now.AddHours(4);
+        AdManager.instance.RewardBackEvent -= BuyAfterAd;
         PlayerPrefs.SetString("silverCooltime", silverCooltime.Ticks.ToString());
     }
 

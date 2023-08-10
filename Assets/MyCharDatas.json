@@ -11,7 +11,7 @@
                 0,
                 0,
                 0,
-                5
+                0
             ]
         },
         {
@@ -30,7 +30,7 @@
         },
         {
             "Name": "고등어냥이",
-            "bought": true,
+            "bought": false,
             "TotalStatPoint": 0,
             "StatLevels": [
                 0,
@@ -39,12 +39,12 @@
                 0,
                 0,
                 0,
-                6
+                0
             ]
         },
         {
             "Name": "턱시도냥이",
-            "bought": true,
+            "bought": false,
             "TotalStatPoint": 0,
             "StatLevels": [
                 0,
@@ -53,7 +53,7 @@
                 0,
                 0,
                 0,
-                9
+                0
             ]
         },
         {
@@ -85,5 +85,5 @@
             ]
         }
     ],
-    "nowSelectCatIndex": 3
+    "nowSelectCatIndex": 0
 }

@@ -46,13 +46,11 @@ public class Revive : MonoBehaviour
         }
         else if(Managers.Data.MyStoreData.SkipAdActive)
         {
-            SecondBTN.GetComponent<Image>().sprite = seImgs[0];
+            SecondBTN.GetComponent<Image>().sprite = seImgs[1];
             SecondBTN.onClick.AddListener(ReviveWithADSkip);
         }
         else
         {
-            SecondBTN.GetComponent<Image>().sprite = seImgs[0];
-            //추가 바람
             SecondBTN.onClick.AddListener(ReviveWithAd);
         }
 
@@ -151,8 +149,14 @@ public class Revive : MonoBehaviour
     void ReviveWithAd()
     {
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
-        //광고 보고 난 뒤에 저것만 실행되면 됨
+        AdManager.instance.ShowAd();
+        AdManager.instance.RewardBackEvent += AfterAd;
+    }
+
+    void AfterAd(object sender, EventArgs e)
+    {
         GameScene.instance.Revive();
+        AdManager.instance.RewardBackEvent -= AfterAd;
     }
 
     #endregion

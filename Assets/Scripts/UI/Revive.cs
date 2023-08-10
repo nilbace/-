@@ -44,7 +44,6 @@ public class Revive : MonoBehaviour
             SecondBTN.GetComponent<Image>().sprite = seImgs[0];
             SecondBTN.onClick.AddListener(ReviveWithTicket);
         }
-        //광고 없다냥 구매시 추가 바람
         else if(Managers.Data.MyStoreData.SkipAdActive)
         {
             SecondBTN.GetComponent<Image>().sprite = seImgs[0];
@@ -53,6 +52,7 @@ public class Revive : MonoBehaviour
         else
         {
             SecondBTN.GetComponent<Image>().sprite = seImgs[0];
+            //추가 바람
             SecondBTN.onClick.AddListener(ReviveWithAd);
         }
 
@@ -150,7 +150,9 @@ public class Revive : MonoBehaviour
 
     void ReviveWithAd()
     {
-
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        //광고 보고 난 뒤에 저것만 실행되면 됨
+        GameScene.instance.Revive();
     }
 
     #endregion

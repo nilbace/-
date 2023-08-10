@@ -22,6 +22,10 @@ public class UIManager
 
     public void ClosePopup()
     {
+        if(RedDot.instance != null)
+        {
+            RedDot.instance.Init();
+        }
         MonoBehaviour.Destroy(_popupStack.Pop());
 
     }

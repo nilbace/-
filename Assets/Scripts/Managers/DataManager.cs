@@ -502,6 +502,10 @@ public class DataManager
     {
         MyMailData.MailBox.RemoveAt(i);
         MyMailData.MailAmount--;
+        if (RedDot.instance != null)
+        {
+            RedDot.instance.Init();
+        }
         SaveAllDatas();
     }
 

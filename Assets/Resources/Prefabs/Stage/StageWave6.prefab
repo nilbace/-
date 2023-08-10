@@ -203,7 +203,7 @@ MonoBehaviour:
       SpawnPoint: {x: 0, y: 5}
     - WaveName: Wave56
       WaveMonster: {fileID: 264406512542626709, guid: 67434cad8f46e9744b2773c28fecb329, type: 3}
-      MonsterHP: 33000
+      MonsterHP: 35000
       WaveMoveSpeed: 3
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 4.5}

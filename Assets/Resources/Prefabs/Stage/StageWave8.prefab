@@ -215,7 +215,7 @@ MonoBehaviour:
       SpawnPoint: {x: 0, y: 5}
     - WaveName: Wave58
       WaveMonster: {fileID: 3714091697221412020, guid: 9b1d9c6135fd0f4439761542da2832d9, type: 3}
-      MonsterHP: 35000
+      MonsterHP: 40000
       WaveMoveSpeed: 3
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 1.5}
@@ -242,10 +242,10 @@ MonoBehaviour:
   - {x: 2, y: 13}
   - {x: 2, y: 15}
   - {x: 4, y: 1}
-  - {x: 0, y: 99}
   - {x: 1, y: 33}
   - {x: 4, y: 14}
   - {x: 0, y: 13}
+  - {x: 0, y: 99}
   - {x: 2, y: 32}
   - {x: 2, y: 6}
   - {x: 0, y: 35}
@@ -254,9 +254,9 @@ MonoBehaviour:
   - {x: 0, y: 4}
   - {x: 2, y: 15}
   - {x: 2, y: 36}
-  - {x: 0, y: 99}
   - {x: 2, y: 7}
   - {x: 0, y: 8}
+  - {x: 0, y: 99}
   - {x: 0, y: 6}
   - {x: 2, y: 13}
   - {x: 1, y: 32}
@@ -268,7 +268,6 @@ MonoBehaviour:
   - {x: 2, y: 13}
   - {x: 2, y: 15}
   - {x: 4, y: 31}
-  - {x: 0, y: 99}
   - {x: 4, y: 58}
   Log: {fileID: 7020389787168640034, guid: 9b59e65c40d13bf429c3f9f5054cec79, type: 3}
   LogWarning: {fileID: 4302185438866433526, guid: ba7a78c103191db4aba303a93e3d111c, type: 3}

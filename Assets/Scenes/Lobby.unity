@@ -1054,9 +1054,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SettingUI, Assembly-CSharp
-        m_MethodName: OpenInsta
+      - m_Target: {fileID: 1282123555}
+        m_TargetAssemblyTypeName: LobbyUI, Assembly-CSharp
+        m_MethodName: OpnInsta
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

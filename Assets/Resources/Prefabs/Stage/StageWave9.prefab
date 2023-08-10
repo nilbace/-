@@ -221,7 +221,7 @@ MonoBehaviour:
       SpawnPoint: {x: 0, y: 5}
     - WaveName: Wave59
       WaveMonster: {fileID: 3961937674712807615, guid: 4cd2e9801f0a0fe4e94fb83074b296bb, type: 3}
-      MonsterHP: 36000
+      MonsterHP: 42000
       WaveMoveSpeed: 3
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 1.2}

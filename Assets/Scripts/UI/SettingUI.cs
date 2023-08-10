@@ -12,16 +12,12 @@ public class SettingUI : MonoBehaviour
         couponField.text = "쿠폰을 입력하세요";
         SetSettingPannel();
 
-        for(int i = 0; i <Coupon7s.Length; i++)
-        {
-            Coupon7s[i] = PlayerPrefs.GetInt("Coupon7s_" + i, 0) == 1;
-        }
     }
 
 
     void SetSettingPannel()
     {
-        
+
 
         sliders[0].value = Managers.Data.MySettingData.BGMSound;
         sliders[1].value = Managers.Data.MySettingData.SFXSound;
@@ -65,16 +61,39 @@ public class SettingUI : MonoBehaviour
         Managers.UI.ClosePopup();
     }
 
-    public bool[] Coupon7s;
-
-    private void SaveCoupon7s()
+    private void ValidateCoupon(string coupon)
     {
-        for (int i = 0; i < Coupon7s.Length; i++)
+        Coupons couponEnum;
+        if (System.Enum.TryParse(coupon, true, out couponEnum))
         {
-            PlayerPrefs.SetInt("Coupon7s_" + i, Coupon7s[i] ? 1 : 0);
+            if (!IsCouponUsed(couponEnum))
+            {
+                // 쿠폰 사용 처리
+                UseCoupon(couponEnum);
+                couponField.text = "상품이 지급되었습니다!";
+            }
+            else
+            {
+                couponField.text = "사용된 쿠폰입니다";
+            }
         }
-        PlayerPrefs.Save();
+        else
+        {
+            Debug.Log("존재하지 않는 쿠폰입니다");
+        }
     }
+
+    void RewardByIndex(Coupons coupon)
+    {
+        switch (coupon)
+        {
+            case Coupons.fnqlwhdk:
+                break;
+
+
+        }
+    }
+
 
 
 
@@ -88,71 +107,98 @@ public class SettingUI : MonoBehaviour
             Managers.Data.SaveAllDatas();
         }
 
+        ValidateCoupon(couponField.text);
 
+    }
 
+    public enum Coupons
+    {
+        fnqlwhdk,
+        Tkfkdgo,
+        rhakdnj,
+        Godqhrgo,
+        Ehakssk,
+        kimtae05080,
+        Kimji03030,
+        choira03300,
+        leehun01250,
+        im09110,
+        youji05100,
+        park06090,
+        eight_seven,
+        Gamethon_5,
+    }
 
-        if (couponField.text == "kimjihyeon0303" && Coupon7s[0] == false)
+    private bool IsCouponUsed(Coupons coupon)
+    {
+        // 쿠폰 사용 여부 확인
+        return PlayerPrefs.GetInt(coupon.ToString(), 0) == 1;
+    }
+
+    private void UseCoupon(Coupons coupon)
+    {
+        couponField.text = "상품이 지급되었습니다!";
+        switch (coupon)
         {
-            couponField.text = "상품이 지급되었습니다!";
-            Managers.Data.MakeAndAddMail(0, 0, 0, 0, 10, 0, "오픈기념 쿠폰 1");
-            Coupon7s[0] = true;
-            SaveCoupon7s();
-            Managers.Data.SaveAllDatas();
-        }
+            case Coupons.fnqlwhdk:
+                Managers.Data.MakeAndAddMail(0, 10, 0, 0, 0, 0, "2스테이지 클리어를 축하드립니다");
+                break;
 
-        if (couponField.text == "parkheejune0609" && Coupon7s[1] == false)
-        {
-            couponField.text = "상품이 지급되었습니다!";
-            Managers.Data.MakeAndAddMail(0, 0, 0, 0, 0, 0, "오픈기념 쿠폰 1");
-            Coupon7s[1] = true;
-            SaveCoupon7s();
-            Managers.Data.SaveAllDatas();
-        }
+            case Coupons.Tkfkdgo:
+                Managers.Data.MakeAndAddMail(0, 15, 0, 0, 0, 0, "4스테이지 클리어를 축하드립니다");
+                break;
 
-        if (couponField.text == "kimjintae0508" && Coupon7s[2] == false)
-        {
-            couponField.text = "상품이 지급되었습니다!";
-            Managers.Data.MakeAndAddMail(0, 0, 0, 0, 0, 0, "쿠폰 2");
-            Coupon7s[2] = true;
-            SaveCoupon7s();
-            Managers.Data.SaveAllDatas();
-        }
+            case Coupons.rhakdnj:
+                Managers.Data.MakeAndAddMail(0, 20, 0, 0, 0, 0, "6스테이지 클리어를 축하드립니다");
+                break;
 
-        if (couponField.text == "your_coupon_code_3" && Coupon7s[3] == false)
-        {
-            couponField.text = "상품이 지급되었습니다!";
-            Managers.Data.MakeAndAddMail(0, 0, 0, 0, 0, 0, "쿠폰 3");
-            Coupon7s[3] = true;
-            SaveCoupon7s();
-            Managers.Data.SaveAllDatas();
-        }
+            case Coupons.Godqhrgo:
+                Managers.Data.MakeAndAddMail(0, 25, 0, 0, 0, 0, "8스테이지 클리어를 축하드립니다");
+                break;
 
-        if (couponField.text == "your_coupon_code_4" && Coupon7s[4] == false)
-        {
-            couponField.text = "상품이 지급되었습니다!";
-            Managers.Data.MakeAndAddMail(0, 0, 0, 0, 0, 0, "쿠폰 4");
-            Coupon7s[4] = true;
-            SaveCoupon7s();
-            Managers.Data.SaveAllDatas();
-        }
+            case Coupons.Ehakssk:
+                Managers.Data.MakeAndAddMail(0, 30, 0, 0, 0, 0, "10스테이지 클리어를 축하드립니다");
+                break;
 
-        if (couponField.text == "your_coupon_code_5" && Coupon7s[5] == false)
-        {
-            couponField.text = "상품이 지급되었습니다!";
-            Managers.Data.MakeAndAddMail(0, 0, 0, 0, 0, 0, "쿠폰 5");
-            Coupon7s[5] = true;
-            SaveCoupon7s();
-            Managers.Data.SaveAllDatas();
-        }
+            case Coupons.kimtae05080:
+                Managers.Data.MakeAndAddMail(1000, 0, 0, 0, 0, 0, "오픈 1일차 기념쿠폰");
+                break;
 
-        if (couponField.text == "your_coupon_code_6" && Coupon7s[6] == false)
-        {
-            couponField.text = "상품이 지급되었습니다!";
-            Managers.Data.MakeAndAddMail(0, 0, 0, 0, 0, 0, "쿠폰 6");
-            Coupon7s[6] = true;
-            SaveCoupon7s();
-            Managers.Data.SaveAllDatas();
-        }
+            case Coupons.Kimji03030:
+                Managers.Data.MakeAndAddMail(0, 0, 5, 0, 0, 0, "오픈 2일차 기념쿠폰");
+                break;
 
+            case Coupons.choira03300:
+                Managers.Data.MakeAndAddMail(0, 0, 0, 2, 0, 0, "오픈 3일차 기념쿠폰");
+                break;
+
+            case Coupons.leehun01250:
+                Managers.Data.MakeAndAddMail(0, 30, 0, 0, 0, 0, "오픈 4일차 기념쿠폰");
+                break;
+
+            case Coupons.im09110:
+                Managers.Data.MakeAndAddMail(5000, 0, 5, 0, 0, 0, "오픈 5일차 기념쿠폰");
+                break;
+
+            case Coupons.youji05100:
+                Managers.Data.MakeAndAddMail(0, 0, 0, 0, 0, 10, "오픈 6일차 기념쿠폰");
+                break;
+
+            case Coupons.park06090:
+                Managers.Data.MakeAndAddMail(0, 100, 0, 0, 0, 0, "오픈 7일차 기념쿠폰");
+                break;
+
+            case Coupons.eight_seven:
+                Managers.Data.MakeAndAddMail(0, 100000, 0, 0, 0, 0, "개발자치트");
+                break;
+
+            case Coupons.Gamethon_5:
+                Managers.Data.MakeAndAddMail(0, 300, 30, 0, 0, 0, "게임톤 5기");
+                break;
+        }
+        Managers.Data.SaveAllDatas();
+
+        // 쿠폰 사용 상태 저장
+        PlayerPrefs.SetInt(coupon.ToString(), 1);
     }
 }

@@ -209,7 +209,7 @@ MonoBehaviour:
       SpawnPoint: {x: 0, y: 5}
     - WaveName: Wave57
       WaveMonster: {fileID: 5551587086624545199, guid: 29907424601be044fbb3a50ade5d1808, type: 3}
-      MonsterHP: 33000
+      MonsterHP: 38000
       WaveMoveSpeed: 3
       WaveDir: {x: 0, y: -1, z: 0}
       SpawnPoint: {x: 0, y: 1.7}
@@ -261,11 +261,10 @@ MonoBehaviour:
   - {x: 2, y: 14}
   - {x: 2, y: 1}
   - {x: 2, y: 11}
-  - {x: 2, y: 33}
+  - {x: 4, y: 33}
   - {x: 2, y: 11}
   - {x: 2, y: 12}
-  - {x: 4, y: 99}
-  - {x: 2, y: 57}
+  - {x: 4, y: 57}
   Log: {fileID: 7020389787168640034, guid: 9b59e65c40d13bf429c3f9f5054cec79, type: 3}
   LogWarning: {fileID: 4302185438866433526, guid: ba7a78c103191db4aba303a93e3d111c, type: 3}
   PowerUp: {fileID: 6953580092862893647, guid: 2590ade27882701498c7bb5906d63550, type: 3}

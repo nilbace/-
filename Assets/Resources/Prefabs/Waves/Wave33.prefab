@@ -107,6 +107,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
+      propertyPath: IsNamed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886714046877487553, guid: cab12624462ba7b4da119431afb3c066, type: 3}
       propertyPath: BulletSize
       value: 0.2
       objectReference: {fileID: 0}

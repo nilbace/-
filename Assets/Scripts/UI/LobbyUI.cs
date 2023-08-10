@@ -81,4 +81,10 @@ public class LobbyUI : MonoBehaviour
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.UI.ShowPopup(Define.Popup.Pet);
     }
+
+    public void OpnInsta()
+    {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        Application.OpenURL("https://www.instagram.com/na0ojima_official/");
+    }
 }

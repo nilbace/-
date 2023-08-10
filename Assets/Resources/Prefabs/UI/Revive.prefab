@@ -519,6 +519,10 @@ MonoBehaviour:
   ReviveTicketBTNIMg: {fileID: 21300000, guid: 5a3305951a97d904391dd51d7bef7879, type: 3}
   ReviveBTN: {fileID: 895121488283978968}
   rubyValueText: {fileID: 3643881506806549236}
+  SecondBTN: {fileID: 8730056900386213109}
+  seImgs:
+  - {fileID: 21300000, guid: c676c7e4ce40ff64caafb7735f4515c1, type: 3}
+  - {fileID: 21300000, guid: f41d2c2fbf009b24db2651bda12ff21a, type: 3}
 --- !u!1 &8730056900386213111
 GameObject:
   m_ObjectHideFlags: 0

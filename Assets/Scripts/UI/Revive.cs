@@ -10,14 +10,14 @@ public class Revive : MonoBehaviour
     [SerializeField] Button ReviveBTN;
     [SerializeField] TMPro.TMP_Text rubyValueText;
 
+    [SerializeField] Button SecondBTN;
+    [SerializeField] Sprite[] seImgs;
+
     private void Start()
     {
         SetButton();
     }
-    public void ReviveWithAD()
-    {
-
-    }
+  
 
     public void StageFail()
     {
@@ -38,7 +38,27 @@ public class Revive : MonoBehaviour
             UpdateRubyValue();
             ReviveBTN.onClick.AddListener(() =>ReviveWithRuby(rubyValue));
         }
+
+        if(Managers.Data.MyStoreData.MySkipCouponAmount > 0 && Managers.Data.MyStoreData.SkipAdActive)
+        {
+            SecondBTN.GetComponent<Image>().sprite = seImgs[0];
+            SecondBTN.onClick.AddListener(ReviveWithTicket);
+        }
+        //광고 없다냥 구매시 추가 바람
+        else if(Managers.Data.MyStoreData.SkipAdActive)
+        {
+            SecondBTN.GetComponent<Image>().sprite = seImgs[0];
+            SecondBTN.onClick.AddListener(ReviveWithADSkip);
+        }
+        else
+        {
+            SecondBTN.GetComponent<Image>().sprite = seImgs[0];
+            SecondBTN.onClick.AddListener(ReviveWithAd);
+        }
+
     }
+
+    #region withRuby
 
     private DateTime lastButton2PressTime;
     int rubyValue = 10;
@@ -94,6 +114,7 @@ public class Revive : MonoBehaviour
 
     void ReviveWithTicket()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Data.MyStoreData.MyReviveTicKetAmount--;
         Managers.Data.SaveAllDatas();
         GameScene.instance.Revive();
@@ -108,4 +129,29 @@ public class Revive : MonoBehaviour
         Managers.Data.SaveAllDatas();
         GameScene.instance.Revive();
     }
+
+    #endregion
+
+    #region withAD
+
+    void ReviveWithSkipTicket()
+    {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        Managers.Data.MyStoreData.MySkipCouponAmount--;
+        Managers.Data.SaveAllDatas();
+        GameScene.instance.Revive();
+    }
+
+    void ReviveWithADSkip()
+    {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        GameScene.instance.Revive();
+    }
+
+    void ReviveWithAd()
+    {
+
+    }
+
+    #endregion
 }

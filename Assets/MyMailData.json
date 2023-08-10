@@ -1,14 +1,4 @@
 {
-    "MailBox": [
-        {
-            "CoinAmount": 0,
-            "RubyAmount": 10,
-            "BellAmount": 0,
-            "SweepAmount": 0,
-            "SkipCouponAmount": 0,
-            "ReviveTicketAmount": 0,
-            "MailText": "2스테이지 클리어를 축하드립니다"
-        }
-    ],
-    "MailAmount": 1
+    "MailBox": [],
+    "MailAmount": 0
 }

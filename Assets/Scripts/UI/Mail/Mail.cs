@@ -38,6 +38,7 @@ public class Mail : MonoBehaviour
 
     public void GetMail()
     {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
         Managers.Data.MyStoreData.MyGoldAmount += thisMail.CoinAmount;
         Managers.Data.MyStoreData.MyRubyAmount += thisMail.RubyAmount;
         Managers.Data.MyBellData.NowBellCount += thisMail.BellAmount;

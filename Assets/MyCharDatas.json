@@ -11,12 +11,12 @@
                 0,
                 0,
                 0,
-                0
+                5
             ]
         },
         {
             "Name": "삼색냥이",
-            "bought": true,
+            "bought": false,
             "TotalStatPoint": 0,
             "StatLevels": [
                 0,
@@ -39,7 +39,7 @@
                 0,
                 0,
                 0,
-                0
+                6
             ]
         },
         {
@@ -47,18 +47,18 @@
             "bought": true,
             "TotalStatPoint": 0,
             "StatLevels": [
-                10,
                 0,
                 0,
                 0,
                 0,
                 0,
-                0
+                0,
+                9
             ]
         },
         {
             "Name": "뱅갈",
-            "bought": true,
+            "bought": false,
             "TotalStatPoint": 0,
             "StatLevels": [
                 0,
@@ -72,7 +72,7 @@
         },
         {
             "Name": "샴",
-            "bought": true,
+            "bought": false,
             "TotalStatPoint": 0,
             "StatLevels": [
                 0,

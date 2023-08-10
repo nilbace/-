@@ -45,8 +45,11 @@ public class Define : MonoBehaviour
         SilverGun,
         PaySuccess,
         Tutorial,
+        MaxCount,
+        GoodBox,
+        SupplyBox,
         Revive,
-        MaxCount
+        StarterBox
     }
 
     public enum Tutorials

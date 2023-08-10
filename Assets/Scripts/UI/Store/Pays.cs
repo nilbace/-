@@ -28,6 +28,12 @@ public class Pays : MonoBehaviour
             Texts.text = "준비중입니다";
         }
     }
+
+    public void Setting(string customText)
+    {
+        Texts.text = customText;
+    }
+
     public void Close()
     {
         Managers.UI.ClosePopup();

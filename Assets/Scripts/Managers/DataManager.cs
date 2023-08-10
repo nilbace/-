@@ -71,7 +71,7 @@ public class DataManager
         while (MyBellData.NowBellCount < 5 && DateTime.Now > GetDateTime(MyBellData.BellPlusTime))
         {
             MyBellData.NowBellCount++;
-            MyBellData.BellPlusTime = GetDateTime(MyBellData.BellPlusTime).AddMinutes(10).ToString();
+            MyBellData.BellPlusTime = GetDateTime(MyBellData.BellPlusTime).AddMinutes(30).ToString();
         }
         SaveBellData();
     }
@@ -625,6 +625,9 @@ public class StoreData
     public int MyReviveTicKetAmount;
     public int MySkipCouponAmount;
     public bool NyaongjimaCouponUsed;
+    public bool SkipAdActive;
+    public bool PurchaseStarterPakage;
+
     public StoreData()
     {
         MyGoldAmount = 0;
@@ -633,6 +636,8 @@ public class StoreData
         MyReviveTicKetAmount = 0;
         MySkipCouponAmount = 0;
         NyaongjimaCouponUsed = false;
+        SkipAdActive = false;
+        PurchaseStarterPakage = false;
     }
 }
 

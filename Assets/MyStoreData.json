@@ -1,8 +1,10 @@
 {
-    "MyGoldAmount": 135406,
+    "MyGoldAmount": 8206,
     "MyRubyAmount": 13207,
     "MySweepTicketAmount": 1,
     "MyReviveTicKetAmount": 0,
     "MySkipCouponAmount": 180,
-    "NyaongjimaCouponUsed": false
+    "NyaongjimaCouponUsed": false,
+    "SkipAdActive": true,
+    "PurchaseStarterPakage": false
 }

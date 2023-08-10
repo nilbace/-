@@ -47,6 +47,7 @@ public class CharUpgrade : MonoBehaviour
     public void GetPointByMoney()
     {
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+
         if (Managers.Data.MyStoreData.MyGoldAmount >= _NowCatData.GetPointMoneyValue
             [Managers.Data.MyCharDatas.charSaveDatas[Managers.Data.MyCharDatas.nowSelectCatIndex].StatLevels[6]]
             
@@ -65,7 +66,17 @@ public class CharUpgrade : MonoBehaviour
     public void ResetStatBTN()
     {
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
-        Managers.Data.ResetCatStat();
+
+        if(Managers.Data.MyStoreData.MyRubyAmount > 10)
+        {
+            Managers.Data.MyStoreData.MyRubyAmount -= 10;
+            Managers.Data.ResetCatStat();
+        }
+        else
+        {
+            Managers.UI.ShowPopup(Define.Popup.PaySuccess);
+            Pays.instance.Setting(Pays.Result.Fail);
+        }
         Init();
     }
 }

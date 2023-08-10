@@ -3,65 +3,86 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class SilverGun : MonoBehaviour
 {
-    [SerializeField] Button CloseBTN;
-    
+    [SerializeField] Button buyFreeBTN;
+    [SerializeField] Button buyAdBTN;
+    [SerializeField] GameObject coolTimeBox;
+    [SerializeField] TextMeshProUGUI coolTimeBoxText;
 
+    int silverBuyCount;
+    DateTime silverCooltime;
     // Start is called before the first frame update
     void Start()
     {
-        //닫힘 버튼
-        CloseBTN.onClick.AddListener(() => Managers.UI.ClosePopup());
+        silverBuyCount = PlayerPrefs.GetInt("silverBuyCount", 0); // 은총상자 카운트
+        Debug.Log(silverBuyCount);
 
-
-
-        SilverGunBTN.onClick.AddListener(OnButtonClick);
-
-        // 이전에 버튼을 누른 시간 불러오기 (실제 게임 로드할 때 사용하십시오)
-        lastButtonPressTime = LoadLastButtonPressTime();
-
-        
+        long ticks = Convert.ToInt64(PlayerPrefs.GetString("silverCooltime", DateTime.Today.Ticks.ToString()));
+        silverCooltime = new DateTime(ticks);
     }
-
-    public Button SilverGunBTN;
-    private DateTime lastButtonPressTime;
-
-
-
-    private void OnButtonClick()
+    void Update()
     {
-        // 현재 시간 저장
-        lastButtonPressTime = DateTime.Now;
-
-        // 버튼 동작 실행
-        ExecuteButtonAction();
-
-
-        // 이전에 버튼을 누른 시간 저장 (실제 게임 종료 시 사용하십시오)
-        SaveLastButtonPressTime(lastButtonPressTime);
+        UpdateUI();
     }
 
+    private void UpdateUI()
+    {
+        if(silverBuyCount == 0)
+        {
+            //무료구매가능
+            buyFreeBTN.gameObject.SetActive(true);
+            buyAdBTN.gameObject.SetActive(false);
+            coolTimeBox.SetActive(false);
+        }
+        else if(silverBuyCount > 0 && DateTime.Now > silverCooltime)
+        {
+            //Debug.Log("광고보기 가능" + DateTime.Now + "/" + silverCooltime);
+            //광고보기 가능
+            buyFreeBTN.gameObject.SetActive(false);
+            buyAdBTN.gameObject.SetActive(true);
+            buyAdBTN.interactable = true;
+            coolTimeBox.SetActive(false);
+        }
+        else if (silverBuyCount > 0 && DateTime.Now < silverCooltime)
+        {
+            //Debug.Log("광고쿨타임중" + DateTime.Now + "/" + silverCooltime);
+            //광고쿨타임중
+            buyFreeBTN.gameObject.SetActive(false);
+            buyAdBTN.gameObject.SetActive(true);
+            buyAdBTN.interactable = false;
+            coolTimeBox.SetActive(true);
 
-    private void ExecuteButtonAction()
+            TimeSpan calTime = silverCooltime - DateTime.Now;
+            coolTimeBoxText.text = calTime.Hours + "h" + calTime.Minutes + "m";
+        }
+    }
+
+    public void ExecuteButtonAction()
     {
         TempSound.instance.SFX(TempSound.EffectSoundName.button1);
 
-        TimeSpan timeSinceLastPress = DateTime.Now - lastButtonPressTime;
+        buySilverGun();
+        silverCooltime = DateTime.Now;
+        Managers.UI.ShowPopup(Define.Popup.PaySuccess);
+        Pays.instance.Setting(Pays.Result.Success);
+    }
 
-        if (timeSinceLastPress.TotalDays >= 1)
-        {
-            buySilverGun();
-            Managers.UI.ShowPopup(Define.Popup.PaySuccess);
-            Pays.instance.Setting(Pays.Result.Success);
-        }
-        else
-        {
-            Managers.UI.ShowPopup(Define.Popup.PaySuccess);
-            Pays.instance.Setting(Pays.Result.Fail);
-        }
-        
+    public void ShowAdButton()
+    {
+        AdManager.instance.ShowAd();
+        AdManager.instance.RewardBackEvent += BuyAfterAd;
+    }
+
+    void BuyAfterAd(object sender, EventArgs e)
+    {
+        buySilverGun();
+        Managers.UI.ShowPopup(Define.Popup.PaySuccess);
+        Pays.instance.Setting(Pays.Result.Success);
+        silverCooltime = DateTime.Now.AddHours(4);
+        PlayerPrefs.SetString("silverCooltime", silverCooltime.Ticks.ToString());
     }
 
     void buySilverGun()
@@ -75,7 +96,10 @@ public class SilverGun : MonoBehaviour
         {
             Managers.Data.MakeAndAddMail(gold, 0, 0, 0, 0, 0, "상점 구매 상품 (은총 상자)");
         }
-
+        silverBuyCount++;
+        Debug.Log(silverBuyCount);
+        PlayerPrefs.SetInt("silverBuyCount", silverBuyCount);
+        PlayerPrefs.Save();
         Managers.Data.SaveAllDatas();
     }
 
@@ -102,19 +126,13 @@ public class SilverGun : MonoBehaviour
         }
 
     }
-
-        private void SaveLastButtonPressTime(DateTime time)
+    public void CloseBTn()
     {
-        // 이전에 버튼을 누른 시간을 저장하는 코드 (예: PlayerPrefs)
-        PlayerPrefs.SetString("LastButtonPressTime", time.ToString());
+        PlayerPrefs.SetInt("silverBuyCount", silverBuyCount);
+        PlayerPrefs.SetString("silverCooltime", silverCooltime.Ticks.ToString());
         PlayerPrefs.Save();
-    }
-
-    private DateTime LoadLastButtonPressTime()
-    {
-        // 이전에 버튼을 누른 시간을 불러오는 코드 (예: PlayerPrefs)
-        string savedTime = PlayerPrefs.GetString("LastButtonPressTime", DateTime.MinValue.ToString());
-        return DateTime.Parse(savedTime);
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        Managers.UI.ClosePopup();
     }
 
 }

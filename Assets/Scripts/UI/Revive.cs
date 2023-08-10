@@ -21,7 +21,7 @@ public class Revive : MonoBehaviour
 
     public void StageFail()
     {
-        
+        Managers.UI.ShowPopup(Define.Popup.StageFail);
     }
 
     void SetButton()
@@ -34,6 +34,7 @@ public class Revive : MonoBehaviour
         }
         else
         {
+            rubyValueText.text = "";
             UpdateRubyValue();
             ReviveBTN.onClick.AddListener(() =>ReviveWithRuby(rubyValue));
         }
@@ -58,9 +59,7 @@ public class Revive : MonoBehaviour
         else
         {
             rubyValue = LoadRubyValue();
-            if (rubyValue < 100)
-                rubyValue += 10;
-            SaveRubyValue(rubyValue);
+            
             rubyValueText.text = rubyValue.ToString();
         }
         if(Managers.Data.MyStoreData.MyRubyAmount < rubyValue)
@@ -103,6 +102,9 @@ public class Revive : MonoBehaviour
     void ReviveWithRuby(int value)
     {
         Managers.Data.MyStoreData.MyRubyAmount -= value;
+        if (rubyValue < 100)
+            rubyValue += 10;
+        SaveRubyValue(rubyValue);
         Managers.Data.SaveAllDatas();
         GameScene.instance.Revive();
     }

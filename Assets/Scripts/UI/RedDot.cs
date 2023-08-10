@@ -7,6 +7,10 @@ public class RedDot : MonoBehaviour
     [SerializeField] GameObject Dot;
 
     public static RedDot instance;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {

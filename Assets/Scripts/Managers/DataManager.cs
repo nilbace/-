@@ -71,7 +71,7 @@ public class DataManager
         while (MyBellData.NowBellCount < 5 && DateTime.Now > GetDateTime(MyBellData.BellPlusTime))
         {
             MyBellData.NowBellCount++;
-            MyBellData.BellPlusTime = GetDateTime(MyBellData.BellPlusTime).AddMinutes(30).ToString();
+            MyBellData.BellPlusTime = GetDateTime(MyBellData.BellPlusTime).AddMinutes(10).ToString();
         }
         SaveBellData();
     }

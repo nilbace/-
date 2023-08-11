@@ -118,19 +118,25 @@ public class SilverGun : MonoBehaviour
         }
         else
         {
+            
+            Managers.UI.ShowPopup(Define.Popup.PaySuccess);
+            Pays.instance.Setting(Pays.Result.Success);
+            silverCooltime = DateTime.Now.AddHours(4);
+            PlayerPrefs.SetString("silverCooltime", silverCooltime.Ticks.ToString());
+            buySilverGun();
             AdManager.instance.ShowAd();
-            AdManager.instance.RewardBackEvent += BuyAfterAd;
         }
     }
 
     void BuyAfterAd(object sender, EventArgs e)
     {
-        buySilverGun();
+        
         Managers.UI.ShowPopup(Define.Popup.PaySuccess);
         Pays.instance.Setting(Pays.Result.Success);
         silverCooltime = DateTime.Now.AddHours(4);
         AdManager.instance.RewardBackEvent -= BuyAfterAd;
         PlayerPrefs.SetString("silverCooltime", silverCooltime.Ticks.ToString());
+        buySilverGun();
     }
 
     void buySilverGun()

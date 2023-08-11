@@ -127,6 +127,7 @@ public class SettingUI : MonoBehaviour
         park06090,
         eight_seven,
         Gamethon_5,
+        bangalS2
     }
 
     private bool IsCouponUsed(Coupons coupon)
@@ -138,6 +139,7 @@ public class SettingUI : MonoBehaviour
     private void UseCoupon(Coupons coupon)
     {
         couponField.text = "»óÇ°ÀÌ Áö±ŞµÇ¾ú½À´Ï´Ù!";
+
         switch (coupon)
         {
             case Coupons.fnqlwhdk:
@@ -181,7 +183,7 @@ public class SettingUI : MonoBehaviour
                 break;
 
             case Coupons.youji05100:
-                Managers.Data.MakeAndAddMail(0, 0, 0, 0, 0, 10, "¿ÀÇÂ 6ÀÏÂ÷ ±â³äÄíÆù");
+                Managers.Data.MakeAndAddMail(0, 3, 0, 10, 0, 10, "¿ÀÇÂ 6ÀÏÂ÷ ±â³äÄíÆù");
                 break;
 
             case Coupons.park06090:
@@ -194,6 +196,10 @@ public class SettingUI : MonoBehaviour
 
             case Coupons.Gamethon_5:
                 Managers.Data.MakeAndAddMail(0, 300, 30, 0, 0, 0, "°ÔÀÓÅæ 5±â");
+                break;
+
+            case Coupons.bangalS2:
+                Managers.Data.MyCharDatas.charSaveDatas[4].bought = true;
                 break;
         }
         Managers.Data.SaveAllDatas();

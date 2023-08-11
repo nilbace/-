@@ -180,6 +180,7 @@ public class Store : MonoBehaviour
                 UnityEngine.Random.Range(1, 6), 
                 "상점 구매 상품(스타터 패키지)");
         }
+        Managers.Data.MyStoreData.PurchaseStarterPakage = true;
         Managers.Data.SaveAllDatas();
         SuccessBuy();
     }

@@ -1,4 +1,23 @@
 {
-    "MailBox": [],
-    "MailAmount": 0
+    "MailBox": [
+        {
+            "CoinAmount": 13030,
+            "RubyAmount": 100,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 1,
+            "MailText": "상점 구매 상품(스타터 패키지)"
+        },
+        {
+            "CoinAmount": 13129,
+            "RubyAmount": 100,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 2,
+            "MailText": "상점 구매 상품(스타터 패키지)"
+        }
+    ],
+    "MailAmount": 2
 }

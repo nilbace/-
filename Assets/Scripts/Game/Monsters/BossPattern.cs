@@ -832,6 +832,8 @@ public class BossPattern : MonoBehaviour
 
                         transform.DOMoveX(-1f, 0.3f);
                         yield return new WaitForSeconds(0.3f);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
                         yield return StartCoroutine(Shoot3Way(0.5f));
 
@@ -848,6 +850,8 @@ public class BossPattern : MonoBehaviour
 
                         transform.DOMoveX(1f, 0.3f);
                         yield return new WaitForSeconds(0.3f);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
+                        Stage1MonsterSpawner.instance.SpawnMonsterWave(36);
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
                         yield return StartCoroutine(Shoot3Way(0.6f));
 
@@ -876,7 +880,7 @@ public class BossPattern : MonoBehaviour
                     case 52:  //레이저3갈래 등등
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(35);
                         Stage1MonsterSpawner.instance.SpawnMonsterWave(37);
-                        StartCoroutine(ShootHalfCircle(0.7f));
+                        StartCoroutine(ShootHalfCircle(0.5f));
                         StartCoroutine(FireLaser(false, new Vector3(1, 3, 0)));
                         StartCoroutine(FireLaser(false, new Vector3(-1, 3, 0)));
                         StartCoroutine(FireLaser(true));

@@ -372,7 +372,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &3035599559990900995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,6 +406,9 @@ MonoBehaviour:
   buyAdBTN: {fileID: 7884061366052101529}
   coolTimeBox: {fileID: 4239333586087154180}
   coolTimeBoxText: {fileID: 2320777753695638363}
+  Imgs:
+  - {fileID: 21300000, guid: 4a6ce9c1b4a11f84e919234654997d26, type: 3}
+  - {fileID: 21300000, guid: 90ec3f8219df8a743a85091610e41cd3, type: 3}
 --- !u!1 &3253736555367250283
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5154843857959465447
 RectTransform:
   m_ObjectHideFlags: 0

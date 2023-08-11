@@ -45,31 +45,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   datas:
   - BossName: 
-    ThreeStarScore: 20000
-    TwoStarScore: 15000
-    OneStarScore: 10000
+    ThreeStarScore: 16000
+    TwoStarScore: 12000
+    OneStarScore: 9000
     OneStarReward: 888
     TwoStarReward: 887
     ThreeStarReward: 8888
     BossImg: {fileID: 21300000, guid: 0ceb73dcea183724889717bcd21ceeca, type: 3}
   - BossName: 
-    ThreeStarScore: 20000
-    TwoStarScore: 15000
-    OneStarScore: 10000
+    ThreeStarScore: 16000
+    TwoStarScore: 13000
+    OneStarScore: 9000
     OneStarReward: 345
     TwoStarReward: 3543
     ThreeStarReward: 5555
     BossImg: {fileID: 21300000, guid: 366bde5e7dfa8cc4ebd7c8739704414b, type: 3}
   - BossName: 
-    ThreeStarScore: 20000
-    TwoStarScore: 15000
-    OneStarScore: 10000
+    ThreeStarScore: 17000
+    TwoStarScore: 14000
+    OneStarScore: 9000
     OneStarReward: 0
     TwoStarReward: 0
     ThreeStarReward: 0
     BossImg: {fileID: 21300000, guid: 92f4479d14b794344a8bed8229ad2d1b, type: 3}
   - BossName: 
-    ThreeStarScore: 20000
+    ThreeStarScore: 17000
     TwoStarScore: 15000
     OneStarScore: 10000
     OneStarReward: 0
@@ -77,65 +77,65 @@ MonoBehaviour:
     ThreeStarReward: 0
     BossImg: {fileID: 21300000, guid: 25fe51459a4b8ed42bcc6e485b4cef43, type: 3}
   - BossName: 
-    ThreeStarScore: 20000
-    TwoStarScore: 15000
-    OneStarScore: 10000
+    ThreeStarScore: 21000
+    TwoStarScore: 17000
+    OneStarScore: 12000
     OneStarReward: 0
     TwoStarReward: 0
     ThreeStarReward: 0
     BossImg: {fileID: 21300000, guid: 8a75f86929dd4bd4495514d56c527058, type: 3}
   - BossName: 
-    ThreeStarScore: 20000
-    TwoStarScore: 15000
-    OneStarScore: 10000
+    ThreeStarScore: 22000
+    TwoStarScore: 18000
+    OneStarScore: 12000
     OneStarReward: 0
     TwoStarReward: 0
     ThreeStarReward: 0
     BossImg: {fileID: 21300000, guid: 3fdff0108359f2946ace7366e6d67447, type: 3}
   - BossName: 
-    ThreeStarScore: 20000
-    TwoStarScore: 15000
-    OneStarScore: 10000
+    ThreeStarScore: 23000
+    TwoStarScore: 19000
+    OneStarScore: 13000
     OneStarReward: 0
     TwoStarReward: 0
     ThreeStarReward: 0
     BossImg: {fileID: 21300000, guid: 9f077dcd52173b048a3ad2f91a274a7d, type: 3}
   - BossName: 
-    ThreeStarScore: 20000
-    TwoStarScore: 15000
-    OneStarScore: 10000
+    ThreeStarScore: 25000
+    TwoStarScore: 20000
+    OneStarScore: 14000
     OneStarReward: 0
     TwoStarReward: 0
     ThreeStarReward: 0
     BossImg: {fileID: 21300000, guid: 03e3b74a1e4c43243be769007272b4b4, type: 3}
   - BossName: 
-    ThreeStarScore: 20000
-    TwoStarScore: 15000
-    OneStarScore: 10000
+    ThreeStarScore: 25000
+    TwoStarScore: 20000
+    OneStarScore: 14000
     OneStarReward: 0
     TwoStarReward: 0
     ThreeStarReward: 0
     BossImg: {fileID: 21300000, guid: 5f280b2ea9c985949b37c2023ee5b6fc, type: 3}
   - BossName: 
-    ThreeStarScore: 20000
-    TwoStarScore: 15000
-    OneStarScore: 10000
+    ThreeStarScore: 27000
+    TwoStarScore: 21000
+    OneStarScore: 15000
     OneStarReward: 0
     TwoStarReward: 0
     ThreeStarReward: 0
     BossImg: {fileID: 21300000, guid: 958ccfae8e0fe8e45a7e1497fa00cee4, type: 3}
   - BossName: 
-    ThreeStarScore: 20000
-    TwoStarScore: 15000
-    OneStarScore: 10000
+    ThreeStarScore: 29000
+    TwoStarScore: 23000
+    OneStarScore: 16000
     OneStarReward: 0
     TwoStarReward: 0
     ThreeStarReward: 0
     BossImg: {fileID: 21300000, guid: 306c6b0739b47d94cbd9382e0e2035bb, type: 3}
   - BossName: 
-    ThreeStarScore: 20000
-    TwoStarScore: 15000
-    OneStarScore: 10000
+    ThreeStarScore: 30000
+    TwoStarScore: 25000
+    OneStarScore: 18000
     OneStarReward: 0
     TwoStarReward: 0
     ThreeStarReward: 0

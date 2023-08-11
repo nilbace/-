@@ -14,6 +14,7 @@ public class Store : MonoBehaviour
     DateTime countClearTime;
 
     [SerializeField] GameObject silverGunAdUI;
+    [SerializeField] TMP_Text mySkipCount;
  
     private void Start()
     {
@@ -25,6 +26,8 @@ public class Store : MonoBehaviour
 
         long ticks = Convert.ToInt64(PlayerPrefs.GetString("countClearTime", DateTime.Today.AddDays(1).Ticks.ToString()));
         countClearTime = new DateTime(ticks);
+
+        mySkipCount.text = Managers.Data.MyStoreData.MySkipCouponAmount.ToString();
     }
 
     private void ResetCount()

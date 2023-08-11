@@ -134,6 +134,7 @@ MonoBehaviour:
   _myHP: 55555
   IsBoss: 1
   IsNamed: 0
+  IsClone: 0
 --- !u!50 &7628122228325080943
 Rigidbody2D:
   serializedVersion: 4
@@ -277,6 +278,10 @@ PrefabInstance:
     - target: {fileID: 3192266315141566008, guid: 82c568539f30119489f69147377be845, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192266315141566009, guid: 82c568539f30119489f69147377be845, type: 3}
+      propertyPath: _waveControlData.Array.data[0].x
+      value: 200000
       objectReference: {fileID: 0}
     - target: {fileID: 3192266315141566009, guid: 82c568539f30119489f69147377be845, type: 3}
       propertyPath: _wavesData.waveDatas.Array.data[28].WaveMonster

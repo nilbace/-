@@ -1,6 +1,6 @@
 {
     "HighScores": [
-        0,
+        16400,
         0,
         0,
         0,
@@ -14,7 +14,7 @@
         0
     ],
     "HighGoldScores": [
-        0,
+        1650,
         0,
         0,
         0,
@@ -27,11 +27,11 @@
         0,
         0
     ],
-    "clearStageIndex": 0,
+    "clearStageIndex": 1,
     "GetReward": [
-        false,
-        false,
-        false,
+        true,
+        true,
+        true,
         false,
         false,
         false,

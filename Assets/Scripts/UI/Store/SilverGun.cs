@@ -11,6 +11,7 @@ public class SilverGun : MonoBehaviour
     [SerializeField] Button buyAdBTN;
     [SerializeField] GameObject coolTimeBox;
     [SerializeField] TextMeshProUGUI coolTimeBoxText;
+    [SerializeField] Sprite[] Imgs;
 
     int silverBuyCount;
     DateTime silverCooltime;
@@ -28,6 +29,17 @@ public class SilverGun : MonoBehaviour
         UpdateUI();
     }
 
+    bool withAdSkipCoupon = false;
+    bool withoutAd = false;
+
+    [ContextMenu("ÀºÃÑ ¸®¼Â")]
+    void ResetTime()
+    {
+        silverCooltime = DateTime.Now.AddHours(-1);
+        AdManager.instance.RewardBackEvent -= BuyAfterAd;
+        PlayerPrefs.SetString("silverCooltime", silverCooltime.Ticks.ToString());
+    }
+
     private void UpdateUI()
     {
         if(silverBuyCount == 0)
@@ -39,11 +51,25 @@ public class SilverGun : MonoBehaviour
         }
         else if(silverBuyCount > 0 && DateTime.Now > silverCooltime)
         {
+            
+
             //Debug.Log("±¤°íº¸±â °¡´É" + DateTime.Now + "/" + silverCooltime);
             //±¤°íº¸±â °¡´É
             buyFreeBTN.gameObject.SetActive(false);
             buyAdBTN.gameObject.SetActive(true);
             buyAdBTN.interactable = true;
+            if (!Managers.Data.MyStoreData.SkipAdActive && Managers.Data.MyStoreData.MySkipCouponAmount > 0)
+            {
+                buyAdBTN.GetComponent<Image>().sprite = Imgs[0];
+                withAdSkipCoupon = true;
+            }
+            else if(Managers.Data.MyStoreData.SkipAdActive)
+            {
+                buyAdBTN.GetComponent<Image>().sprite = Imgs[1];
+                withoutAd = true;
+            }
+
+
             coolTimeBox.SetActive(false);
         }
         else if (silverBuyCount > 0 && DateTime.Now < silverCooltime)
@@ -72,8 +98,29 @@ public class SilverGun : MonoBehaviour
 
     public void ShowAdButton()
     {
-        AdManager.instance.ShowAd();
-        AdManager.instance.RewardBackEvent += BuyAfterAd;
+        if(withAdSkipCoupon)
+        {
+            Managers.Data.MyStoreData.MySkipCouponAmount--;
+            Managers.Data.SaveAllDatas();
+            buySilverGun();
+            Managers.UI.ShowPopup(Define.Popup.PaySuccess);
+            Pays.instance.Setting(Pays.Result.Success);
+            silverCooltime = DateTime.Now.AddHours(4);
+            PlayerPrefs.SetString("silverCooltime", silverCooltime.Ticks.ToString());
+        }
+        else if(withoutAd)
+        {
+            buySilverGun();
+            Managers.UI.ShowPopup(Define.Popup.PaySuccess);
+            Pays.instance.Setting(Pays.Result.Success);
+            silverCooltime = DateTime.Now.AddHours(4);
+            PlayerPrefs.SetString("silverCooltime", silverCooltime.Ticks.ToString());
+        }
+        else
+        {
+            AdManager.instance.ShowAd();
+            AdManager.instance.RewardBackEvent += BuyAfterAd;
+        }
     }
 
     void BuyAfterAd(object sender, EventArgs e)

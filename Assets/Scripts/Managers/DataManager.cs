@@ -89,7 +89,7 @@ public class DataManager
     {
         if (MyBellData.NowBellCount == 5)
         {
-            MyBellData.BellPlusTime = DateTime.Now.AddMinutes(30).ToString();
+            MyBellData.BellPlusTime = DateTime.Now.AddMinutes(10).ToString();
             MyBellData.NowBellCount--;
             SaveBellData();
         }

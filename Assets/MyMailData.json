@@ -1,14 +1,4 @@
 {
-    "MailBox": [
-        {
-            "CoinAmount": 500,
-            "RubyAmount": 0,
-            "BellAmount": 0,
-            "SweepAmount": 0,
-            "SkipCouponAmount": 0,
-            "ReviveTicketAmount": 0,
-            "MailText": "상점 구매 상품 (은총 상자)"
-        }
-    ],
-    "MailAmount": 1
+    "MailBox": [],
+    "MailAmount": 0
 }

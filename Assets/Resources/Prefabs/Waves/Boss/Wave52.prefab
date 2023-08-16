@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2679765035935098377}
   - component: {fileID: 2679765035935098382}
   - component: {fileID: 1193889123613636787}
+  - component: {fileID: 8648950623211966910}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Enemy
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 366bde5e7dfa8cc4ebd7c8739704414b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81b015333601f4e439c666ec8bbe9272, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,6 +103,7 @@ MonoBehaviour:
   _myHP: 222222
   IsBoss: 1
   IsNamed: 0
+  IsClone: 0
 --- !u!50 &2679765035935098378
 Rigidbody2D:
   serializedVersion: 4
@@ -140,7 +142,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13, y: 15}
+    oldSize: {x: 10.23, y: 15.12}
     newSize: {x: 13, y: 15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -195,6 +197,26 @@ MonoBehaviour:
   ChangeDirTime: 0
   newSpeed: 0
   changeDirDelay: 0.5
+--- !u!95 &8648950623211966910
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970839705582343963}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a187bc689c6c614aab70c6af75c1cc2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &9180555276336733649
 GameObject:
   m_ObjectHideFlags: 0

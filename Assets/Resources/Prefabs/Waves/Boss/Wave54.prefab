@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 7430739536080694103}
   - component: {fileID: 7430739536080694096}
   - component: {fileID: 5962398610444744173}
+  - component: {fileID: 2212445142631802213}
   m_Layer: 0
   m_Name: Monkey
   m_TagString: Enemy
@@ -107,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 25fe51459a4b8ed42bcc6e485b4cef43, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e24fa9f34b7f216488426e42e7e0275e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,6 +134,7 @@ MonoBehaviour:
   _myHP: 40000
   IsBoss: 1
   IsNamed: 0
+  IsClone: 0
 --- !u!50 &7430739536080694100
 Rigidbody2D:
   serializedVersion: 4
@@ -171,7 +173,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.41, y: 16.63}
+    oldSize: {x: 10.36, y: 16.78}
     newSize: {x: 10.41, y: 16.63}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -228,3 +230,23 @@ MonoBehaviour:
   ChangeDirTime: 0
   newSpeed: 0
   changeDirDelay: 0.5
+--- !u!95 &2212445142631802213
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6446602021748251205}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eee5ce8ef0a724d4f9d6a97373d27152, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

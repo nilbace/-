@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 7830690111161467751}
   - component: {fileID: 7830690111161467744}
   - component: {fileID: 6417005933832740317}
+  - component: {fileID: 7211343803298757165}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Enemy
@@ -61,7 +62,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5964339813743424117}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 3.27, z: 0}
+  m_LocalPosition: {x: 0, y: 3.219, z: 0}
   m_LocalScale: {x: 0.22203337, y: 0.22203337, z: 0.22203337}
   m_Children: []
   m_Father: {fileID: 6694752424961544978}
@@ -107,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 689e264fb42854348a234b4a5e3afe8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b395852daad29641b70d778a8374ca5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,6 +134,7 @@ MonoBehaviour:
   _myHP: 50000
   IsBoss: 1
   IsNamed: 0
+  IsClone: 0
 --- !u!50 &7830690111161467748
 Rigidbody2D:
   serializedVersion: 4
@@ -167,18 +169,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.071796715, y: -0.7538667}
+  m_Offset: {x: -0.006466031, y: -0.23122072}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.57, y: 10.97}
+    oldSize: {x: 6.61, y: 11.22}
     newSize: {x: 6.57, y: 10.97}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.13047, y: 8.707734}
+  m_Size: {x: 3.999808, y: 9.753026}
   m_EdgeRadius: 0
 --- !u!114 &7830690111161467744
 MonoBehaviour:
@@ -232,3 +234,23 @@ MonoBehaviour:
   ChangeDirTime: 0
   newSpeed: 0
   changeDirDelay: 0.5
+--- !u!95 &7211343803298757165
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5964339813743424117}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 281549833a920de45a52971065d5edde, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

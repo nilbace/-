@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 7185217140127674731}
   - component: {fileID: 7185217140127674732}
   - component: {fileID: 6203426069870456785}
+  - component: {fileID: 3300326725878623417}
   m_Layer: 0
   m_Name: Chick
   m_TagString: Enemy
@@ -107,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 92f4479d14b794344a8bed8229ad2d1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aceb50bea1bf4e6478ba61c7dd4b06d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,6 +134,7 @@ MonoBehaviour:
   _myHP: 222222
   IsBoss: 1
   IsNamed: 0
+  IsClone: 0
 --- !u!50 &7185217140127674728
 Rigidbody2D:
   serializedVersion: 4
@@ -167,18 +169,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.034289002, y: -1.5772915}
+  m_Offset: {x: -0.034288883, y: -1.0593534}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.23, y: 14.36}
+    oldSize: {x: 10.87, y: 14.57}
     newSize: {x: 10.23, y: 14.36}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.5616035, y: 10.354582}
+  m_Size: {x: 7.5616035, y: 10.850001}
   m_EdgeRadius: 0
 --- !u!114 &7185217140127674732
 MonoBehaviour:
@@ -228,3 +230,23 @@ MonoBehaviour:
   ChangeDirTime: 0
   newSpeed: 0
   changeDirDelay: 0.5
+--- !u!95 &3300326725878623417
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764020387984392313}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f46ba32aae6f054c8ffd6000a7a1841, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

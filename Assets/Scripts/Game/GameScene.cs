@@ -179,7 +179,7 @@ public class GameScene : MonoBehaviour
 
     void SetHeartIMG()
     {
-        for(int i = 0; i <5;i++)
+        for(int i = 0; i <6;i++)
         {
             Hearts[i].SetActive(false);
         }
@@ -264,7 +264,7 @@ public class GameScene : MonoBehaviour
     IEnumerator BossDieAndStageClear()
     {
         yield return new WaitForSeconds(1f);
-        StageClaerImg.SetActive(false);
+        StageClaerImg.SetActive(true);
         yield return new WaitForSeconds(4f);
 
         float goldper = (float)(Player.instance.resultStats[4]+100) / 100f;

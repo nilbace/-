@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 6484284246493546573}
   - component: {fileID: 6484284246493546570}
   - component: {fileID: 7808456588954818295}
+  - component: {fileID: 4399291911416022789}
   m_Layer: 0
   m_Name: Horse
   m_TagString: Enemy
@@ -107,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 3fdff0108359f2946ace7366e6d67447, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb13446c182c1a9479bf1032fd7788e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,6 +134,7 @@ MonoBehaviour:
   _myHP: 666666
   IsBoss: 1
   IsNamed: 0
+  IsClone: 0
 --- !u!50 &6484284246493546574
 Rigidbody2D:
   serializedVersion: 4
@@ -171,7 +173,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 11.93, y: 17.96}
+    oldSize: {x: 12.03, y: 18.07}
     newSize: {x: 11.93, y: 17.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -225,3 +227,23 @@ MonoBehaviour:
   ChangeDirTime: 0
   newSpeed: 0
   changeDirDelay: 0.5
+--- !u!95 &4399291911416022789
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463989010981730655}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4ecf7a047ae3234488c17dab8d57c07, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

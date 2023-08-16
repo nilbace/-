@@ -1,23 +1,86 @@
 {
     "MailBox": [
         {
-            "CoinAmount": 13030,
-            "RubyAmount": 100,
+            "CoinAmount": 1700,
+            "RubyAmount": 0,
             "BellAmount": 0,
             "SweepAmount": 0,
             "SkipCouponAmount": 0,
-            "ReviveTicketAmount": 1,
-            "MailText": "상점 구매 상품(스타터 패키지)"
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지8 1별 보상"
         },
         {
-            "CoinAmount": 13129,
-            "RubyAmount": 100,
+            "CoinAmount": 3400,
+            "RubyAmount": 0,
             "BellAmount": 0,
             "SweepAmount": 0,
             "SkipCouponAmount": 0,
-            "ReviveTicketAmount": 2,
-            "MailText": "상점 구매 상품(스타터 패키지)"
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지8 2별 보상"
+        },
+        {
+            "CoinAmount": 1800,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지9 1별 보상"
+        },
+        {
+            "CoinAmount": 3600,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지9 2별 보상"
+        },
+        {
+            "CoinAmount": 0,
+            "RubyAmount": 34,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지9 3별 보상"
+        },
+        {
+            "CoinAmount": 1900,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지10 1별 보상"
+        },
+        {
+            "CoinAmount": 3800,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지10 2별 보상"
+        },
+        {
+            "CoinAmount": 2000,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지11 1별 보상"
+        },
+        {
+            "CoinAmount": 4000,
+            "RubyAmount": 0,
+            "BellAmount": 0,
+            "SweepAmount": 0,
+            "SkipCouponAmount": 0,
+            "ReviveTicketAmount": 0,
+            "MailText": "스테이지11 2별 보상"
         }
     ],
-    "MailAmount": 2
+    "MailAmount": 9
 }

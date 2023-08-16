@@ -52,7 +52,8 @@ public class AdManager : MonoBehaviour
         });
 
 #if UNITY_ANDROID
-        adUnitId = "ca-app-pub-3940256099942544/5224354917"; //º¸»óÇü ±¤°í »ùÇÃID
+        adUnitId = "ca-app-pub-5263245376517832/5897856879";//³Ä¿ËÁö¸¶ ID
+            //"ca-app-pub-3940256099942544/5224354917"; //º¸»óÇü ±¤°í »ùÇÃID
             //ca-app-pub-5263245376517832~2279457320 //º¸»óÇü ½ÅÃ»ID
 #elif UNITY_IOS
             adUnitId = "ca-app-pub-3940256099942544/4411468910";
@@ -80,7 +81,7 @@ public class AdManager : MonoBehaviour
         }
 
         Debug.Log("Loading the rewarded ad.");
-        AndroidToast.I.ShowToastMessage("±¤°í ·ÎµùÁß");
+        //AndroidToast.I.ShowToastMessage("±¤°í ·ÎµùÁß");
 
         // create our request used to load the ad.
         var adRequest = new AdRequest();
@@ -110,7 +111,7 @@ public class AdManager : MonoBehaviour
                     watch = false;
                     close = false;
                     Debug.Log("±¤°í Á¤»ó ´ÝÀ½");
-                    AndroidToast.I.ShowToastMessage("±¤°í Á¤»ó ´ÝÀ½");
+                    //AndroidToast.I.ShowToastMessage("±¤°í Á¤»ó ´ÝÀ½");
                     // Reload the ad so that we can show another as soon as possible.
                     LoadRewardedAd();
                 };

@@ -52,9 +52,8 @@ public class AdManager : MonoBehaviour
         });
 
 #if UNITY_ANDROID
-        adUnitId = "ca-app-pub-5263245376517832/5897856879";//냐옹지마 ID
-            //"ca-app-pub-3940256099942544/5224354917"; //보상형 광고 샘플ID
-            //ca-app-pub-5263245376517832~2279457320 //보상형 신청ID
+        adUnitId = //"ca-app-pub-5263245376517832/5897856879";//냐옹지마 ID
+            "ca-app-pub-3940256099942544/5224354917"; //보상형 광고 샘플ID
 #elif UNITY_IOS
             adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else

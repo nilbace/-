@@ -97,4 +97,11 @@ public class CharPet : MonoBehaviour
     {
         
     }
+
+    public void PetBTN()
+    {
+        TempSound.instance.SFX(TempSound.EffectSoundName.button1);
+        Managers.UI.ClosePopup();
+        Managers.UI.ShowPopup(Define.Popup.Pet);
+    }
 }

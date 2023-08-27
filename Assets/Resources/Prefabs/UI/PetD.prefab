@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.028, y: -24.304}
-  m_SizeDelta: {x: 11.167, y: 4.645}
+  m_AnchoredPosition: {x: 17.44, y: -253}
+  m_SizeDelta: {x: 91.84, y: 36.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7470684628269604861
 CanvasRenderer:
@@ -92,12 +92,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4.15
+  m_fontSize: 32.95
   m_fontSizeBase: 11.53
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 1.4
-  m_fontSizeMax: 72
+  m_fontSizeMax: 33
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -169,8 +169,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.007, y: -16.652}
-  m_SizeDelta: {x: 86.473, y: 22.511}
+  m_AnchoredPosition: {x: -4.53, y: -171.82}
+  m_SizeDelta: {x: 855.89, y: 239.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7249416691266905063
 CanvasRenderer:
@@ -281,7 +281,7 @@ RectTransform:
   m_GameObject: {fileID: 3035599558584164397}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.0057335, y: 13.756884, z: 10.0057335}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7618355785730873046}
   - {fileID: 5173973162013807021}
@@ -290,8 +290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 4}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 6, y: 4}
+  m_SizeDelta: {x: 972, y: 1038}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3035599558584164398
 CanvasRenderer:
@@ -560,8 +560,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 446.6, y: 622.61}
-  m_SizeDelta: {x: 121.21, y: 144.77}
+  m_AnchoredPosition: {x: 439, y: 470}
+  m_SizeDelta: {x: 107, y: 106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4415531454720242849
 CanvasRenderer:
@@ -591,7 +591,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 408200ca3a937584c8560dd4e8031370, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 397c8006eb7ca0b4b87e728aad18554d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

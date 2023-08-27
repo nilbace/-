@@ -138,7 +138,7 @@ public class SelectedUI : MonoBehaviour
     {
         _nowSweepTicketCount = Managers.Data.MyStoreData.MySweepTicketAmount;
         selSweepCount.text = _nowSelSweepCount.ToString();
-        nowSweepCount.text = _nowSweepTicketCount.ToString();
+        nowSweepCount.text = "소지 개수 : " + _nowSweepTicketCount.ToString();
         if (_nowSelSweepCount >= _nowSweepTicketCount)
         {
             PlusBTN.interactable = false;

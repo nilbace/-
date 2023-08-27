@@ -12,6 +12,19 @@ public class LoginScene : MonoBehaviour
     public float blinkSpeed = 1f;
 
     private bool increasingAlpha = true;
+    private bool StoryRead;
+
+    public void PressStart()
+    {
+        StoryRead = PlayerPrefs.GetInt("StoryRead", 0) == 1;
+        if (StoryRead) UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
+        else UnityEngine.SceneManagement.SceneManager.LoadScene("Prologue");
+    }
+
+    private void Start()
+    {
+        TempSound.instance.TurnONBGM(TempSound.BGMName.Lobby);
+    }
 
     private void Update()
     {
